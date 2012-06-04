@@ -5,9 +5,25 @@
 	<meta http-equiv="X-UA-Compatible" content="chrome=1">
 	<title>beginor@github</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<link href='http://alexgorbatchev.com/pub/sh/current/styles/shCore.css' rel='stylesheet' type='text/css' />
+	<link href='http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css' rel='stylesheet' type='text/css' />
 </head>
-	<body>
-		<h1>beginor@github</h1>
-		<p>Website under construction!</p>
-	</body>
+<body>
+	<h1>beginor@github</h1>
+	<p>Website under construction!</p>
+	<pre class="brush:js">
+	function hello() {
+		return "Hello,world";
+	}
+	</pre>
+	<script src='http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js' type='text/javascript'></script>
+	<script src='http://alexgorbatchev.com/pub/sh/current/scripts/shAutoloader.js' type='text/javascript'></script>
+	<script type="text/javascript">
+		SyntaxHighlighter.autoloader(
+			'js jscript javascript  http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJScript.js',
+			'applescript            http://alexgorbatchev.com/pub/sh/current/scripts/shBrushAppleScript.js'
+		);
+		SyntaxHighlighter.all();
+	</script>
+</body>
 </html>
