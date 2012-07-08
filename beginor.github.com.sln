@@ -1,23 +1,42 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "beginor.github.com", ".", "{AE3F2FE2-7340-4E0B-A734-2A78788B3564}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "beginor.github.com.git", ".", "{AE3F2FE2-7340-4E0B-A734-2A78788B3564}"
 	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.Debug = "True"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.PhysicalPath = "..\beginor.github.com.git\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\beginor.github.com\"
+		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.VirtualPath = "/beginor.github.com"
+		Release.AspNetCompiler.Debug = "False"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.PhysicalPath = "..\beginor.github.com.git\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\beginor.github.com\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.VirtualPath = "/beginor.github.com"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		VWDPort = "4182"
+		VWDVirtualPath = "/"
+	EndProjectSection
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.PhysicalPath = "..\beginor.github.com\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\beginor.github.com\"
 		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/beginor.github.com"
+		Debug.AspNetCompiler.VirtualPath = "/beginor.github.com"
+		Release.AspNetCompiler.Debug = "False"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.PhysicalPath = "..\beginor.github.com\"
 		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\beginor.github.com\"
 		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
+		Release.AspNetCompiler.VirtualPath = "/beginor.github.com"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		VWDPort = "54385"
 		VWDVirtualPath = "/"
 	EndProjectSection
