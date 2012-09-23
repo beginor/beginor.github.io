@@ -1,50 +1,10 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<!-- saved from url=(0033)http://localhost:54385/index.html -->
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta content="chrome=1" http-equiv="X-UA-Compatible">
-	<title>张志敏的 GitHub 主页</title>
-	<link rel="stylesheet" href="assets/styles.css">
-	<link rel="stylesheet" href="assets/pygment_trac.css">
-	<script type="text/javascript" src="assets/jquery.min.cache"></script>
-	<script type="text/javascript" src="assets/respond.js"></script>
-	<!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-	<!--[if lt IE 8]>
-    <link rel="stylesheet" href="assets/stylesheets/ie.css">
-    <![endif]-->
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-	<meta name="GENERATOR" content="MSHTML 9.00.8112.16446">
-</head>
-<body>
-	<div id="header">
-		<nav>
-<LI class="fork"><A href="https://github.com/beginor/">我的GitHub代码库</A></LI>
-<LI class="downloads"><A href="http://beginor.cnblogs.com/">中文博客</A></LI>
-<LI class="downloads"><A href="http://weibo.com/beginor">新浪微博</A></LI>
-<LI class="title">LINKS</LI></nav>
-	</div>
-	<!-- end header -->
-	<div class="wrapper">
-		<section>
-<DIV id="title">
-<H1>张志敏</H1>
-<P>一个靠谱的程序员， 目前关注 MonoTouch、 WPF/Silverlight， ASP.NET WebAPI 和 NHibernage</P>
-<HR>
-
-<SPAN class="credits left">Project maintained by <A href="https://github.com/beginor">beginor</A></SPAN><SPAN 
-class="credits right">Hosted on GitHub Pages — Theme by <A href="http://twitter.com/#!/michigangraham">mattgraham</A></SPAN></DIV>
-</section>
+﻿---
+layout: default
+title: HelloWorld
+---
 <h1>Blog Posts</h1>
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
-	</div>
-	<!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
-</body>
-</html>
+<ul class="posts">
+{% for post in site.posts %}
+	<li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+{% endfor %}
+</ul>
