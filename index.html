@@ -34,9 +34,16 @@
 <H1>张志敏</H1>
 <P>一个靠谱的程序员， 目前关注 MonoTouch、 WPF/Silverlight， ASP.NET WebAPI 和 NHibernage</P>
 <HR>
+
 <SPAN class="credits left">Project maintained by <A href="https://github.com/beginor">beginor</A></SPAN><SPAN 
 class="credits right">Hosted on GitHub Pages — Theme by <A href="http://twitter.com/#!/michigangraham">mattgraham</A></SPAN></DIV>
 </section>
+<h1>Blog Posts</h1>
+  <ul class="posts">
+    {% for post in site.posts %}
+      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
 	</div>
 	<!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
 </body>
