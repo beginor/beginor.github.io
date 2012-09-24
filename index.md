@@ -4,6 +4,8 @@ layout: default
 ---
 ## GitHub 博客建设中
 
-    public void HelloWorld() {
-    	Console.WriteLine("Hello,World");
-    }
+<pre class="brush:c#">
+public void HelloWorld() {
+	Console.WriteLine("Hello,World");
+}
+</pre>
