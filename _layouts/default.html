@@ -5,8 +5,8 @@
 	<title>{{ page.title }}</title>
 	{% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
 	<!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
 	<link href="/assets/styles/style.css" rel="stylesheet">
 </head>
 <body>
@@ -29,5 +29,6 @@
 		</div>
 		<div class="footer">&copy;</div>
 	</div>
+	{% include sh-script.md %}
 </body>
 </html>

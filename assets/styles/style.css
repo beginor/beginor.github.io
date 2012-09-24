@@ -12,11 +12,25 @@ body {
 	background-color:#ffffff;
 }
 .header {
+	margin: 0px;
+	padding: 16px;
+	background-color: #FAFAFA;
 }
+
 .main-container {
 }
+
 .navigation-bar {
 }
+
+	.navigation-bar ul {
+		display: inline-block;
+	}
+
+	.navigation-bar ul li {
+		display: inline-block;
+	}
+
 .main-content {
 }
 .side-bar {
