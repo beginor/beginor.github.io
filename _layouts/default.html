@@ -1,11 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 	<meta charset="utf-8" />
 	<title>{{ page.title }}</title>
+	{% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+	<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+	<link href="/assets/styles/style.css" rel="stylesheet">
 </head>
 <body>
-<h1> This is Default Layout !</h1>
-{{ content }}
+	<div class="header">
+		<h1>张志敏的技术专栏</h1>
+		<div>我是一个靠谱的程序员, 目前关注以下领域： MonoTouch， WPF/Silverlight， ASP.NET MVC, WCF REST, NHibernate</div>
+	</div>
+	<div class="main-container">
+		<div class="navigation-bar">
+			<ul>
+				<li><a href="/">首页</a></li>
+				<li><a href="/pages.html">全部页面</a></li>
+				<li><a href="/about.html">关于</a></li>
+			</ul>
+		</div>
+		<div class="main-content">
+			{{ content }}
+		</div>
+		<div class="side-bar">
+		</div>
+		<div class="footer">&copy;</div>
+	</div>
 </body>
 </html>
