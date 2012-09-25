@@ -1,0 +1,10 @@
+---
+layout: nil
+title : Sitemap
+---
+
+{% for page in site.pages %}
+{{site.public_url}}{{ page.url }}{% endfor %}
+
+{% for post in site.posts %}
+{{site.public_url}}{{ post.url }}{% endfor %}

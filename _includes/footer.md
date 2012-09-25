@@ -1,1 +1,1 @@
-<div class="footer">Copyright &copy; 2012 {{ site.owner }}</div>
+<div class="footer">Copyright &copy; 2012 {{ site.owner.name }}</div>
