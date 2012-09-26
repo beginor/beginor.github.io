@@ -1,12 +1,15 @@
 ---
-title: 全部页面
+title: 全部文章
 layout: default
 ---
 
-<h2> All Pages </h2>
-
-<ol>
-{% for post in site.posts %}
-	<li><a href="{{ post.url }}">{{ post.title }}</a></li>
+<ul class="tag-list">
+{% for tag in site.tags %}
+<h3 id="{{ tag[0] }}-ref">{{ tag[0] }}</h3>
+<ul>
+	{% for post in tag[1] %}
+		<li><a href="{{ post.url }}">{{ post.title }}</a></li>
+	{% endfor %}
+</ul>
 {% endfor %}
-</ol>
+</ul>

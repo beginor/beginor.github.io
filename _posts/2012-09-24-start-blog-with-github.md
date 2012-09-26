@@ -1,7 +1,8 @@
 ---
 title: 开始在 GitHub 上写博客
-description: 开始在 GitHub 上写博客需要的准备工作
+description: 开始在 GitHub 上写博客需要的准备工作， 申请 Github 账户、 准备 Jekyll、 添加讨论 ……
 layout: default
+tags: [教程, 参考]
 ---
 
 ## 开始在 GitHub 上写博客

@@ -106,8 +106,30 @@ a {
 	padding: 12px;
 }
 
+.box-content ul {
+	margin: 0px;
+	padding: 0px;
+}
+
+.box-content li {
+	display: inline-block;
+}
+
+.post-title {
+	font-weight: bold;
+}
+
+.post-date {
+	float: right;
+}
+
+a.read-more {
+	text-decoration: underline;
+}
+
 .footer {
 	text-align: center;
+	padding: 12px;
 }
 
 .code {

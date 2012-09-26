@@ -2,6 +2,7 @@
 title: Markdown 语法简介
 description: Markdown 语法简介
 layout: default
+tags: [教程,参考,其它]
 ---
 
 **NOTE:** This is Traditional Chinese Edition Document of
