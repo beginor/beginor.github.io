@@ -73,14 +73,14 @@ a {
 }
 
 .main-content {
-	margin-right: 330px;
-	padding: 0px 10px 0px 10px;
+	margin-right: 310px;
+	padding: 0px 0px 0px 0px;
 }
 
 .side-bar {
 	position: absolute;
 	width: 300px;
-	border-left: 1px solid #CCC;
+	/*border-left: 1px solid #CCC;*/
 	border-top-width: 0;
 	overflow: hidden;
 	padding: 0px 8px 20px 8px;
@@ -106,12 +106,12 @@ a {
 	padding: 12px;
 }
 
-.box-content ul {
+.tag-list {
 	margin: 0px;
 	padding: 0px;
 }
 
-.box-content li {
+.tag-list li {
 	display: inline-block;
 }
 
@@ -133,5 +133,5 @@ a.read-more {
 }
 
 .code {
-	font-family: "DejaVu Sans Mono", Consolas, "Courier New";
+	font-family: Consolas, "Courier New";
 }

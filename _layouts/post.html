@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>{{ page.title }}</title>
+	{% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link href="/assets/styles/style.css" rel="stylesheet">
+</head>
+<body>
+	<div class="body-wrapper">
+		{% include header.md %}
+		<div class="main-container">
+			<div class="main-content">
+				<div class="box">
+					<div class="box-title">{{ page.title }}</div>
+					<div class="box-content">
+						{{ content }}
+					</div>
+				</div>
+				<div class="box">Discuss Thread</div>
+			</div>
+			<div class="side-bar">
+				{% include announce.md %}
+				{% include weibo.md %}
+				{% include google-search.md %}
+				{% include tags.md %}
+				{% include recent-post.md %}
+			</div>
+			{% include footer.md %}
+		</div>
+	</div>
+	{% include sh-script.md %}
+</body>
+</html>
