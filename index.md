@@ -8,6 +8,7 @@ layout: default
 	<div class="box-title">
 		<span class="post-title"><a href="{{ p.url }}">{{ p.title }}</a></span>
 		<span class="post-date">{{ p.date | date: "%Y-%m-%d" }}</span>
+		<span class="post-comment-count"><a href="{{ p.url }}#disqus_thread">评论</a></span>
 	</div>
 	<div class="box-content">
 		{{ p.content | strip_html | truncate: 300 }}

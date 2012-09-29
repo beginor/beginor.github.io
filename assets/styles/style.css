@@ -135,3 +135,7 @@ a.read-more {
 .code {
 	font-family: Consolas, "Courier New";
 }
+
+#disqus_thread {
+	margin: 8px;
+}

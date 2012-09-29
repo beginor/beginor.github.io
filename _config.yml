@@ -1,8 +1,10 @@
 auto: true
-title: 张志敏的技术专栏
-subtitle: 我是一个靠谱的程序员, 目前关注以下领域： MonoTouch， WPF/Silverlight， ASP.NET MVC, WCF REST, NHibernate
-public_url: http://beginor.github.com
+title: "张志敏的技术专栏"
+subtitle: "我是一个靠谱的程序员, 目前关注以下领域： MonoTouch， WPF/Silverlight， ASP.NET MVC, WCF REST, NHibernate"
+public_url: "http://beginor.github.com"
 owner:
-  name: 张志敏
-  mail: beginor(at)qq.com
-  weibo: http://weibo.com/beginor
+  name: "张志敏"
+  mail: "beginor(at)qq.com"
+  weibo: "http://weibo.com/beginor"
+disqus:
+  short_name: "beginor-github"
