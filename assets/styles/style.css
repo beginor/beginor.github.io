@@ -13,7 +13,7 @@ img {
 }
 
 a {
-	text-decoration: none;
+	text-decoration: underline;
 	color: #000;
 }
 
@@ -113,6 +113,7 @@ a {
 
 .tag-list li {
 	display: inline-block;
+	margin: 4px;
 }
 
 .post-title {
@@ -121,6 +122,12 @@ a {
 
 .post-date {
 	float: right;
+	margin: 0px 4px;
+}
+
+.post-comment-count {
+	float: right;
+	margin: 0px 4px;
 }
 
 a.read-more {
@@ -133,28 +140,29 @@ a.read-more {
 }
 
 .code {
-	font-family: Consolas, "Courier New";
+	font-family:Consolas, Monaco, Andale Mono, monospace;
 }
 
 #disqus_thread {
 	margin: 8px;
 }
 
-.box previous {
-	margin: 0px;
+.box .previous {
+	margin: 8px;
 	padding: 0px;
 	display: inline-block;
-	width: 60px;
+	float: left;
 }
 
-.box privious disabled {
-	margin: 0px;
-	padding: 0px;
+.disabled {
+	color: gray;
 }
 
 ul.pages {
-	margin: 0px;
+	margin: 8px;
 	padding: 0px;
+	display: inline-block;
+	float: center;
 }
 
 ul.pages li.page {
@@ -167,3 +175,9 @@ span.current-page {
 	font-stretch: bold;
 }
 
+.box .next {
+	margin: 8px;
+	padding: 0px;
+	display: inline-block;
+	float: right;
+}
