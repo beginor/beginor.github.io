@@ -139,3 +139,31 @@ a.read-more {
 #disqus_thread {
 	margin: 8px;
 }
+
+.box previous {
+	margin: 0px;
+	padding: 0px;
+	display: inline-block;
+	width: 60px;
+}
+
+.box privious disabled {
+	margin: 0px;
+	padding: 0px;
+}
+
+ul.pages {
+	margin: 0px;
+	padding: 0px;
+}
+
+ul.pages li.page {
+	margin: 0px;
+	padding: 0px;
+	display: inline-block;
+}
+
+span.current-page {
+	font-stretch: bold;
+}
+

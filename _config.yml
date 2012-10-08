@@ -8,3 +8,4 @@ owner:
   weibo: "http://weibo.com/beginor"
 disqus:
   short_name: "beginor-github"
+paginate: 3
