@@ -139,7 +139,7 @@ a.read-more {
 	padding: 12px;
 }
 
-.code {
+code, .code {
 	font-family:Consolas, Monaco, Andale Mono, monospace;
 }
 

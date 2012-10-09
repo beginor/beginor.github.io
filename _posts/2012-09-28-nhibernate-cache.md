@@ -339,6 +339,32 @@ NHibernate 的二级缓存是可以扩展的， [NHibernate.ControlLib](http://s
 
 NHibernate 二级有几个配置选项， 他们分别是：
 
-**实体类二级缓存配置选项**
+**实体类以及集合二级缓存配置选项**
+
+指定类：
+
+	<class-cache class="类名称" region="默认类名称" include="all|non-lazy"
+             usage="read-only|read-write|nonstrict-read-write|transactional" />
+
+指定集合：
+
+	<collection-cache collection ="集合名称" region="默认集合名称"
+                  usage="read-only|read-write|nonstrict-read-write|transactional"/>
+
+* region：可选，默认值为类或集合的名称，用来指定二级缓存的区域名，对应于缓存实现的一个命名缓存区域。
+* include：可选，默认值为all，当取non-lazy时设置延迟加载的持久化实例的属性不被缓存。
+* usage：声明缓存同步策略，就是上面说明的四种缓存策略。
 
 **查询二级缓存配置**
+
+* Cacheable 为一个查询显示启用二级缓存；
+* CacheMode 缓存模式， 有如下可选：
+  1. Ignore：更新数据时将二级缓存失效，其它时间不和二级缓存交互
+  1. Put：向二级缓存写数据，但不从二级缓存读数据
+  1. Get：从二级缓存读数据，仅在数据更新时向二级缓存写数据
+  1. Normal：默认方式。从二级缓存读/写数据
+  1. Refresh：向二级缓存写数据，想不从二级缓存读数据，通过在配置文件设置
+     cache.use_minimal_puts从数据库中读取数据时，强制二级缓存刷新 
+* CacheRegion 给查询缓存指定了特定的命名缓存区域， 如果两个查询相同， 但是指定的 CacheRegion 不同， 则也会从数据库查询数据。
+
+以上是在项目中用到的二级缓存相关知识的整理， 肯定不完整， NHibernate 的缓存还有更多的地方需要挖掘。

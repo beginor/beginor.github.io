@@ -8,4 +8,5 @@ owner:
   weibo: "http://weibo.com/beginor"
 disqus:
   short_name: "beginor-github"
-paginate: 3
+paginate: 10
+exclude: [start-jekyll.bat, Github.sln, Github.v11.suo]
