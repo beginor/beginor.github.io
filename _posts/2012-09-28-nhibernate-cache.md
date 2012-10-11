@@ -23,8 +23,10 @@ NHibernate 支持两种级别的缓存， 即一级缓存以及二级缓存。
 
 注意最后一句， 明确说明了一级缓存的用途：
 
-* 在对象树种导航、浏览时， 使用一级缓存；
+* 在对象树种导航、浏览时， 使用一级缓存； 
 * 根据对象的 id 加载对象；
+
+由此可以看出， 一级缓存的作用是比较有限的， 但是也有用得着的地方。
 
 ### 一级缓存测试
 
@@ -186,9 +188,10 @@ session 提供了 Get 和 Load 两个方法， 这两个方法有什么区别呢
 Nh 默认未启用二级缓存， 启用二级缓存需要如下步骤：
 
 1、 在 hibernate.cfg.xml 文件中添加下面三个属性：  
-   `<property name="cache.provider_class">NHibernate.Cache.HashtableCacheProvider</property>`  
-   `<property name="cache.use_second_level_cache">true</property>`  
-   `<property name="cache.use_query_cache">true</property>`
+
+	<property name="cache.provider_class">NHibernate.Cache.HashtableCacheProvider</property>`  
+	<property name="cache.use_second_level_cache">true</property>`  
+	<property name="cache.use_query_cache">true</property>`
 
 这三个属性的作用是显而易见的， 第一个是指定使用什么二级缓存的实现， 第二个是启用二级缓存， 第三个是为查询启用二级缓存缓存。
 

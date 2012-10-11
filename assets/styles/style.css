@@ -47,6 +47,15 @@ hr {
    color: #999;
 }
 
+pre {
+   padding: 0px 24px;
+   background-color: #f8f8f8;
+   border: 1px solid #cccccc;
+   max-width: 800px;
+   white-space: pre-wrap;
+   /*border-radius: 3px;*/
+}
+
 .body-wrapper {
 }
 
