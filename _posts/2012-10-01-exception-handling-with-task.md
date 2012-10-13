@@ -44,7 +44,7 @@ tags: [.Net Framework]
 
 > 没有在等待 Task 完成时捕获其异常， 也没有读取 Task 的 Exception 属性， 结果导致异常被终结线程重新抛出。 也就是说， Task 异常有两种处理方式：
 
-*** 1、 调用 Task 的 Wait 方法时使用 try-catch 捕获异常： ***
+**1、 调用 Task 的 Wait 方法时使用 try-catch 捕获异常：**
 
 	var testTask = TestAsync(5, -10);
 	try {
@@ -54,7 +54,7 @@ tags: [.Net Framework]
 		Console.WriteLine(ex);
 	}
 
-*** 2、 在 Task 的 ContinueWith 方法中读取 Task 的 Exception 属性： ***
+**2、 在 Task 的 ContinueWith 方法中读取 Task 的 Exception 属性：**
 
 	var testTask = TestAsync(5, -10);
 	testTask.ContinueWith(task => {
