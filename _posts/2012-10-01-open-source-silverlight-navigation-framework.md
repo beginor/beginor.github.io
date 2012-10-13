@@ -54,7 +54,7 @@ tags: [Silverlight]
 
 如果还不够清楚， 可以从 GitHub 网站项目下载这个[项目](https://github.com/beginor/AssemblyNavigation)， 有一个完整的测试程序。
 
-*** 注意问题 ***
+**注意问题**
 
 * 如果模块引用的第三方组件只在 xaml 中使用， 则必须添加 x:Name 属性， 否则可能会出现找不到这个第三方组件的问题；
 * 如果模块的 xaml 中引用了 clrnamespace ， 则必须指定 assembly 值， 否则也可能会出现问题。

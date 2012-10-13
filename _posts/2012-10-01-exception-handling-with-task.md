@@ -6,7 +6,7 @@ tags: [.Net Framework]
 
 ---
 
-在 .Net 开发中， 使用 Task 、 Task<T> 进行异步编程是非常方便的， 但是在处理 Task 产生的异常时， 需要注意一个问题， 比如下面的代码：
+在 .Net 开发中， 使用 `Task` 、 `Task<T>` 进行异步编程是非常方便的， 但是在处理 Task 产生的异常时， 需要注意一个问题， 比如下面的代码：
 
 	static Task<int> TestAsync(int a, int b) {
 		var tcs = new TaskCompletionSource<int>();
