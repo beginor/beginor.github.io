@@ -30,4 +30,4 @@ FrameworkElement 提供了 Parent 属性和 FindName 方法可以在对象树中
 
 在 Silverlight 中， 绝大多数控件都继承自 FrameworkElement ， 因为绝大多数控件都需要 Framework Element 提供的功能， 直接继承自 UIElement 的控件几乎没有， 但是所有的控件都保留了操作 UIElement 的能力。 最后在附加上一个完整的类图， 方便大家参考。
 
-![Inheritance](/assets/post-images/UIElement-LayoutElement-Full.png)
+![Inheritance](/assets/post-images/UIElement-LayoutElement-full.png)
