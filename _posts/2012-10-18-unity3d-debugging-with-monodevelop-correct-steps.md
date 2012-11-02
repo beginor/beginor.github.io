@@ -3,7 +3,6 @@ layout: post
 title: 使用 MonoDevelop 调试 Unity3D 的正确步骤
 description: Unity3D 是一个基于 Mono 的跨平台游戏引擎，支持 PC 、MAC 、 Android 、IOS 等多种平台，其 3.0 以后的版本支持用  MonoDevelop 调试，很多人安装了之后发现 MonoDevelop 的调试按钮是灰色的，无法进行调试，通过看官方文档和测试，发现正确的调试步骤如下：
 tags: [Unity3D]
-
 ---
 
 ## 使用 MonoDevelop 调试 Unity3D 的正确步骤
