@@ -211,29 +211,29 @@ Android 的标签用 ActionBar 实现， 用户既可以点击标签切换视图
 
 同时还需要重写 `OnOptionsItemSelected` 方法， 当用户点击 Home 按钮时， 做相应的处理， 实现向上导航的代码如下：
 
-		public override bool OnOptionsItemSelected(Android.Views.IMenuItem item) {
-			// 作为示例， 只处理用户点击 Home 按钮的情况。
-			if (item.ItemId == Android.Resource.Id.Home) {
-				// 当 Home 按钮被点击时会调用到这里
-				// 创建启动上级 Activity 的 Intent
-				var upIntent = new Intent(this, typeof(MainActivity));
-				// 使用 Suport Package 中的 NavUtils 来正确处理向上导航
-				if (NavUtils.ShouldUpRecreateTask(this, upIntent)) {
-					// 上级 Activity 没有起动过， 需要创建一个新的导航栈道
-					TaskStackBuilder.Create(this)
-						// If there are ancestor activities, they should be added here.
-						.AddNextIntent(upIntent)
-						.StartActivities();
-					this.Finish();
-				}
-				else {
-					// 上级 Activity 已经创建过了， 直接导航就行。
-					NavUtils.NavigateUpTo(this, upIntent);
-				}
-				return true;
+	public override bool OnOptionsItemSelected(Android.Views.IMenuItem item) {
+		// 作为示例， 只处理用户点击 Home 按钮的情况。
+		if (item.ItemId == Android.Resource.Id.Home) {
+			// 当 Home 按钮被点击时会调用到这里
+			// 创建启动上级 Activity 的 Intent
+			var upIntent = new Intent(this, typeof(MainActivity));
+			// 使用 Suport Package 中的 NavUtils 来正确处理向上导航
+			if (NavUtils.ShouldUpRecreateTask(this, upIntent)) {
+				// 上级 Activity 没有起动过， 需要创建一个新的导航栈道
+				TaskStackBuilder.Create(this)
+					// If there are ancestor activities, they should be added here.
+					.AddNextIntent(upIntent)
+					.StartActivities();
+				this.Finish();
 			}
-			return base.OnOptionsItemSelected(item);
+			else {
+				// 上级 Activity 已经创建过了， 直接导航就行。
+				NavUtils.NavigateUpTo(this, upIntent);
+			}
+			return true;
 		}
+		return base.OnOptionsItemSelected(item);
+	}
 
 ## 总结
 
