@@ -2,7 +2,7 @@
 layout: post
 title: Mono for Android 实现高效的导航
 description: Android 4.0 系统定义了一系列的高效导航方式 (Effective Navigation) ， 主要包括标签、下拉列表、以及向上和返回等， 本文介绍如何用 Mono for Android 实现这些的导航方式。
-tags: [mono, Android]
+tags: [Mono, Android]
 ---
 
 ## Mono for Android 实现高效的导航
