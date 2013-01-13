@@ -33,7 +33,7 @@ Intel HAXM (Hardware Accelerated Execution Manager) 使用基于 Intel(R) Virtua
 
 ![下载并安装 Intel HAXM 扩展][image1]
 
-下载 HAXM 之后， 需要运行安装程序来进行安装， HAXM 下载的目录是 `android-sdk\extras\intel\Hardware_Accelerated_Execution_Manager` , 运行 `IntelHaxm.exe` 进行安装， 屏幕提示，一步一步安装即可。
+下载 HAXM 之后， 需要运行安装程序来进行安装， HAXM 下载的目录是 `android-sdk\extras\intel\Hardware_Accelerated_Execution_Manager` , 运行 `IntelHaxm.exe` 进行安装， 根据屏幕提示，一步一步安装即可。
 
 ## 下载 Android x86 镜像
 
