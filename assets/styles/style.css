@@ -22,38 +22,41 @@ a {
 	}
 
 blockquote {
-	border-left:.5em solid #eee;
+	border-left: .5em solid #eee;
 	padding: 0 2em;
-	margin-left:0;
+	margin-left: 0;
 	max-width: 476px;
 }
-blockquote  cite {
-   font-size:14px;
-   line-height:20px;
-   color:#bfbfbf;
-}
-blockquote cite:before {
-   content: '\2014 \00A0';
-}
 
-blockquote p {  
-   color: #666;
-   /*max-width: 80%;*/
-}
+	blockquote cite {
+		font-size: 14px;
+		line-height: 20px;
+		color: #bfbfbf;
+	}
+
+		blockquote cite:before {
+			content: '\2014 \00A0';
+		}
+
+	blockquote p {
+		color: #666;
+		/*max-width: 80%;*/
+	}
+
 hr {
-   /*width: 80%;*/
-   text-align: left;
-   margin: 0 auto 0 0;
-   color: #999;
+	/*width: 80%;*/
+	text-align: left;
+	margin: 0 auto 0 0;
+	color: #999;
 }
 
 pre {
-   padding: 0px 24px;
-   background-color: #f8f8f8;
-   border: 1px solid #cccccc;
-   max-width: 800px;
-   white-space: pre-wrap;
-   /*border-radius: 3px;*/
+	padding: 0px 24px;
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	max-width: 800px;
+	white-space: pre-wrap;
+	/*border-radius: 3px;*/
 }
 
 .body-wrapper {
@@ -69,11 +72,15 @@ pre {
 
 .blog-title {
 	font-size: 17pt;
+	font-weight: bold;
+	text-shadow: 0px 0px 4px #9a9a9a;
 }
 
 .blog-subtitle {
 	font-size: 10.5pt;
-	color: #999;
+	color: #767676;
+	/*font-weight: bold;*/
+	text-shadow: 0px 0px 2px #9a9a9a;
 }
 
 .navigation-bar {
@@ -100,6 +107,10 @@ pre {
 		font-size: 10.5pt;
 		list-style: none;
 	}
+
+		.navigation-bar li a {
+			text-shadow: 0px 0px 2px #9a9a9a;
+		}
 
 .main-container {
 	/*border: 1px solid black;*/
@@ -135,6 +146,7 @@ pre {
 	padding: 6px;
 	background: #F6F6F6;
 	border-bottom: 1px solid #ccc;
+	text-shadow: 0px 0px 2px #9a9a9a;
 }
 
 .box-content {
@@ -146,10 +158,10 @@ pre {
 	padding: 0px;
 }
 
-.tag-list li {
-	display: inline-block;
-	margin: 4px;
-}
+	.tag-list li {
+		display: inline-block;
+		margin: 4px;
+	}
 
 .post-title {
 	font-weight: bold;
@@ -175,7 +187,7 @@ a.read-more {
 }
 
 code, .code {
-	font-family:Consolas, Monaco, Andale Mono, monospace;
+	font-family: Consolas, Monaco, Andale Mono, monospace;
 }
 
 #disqus_thread {
@@ -200,11 +212,11 @@ ul.pages {
 	float: center;
 }
 
-ul.pages li.page {
-	margin: 0px;
-	padding: 0px;
-	display: inline-block;
-}
+	ul.pages li.page {
+		margin: 0px;
+		padding: 0px;
+		display: inline-block;
+	}
 
 span.current-page {
 	font-stretch: bold;
@@ -222,6 +234,6 @@ span.current-page {
 	padding: 0px 0px 0px 20px;
 }
 
-.recent-post-list li {
-	/*margin: 0px 0px 0px 8px;*/
-}
+	.recent-post-list li {
+		/*margin: 0px 0px 0px 8px;*/
+	}
