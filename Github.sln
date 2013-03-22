@@ -19,6 +19,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "beginor.github.com", ".", "
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "22743"
+		VWDVirtualPath = "/"
 	EndProjectSection
 EndProject
 Global
