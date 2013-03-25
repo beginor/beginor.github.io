@@ -1,42 +1,79 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<title>Bootstrap 101 Template</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="/assets/imgs/min32.png" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="keywords" content="darwin, evolution, natural selection, species, beagle, 1859" />
+	<meta name="description" content="{{ page.description }}">
 	<!-- Bootstrap -->
-	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-	<style>
-		body {
-			/*padding-top: 60px;*/ /* 60px to make the container go all the way to the bottom of the topbar */
-		}
-	</style>
-	<link href="css/bootstrap-responsive.min.css" rel="stylesheet" />
+	<link href="/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link href="/assets/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
+	<link href="/assets/styles/style2.css" rel="stylesheet" />
 </head>
 <body>
 	<!-- header -->
-	<div class="container">
-		<div class="pull-right" valign="center">
-			Search
-		</div>
+	<div class="navbar navbar-static-top" style="border-width: 0px;">
+		<div class="navbar-inner" style="border-width: 0px; box-shadow: none;">
+			<div class="container">
+				<div class="pull-right" valign="center">
+					Search
+				</div>
 
-		<div class="blog-title-container">
-			<h1>���ͱ���</h1>
+				<div class="blog-title-container">
+					<div class="blog-title">张志敏的技术专栏</div>
+					<div class="blog-subtitle">我是一个靠谱的程序员, 目前关注 MonoTouch、 Mono for Android、 Silverlight、  ASP.NET MVC 以及 NHibernate。</div>
+				</div>
+			</div>
 		</div>
 	</div>
+
 	<!-- /header -->
 	<div class="container">
+
 		<div class="row">
+
 			<div class="span9">
-				<div>
-					<ul class=" nav nav-tabs">
-						<li class="active"><a href="#" title="shouye">��ҳ</a></li>
-						<li><a href="#">ȫ������</a></li>
-					</ul>
+				<!-- main nav bar -->
+				<ul class=" nav nav-tabs">
+					<li class="active"><a href="#" title="shouye">首页</a></li>
+					<li><a href="#">全部文章</a></li>
+					<li><a href="#">订阅</a></li>
+					<li><a href="#">关于</a></li>
+				</ul>
+				<!-- /main nav bar -->
+
+				<!-- body content -->
+				<div class="body-content">
+					<div class="article-entry">
+						<h3><a href="#">从 SVN 迁移到 Git</a></h3>
+						<p>
+							从 SVN 迁移到 Git 准备工作 确认所有用户的本地修改都签入到服务器， 将 SVN 源代码的分支尽可能的合并到主干， 已经发布的做好归档信息， 并备份 SVN 库。 虽然迁移到 Git 的风险不大， 但是备份一下总是好的。 安装 Git ��... 阅读全文
+						</p>
+					</div>
+					<div class="article-entry">
+						<h3><a href="#">在 Windows 系统上配置 Apache Git 服务器</a></h3>
+						<p>
+							在 Windows 系统上配置 Apache Git 服务器 本文介绍如何在 Windows 系统上配置 Apache Git 服务器， 以及使用 AD 进行认证用户认证。 软件环境 Windows Server 2003 Apache 2.2 Git 1.8 安装 Apache 从 httpd 的主页下载 Apache Httpd 的 Windows 最新��... 阅读全文
+						</p>
+					</div>
+					<div class="article-entry">
+						<h3><a href="#">我正确回答了90%的面试题，为什么被拒？</a></h3>
+						<p>
+							交流面试的时候，经常有朋友会问一个问题：我正确回答了90%的面试题，为什么被拒？ 我们就来探讨这个问题。 先回答我一个问题：假设一次面试满分是100分，你正确回答90%题，该得多少分？如果你认为该得90分，那说明你... 阅读全文
+						</p>
+					</div>
+					<!-- /body content-->
 				</div>
 			</div>
+
+
 			<div class="span3 side-bar hidden-print" valign="top">
 				<div class="well well-large" style="max-width: 340px; padding: 8px 0;">
+					
 					<ul class="nav nav-list">
+						<img src="../imgs/sidebar-logo.png" />
 						<li class="nav-header">LIST HEADER</li>
 						<li><a href="#">List Item</a></li>
 						<li><a href="#">List Item</a></li>
@@ -56,6 +93,10 @@
 				</div>
 			</div>
 		</div>
+	</div>
+	<div class="container">
+		<hr />
+		<div class="text-center">&copy; beginor</div>
 	</div>
 	<script src="js/jquery-1.9.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
