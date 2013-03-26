@@ -56,7 +56,40 @@ div.navbar-inner {
 	padding-right: 12px;
 	padding-left: 12px;
 	font-size: 0.98em;
-	border-bottom-color: rgba(0, 0, 0, 0.07);
-	border-bottom-width: 1px;
-	border-bottom-style: solid;
+	border-top-color: rgba(0, 0, 0, 0.07);
+	border-top-width: 1px;
+	border-top-style: solid;
+}
+
+.box {
+	margin: 16px 6px 6px 6px;
+	box-shadow: 0px 1px 4px rgba(0,0,0,0.065);
+	border: 1px solid #ccc;
+	border-radius: 6px;
+}
+
+.box-title {
+	text-align: left;
+	font-size: 14px;
+	padding: 6px;
+	background: #F6F6F6;
+	border-bottom: 1px solid #ccc;
+}
+
+.box-content {
+	padding: 12px;
+}
+
+.post-title {
+	font-weight: bold;
+}
+
+.post-date {
+	float: right;
+	margin: 0px 4px;
+}
+
+.post-comment-count {
+	float: right;
+	margin: 0px 4px;
 }

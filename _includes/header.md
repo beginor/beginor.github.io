@@ -3,7 +3,6 @@
 	<div class="navbar-inner" style="border-width: 0px; box-shadow: none;">
 		<div class="container">
 			<div class="pull-right" valign="center">
-				
 			</div>
 
 			<div class="blog-title-container">
@@ -13,5 +12,4 @@
 		</div>
 	</div>
 </div>
-
 <!-- /header -->

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<title>{{ page.title }}</title>
@@ -27,11 +27,15 @@
 				</div>
 			</div>
 			<!-- side bar -->
-			{% include announce.md %}
-			{% include weibo.md %}
-			{% include google-search.md %}
-			{% include tags.md %}
-			{% include recent-post.md %}
+			<div class="span3 side-bar hidden-print" valign="top">
+				<div class="well well-large" style="/*max-width: 340px;*/ padding: 0px 0;">
+					{% include google-search.md %}
+					{% include announce.md %}
+					{% include weibo.md %}
+					{% include tags.md %}
+					{% include recent-post.md %}
+				</div>
+			</div>
 			<!-- /side bar -->
 		</div>
 	</div>
