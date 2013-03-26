@@ -1,33 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8" />
 	<title>{{ page.title }}</title>
-	{% if page.description %}<meta name="description" content="{{ page.description }}"/>{% endif %}
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="/assets/imgs/min32.png" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	{% if page.keywords %}<meta name="keywords" content="{{ page.description }}" />{% endif %}
+	{% if page.description %}<meta name="description" content="{{ page.description }}" />{% endif %}
 	<!--[if lt IE 9]>
-	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-	<link href="/assets/styles/style.css" rel="stylesheet" />
-	<link href="/assets/styles/twitter-elements.css" rel="stylesheet" />
+	<!-- Bootstrap -->
+	<link href="/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link href="/assets/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
+	<!-- custom style -->
+	<link href="/assets/styles/style2.css" rel="stylesheet" />
 </head>
 <body>
-	<div class="body-wrapper">
-		{% include header.md %}
-		<div class="main-container">
-			<div class="main-content">
-				{{ content }}
+	{% include header.md %}
+	<div class="container">
+		<div class="row">
+			<div class="span9">
+				{% include nav-bar.md %}
+				<div class="body-content">
+					{{ content }}
+				</div>
 			</div>
-			<div class="side-bar">
-				{% include announce.md %}
-				{% include weibo.md %}
-				{% include google-search.md %}
-				{% include tags.md %}
-				{% include recent-post.md %}
-			</div>
-			{% include footer.md %}
+			<!-- side bar -->
+			{% include announce.md %}
+			{% include weibo.md %}
+			{% include google-search.md %}
+			{% include tags.md %}
+			{% include recent-post.md %}
+			<!-- /side bar -->
 		</div>
 	</div>
-	{% include sh-script.md %}
+	
+	<div class="container">
+		{% include footer.md %}
+	</div>
+
 	{% include comment-count.md %}
+
 </body>
 </html>

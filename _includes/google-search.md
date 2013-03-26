@@ -1,7 +1,5 @@
-<div class="box">
-	<div class="box-title"> 站内搜索 </div>
-	<div class="box-content">
-	<!-- SiteSearch Google -->
+<div class="span3 side-bar hidden-print" valign="top">
+	<div class="well well-large" style="max-width: 340px; padding: 0px 0;">
 		<form method="get" action="http://www.google.com/search">
 			<table>
 				<tr>
