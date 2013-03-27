@@ -1,52 +1,8 @@
 ﻿body {
+	padding-top: 40px;
 }
 
-div.navbar-static-top {
-	background-image: url("../imgs/bg.png");
-	background-repeat: repeat-x;
-	background-position: bottom, left;
-}
-
-div.navbar-inner {
-	background-image: url("../imgs/bg.png");
-	background-repeat: repeat-x;
-	background-position: bottom, left;
-	border-width: 0px;
-	box-shadow: none;
-}
-
-.blog-title-container {
-	padding: 16px 16px 16px 0px;
-}
-
-.blog-title {
-	font-size: 17pt;
-	font-weight: bold;
-	text-shadow: 0px 0px 4px #9a9a9a;
-}
-
-.blog-subtitle {
-	font-size: 10.5pt;
-	color: #767676;
-	/*font-weight: bold;*/
-	text-shadow: 0px 0px 2px #9a9a9a;
-}
-
-.body-content {
-}
-
-.article-entry {
-	margin: 10px !important;
-	padding: 4px;
-	/*border: 1px solid #dadada;*/
-	/*border-radius: 4px;*/
-}
-
-	.article-entry h3 {
-		margin-bottom: 10px !important;
-		padding-bottom: 5px;
-		border-bottom: 1px solid #dadada;
-	}
+.body-content {}
 
 .nav-header {
 	margin: 10px -12px 5px;
@@ -56,9 +12,11 @@ div.navbar-inner {
 	padding-right: 12px;
 	padding-left: 12px;
 	font-size: 0.98em;
+	/*
 	border-top-color: rgba(0, 0, 0, 0.07);
 	border-top-width: 1px;
 	border-top-style: solid;
+	*/
 }
 
 .box {
