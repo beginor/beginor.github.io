@@ -2,48 +2,38 @@
 <html>
 <head>
 	<title>{{ page.title }}</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" href="/assets/imgs/min32.png" />
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	{% if page.keywords %}<meta name="keywords" content="{{ page.description }}" />{% endif %}
-	{% if page.description %}<meta name="description" content="{{ page.description }}" />{% endif %}
-	<!--[if lt IE 9]>
-		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-	<!-- Bootstrap -->
-	<link href="/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-	<link href="/assets/styles/style2.css" rel="stylesheet" />
-	<link href="/assets/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
-	<!-- custom style -->
+	{% include meta-icon-link.md %}
+	{% if site.keywords %}<meta name="keywords" content="{{ site.keywords }}" />{% endif %}
+	{% if site.description %}<meta name="description" content="{{ site.description }}" />{% endif %}
 </head>
 <body>
+
 {% include header.md %}
-</div>
-	<div class="container">
-		<div class="row">
-			<div class="span9">
-				<div class="body-content">
-					{{ content }}
-				</div>
+
+<div class="container">
+	<div class="row">
+		<div class="span9">
+			<div class="body-content">
+				{{ content }}
 			</div>
-			<!-- side bar -->
-			<div class="span3 side-bar hidden-print" valign="top" style="margin-top: 16px;">
-				<div class="well well-large" style="padding: 0px 0px;">
-					{% include announce.md %}
-					{% include weibo.md %}
-					{% include tags.md %}
-					{% include recent-post.md %}
-				</div>
-			</div>
-			<!-- /side bar -->
 		</div>
+		<!-- side bar -->
+		<div class="span3 side-bar hidden-print" valign="top" style="margin-top: 16px;">
+			<div class="well well-large" style="padding: 0px 0px;">
+				{% include announce.md %}
+				{% include weibo.md %}
+				{% include tags.md %}
+				{% include recent-post.md %}
+			</div>
+		</div>
+		<!-- /side bar -->
 	</div>
-	
-	<div class="container">
-		{% include footer.md %}
-	</div>
+</div>
 
-	{% include comment-count.md %}
+{% include footer.md %}
 
+{% include comment-count.md %}
+<script type="text/javascript" src="/assets/bootstrap/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
