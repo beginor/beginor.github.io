@@ -6,8 +6,6 @@ tags: [转载]
 
 ---
 
-## 【翻译】MVP(SC),MVP(PV),PM,MVVM 和 MVC 表现模式架构对比
-
 翻译 CodeProject 上的一篇文章，对常见的几种表现模式 (Presentation patterns) 进行了说明，并进行对比。原文地址是 [http://www.codeproject.com/KB/aspnet/ArchitectureComparison.aspx](http://www.codeproject.com/KB/aspnet/ArchitectureComparison.aspx)。
 
 ### 表现模式 (Presentation patterns) 背景

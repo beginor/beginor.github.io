@@ -5,8 +5,6 @@ description: 多数情况下 NHibernate 使用配置文件进行配置， 但是
 tags: [NHibernate]
 ---
 
-## 使用代码配置 NHibernate
-
 多数情况下 NHibernate 使用配置文件进行配置， 但是我们也可以使用代码进行配置， 步骤如下：
 
 ### 1、 创建一个 Configuration 

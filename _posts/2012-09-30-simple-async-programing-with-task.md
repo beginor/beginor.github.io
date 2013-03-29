@@ -5,7 +5,6 @@ description: 本文介绍了常见的 .Net 异步编程模式， 以及如何用
 tags: [.Net Framework]
 
 ---
-## 使用 Task 简化异步编程
 
 ### .Net 传统异步编程概述
 

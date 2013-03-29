@@ -5,8 +5,6 @@ description: 介绍 NHibernate 支持两种级别的缓存， 即一级缓存以
 tags: [NHibernate, 参考]
 ---
 
-# NHibernate 缓存
-
 NHibernate 支持两种级别的缓存， 即一级缓存以及二级缓存。
 
 ## 一级缓存

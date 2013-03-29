@@ -5,8 +5,6 @@ description: 在 Windows 系统上一直使用 ImDisk 创建内存盘作为缓�
 tags: [MAC OSX]
 ---
 
-## 在 Mac OS X 中创建和使用内存盘
-
 在 Windows 系统上一直使用 ImDisk 创建内存盘作为缓存， 将系统临时目录、 浏览器缓存等设置到内存盘， 这样做的好处是很明显的：
 
 1、 内存盘不用定时清理， 系统重启就自动清空  

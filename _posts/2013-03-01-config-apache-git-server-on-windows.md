@@ -5,8 +5,6 @@ description: 在 Windows 系统上配置 Apache  Git 服务器， 以及使用 A
 tags: [Git]
 ---
 
-## 在 Windows 系统上配置 Apache  Git 服务器 ##
-
 本文介绍如何在 Windows 系统上配置 Apache  Git 服务器， 以及使用 AD 进行认证用户认证。
 
 ### 软件环境 ###

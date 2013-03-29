@@ -2,7 +2,9 @@
 	padding-top: 40px;
 }
 
-.body-content {}
+.body-content {
+	/*padding: 16px 0px 0px 0px;*/
+}
 
 .nav-header {
 	margin: 10px -12px 5px;
@@ -17,15 +19,15 @@
 .box {
 	margin: 16px 6px 6px 6px;
 	box-shadow: 0px 1px 4px rgba(0,0,0,0.065);
-	border: 1px solid #ccc;
-	border-radius: 6px;
+	/*border: 1px solid #ccc;
+	border-radius: 6px;*/
 }
 
 .box-title {
 	text-align: left;
 	font-size: 14px;
 	padding: 6px;
-	background: #F6F6F6;
+	/*background: #F6F6F6;*/
 	border-bottom: 1px solid #ccc;
 }
 

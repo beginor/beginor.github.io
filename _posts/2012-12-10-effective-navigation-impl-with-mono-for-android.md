@@ -5,8 +5,6 @@ description: Android 4.0 系统定义了一系列的高效导航方式 (Effectiv
 tags: [Mono, Android]
 ---
 
-## Mono for Android 实现高效的导航
-
 Android 4.0 系统定义了一系列的[高效导航方式 (Effective Navigation)](http://developer.android.com/training/design-navigation/index.html)， 主要包括标签、下拉列表、以及向上和返回等， 本文介绍如何用 Mono for Android 实现这些的导航方式。
 
 ### 准备 Android 4.0 ICS 项目
