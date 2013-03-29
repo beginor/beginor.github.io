@@ -5,8 +5,6 @@ description: 介绍如何通过网页内部分发 iOS 应用， 包括 In-House 
 tags: [iOS]
 ---
 
-## 通过网页进行 iOS 应用内部分发 ##
-
 介绍如何通过网页内部分发 iOS 应用， 包括 In-House 企业应用和 ad-hoc 测试应用。
 
 ### 原生 XCode 应用 ###

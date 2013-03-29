@@ -5,8 +5,6 @@ layout: post
 tags: [教程, 参考]
 ---
 
-## 开始在 GitHub 上写博客
-
 准备工作如下
 
 ### 申请 GitHub 账户并准备代码库

@@ -5,8 +5,6 @@ description: Android 模拟器一直以运行速度慢著称， 本文介绍使�
 tags: [Android]
 ---
 
-## 使用 Intel HAXM 为 Android 模拟器加速，媲美真机
-
 Android 模拟器一直以运行速度慢著称， 本文介绍使用 Intel HAXM 技术为 Android 模拟器加速， 使模拟器运行度媲美真机， 彻底解决模拟器运行慢的问题。
 
 Intel HAXM (Hardware Accelerated Execution Manager) 使用基于 Intel(R) Virtualization Technology (VT) 的硬件加速， 因此需要 CPU 支持 VT ， 而且仅限于 Intel CPU， 与 AMD CPU 无缘， Intel HAXM 的描述如下：

@@ -5,8 +5,6 @@ description: 介绍 Mono for Android 平台下的 Activity 生命周期， 以�
 tags: [Mono, Android]
 ---
 
-## Activity 生命周期
-
 Android 系统用栈的形式管理 Activity ， 当新的 Activity 被创建是， 会被放置到栈顶， 这个 Activity 会进入到运行状态， 而前一个 Activity 则会被压入栈， 直到新的 Activity 退出， 否则不会出现在前台。
 
 ### 单个 Activity 的生命周期状态以及生命周期方法

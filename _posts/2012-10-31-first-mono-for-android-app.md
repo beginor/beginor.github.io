@@ -5,8 +5,6 @@ description: Mono for Android 初体验， 学习怎么使用 Mono for Anrdoid �
 tags: [Mono, Android]
 ---
 
-## 我的第一个 Mono for Android 应用
-
 Mono for Android 初体验， 学习怎么使用 Mono for Anrdoid 创建 android 应用， 如何使用 Intent 启动 Activity ， 如何在 Activity 之间传递参数。
 
 ### 准备开发环境

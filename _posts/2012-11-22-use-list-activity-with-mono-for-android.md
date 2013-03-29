@@ -5,8 +5,6 @@ description: 介绍 Mono for Android 平台下 ListActivity 的使用， 以及�
 tags: [Mono, Android]
 ---
 
-## Mono for Android 下的 ListActivity
-
 介绍 Mono for Android 平台下 ListActivity 的使用， 以及如何进行自定义 ListActivity 的 Adapter。
 
 ### 使用 ListActivity 最简单的方式

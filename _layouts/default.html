@@ -1,33 +1,41 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8" />
-	<title>{{ page.title }}</title>
-	{% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
-	<!--[if lt IE 9]>
-	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-	<link href="/assets/styles/style.css" rel="stylesheet" />
-	<link href="/assets/styles/twitter-elements.css" rel="stylesheet" />
+	<title>{{ site.title }}</title>
+	{% include meta-icon-link.md %}
+	{% if site.keywords %}<meta name="keywords" content="{{ site.keywords }}" />{% endif %}
+	{% if site.description %}<meta name="description" content="{{ site.description }}" />{% endif %}
 </head>
 <body>
-	<div class="body-wrapper">
-		{% include header.md %}
-		<div class="main-container">
-			<div class="main-content">
+
+{% include header.md %}
+
+<div class="container">
+	<div class="row">
+		<div class="span9">
+			<div class="body-content">
 				{{ content }}
 			</div>
-			<div class="side-bar">
-				{% include announce.md %}
-				{% include weibo.md %}
-				{% include google-search.md %}
-				{% include tags.md %}
-				{% include recent-post.md %}
-			</div>
-			{% include footer.md %}
 		</div>
+		<!-- side bar -->
+		<div class="span3 side-bar hidden-print" valign="top" style="margin-top: 16px;">
+			<div class="well well-large" style="max-width: 340px; padding: 0px 0px;">
+				<ul class="nav nav-list">
+					{% include announce.md %}
+					{% include weibo.md %}
+					{% include tags.md %}
+					{% include recent-post.md %}
+				</ul>
+			</div>
+		</div>
+		<!-- /side bar -->
 	</div>
-	{% include sh-script.md %}
-	{% include comment-count.md %}
+</div>
+
+{% include footer.md %}
+
+{% include comment-count.md %}
+<script type="text/javascript" src="/assets/bootstrap/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

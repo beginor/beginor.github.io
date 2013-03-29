@@ -5,8 +5,6 @@ description: 你是否有过想干点儿什么的想法？去开发一个项目�
 tags: [转载]
 ---
 
-## 我没有时间
-
 你是否有过想干点儿什么的想法？去开发一个项目？想实现一个目标？
 
 如果是像 [Malcolm Gladwell](http://www.gladwell.com/outliers/outliers_excerpt1.html) 和 [Peter Norvig](http://norvig.com/21-days.html) 告诉我们的，精通一个事情需要花去数千小时、数年的时间，你的梦想和雄心很容易就会熄灭。

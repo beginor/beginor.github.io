@@ -7,8 +7,8 @@ layout: default
 <div class="box">
 	<div class="box-title">
 		<span class="post-title"><a href="{{ p.url }}">{{ p.title }}</a></span>
-		<span class="post-comment-count"><a href="{{ p.url }}#disqus_thread">评论</a></span>
-		<span class="post-date">{{ p.date | date: "%Y-%m-%d" }}</span>
+		<span class="pull-right"><a href="{{ p.url }}#disqus_thread">评论</a></span>
+		<span class="pull-right" style="margin: 0 4px;">{{ p.date | date: "%Y-%m-%d" }}</span>
 	</div>
 	<div class="box-content">
 		{{ p.content | strip_html | truncate: 300 }}
@@ -17,49 +17,36 @@ layout: default
 </div>
 {% endfor %}
 
-<div class="box">
-  {% if paginator.previous_page %}
-  <p class="previous">
-    {% if paginator.previous_page == 1 %}
-    <a href="/">前一页</a>
-    {% else %}
-    <a href="/page{{paginator.previous_page}}">前一页</a>
-    {% endif %}
-  </p>
-  {% else %}
-  <p class="previous disabled">
-    <span>前一页</span>
-  </p>
-  {% endif %}
+<div class="pagination pagination-centered">
+	<ul>
+	{% if paginator.previous_page %}
+		{% if paginator.previous_page == 1 %}
+		<li><a href="/">前一页</a></li>
+		{% else %}
+		<li><a href="/page{{paginator.previous_page}}">前一页</a></li>
+		{% endif %}
+	{% else %}
+		<li class="disabled"><span>前一页</span></li>
+	{% endif %}
 
-  <ul class="pages">
-    <li class="page">
-      {% if paginator.page == 1 %}
-      <span class="current-page">1</span>
-      {% else %}
-      <a href="/">1</a>
-      {% endif %}
-    </li>
+	{% if paginator.page == 1 %}
+		<li class="active"><span>1</span></li>
+	{% else %}
+		<li><a href="/">1</a></li>
+	{% endif %}
 
-    {% for count in (2..paginator.total_pages) %}
-    <li class="page">
-      {% if count == paginator.page %}
-      <span class="current-page">{{count}}</span>
-      {% else %}
-      <a href="/page{{count}}">{{count}}</a>
-      {% endif %}
-    </li>
-    {% endfor %}
-  </ul>
+	{% for count in (2..paginator.total_pages) %}
+		{% if count == paginator.page %}
+		<li class="active"><span>{{count}}</span></li>
+		{% else %}
+		<li><a href="/page{{count}}">{{count}}</a></li>
+		{% endif %}
+	{% endfor %}
 
-  {% if paginator.next_page %}
-  <p class="next">
-    <a href="/page{{paginator.next_page}}">后一页</a>
-  </p>
-  {% else %}
-  <p class="next disabled">
-    <span>后一页</span>
-  </p>
-  {% endif %}
-
+	{% if paginator.next_page %}
+		<li><a href="/page{{paginator.next_page}}">后一页</a></li>
+	{% else %}
+		<li class="disabled"><span>后一页</span></li>
+	{% endif %}
+	</ul>
 </div>
