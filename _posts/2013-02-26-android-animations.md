@@ -20,4 +20,4 @@ View Animation 在 Android 系统中出现的最早， 可以在 3.1 之前的�
 
 ![View Animation](/assets/post-images/android.animation.png)
 
-### 布局动画 ###
+### 布局动画
