@@ -2,7 +2,7 @@
 title: 让 VS 编译 MonoTouch 项目源文件不再出错
 description: 使用MonoTouch做iOS开发，通常会相应的建立两个项目，一个是MonoDevelop项目，在OSX下使用，一个是VS项目，在Windows下使用，VS项目在添加MonoTouch项目的CS源文件之后，经常编译出错，而且如果安装了Resharper之类的插件之话，也会得到一大堆错误信息，本文提供了一个比较好的解决方案。
 layout: post
-tags: [MonoTouch]
+tags: [Mono, iOS]
 ---
 
 使用 MonoTouch 做 iOS 开发， 由于 MonoDevelop 和 VS 2010 相比， 功能差的太多， 通常会相应的建立两个项目， 一个是 MonoDevelop 项目， 在 OSX 下使用， 一个是 VS 项目， 在 Windows 下使用， 在 Windows 系统下进行编码， 之后再在 OSX 下进行调试。 不过， 默认的 VS 项目在添加 MonoTouch 项目的 CS 源文件之后， 经常编译出错， 而且如果安装了 Resharper 之类的插件之话， 也会得到一大堆错误信息， 令人感觉非常恶心。 经过一番研究发现是因为 VS 不能引用 MonoTouch 的几个核心 dll 文件导致的， 包括 mscorlib.dll ， System.dll ， System.Core.dll 等， 找到原因之后， 对应的解决方法就有了。
