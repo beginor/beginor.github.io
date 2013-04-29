@@ -2,7 +2,7 @@
 layout: post
 title: 使用 Task 简化异步编程
 description: 本文介绍了常见的 .Net 异步编程模式， 以及如何用 Task 对象包装这些异步编程模式， 并给出了一个使用 Task 对象包装异步操作， 简化代码的例子。
-tags: [.Net Framework]
+tags: [.Net]
 
 ---
 
