@@ -2,7 +2,7 @@
 layout: post
 title: Task 编程中的异常处理
 description: 在 .Net 开发中， 使用 Task 、 Task<T> 进行异步编程是非常方便的， 但是在处理 Task 产生的异常时， 也有一些需要注意的问题。
-tags: [.Net Framework]
+tags: [.Net]
 
 ---
 
