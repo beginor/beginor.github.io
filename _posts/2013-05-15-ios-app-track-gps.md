@@ -3,7 +3,7 @@ layout: post
 title: iOS 应用使用位置信息
 description: 介绍 iOS 应用使用位置信息，以及如何在后台继续获取位置信息
 tags: [iOS, Mono]
-keywords: ios, track gps background, lock screen, switch app
+keywords: ios, track gps background, lock screen, switch app, xamarin.ios, monotouch
 ---
 
 最近要在 iOS 应用中添加位置信息， 需要满足的需求如下： 
@@ -18,8 +18,45 @@ keywords: ios, track gps background, lock screen, switch app
 
 在 iOS 上获取位置信息是很容易的， 网上的资料也很多， 我的代码如下：
 
+    // make sure location service is enabled.
+    if (!CLLocationManager.LocationServicesEnabled) {
+       return;
+    }
+    // create a new location manager
+    CLLocationManager locationManager = new CLLocationManager {
+       DistanceFilter = CLLocationDistance.FilterNone,
+       DesiredAccuracy = 1000
+    };
+    // check to work with both ios 6 and older.
+    if (UIDevice.CurrentDevice.CheckSystemVersion(6, 0)) {
+       locationManager.LocationsUpdated += OnLocationsUpdated;
+    }
+    else {
+       locationManager.UpdatedLocation += OnLocationUpdated;
+    }
+    locationManager.StartUpdatingLocation();
 
+第一次
 
 ## 在锁屏情况下继续更新 GPS 信息
 
+    public override void DidEnterBackground(UIApplication application) {
+       if (application.ApplicationState == UIApplicationState.Background) {
+          Log.Debug("App send to background by home button/switching to other app, stop upload location.");
+       }
+       else if (application.ApplicationState == UIApplicationState.Inactive) {
+          Log.Debug("App send to background by locking screen, contine upload location, but change mode to powersave mode");
+       }
+    }
+
+    public override void WillEnterForeground(UIApplication application) {
+    }
+
 ## 为应用添加后台位置权限
+
+需要修改 info.plist ，增加后台位置权限；
+
+    <key>UIBackgroundModes</key>
+    <array>
+       <string>location</string>
+    </array>
