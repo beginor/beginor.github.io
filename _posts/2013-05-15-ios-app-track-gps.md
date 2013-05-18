@@ -6,7 +6,7 @@ tags: [iOS, Mono]
 keywords: ios, track gps background, lock screen, switch app, xamarin.ios, monotouch
 ---
 
-最近要在 iOS 应用中添加位置信息， 需要满足的需求如下： 
+最近要在 iOS 应用中添加位置信息， 需要满足的需求如下：
 
 1. 应用在前台时能够获取位置信息；
 2. 通过切换、 Home 按键将应用切换到后台时，停止获取位置信息；
@@ -73,7 +73,15 @@ keywords: ios, track gps background, lock screen, switch app, xamarin.ios, monot
 
 ## 为应用添加后台位置权限
 
-要真正能在锁屏状态下继续更新位置， 需要修改 info.plist ，增加后台位置权限；
+要真正能在锁屏状态下继续更新位置， 需要修改 info.plist ，增加后台位置权限。 找到项目中的 info.plist 文件， 双击打开， 并切换到 Source 标签， 如下图所示：
+
+![info.plist file in project](/assets/post-images/open-info-plist-file.png)
+
+然后添加 Required background modes 属性项， 并将这个属性类型设置为 Array ， 并为这个属性添加一个子项 Location-based information ， 最终如下图所示：
+
+![add location based info](/assets/post-images/add-location-based-info.png)
+
+也可以直接把下面的代码添加到 info.plist 文件中， 效果是一样的。
 
     <key>UIBackgroundModes</key>
     <array>
