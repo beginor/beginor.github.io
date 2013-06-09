@@ -20,7 +20,7 @@ keywords: flat design, 扁平化, 设计
 
 ![不添加效果](/assets/post-images/no-added-effect-3.jpg)
 
-**扁平化设计**的概念来自于其自身形象，采用了非常独特的简约而扁平的设计风格。
+扁平化设计的概念来自于其自身形象，采用了非常独特的简约而扁平的设计风格。
 
 这种概念不添加点缀——阴影、棱台、浮雕、渐变以及其它增加深度层次的工具。 所有的元素包括图像、 按钮、 导航工具， 都是非常清爽的， 没有任何羽化或者阴影效果。
 
@@ -39,6 +39,8 @@ keywords: flat design, 扁平化, 设计
 ![简单的元素](/assets/post-images/simple-element-4.jpg)
 
 Flat design uses many simple user interface elements, such as buttons and icons. Designers often stick to simple shapes, such as rectangles, circles or squares and allow each shape to stand alone. Shape edges can be perfectly angular and square or include curvature.
+
+扁平化设计采用大量的简单的界面元素， 包括按钮和图表。 设计师通常坚持使用简单的图形， 例如矩形、 圆形或正方形， 并且允许他们单独存在， 
 
 Each UI element should be simple and easy to click or tap. Interaction should be intuitive for users without a lot of in-design explanation.
 
