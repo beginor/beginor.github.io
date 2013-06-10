@@ -14,11 +14,11 @@ keywords: flat design, 扁平化, 设计
 
 ## 不添加效果
 
-![不添加效果](/assets/post-images/no-added-effect-1.jpg)
+[![不添加效果](/assets/post-images/no-added-effect-1.jpg)](http://www.triplagent.com/)
 
-![不添加效果](/assets/post-images/no-added-effect-2.jpg)
+[![不添加效果](/assets/post-images/no-added-effect-2.jpg)](http://www.intothearctic.gp/)
 
-![不添加效果](/assets/post-images/no-added-effect-3.jpg)
+[![不添加效果](/assets/post-images/no-added-effect-3.jpg)](http://dribbble.com/shots/947749-Task-app)
 
 扁平化设计的概念来自于其自身形象，采用了非常独特的简约而扁平的设计风格。
 
@@ -30,63 +30,59 @@ keywords: flat design, 扁平化, 设计
 
 ## 简单的元素
 
-![简单的元素](/assets/post-images/simple-element-1.jpg)
+[![简单的元素](/assets/post-images/simple-element-1.jpg)](http://dribbble.com/shots/917819-iPad-Calendar-Login)
 
-![简单的元素](/assets/post-images/simple-element-2.jpg)
+[![简单的元素](/assets/post-images/simple-element-2.jpg)](http://dribbble.com/shots/962125-Filetypes)
 
-![简单的元素](/assets/post-images/simple-element-3.jpg)
+[![简单的元素](/assets/post-images/simple-element-3.jpg)](http://designmodo.com/square/)
 
-![简单的元素](/assets/post-images/simple-element-4.jpg)
+[![简单的元素](/assets/post-images/simple-element-4.jpg)](http://simonemarcarino.com/)
 
-Flat design uses many simple user interface elements, such as buttons and icons. Designers often stick to simple shapes, such as rectangles, circles or squares and allow each shape to stand alone. Shape edges can be perfectly angular and square or include curvature.
+扁平化设计采用大量的简单的界面元素， 包括按钮和图表。 设计师通常坚持使用简单的图形， 例如矩形、 圆形或正方形， 并且允许他们单独存在， 图形的边沿可以是完美的圆角或直角。
 
-扁平化设计采用大量的简单的界面元素， 包括按钮和图表。 设计师通常坚持使用简单的图形， 例如矩形、 圆形或正方形， 并且允许他们单独存在， 
+每个界面元素都应当简单， 容易点击或触碰， 同用户的交互应当非常的直接， 不需要太多设计上的解释。
 
-Each UI element should be simple and easy to click or tap. Interaction should be intuitive for users without a lot of in-design explanation.
+除了简约的风格外， 鼓励在按钮上大胆地使用颜色， 但是请不要混淆简单元素与简单的设计， 扁平化设计理念可以向其它任何设计风格一样复杂。
 
-In addition to simple styling, go bold with color on clickable buttons to encourage use. But don’t confuse simple elements with simple design, flat design concepts can be just as complex as any other type of design scheme.
-
-Need help getting started? Designmodo offers a variety of UI kits using flat styles – from the [Square UI Free](http://designmodo.com/square-free/) and [Flat UI Free](http://designmodo.com/flat-free/), a simple PSD/HTML UI kit with basic components, to [Square UI](http://designmodo.com/square/) and [Flat UI Pr](http://designmodo.com/flat/)o, a complete PSD/HTML UI pack for website and app design projects.
+需要入门帮助么？ Designmodo 提供了大量的采用扁平化风格的界面套件 —— 从免费的 [Square UI Free](http://designmodo.com/square-free/) 和 [Flat UI Free](http://designmodo.com/flat-free/) ， 包含基础组件的 PSD/HTML 界面套件， 到 [Square UI](http://designmodo.com/square/) 和 [Flat UI Pr](http://designmodo.com/flat/) ， 一套完整的 PSD/HTML 格式的网站和应用界面设计。
 
 ## 关注字体
 
-![关注字体](/assets/post-images/focus-on-typography-1.jpg)
+[![关注字体](/assets/post-images/focus-on-typography-1.jpg)](http://courtneyandrew.com/)
 
-![关注字体](/assets/post-images/focus-on-typography-2.jpg)
+[![关注字体](/assets/post-images/focus-on-typography-2.jpg)](https://plover.co/)
 
-![关注字体](/assets/post-images/focus-on-typography-3.jpg)
+[![关注字体](/assets/post-images/focus-on-typography-4.jpg)](http://www.flatmate.se/)
 
-![关注字体](/assets/post-images/focus-on-typography-4.jpg)
+由于扁平化设计采用了简单自然的元素，因此字体很重要。
 
-Because of the simple nature of element in flat design, typography is extremely important.
+字体的基调应当与整体设计的主题相符 —— 非常华丽的字体用在简约设计上看起来有些尴尬， 应当使用粗体， 用词简明高效， 努力为最终产品在视觉和措辞上达成一致的风格。
 
-The tone of typefaces should match the overall design scheme – a highly embellished font might look odd against a super-simple design. Type should also be bold and worded simply and efficiently, in an effort for the final product to have a consistent tone visually and textually.
+在扁平化设计的网站上考虑将 sans serif 及其系列作为首要字体， 可以添加一点点额外奇特的字体作为艺术元素， 但是必须注意， 特殊字体不能滥用。
 
-Consider a simple sans serif type family with plenty of variations and weights for the primary typography on a site using flat design. Add a touch of the unexpected with one novelty font as an art element, but be careful not to go overboard with use of the specialty typeface.
-
-Type should also tell users how to use the design. Label buttons and other elements for increased ease of use and interactivity.
+字体也应该告诉用户如何使用设计， 按钮以及其他元素上的文字应能增加易用性和交互性。
 
 ## 关注颜色
 
-![关注颜色](/assets/post-images/focus-on-color-1.jpg)
+[![关注颜色](/assets/post-images/focus-on-color-1.jpg)](http://dribbble.com/shots/968439-Close-landing-page)
 
-![关注颜色](/assets/post-images/focus-on-color-2.jpg)
+[![关注颜色](/assets/post-images/focus-on-color-2.jpg)](http://dribbble.com/shots/963964-Online-Radio)
 
-![关注颜色](/assets/post-images/focus-on-color-3.jpg)
+[![关注颜色](/assets/post-images/focus-on-color-3.jpg)](http://dribbble.com/shots/1021883-Squirrel-Settings)
 
-Color is a large part of flat design. [Flat design color palettes](http://designmodo.com/flat-design-colors/) are often much brighter and more colorful than those for other sites.
+颜色是扁平化设计的一大部分， 与其它站点相比， 扁平化设计使用[更加明亮和更加丰富的颜色](http://designmodo.com/flat-design-colors/)。 
 
-Color palettes for flat design projects often contain many more hues as well. While most color palettes focus on two or three colors at most, flat design palettes may use six to eight colors equally.
+扁平化设计经常使用更多颜色， 一般项目通常最多使用两种或者三种颜色， 而扁平化设计则可使用 6 到 8 中颜色。
 
-The hues tend to be vibrant – think about the purest colors from the color wheel – without tints or tones. Primary and secondary colors are popular. In addition certain types of colors are also used frequently; in this iteration of the flat design trend, retro colors – including salmon, purple, green and blue – are especially popular.
+色彩趋向于变化 —— 想一想颜色轮上面没有任何变化的纯色， 第一种和第二种通常是非常流行的， 除了常用的几种颜色， 在扁平化设计的这一轮迭代中， 粉橙色、 紫色、 绿色和蓝色这些复古色彩是非常受欢迎的。
 
 ## 简约实现
 
-![简约实现](/assets/post-images/minimalist-approach-1.jpg)
+[![简约实现](/assets/post-images/minimalist-approach-1.jpg)](http://dribbble.com/shots/981593-Personal-Site)
 
-![简约实现](/assets/post-images/minimalist-approach-2.jpg)
+[![简约实现](/assets/post-images/minimalist-approach-2.jpg)](http://fltdsgn.com/)
 
-![简约实现](/assets/post-images/minimalist-approach-3.jpg)
+[![简约实现](/assets/post-images/minimalist-approach-3.jpg)](http://cdns.designmodo.com/wp-content/uploads/2013/05/Mud.jpg)
 
 Flat design is simple by nature and works well with an overall minimalist design approach.
 
@@ -101,8 +97,6 @@ Some retail sites, such as Svpply (above), using flat design have done a good jo
 ![“接近” 扁平化设计](/assets/post-images/almost-flat-design-2.jpg)
 
 ![“接近” 扁平化设计](/assets/post-images/almost-flat-design-3.jpg)
-
-![“接近” 扁平化设计](/assets/post-images/almost-flat-design-4.jpg)
 
 ![“接近” 扁平化设计](/assets/post-images/almost-flat-design-5.jpg)
 
