@@ -84,15 +84,9 @@ keywords: flat design, 扁平化, 设计
 
 [![简约实现](/assets/post-images/minimalist-approach-3.jpg)](http://cdns.designmodo.com/wp-content/uploads/2013/05/Mud.jpg)
 
-Flat design is simple by nature and works well with an overall minimalist design approach.
-
 扁平化设计简洁的特质，配以简约的设计实现是非常棒的。
 
-Avoid too many bells and whistles in the overall site design. Simple color and text may be enough. If you want to add visuals, opt for simple photography.
-
 在整体的设计上避免过多的铃铛、口哨类的装饰， 简单的颜色和文字就足够了， 如果你还想再添加一些装饰， 则考虑一下简单的图形。
-
-Some retail sites, such as Svpply (above), using flat design have done a good job placing items on a simple background to do this. (It should be noted that the photos do have some natural depth but still fit into the overall flatness of the design.)
 
 一些零售网站， 比如上面提到的 Svpply ， 采用了扁平化设计， 把产品直接放在简单的背景图上， 效果相当不错！
 
@@ -108,26 +102,21 @@ Some retail sites, such as Svpply (above), using flat design have done a good jo
 
 ![“接近” 扁平化设计](/assets/post-images/almost-flat-design-6.jpg)
 
-A style more designers tend to agree on is “almost” flat design.
-
 更多设计师愿意接受的是＂接近＂扁平化的设计。
 
-In almost flat design, the basic theme of the flat style is used but some effects are added to the design scheme. Buttons, for example, may contain slight gradients or drop shadows. Designers typically pick one effect and use it exclusively in an almost flat project.
+在接近扁平化的设计中， 基本主题采用扁平样式， 不过在设计上添加一些效果， 例如为按钮稍微添加渐变或阴影效果， 设计师们往往会在整个项目中贯穿某一种效果。
 
-This style allows for a little more flexibility than some of the rigidness of the no effects thought behind flat design.
+不添加效果的扁平化有时会显得有些僵硬， 而这种样式添加了一些灵活性。
 
-Designers like it because of the added depth and texture. Users like it because the style is a little less sharp and can help guide proper interaction. On the flip side, designers don’t like it because it marries two styles in a way that can lack definition of a true style.
+由于添加了景深和贴图， 很多设计师喜欢它， 看起来不是那么尖锐， 并且对某些交互有指导帮助作用， 也深受用户喜爱。 不过另一方面， 也由于融合了两种样式， 缺乏一种纯粹的设计样式， 很多设计师不喜欢这种设计。
 
+## 更多关于扁平化设计资源
 
-Source: http://designmodo.com/flat-design-principles/#ixzz2VdNdVn5N
+Designmodo 是扁平化设计趋势讨论中的领军人物， 阅读我们更多关于扁平化的文章：
 
-## 更多关于扁平化设计的资料
-
-Designmodo has been a leader in the flat design trend discussion. Read our previous articles for more on flat design.
-
-- [Flat Design: Can you Benefit from the Trend?](http://designmodo.com/flat-design)
-- [Flat Web Design: Beautiful Examples of Websites](http://designmodo.com/flat-design-examples/)
-- [Beautiful Examples of Flat Icon Design](http://designmodo.com/flat-icons-examples/)
-- [Making it Work: Flat Design and Color Trends](http://designmodo.com/flat-design-colors/)
+- [扁平化设计： 你能从中获益么？](http://designmodo.com/flat-design)
+- [扁平化网站设计： 漂亮的网站示例](http://designmodo.com/flat-design-examples/)
+- [漂亮的扁平化图标设计示例](http://designmodo.com/flat-icons-examples/)
+- [让它可行： 扁平化设计与颜色](http://designmodo.com/flat-design-colors/)
 
 原文地址： [Principles of Flat Design](http://designmodo.com/flat-design-principles/)
