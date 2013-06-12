@@ -42,10 +42,12 @@ KKGridView 在 GitHub 上的主页是 [https://github.com/kolinkrewinkel/KKGridV
 
 绑定的语法定义为：
 
+<pre><code>
     [BaseType(typeof(TypeBase))]
     interface MyType [: Prodocol1, Protocol2] {
        IntPtr Constructor(string foo);
     }
+</code></pre>
 
 MyType 与 ObjC 的类型对应， TypeBase 与 ObjC 的基类对应， Protocol1 、 Prodocol2 与 ObjC 类型实现的协议对应。
 
@@ -58,10 +60,12 @@ ObjC 的 interface 定义如下：
 
 对应的绑定语法如下：
 
+<pre><code>
     [BaseType(typeof(UIScrollView))]
     interface KKGridView {
     }
-
+</code></pre>
+>
 **protocol**
 
 ObjC 的 protocol 定义语法如下：
@@ -76,6 +80,7 @@ ObjC 的 protocol 定义语法如下：
 
 ObjC 的 protocol 与 C# 的 interface 有些类似， 但是 protocol 中定义的方法有两种， optional 和 required ， 又有点儿像抽象类， MonoTouch 将其绑定为类， 并添加 ModelAttribute 标记， 对应的绑定语法分别为：
 
+<pre><code>
     [Model, BaseType(typeof(NSObject))]
     interface KKGridViewDataSource {
     }
@@ -83,7 +88,8 @@ ObjC 的 protocol 与 C# 的 interface 有些类似， 但是 protocol 中定义
     [Model, BaseType(typeof(UIScrollViewDelegate))]
     interface KKGridViewDelegate {
     }
-
+</code></pre>
+>
 **instance method**
 
 实例方法绑定为对应的 C# 实例方法：
