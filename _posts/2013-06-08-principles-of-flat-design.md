@@ -86,9 +86,15 @@ keywords: flat design, 扁平化, 设计
 
 Flat design is simple by nature and works well with an overall minimalist design approach.
 
+扁平化设计简洁的特质，配以简约的设计实现是非常棒的。
+
 Avoid too many bells and whistles in the overall site design. Simple color and text may be enough. If you want to add visuals, opt for simple photography.
 
+在整体的设计上避免过多的铃铛、口哨类的装饰， 简单的颜色和文字就足够了， 如果你还想再添加一些装饰， 则考虑一下简单的图形。
+
 Some retail sites, such as Svpply (above), using flat design have done a good job placing items on a simple background to do this. (It should be noted that the photos do have some natural depth but still fit into the overall flatness of the design.)
+
+一些零售网站， 比如上面提到的 Svpply ， 采用了扁平化设计， 把产品直接放在简单的背景图上， 效果相当不错！
 
 ## “接近” 扁平化设计
 
@@ -103,6 +109,8 @@ Some retail sites, such as Svpply (above), using flat design have done a good jo
 ![“接近” 扁平化设计](/assets/post-images/almost-flat-design-6.jpg)
 
 A style more designers tend to agree on is “almost” flat design.
+
+更多设计师愿意接受的是＂接近＂扁平化的设计。
 
 In almost flat design, the basic theme of the flat style is used but some effects are added to the design scheme. Buttons, for example, may contain slight gradients or drop shadows. Designers typically pick one effect and use it exclusively in an almost flat project.
 
