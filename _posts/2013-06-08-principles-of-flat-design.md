@@ -92,15 +92,15 @@ keywords: flat design, 扁平化, 设计
 
 ## “接近” 扁平化设计
 
-![“接近” 扁平化设计](/assets/post-images/almost-flat-design-1.jpg)
+[![“接近” 扁平化设计](/assets/post-images/almost-flat-design-1.jpg)](http://dribbble.com/shots/1024811-Nagging-popup)
 
-![“接近” 扁平化设计](/assets/post-images/almost-flat-design-2.jpg)
+[![“接近” 扁平化设计](/assets/post-images/almost-flat-design-2.jpg)](http://dribbble.com/shots/1054539-Calc)
 
-![“接近” 扁平化设计](/assets/post-images/almost-flat-design-3.jpg)
+[![“接近” 扁平化设计](/assets/post-images/almost-flat-design-3.jpg)](http://dribbble.com/shots/992907-SimpleMail-Full-View-The-easy-way-to-email-anything)
 
-![“接近” 扁平化设计](/assets/post-images/almost-flat-design-5.jpg)
+[![“接近” 扁平化设计](/assets/post-images/almost-flat-design-5.jpg)](http://dribbble.com/shots/1053618-Coming-project)
 
-![“接近” 扁平化设计](/assets/post-images/almost-flat-design-6.jpg)
+[![“接近” 扁平化设计](/assets/post-images/almost-flat-design-6.jpg)](http://dribbble.com/shots/1001719-Music-Web-Application)
 
 更多设计师愿意接受的是＂接近＂扁平化的设计。
 
