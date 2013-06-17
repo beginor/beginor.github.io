@@ -36,7 +36,7 @@ tags: [.Net]
 
 当程序运行结束时， 会产生下图所示的异常：
 
-![AggregateException was unhandled](http://beginor.github.com/assets/post-images/agg-exp-was-unhandled.png)
+![AggregateException was unhandled](http://beginor.github.io/assets/post-images/agg-exp-was-unhandled.png)
 
 关键的是这段文字：
 

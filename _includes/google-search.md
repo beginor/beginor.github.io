@@ -3,5 +3,5 @@
 	<!--<input type="submit" class="btn" name="btnG" value="搜索" />-->
 	<input type="hidden" name="oe" value="GB2312" />
 	<input type="hidden" name="hl" value="zh-CN" />
-	<input type="hidden" name="as_sitesearch" value="beginor.github.com" />
+	<input type="hidden" name="as_sitesearch" value="beginor.github.io" />
 </form>
