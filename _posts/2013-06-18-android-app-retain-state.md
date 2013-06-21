@@ -3,7 +3,7 @@ layout: post
 title: Android 应用保存状态
 description: 扁平化设计原则
 tags: [Android]
-keywords: xamarin, android, retain state, mono, activity, fragment, onSaveInstanceState,  onRestoreInstanceState, bundle,  shared preference
+keywords: xamarin, mono, c#, android, retain state, mono, activity, fragment, onSaveInstanceState,  onRestoreInstanceState, bundle,  shared preference
 ---
 
 最近开发的 Android 应用中需要添加保存用户状态的功能， 经过查阅 Android 的文档， 保存用户状态的几种方法如下：
@@ -65,7 +65,7 @@ Android 系统提供的 [Bundle][1] 类似于哈希表， 以 key、 value 的�
 
 **经过测试， 这种方法最大的缺点就是不靠谱** ， 因为 onSaveInstanceState 和 onResotreInstanceState 不是每次都能被系统调用， 因为应用可能在调用 onRestoreInstanceState 方法之前应用就被结束了， 大家都喜欢装杀进程的软件， 应用程序总免不了被结束的命运， 所以这种方法不是很可靠的。
 
-## SharedPreference
+## 2、 使用 SharedPreference 保存状态
 
 Android 推荐在 onPause 方法中使用 [SharedPreference][3] 保存状态是比较可靠的， 因为 SharedPreference 是基于文件的， 所以被结束进程也不怕。 
 
@@ -82,9 +82,9 @@ Android 推荐在 onPause 方法中使用 [SharedPreference][3] 保存状态是�
         editor.Commit();
     }
 
-## 恢复状态
+### 恢复状态
 
-虽然
+虽然可以在任何时候读取保存的 SharedPreference ， 但是还是推荐在 onCreate 方法中读取保存的内容， 示例代码如下：
 
     protected override void OnCreate(Bundle bundle) {
         base.OnCreate(bundle);
@@ -94,6 +94,14 @@ Android 推荐在 onPause 方法中使用 [SharedPreference][3] 保存状态是�
         _myButton.Text = pref.GetString("main_activity_button_text", "Nothing in state.");
     }
 
+### 注意问题
+
+Activity 有两个方法来创建 SharedPreference ， [getPreferences][4] 和 [getSharedPreferences][5] ,  getPreference 创建的 SharedPreference 只能在当前的 Activity 中访问， 而 getSharedPreference 创建的选项则可以在整个应用中访问。
+
+保存用户状态建议积极一些， 不要总是等待系统调用 onPause 方法， 只要用户操作了界面， 就可以进行状态保存， 这样会让应用更加可靠一些。
+
 [1]:http://developer.android.com/reference/android/os/Bundle.html
 [2]:http://developer.android.com/reference/android/app/Activity.html
 [3]:http://developer.android.com/reference/android/content/SharedPreferences.html
+[4]:https://developer.android.com/reference/android/app/Activity.html#getPreferences(int)
+[5]:https://developer.android.com/reference/android/content/Context.html#getSharedPreferences(java.lang.String, int)
