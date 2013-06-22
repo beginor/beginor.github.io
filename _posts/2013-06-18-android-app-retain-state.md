@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Android 应用保存状态
-description: 扁平化设计原则
+description: Android 应用保存状态的几种方法
 tags: [Android]
 keywords: xamarin, mono, c#, android, retain state, mono, activity, fragment, onSaveInstanceState,  onRestoreInstanceState, bundle,  shared preference
 ---
