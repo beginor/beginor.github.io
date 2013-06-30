@@ -24,9 +24,37 @@ keywords: xamarin, mono, c#, ios, uiview, animation
 
 ## 为视图的属性变化添加动画
 
-为了给属性的变化添加动画效果， 需要把修改这些属性的代码放到指定的动画代码段 (**animation block**) 中， f
+为了给属性的变化添加动画效果， 需要把修改这些属性的代码放到指定的动画代码段 (**animation block**) 中。 只有在动画代码段中修改支持动画的属性， 才能添加动画效果。
 
 ### 使用 Begin/Commit 方法做动画
+
+在 iOS 3.0 以及之前的系统中， 必须使用 `UIView` 的类方法 [`beginAnimations:context:`][9] 和 [`commitAnimations`][10] 来定义动画代码段， 在 begin 和 commit 之间的代码会在特殊的动画线程中运行， 因此不会阻塞主线程， 比如说要切换两个视图， 代码应该是这样子的：
+
+    [UIView beginAnimations:@"ToggleViews" context:nil];
+    [UIView setAnimationDuration:1.0];
+ 
+    // Make the animatable changes.
+    firstView.alpha = 0.0;
+    secondView.alpha = 1.0;
+ 
+    // Commit the changes and perform the animation.
+    [UIView commitAnimations];
+
+在 Xamarin.iOS (MonoTouch) 平台下， begin/end 方法对应的绑定为：
+
+- [`public static void BeginAnimations (string animation)`][11]
+- [`public static void BeginAnimations (string animationID, IntPtr context)`][12]
+- [`public static void CommitAnimations ()`](13)
+
+上面的切换视图的 C# 版本代码为：
+
+    UIView.BeginAnimations("ToggleViews");
+    UIView.SetAnimationDuration(1.0)
+    this.FirstView.Alpha = 0.0;
+    this.SecondView.Alpha = 1.0;
+    UIView.CommitAnidations();
+
+> **注意：** 如果不是为了支持很旧的设备， 则推荐使用下面的 lambda (block based method) 来实现动画效果， 虽然 begin/commit 还能够使用， 按照官方的说法， 对新系统来说是不推荐的了。
 
 ### 使用 lambda (block based method) 做动画
 
@@ -93,6 +121,31 @@ keywords: xamarin, mono, c#, ios, uiview, animation
 
 ### 嵌套动画
 
+iOS 支持嵌套的动画， 也就是说在一个动画代码段中， 可以再开始另外一个动画代码段， 例如：
+
+    [UIView animateWithDuration:1.0
+        delay: 1.0
+        options:UIViewAnimationOptionCurveEaseOut
+        animations:^{
+            aView.alpha = 0.0;
+            // Create a nested animation that has a different
+            // duration, timing curve, and configuration.
+            [UIView animateWithDuration:0.2
+                 delay:0.0
+                 options: UIViewAnimationOptionOverrideInheritedCurve |
+                          UIViewAnimationOptionCurveLinear |
+                          UIViewAnimationOptionOverrideInheritedDuration |
+                          UIViewAnimationOptionRepeat |
+                          UIViewAnimationOptionAutoreverse
+                 animations:^{
+                      [UIView setAnimationRepeatCount:2.5];
+                      anotherView.alpha = 0.0;
+                 }
+                 completion:nil];
+ 
+        }
+        completion:nil];
+
 ### 实现动画的自动翻转
 
 ## 创建视图切换动画
@@ -113,3 +166,8 @@ keywords: xamarin, mono, c#, ios, uiview, animation
 [6]:http://iosapi.xamarin.com/?link=M%3aMonoTouch.UIKit.UIView.Animate(System.Double%2cMonoTouch.Foundation.NSAction)
 [7]:http://iosapi.xamarin.com/?link=M%3aMonoTouch.UIKit.UIView.Animate(System.Double%2cMonoTouch.Foundation.NSAction%2cMonoTouch.Foundation.NSAction)
 [8]:http://iosapi.xamarin.com/?link=M%3aMonoTouch.UIKit.UIView.Animate(System.Double%2cSystem.Double%2cMonoTouch.UIKit.UIViewAnimationOptions%2cMonoTouch.Foundation.NSAction%2cMonoTouch.Foundation.NSAction)
+[9]:http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/beginAnimations:context:
+[10]:http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/commitAnimations
+[11]:http://iosapi.xamarin.com/?link=M%3aMonoTouch.UIKit.UIView.BeginAnimations(System.String)
+[12]:http://iosapi.xamarin.com/?link=M%3aMonoTouch.UIKit.UIView.BeginAnimations(System.String%2cSystem.IntPtr)
+[13]:http://iosapi.xamarin.com/?link=M%3aMonoTouch.UIKit.UIView.CommitAnimations
