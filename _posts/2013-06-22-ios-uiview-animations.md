@@ -54,6 +54,19 @@ keywords: xamarin, mono, c#, ios, uiview, animation
     this.SecondView.Alpha = 1.0;
     UIView.CommitAnidations();
 
+在 Begin/Commit 函数之间， 可以通过下面的方法设置动画的参数和选项：
+
+- [`setAnimationStartDate:`](http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/setAnimationStartDate:)
+- [`setAnimationDelay:`](http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/setAnimationDelay:)
+- [`setAnimationDuration:`](http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/setAnimationDuration:)
+- [`setAnimationCurve:`](http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/setAnimationCurve:)
+- [`setAnimationRepeatCount:`](http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/setAnimationRepeatCount:)
+- [`setAnimationRepeatAutoreverses:`](http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/setAnimationRepeatAutoreverses:)
+- [`setAnimationDelegate:`](http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/setAnimationDelegate:)
+- [`setAnimationWillStartSelector:`](http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/setAnimationWillStartSelector:)
+- [`setAnimationDidStopSelector:`](http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/setAnimationDidStopSelector:)
+- [`setAnimationBeginsFromCurrentState:`](http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/setAnimationBeginsFromCurrentState:)
+
 > **注意：** 如果不是为了支持很旧的设备， 则推荐使用下面的 lambda (block based method) 来实现动画效果， 虽然 begin/commit 还能够使用， 按照官方的说法， 对新系统来说是不推荐的了。
 
 ### 使用 lambda (block based method) 做动画
@@ -124,27 +137,23 @@ keywords: xamarin, mono, c#, ios, uiview, animation
 iOS 支持嵌套的动画， 也就是说在一个动画代码段中， 可以再开始另外一个动画代码段， 例如：
 
     [UIView animateWithDuration:1.0
-        delay: 1.0
-        options:UIViewAnimationOptionCurveEaseOut
-        animations:^{
-            aView.alpha = 0.0;
-            // Create a nested animation that has a different
-            // duration, timing curve, and configuration.
-            [UIView animateWithDuration:0.2
-                 delay:0.0
-                 options: UIViewAnimationOptionOverrideInheritedCurve |
-                          UIViewAnimationOptionCurveLinear |
-                          UIViewAnimationOptionOverrideInheritedDuration |
-                          UIViewAnimationOptionRepeat |
-                          UIViewAnimationOptionAutoreverse
-                 animations:^{
-                      [UIView setAnimationRepeatCount:2.5];
-                      anotherView.alpha = 0.0;
-                 }
-                 completion:nil];
- 
+        delay:1.0
+        options:UIViewAnimationOptionCurveEaseOut animations:^{
+            self.firstView.alpha = 0.0f;
+            [UIView animateWithDuration:1.0	
+                delay:0.0
+                options:UIViewAnimationOptionOverrideInheritedCurve |
+                    UIViewAnimationOptionCurveLinear |
+                    UIViewAnimationOptionOverrideInheritedDuration |
+                    UIViewAnimationOptionRepeat |
+                    UIViewAnimationOptionAutoreverse
+                animations:^{
+                    [UIView setAnimationRepeatCount:2.5];
+                    self.secondView.alpha = 0.0f;
+                }
+                completion:nil];
         }
-        completion:nil];
+    completion:nil];
 
 ### 实现动画的自动翻转
 
