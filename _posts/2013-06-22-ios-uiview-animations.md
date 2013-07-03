@@ -17,7 +17,7 @@ keywords: xamarin, mono, c#, ios, uiview, animation
 - **Frame** 可以改变视图相对于上一级视图的位置和大小。 （如果视图已经经过了缩放、 旋转、平移之类的变换， 则需要修改 Center 和 Bounds 属性）
 - **Bounds** 改变视图大小。
 - **Center** 改变视图相对于上级视图的位置。
-- **Transform** 相对于中心点进行视图缩放、旋转和平移， 这个属性只能进行二维转换。 （如果要进行三位转换， 则必须用 CoreAnimation 操作视图的 Layer 属性。）
+- **Transform** 相对于中心点进行视图缩放、旋转和平移， 这个属性只能进行二维转换。 （如果要进行三维转换， 则必须用 CoreAnimation 操作视图的 Layer 属性。）
 - **Alpha** 改变视图的透明度。
 - **BackgroundColor** 修改视图的背景色。
 - **ContentStretch** 改变视图内容在视图的可用空间内的拉伸方式。
