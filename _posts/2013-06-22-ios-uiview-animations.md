@@ -134,13 +134,14 @@ keywords: xamarin, mono, c#, ios, uiview, animation
 
 ### 嵌套动画
 
-iOS 支持嵌套的动画， 也就是说在一个动画代码段中， 可以再开始另外一个动画代码段， 例如：
+iOS 支持嵌套的动画， 也就是说在一个动画代码段中， 可以再开始另外一个动画代码段， 而不必等当前动画完成， 嵌套的动画会同时开始运行， 默认继承原来动画的延时、 时间长度、 加速曲线等， 不过这些选项也能被覆盖。 例如：
 
     [UIView animateWithDuration:1.0
         delay:1.0
         options:UIViewAnimationOptionCurveEaseOut animations:^{
             self.firstView.alpha = 0.0f;
-            [UIView animateWithDuration:1.0	
+            // 这里开始一个新的动画
+            [UIView animateWithDuration:1.0
                 delay:0.0
                 options:UIViewAnimationOptionOverrideInheritedCurve |
                     UIViewAnimationOptionCurveLinear |
@@ -155,7 +156,48 @@ iOS 支持嵌套的动画， 也就是说在一个动画代码段中， 可以�
         }
     completion:nil];
 
+对应的 C# 代码如下：
+
+    UIView.Animate(
+        1.0,
+        1.0,
+        UIViewAnimationOptions.CurveEaseIn,
+        () => {
+            this.FirstView.Alpha = 0.0;
+            UIView.Animate(
+                1.0,
+                1.0,
+                UIViewAnimationOptions.OverrideInheritedCurve |
+                UIViewAnimationOptions.CurveLinear |
+                UIViewAnimationOptions.OverrideInheritedDuration |
+                UIViewAnimationOptions.Repeat |
+                UIViewAnimationOptions.Autoreverse,
+                () => {
+                    UIView.SetAnimationRepeatCount(2.f);
+                    this.SecondView.Alpha = 0.0;
+                },
+                null
+            );
+        },
+        null
+    );
+
+对于使用 Begin/Commit 方法的动画， 也可以嵌套调用 Begin/Commit 方法来实现嵌套的动画， 例如：
+
+    UIView.BeginAnimations("Animation1");
+    // Animation code goes here
+        // Start another animation
+        UIView.BeginAnimations("Nested animation");
+        // nested animations code goes here.
+        UIView.CommitAnimations();
+    // other code
+    UIView.CommitAnimations();
+
+这段 C# 代码对应的 ObjC 代码很简单， 就不写出来了。
+
 ### 实现动画的自动翻转
+
+当创建自动翻转指定次数的动画时， 考虑将重复次数设置为非整数值。 因为对于自动翻转的动画来说， 每次循环都是从原始值变化到目标值再变化回原始值， 如果希望动画结束之后停留在目标值， 需要将重复次数设置加上 0.5 ， 否则， 动画回慢慢变回原始值， 再迅速变化到目标值， 这可能不是原来期望的动画效果。
 
 ## 创建视图切换动画
 
