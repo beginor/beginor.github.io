@@ -201,9 +201,34 @@ iOS 支持嵌套的动画， 也就是说在一个动画代码段中， 可以�
 
 ## 创建视图切换动画
 
+视图切换动画可以减少修改可视化树时引起的界面上的突变， iOS 系统中大量使用了视图切换动画， 视图切换动画主要有下面两种场景：
+
+- **修改子视图** 
+- **替换子视图**
+
+> 注意： 不要把视图切换和视图控制器的切换混淆（显示一个模式对话框、将视图控制器推入导航堆栈等）， 视图切换改变的仅仅是视图的可视化树， 视图控制器是不变的, 更多信息可以参考[iOS视图控制器编程指南][14]。
+
 ### 修改子视图
 
-### 替换视图
+可以修改子视图的可见性用来表示当前视图的不同的状态， 看下面的两个视图切换的例子，在 iOS 4.0 之前， 需要将视图切换动画添加到 Begin/Commit 动画之间， 代码如下：
+
+在 iOS 4.0 之后， 可以使用 [transitionWithView:duration:options:animations:completion:][15]
+
+    [UIView transitionWithView:self.view
+        duration:1.0
+        options:UIViewAnimationOptionTransitionCurlUp
+        animations:^{
+            self.currentView.hidden = YES;
+            self.swapView.hidden = NO;
+        }
+        completion:^(BOOL finished) {
+            UIView *tmp = self.currentView;
+            self.currentView = self.swapView;
+            self.swapView = tmp;
+        }
+    ];
+
+### 替换子视图
 
 ## 链接多个动画
 
@@ -222,3 +247,4 @@ iOS 支持嵌套的动画， 也就是说在一个动画代码段中， 可以�
 [11]:http://iosapi.xamarin.com/?link=M%3aMonoTouch.UIKit.UIView.BeginAnimations(System.String)
 [12]:http://iosapi.xamarin.com/?link=M%3aMonoTouch.UIKit.UIView.BeginAnimations(System.String%2cSystem.IntPtr)
 [13]:http://iosapi.xamarin.com/?link=M%3aMonoTouch.UIKit.UIView.CommitAnimations
+[14]:http://developer.apple.com/library/ios/featuredarticles/ViewControllerPGforiPhoneOS/Introduction/Introduction.html#//apple_ref/doc/uid/TP40007457
