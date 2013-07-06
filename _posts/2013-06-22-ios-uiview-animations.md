@@ -228,11 +228,41 @@ iOS 支持嵌套的动画， 也就是说在一个动画代码段中， 可以�
         }
     ];
 
+在 iOS 4.0 之前需要用到的函数是 [`setAnimationTransition:forView:cache:`][16] 对应的代码如下：
+
+    [UIView beginAnimations:@"toggleView" context:nil];
+    [UIView setAnimationTransition:UIViewAnimationTransitionCurlUp forView:self.view cache:YES];
+    [UIView setAnimationDuration:1.0];
+    // animation goes here
+    self.currentView.hidden = YES;
+    self.swapView.hidden = NO;
+    [UIView commitAnimations];
+
+这里只有动画部分的代码， 动画完成之后请参考 [`setAnimationDelegate:`][17] 方法设置并实现 UIAnimationDelegate 。
+
 ### 替换子视图
+
+要进行子视图的替换， 需要用到 [`transitionFromView:toView:duration:options:completion:`][18] 方法， 示例代码如下：
+
+    UIView *fromView = (self.displayPrimary ? self.view : self.secondView);
+    UIView *toView = (self.displayPrimary ? self.secondView : self.view);
+    UIViewAnimationOptions option = (self.displayPrimary ? UIViewAnimationOptionTransitionFlipFromRight
+                                    : UIViewAnimationOptionTransitionFlipFromLeft);
+    [UIView transitionFromView:fromView toView:toView duration:1.0 options:option
+        completion:^(BOOL finished) {
+            if (finished) {
+            self.displayPrimary = !self.displayPrimary;
+            }
+        }
+    ];
 
 ## 链接多个动画
 
-## 同时进行视图和图层动画
+有了上面的知识， 链接多个动画就非常简单了：
+
+- 对于 lambda 或 block-based 方法的动画， 使用 complete 回调函数即可；
+- 对于 Begin/Commit 方法的动画， 需要实现一个 UIAnimationDelegate ， 然后调用 setAnimationDelegate 方法设置 Delegate 即可。
+
 
 [1]:https://developer.apple.com/library/ios/#documentation/Cocoa/Conceptual/CoreAnimation_guide/Introduction/Introduction.html "Core Animation"
 [2]:http://developer.apple.com/library/ios/#documentation/windowsviews/conceptual/viewpg_iphoneos/animatingviews/animatingviews.html "View Programming Guide for iOS: Animations"
@@ -248,3 +278,7 @@ iOS 支持嵌套的动画， 也就是说在一个动画代码段中， 可以�
 [12]:http://iosapi.xamarin.com/?link=M%3aMonoTouch.UIKit.UIView.BeginAnimations(System.String%2cSystem.IntPtr)
 [13]:http://iosapi.xamarin.com/?link=M%3aMonoTouch.UIKit.UIView.CommitAnimations
 [14]:http://developer.apple.com/library/ios/featuredarticles/ViewControllerPGforiPhoneOS/Introduction/Introduction.html#//apple_ref/doc/uid/TP40007457
+[15]:http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/transitionWithView:duration:options:animations:completion:
+[16]:http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/setAnimationTransition:forView:cache:
+[17]:http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/setAnimationDelegate:
+[18]:http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/transitionFromView:toView:duration:options:completion:
