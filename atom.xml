@@ -15,7 +15,7 @@ title : 张志敏的技术专栏
    <email>{{ site.owner.mail }}</email>
  </author>
 
- {% for post in site.posts %}
+ {% for post in site.posts limit:20 %}
  <entry>
    <title>{{ post.title }}</title>
    <link href="{{ site.public_url }}{{ post.url }}"/>
