@@ -1,6 +1,6 @@
 ---
 layout: nil
-title : Atom Feed
+title : 张志敏的技术专栏
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
@@ -21,7 +21,7 @@ title : Atom Feed
    <link href="{{ site.public_url }}{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
    <id>{{ site.public_url }}{{ post.id }}</id>
-   <content type="html">{{ post.content | xml_escape }}</content>
+   <content type="html"><![CDATA[{{ post.content }}]]></content>
  </entry>
  {% endfor %}
  
