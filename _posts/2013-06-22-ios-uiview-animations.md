@@ -1,7 +1,7 @@
 ---
 layout: post
 title: iOS 系统中的视图动画
-description: 扁平化设计原则
+description: 动画为用户界面的状态转换提供了流畅的可视化效果， 在 iOS 中大量使用了动画效果， 包括改变视图位置、 大小、 从可视化树中删除视图， 隐藏视图等。 你可以考虑用动画效果给用户提供反馈或者用来实现有趣的特效。
 tags: [iOS, Xamarin]
 keywords: xamarin, mono, c#, ios, uiview, animation
 ---
