@@ -152,7 +152,8 @@ keywords: silverlight, createobject, createobjectex
        },
        /**
         * A string that represents a set of user-defined initialization parameters.
-        * The format of the value can be user-defined. The default value is null or     * an empty string.
+        * The format of the value can be user-defined. The default value is null or
+        * an empty string.
         * A string like: name1=value1,name2=value2,name3=value3
         */
        initParams: '',
