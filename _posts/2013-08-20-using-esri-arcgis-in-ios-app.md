@@ -30,27 +30,87 @@ ESRI 提供的 [ArcGIS SDK for iOS][1] 是 Framework 形式， 但是与 iOS 提
 
 #### 1. 将 ArcGIS 添加到框架搜索路径 ####
 
+要将 ArcGIS Framework 添加到项目， 选择左边导航窗口的项目节点， 选择一个目标节点， 再选择编译设置标签， 如下图所示：
+
 ![add-arcgis-to-framework-search-path](/assets/post-images/add-arcgis-to-framework-search-path.png)
 
+在编译设置标签的搜索框输入 `Framework Search Paths` 可以快速找到框架搜索路径设置， 双击右边的空白处， 点击 `+` 按钮并输入下面的路径：
+
+`$(HOME)/Library/SDKs/ArcGIS/iOS/**`
+
+> 注意： 如果在项目的 `Valid Architectures setting` 中有 `armv7s` 选项的话， 请删除这个选项， 这个选项是有 Xcode 针对 iPhone5 自动添加的， 但是 ArcGIS 库目前不包含 `armv7s` 。
+
 #### 2. 添加依赖项 ####
+
+ArcGIS 依赖于下面的框架和类库， 因此需要把它们添加到项目中：
+
+- CoreGraphics.framework
+- CoreLocation.framework
+- CoreText.framework
+- Foundation.framework
+- libc++.dylib
+- libz.dylib
+- QuartzCore.framework
+- MediaPlayer.framework
+- MobileCoreServices.framework
+- OpenGLES.framework
+- Security.framework
+- UIKit.framework
+
+选择项目目标的 `Build Phases` 标签， 在 `Link Binary with Libraries` 节点， 点击 `+` 按钮， 添加上面列出的依赖项， 如下图所示：
 
 ![add-dependet-library](/assets/post-images/add-dependet-library.png)
 
 #### 3. 修改编译选项 ####
 
+为了确认能够正确的加载 ArcGIS framework ， 需要在项目中添加一些编译标志 (build flags) 。
+
+> 注意： 如果没有这些标志， 程序在使用 ArcGIS API 提供的类时可能会崩溃！
+
+选择 `Build Settings` 标签， 在搜索框内输入 `Other Linker Flags` 可快速找到 `Other Linker Flags` 设置， 双击空白处， 会弹出一个文本框， 在文本框内输入 `-all_load -ObjC -framework ArcGIS` ， 点击文本框外任意位置， 保存输入选项， 如下图所示：
+
 ![modity-build-flags](/assets/post-images/modity-build-flags.png)
 
 #### 4. 添加资源包 ####
 
+ArcGIS API 用到的资源文件， 比如 ESRI 和 Bind 的 Logo ， GPS 位置图片等， 被整理打包成一个 `ArcGIS.bundle` 文件， 默认安装在 `${HOME}/Library/SDKs/ArcGIS/iOS/ArcGIS.framework/Versions/Current/Resources` 目录， 需要手工将这个文件添加到项目中。
+
+转到 XCode 的 `File` 菜单， 选择 `Add Files to <project>` 菜单项， 导航到 `${HOME}/Library/SDKs/ArcGIS/iOS/ArcGIS.framework/Versions/Current/Resources` 目录， 选择 `ArcGIS.bundle` 文件， 最后点击 `Add` 按钮， 将 bundle 文件添加到项目。
+
+> 注意： 在 OS X 系统下， `${HOME}/Library` 目录默认是隐藏的， 可以通过在终端程序中输入命令 `chflags nohidden ~/Library/` 来显示这个目录。
+
 ### 使用 ArcGIS Online 基础图层 ###
+
+项目设置完成之后， 使用 ArcGIS Online 的图层就很简单了， 比如：
+
+    - (void)viewDidLoad {
+        [super viewDidLoad];
+        
+        AGSTiledMapServiceLayer *tiledLayer =
+        [AGSTiledMapServiceLayer
+         tiledMapServiceLayerWithURL:[NSURL URLWithString:@"http://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer"]];
+        [self.mapView addMapLayer:tiledLayer withName:@"Basemap Tiled Layer"];
+        
+        //Set the map view's layerDelegate to self so that our
+        //view controller is informed when map is loaded
+        self.mapView.layerDelegate = self;
+    }
+
 
 ## 在 Xamarin.iOS 项目中使用 ArcGIS SDK ##
 
+要在 Xamarin.iOS 项目中使用 ArcGIS Runtime SDK ， 需要先将 ArcGIS SDK 绑定成 Xamarin.iOS 类库项目， 这个在 Github 上已经有了，地址是： [https://github.com/beginor/MonoTouch.ArcGIS][5]
+
 ### 下载并编译 ArcGIS iOS 绑定项目 ###
 
+
+
 ### 使用 ArcGIS Online 基础图层
+
+
 
 [1]: https://developers.arcgis.com/en/ios/
 [2]: https://developers.arcgis.com/en/features/
 [3]: https://developers.arcgis.com/en/sign-in/
 [4]: http://www.esri.com/apps/products/download/index.cfm#ArcGIS_Runtime_SDK_for_iOS
+[5]: https://github.com/beginor/MonoTouch.ArcGIS
