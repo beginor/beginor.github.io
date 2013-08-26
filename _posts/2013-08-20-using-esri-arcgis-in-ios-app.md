@@ -99,15 +99,31 @@ ArcGIS API 用到的资源文件， 比如 ESRI 和 Bind 的 Logo ， GPS 位置
 
 ## 在 Xamarin.iOS 项目中使用 ArcGIS SDK ##
 
-要在 Xamarin.iOS 项目中使用 ArcGIS Runtime SDK ， 需要先将 ArcGIS SDK 绑定成 Xamarin.iOS 类库项目， 这个在 Github 上已经有了，地址是： [https://github.com/beginor/MonoTouch.ArcGIS][5]
+要在 Xamarin.iOS 项目中使用 ArcGIS Runtime SDK ， 需要先将 ArcGIS SDK 绑定成 Xamarin.iOS 类库项目， 这个在 Github 上已经有了，地址是： [https://github.com/beginor/MonoTouch.ArcGIS][5] ， 有了这个绑定项目， 在 Xamarin.iOS 中使用 ArcGIS 就容易的多了。
 
 ### 下载并编译 ArcGIS iOS 绑定项目 ###
 
+访问 [https://github.com/beginor/MonoTouch.ArcGIS][5] ， 选择右边的 `Download Zip` 链接或者 `Clone in Desktop` 链接， 都可以得到这个绑定项目， 推荐 fork 这个项目， 这样便于根据自己的需要进行更改。
 
+下载之后用 XamarinStudio 打开 `MonoTouch.ArcGIS.sln` 解决方案， 可以看到这个解决方案包括两个项目， Binding 和 AGSTestCS 两个项目， 分别是 ArcGIS for iOS 的绑定项目以及测试项目， 如下图所示：
+
+![MonoTouch.ArcGIS.sln](/assets/post-images/monotouch-arcgis-sln.png)
+
+参照 ReadMe.md 文件的说明， 需要把 ArcGIS 文件从 `~/Library/SDKs/ArcGIS/iOS/ArcGIS.framework/Versions/Current/` 目录复制到 Binding 项目所在的目录， 并重命名为 `libArcGIS.a` ，然后编译这个项目， 如果没有错误的话， 会在 bin 目录内生成一个体积巨大的 dll 文件 `MonoTouch.ArcGIS.dll` ， 这就表示 Binding 项目生成成功了， 虽然这个 dll 文件很大， 但是不用担心， 最终生成 ios 应用时， 编译器会将用不到的部分删除， 最终的应用程序不会很大， 一般会在 10m 以内。
+
+现在可以生成并运行 AGSTestCS 项目， 可以看到一个地图应用在 iOS 模拟器启动， 这就表示一切都成功了！
 
 ### 使用 ArcGIS Online 基础图层
 
+Binding项目只是对 ArcGIS API 的绑定， 因此对外暴露的 API 函数几乎不变， 不同的只是换成了 C# 的语法， 上面在 Xcode 中使用 ArcGIS Online 的基础图层的代码对应的 C# 版本如下：
 
+    public override void ViewDidLoad() {
+       base.ViewDidLoad();
+       // add a basemap tiled layer.
+       var url = NSUrl.FromString("http://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer");
+       var tiledLayer = AGSTiledMapServiceLayer.TiledMapServiceLayerWithURL(url);
+       this.MapView.AddMapLayer(tiledLayer, "Basemap Tiled Layer");
+    }
 
 [1]: https://developers.arcgis.com/en/ios/
 [2]: https://developers.arcgis.com/en/features/
