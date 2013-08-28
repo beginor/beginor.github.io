@@ -37,7 +37,7 @@ ArcGIS API 提供的专题图层 ([AGSFeatureLayer][3]) 可以用来访问并编
 
 ## 2. 允许用户选择专题
 
-In this section, you'll allow a user to select a country from a list. To do this, you'll add a button to the UI and connect the button's Touch Up Inside event to an action method on the view controller called `ShowCountryPicker`.
+在这一节中， 允许用户从列表中选择一个国家。 要完成这个功能， 需要在界面上添加一个按钮， 并将按钮的 `Touch Up Inside` 事件连接到方法 `ShowCountryPicker` :
 
 ![Show Country picker button](/assets/post-images/show-country-picker.png)
 
