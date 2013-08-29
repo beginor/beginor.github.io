@@ -41,11 +41,121 @@ ArcGIS API 提供的专题图层 ([AGSFeatureLayer][3]) 可以用来访问并编
 
 ![Show Country picker button](/assets/post-images/show-country-picker.png)
 
-When a user taps the button, the view controller's method `showCountryPicker:` will be invoked. In this method, you'll instantiate `UIPickerView` and display it on screen. To add a list of countries to the picker, you'll set the view controller as the picker's data source and implement the methods defined in the `UIPickerViewDataSource` protocol. Finally, you'll also set the view controller as the picker's delegate and implement the `pickerView:didSelectRow:inComponent:` method defined in the `UIPickerViewDelegate` protocol to allow the picker to inform you when a user selects a country.
+当用户点击按钮时， 会调用 View Controller 的 `ShowCountryPicker` 方法， 在这个方法中， 我们初始化一个 `UIPickerView` 并把它显示在屏幕上， 要显示国家列表， 则需要指定数据源并实现 `UIPickerViewDataSource` 协议中定义的方法， 为了能收到用户选择的选项， 还需要实现 `UIPickerViewDelegate` 协议中定义的 `pickerView:didSelectRow:inComponent:` 方法。
+
+    partial void ShowCountryPicker(UIButton sender) {
+        if (this.Countries == null) {
+            this.Countries = new string[] { @"None",@"US",@"Canada",@"France",@"Australia",@"Brazil" };
+        }
+
+        var pickerSheet = new UIActionSheet(new RectangleF(0, 0, 320, 410));
+        pickerSheet.ShowInView(this.View);
+        pickerSheet.Bounds = new RectangleF(0, 0, 320, 410);
+
+        var countryPicker = new UIPickerView(pickerSheet.Bounds);
+        countryPicker.WeakDelegate = this;
+        countryPicker.DataSource = this;
+        countryPicker.ShowSelectionIndicator = true;
+
+        pickerSheet.AddSubview(countryPicker);
+    }
+
+    #region "UIPickerview DataSource Part"
+    [Export("numberOfComponentsInPickerView:")]
+    public int GetComponentCount(UIPickerView picker) {
+        return 1;
+    }
+
+    [Export("pickerView:numberOfRowsInComponent:")]
+    public virtual int GetRowsInComponent(UIPickerView picker, int component) {
+        return this.Countries.Length;
+    }
+
+    [Export("pickerView:titleForRow:forComponent:")]
+    public virtual string GetTitle(UIPickerView picker, int row, int component) {
+        return this.Countries[row];
+    }
+    #endregion
+    
+    #region "UIPickerview Delegate Part"
+    [Export("pickerView:didSelectRow:inComponent:")]
+    public virtual void Selected(UIPickerView picker, int row, int component) {
+
+        // Dismiss action sheet
+        var pickerSheet = (UIActionSheet)picker.Superview;
+        pickerSheet.DismissWithClickedButtonIndex(0, true);
+    }
+    #endregion
 
 ## 3. 显示选中的专题数据
 
+我们现在来完成高亮显示属于用户选择的国家的数据。
+
+首先得到的是用户选择的国家， 如果用户选择了 `None` 的话， 清空专题图层选中的数据； 否则， 使用类似于 SQL 的语法 `COUNTRY = <selected_country>` 来选中专题图层的数据。 不过在进行选中操作之前， 需要设置专题图层选中数据的符号， 比如设置选中的数据在地图上显示为红色的原点； 同时还需要设置图层的 `queryDelegate` ， 实现 `AGSFeatureLayerQueryDelegate` 协议定义的方法， 这样当选择操作完成时，才能收到通知。  
+
+    #region "UIPickerview Delegate Part"
+    [Export("pickerView:didSelectRow:inComponent:")]
+    public virtual void Selected(UIPickerView picker, int row, int component) {
+        var countryName = this.Countries[row];
+        var featureLayer = (AGSFeatureLayer)this.MapView.MapLayerForName("CloudData");
+
+        if (featureLayer.SelectionSymbol == null) {
+            // SYMBOLOGY FOR WHERE CLAUSE SELECTION
+            var selectedFeatureSymbol = AGSSimpleMarkerSymbol.SimpleMarkerSymbolWithColor(UIColor.FromRGBA(0.78f, 0.3f, 0.19f, 1f));
+            selectedFeatureSymbol.Style = AGSSimpleMarkerSymbolStyle.Circle;
+            selectedFeatureSymbol.Size = new SizeF(10, 10);
+            featureLayer.SelectionSymbol = selectedFeatureSymbol;
+        }
+
+        if (featureLayer.WeakQueryDelegate == null) {
+            featureLayer.WeakQueryDelegate = this;
+        }
+
+        if (countryName == "None") {
+            // CLEAR SELECTION
+            featureLayer.ClearSelection();
+        }
+        else {
+            var selectQuery = AGSQuery.Query();
+            selectQuery.Where = string.Format("COUNTRY = '{0}'", countryName);
+            featureLayer.SelectFeaturesWithQuery(selectQuery, AGSFeatureLayerSelectionMethod.New);
+        }
+
+        // Dismiss action sheet
+        var pickerSheet = (UIActionSheet)picker.Superview;
+        pickerSheet.DismissWithClickedButtonIndex(0, true);
+    }
+    #endregion
+
+    #region "AGSFeature Query Delegate part"
+    [Export("featureLayer:operation:didSelectFeaturesWithFeatureSet:")]
+    public virtual void DidSelectFeaturesWithFeatureSet(AGSFeatureLayer featureLayer, NSOperation op, AGSFeatureSet featureSet) {
+        AGSMutableEnvelope env = null;
+        foreach (var selectedFature in featureSet.Features) {
+            if (env != null) {
+                env.UnionWithEnvelope(selectedFature.Geometry.Envelope);
+            }
+            else {
+                env = (AGSMutableEnvelope)selectedFature.Geometry.Envelope.MutableCopy();
+            }
+        }
+        this.MapView.ZoomToGeometry(env, 20, true);
+    }
+    #endregion
+
 ## 4. 运行示例程序
+
+好了， 现在可以运行一下这个测试程序， 如果没有错误的话， 看到下面的程序截图：
+
+![cloud-data-tutorial](/assets/post-images/cloud-data-tutorial-1.png)
+
+点击按钮时， 屏幕截图如下：
+
+![cloud-data-tutorial](/assets/post-images/cloud-data-tutorial-1.png)
+
+选择 US 时， 截图如下：
+
+![cloud-data-tutorial](/assets/post-images/cloud-data-tutorial-1.png)
 
 [1]: https://developers.arcgis.com/en/ios/
 [2]: https://github.com/beginor/MonoTouch.ArcGIS
