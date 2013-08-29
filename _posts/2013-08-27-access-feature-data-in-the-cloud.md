@@ -151,11 +151,11 @@ ArcGIS API 提供的专题图层 ([AGSFeatureLayer][3]) 可以用来访问并编
 
 点击按钮时， 屏幕截图如下：
 
-![cloud-data-tutorial](/assets/post-images/cloud-data-tutorial-1.png)
+![cloud-data-tutorial](/assets/post-images/cloud-data-tutorial-2.png)
 
 选择 US 时， 截图如下：
 
-![cloud-data-tutorial](/assets/post-images/cloud-data-tutorial-1.png)
+![cloud-data-tutorial](/assets/post-images/cloud-data-tutorial-3.png)
 
 [1]: https://developers.arcgis.com/en/ios/
 [2]: https://github.com/beginor/MonoTouch.ArcGIS
