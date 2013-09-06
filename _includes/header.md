@@ -22,7 +22,7 @@
 						<a href="/atom.xml">订阅</a>
 					</li>
 					<li>
-						<a href="/libraries.html">开源类库</a>
+						<a href="/libraries.html">开源项目</a>
 					</li>
 					<li>
 						<a href="/about.html">关于</a>
