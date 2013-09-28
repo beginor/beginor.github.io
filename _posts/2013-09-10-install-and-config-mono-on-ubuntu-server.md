@@ -6,19 +6,51 @@ tags: [Mono, Linux]
 keywords: Linux, Ubuntu Server, Apache2, mod_mono, mono
 ---
 
-在 Ubuntu Server 上安装和配置 Apache2 ＋ Mono 生产环境的记录。
+在 Ubuntu Server 上安装和配置 Apache2 ＋ Mono 生产环境的记录。 服务器环境是 Ubuntu Server 13.04 虚拟机模式 (Virtual Machine Mode)， 安装的 Mono 的版本是 3.2.1 ， 最终环境如下图所示：
+
+![Ubuntu Server And Mono Version Infomation](/assets/post-images/ubuntu-server-mono-version-info.png)
 
 ### 准备编译环境
 
+还是老话题， 先准备 GCC 编译环境， 这样才可以从源代码编译安装所需要的软件。  首先需要安装的是基本的编译工具， 只要输入下面的命令即可：
+
     sudo apt-get install g++ gettext autoconf
+
+接下来输入用户名和密码， 就可以自动安装必须的命令行编译工具了。
 
 ### 从源代码编译安装 libgdiplus
 
+对于服务器来说， 主要运行 Apache、 ASP.Net、 Mvc 以及 WCF 等服务端程序， 一般不会运行图形界面， 因为图形界面会消耗额外的内存和处理器资源， 所以说 libgdiplus 不是必须安装的， 不过一个常见的场景是需要在服务端动态生成图片， 也会用到 libgdiplus ， 因此 libgdiplus 还是推荐安装的。 如果服务器上不需要生成图片， 则可以不用安装 libgdiplus 。
+
+先安装编译 libgdiplus 所需的依赖项， 输入下面的命令：
+
     sudo apt-get install libglib2.0-dev libpng12-dev libexif-dev libx11-dev libfreetype6-dev libfontconfig1-dev libjpeg62-dev libgif-dev
 
-### 从源代码编译安装 mono
+下载 libgdiplus 最新版的源代码：
 
-### 从源代码编译安装 xsp
+    wget http://download.mono-project.com/sources/libgdiplus/libgdiplus-2.10.9.tar.bz2
+
+下载完成之后解压， 并且换到源代码的目录：
+
+    tar -jxvf libgdiplus-2.10.9.tar.bz2
+    cd libgdiplus-2.10.9
+
+配置并检查 libgdiplus 的编译选项：
+
+    ./configure
+
+这是最关键的步骤， 如果 `configure` 命令中途出错， 则一般是缺少了某个依赖的库， 只要根据提示安装相应的依赖库就可以了， `configure` 命令运行结果如果如下图所示， 则表示可以进行下一步了：
+
+![Libgdiplus configure summary](/assets/post-images/libgdiplus-configure-summary.png)
+
+> 上图中的配置结果不支持 tiff ， 因为在服务端动态生成 tiff 图片的需求很小， 所以这个 tiff 可以直接忽略了， 如果需要生成 tiff， 只要安装 `libtiff-dev` 再次执行 `configure` 命令即可。
+
+接下来接着输入下面的命令就可以编译并安装 libgdiplus 了：
+
+
+
+### 从源代码编译安装 mono 、 xsp
+
 
 ### 安装 apache2 和 apache2-dev
 
