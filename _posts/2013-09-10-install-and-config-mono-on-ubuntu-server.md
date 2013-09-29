@@ -24,7 +24,7 @@ keywords: Linux, Ubuntu Server, Apache2, mod_mono, mono
 
 先安装编译 libgdiplus 所需的依赖项， 输入下面的命令：
 
-    sudo apt-get install libglib2.0-dev libpng12-dev libexif-dev libx11-dev libfreetype6-dev libfontconfig1-dev libjpeg62-dev libgif-dev
+    sudo apt-get install libglib2.0-dev libpng12-dev libexif-dev libx11-dev libfreetype6-dev libfontconfig1-dev libjpeg62-dev libgif-dev libxrender-dev
 
 下载 libgdiplus 最新版的源代码：
 
