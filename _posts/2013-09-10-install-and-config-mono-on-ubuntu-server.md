@@ -47,10 +47,85 @@ keywords: Linux, Ubuntu Server, Apache2, mod_mono, mono
 
 接下来接着输入下面的命令就可以编译并安装 libgdiplus 了：
 
+    make
+    sudo make install
 
+**常见问题：**
+
+如果在 `make` 的过程中出现类似如下错误：
+
+    Making all in pixman
+    make[4]: Entering directory `/usr/local/src/libgdiplus-2.10.9/pixman/pixman'
+    source='pixman-access.c' object='pixman-access.lo' libtool=yes \
+            DEPDIR=.deps depmode=none /bin/sh ../depcomp \
+            /bin/sh ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..     -g -O2 -Wall -fvisibility=hidden -c -o pixman-access.lo pixman-access.c
+    ../libtool: line 852: X--tag=CC: command not found
+    ../libtool: line 885: libtool: ignoring unknown tag : command not found
+    ../libtool: line 852: X--mode=compile: command not found
+    ../libtool: line 1018: *** Warning: inferring the mode of operation is deprecated.: command not found
+    ../libtool: line 1019: *** Future versions of Libtool will require --mode=MODE be specified.: command not found
+    ../libtool: line 1162: Xgcc: command not found
+    ../libtool: line 1162: X-DHAVE_CONFIG_H: command not found
+    ../libtool: line 1162: X-I.: command not found
+    ../libtool: line 1162: X-I..: command not found
+    ../libtool: line 1162: X-g: command not found
+    ../libtool: line 1162: X-O2: command not found
+    ../libtool: line 1162: X-Wall: command not found
+    ../libtool: line 1162: X-fvisibility=hidden: command not found
+    ../libtool: line 1162: X-c: command not found
+    ../libtool: line 1214: Xpixman-access.lo: command not found
+    ../libtool: line 1219: libtool: compile: cannot determine name of library object from `': command not found
+    make[4]: *** [pixman-access.lo] Error 1
+    make[4]: Leaving directory `/usr/local/src/libgdiplus-2.10.9/pixman/pixman'
+    make[3]: *** [all-recursive] Error 1
+    make[3]: Leaving directory `/usr/local/src/libgdiplus-2.10.9/pixman'
+    make[2]: *** [all] Error 2
+
+解决方法是输入下面的命令， 然后再继续执行 `make` 命令：
+
+    export echo=echo
+
+如果出现类似这样的错误：
+
+    /usr/lib64/libglib-2.0.so.0: could not read symbols: Invalid operation
+    collect2: error: ld returned 1 exit status
+    make[2]: *** [testgdi] Error 1
+    make[2]: Leaving directory `/usr/local/src/libgdiplus-2.10.9/tests'
+    make[1]: *** [all-recursive] Error 1
+    make[1]: Leaving directory `/usr/local/src/libgdiplus-2.10.9'
+    make: *** [all] Error 2
+
+解决方法是：
+
+* 先执行 `./configure` 命令， 然后编辑 `test/Makefile` 文件；
+* 将 130 行的 `LIBS = -lpthread -lfontconfig` 改为 ` LIBS = -lpthread -lfontconfig -lglib-2.0 -lX11`；
+* 再次执行 `make` 命令即可。
+
+最终， 在 `make` 命令执行成功之后， 在继续执行 `sudo make install` 命令进行安装。
 
 ### 从源代码编译安装 mono 、 xsp
 
+安装好了 libgdiplus 之后， 接下来的 mono 和 xsp 就是一路顺风了， 只要简单的敲几行命令就可以了：
+
+    wget http://download.mono-project.com/sources/mono/mono-3.2.3.tar.bz2
+    tar -jxvf mono-3.2.3.tar.bz2
+    cd mono-3.2.3
+    make
+    sudo make install
+
+    wget http://download.mono-project.com/sources/xsp/xsp-2.10.2.tar.bz2
+    tar -jxvf xsp-2.10.2.tar.bz2
+    cd xsp-2.10.2.tar.bz2
+    make
+    sudo make install
+
+执行上面的命令， 一般都不会出现什么错误了。 现在可以测试一下安装的 mono 和 xsp ， 在终端输入：
+
+    mono --version
+
+可以得到如下图的提示：
+
+![Mono 3.2.3 Version Info](/assets/post-images/mono-3.2.3-version-info.png)
 
 ### 安装 apache2 和 apache2-dev
 
