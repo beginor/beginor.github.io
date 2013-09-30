@@ -127,10 +127,71 @@ keywords: Linux, Ubuntu Server, Apache2, mod_mono, mono
 
 ![Mono 3.2.3 Version Info](/assets/post-images/mono-3.2.3-version-info.png)
 
+编译安装 xsp 之后， 会在 `/usr/local/lib/xsp/test` 目录下生成一个 .net 测试网站， 我们可以用这个测试站点来测试 mono + xsp 的安装， 输入下面的命令：
+
+    cd /usr/local/lib/xsp/test
+    ls
+    xsp
+
+可以看到的命令行输出如下：
+
+![Xsp Test Server](/assets/post-images/xsp-test-server.png)
+
+打开浏览器， 访问服务器的 8080 端口， 可以看到的如下的画面， 说明 mono + xsp 已经安装成功了。
+
+![xsp test site info](/assets/post-images/xsp-test-site-info.png)
+
 ### 安装 apache2 和 apache2-dev
+
+前面已经安装好了 mono + xsp ， 用来测试应用的话足够了， 但是不能做为服务器生产环境使用， 因此还需要继续安装 apache http server ， 并将 mono 做为 apache 的模块挂载上去。 Apache http server 我们选择从 Ubuntu Server 的软件仓库中安装， 只要输入下面的命令即可：
+
+    sudo apt-get install apache2 apache2-prefork-dev apache2-threaded-dev
+
+第一个软件包是 Apache Http 服务器， 另外两个是 Apache 的开发包， 接下来要安装的 mod_mono 依赖这两个开发包， 因此一并安装。
 
 ### 从源代码编译安装 mod_mono
 
+现在， 安装 mod_mono 也是非常简单的：
+
+    wget http://origin-download.mono-project.com/sources/mod_mono/mod_mono-2.10.tar.bz2
+    tar -jxvf mod_mono-2.10.tar.bz2
+    cd mod_mono-2.10
+    ./configure
+    make
+    sudo make install
+
+这个一般也不会出现什么错误， 基本上都能正确安装。
+
 ### 配置 apache2 和 mod_mono
 
-http://download.mono-project.com/sources/
+现在， 可以说万事具备， 只欠东风， 只要将 mod_mono 配置并加载到 apache 中就可以了， apache 在 Ubuntu Server 上的配置目录是 `/etc/apache2` ， 在编译安装 mod_mono 的时候， 已经将 mod_mono.conf 复制到这个目录了， 我们只要修改 apache2 的配置， 引用这个文件即可， `/etc/apache2` 的目录结构如下：
+
+![/etc/apache2 directory structure](/assets/post-images/etc-apache2-dir-structure.png)
+
+通过查看 `/etc/apache2/apache2.conf` 文件可以知道各个目录的含义， 只要在 `/etc/apache2/mods_enabled` 目录新建一个链接文件， 指向 `/etc/apache2/mod_mono.conf` 即可加载 mod_mono ， 切换到
+
+> 有兴趣的可以输入命令 `more /etc/apache2/mod_mono.conf` 查看一下这个文件的内容， 看是不是很熟悉的 aspx 、 asmx 、 ashx 等都出现了。
+
+    Alias /MonoTest "/usr/local/lib/xsp/test"
+    MonoServerPath MonoTest "/usr/bin/mod-mono-server2"
+    MonoDebug MonoTest true
+    MonoSetEnv MonoTest MONO_IOMAP=all
+
+    MonoApplications MonoTest "/MonoTest:/usr/local/lib/xsp/test"
+    <Location "/MonoTest">
+      Allow from all
+      Order allow,deny
+      MonoSetServerAlias MonoTest
+      SetHandler mono
+      SetOutputFilter DEFLATE
+      SetEnvIfNoCase Request_URI "\.(?:gif|jpe?g|png)$" no-gzip dont-vary
+    </Location>
+    <IfModule mod_deflate.c>
+      AddOutputFilterByType DEFLATE text/html text/plain text/xml text/javascript
+    </IfModule>
+
+### 参考资料
+
+* [http://download.mono-project.com/sources/](http://download.mono-project.com/sources/)
+* [Mod mono](http://www.mono-project.com/Mod_mono)
+* [Configure Apache Mod_Mono](http://go-mono.com/config-mod-mono/Default.aspx)
