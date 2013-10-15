@@ -168,9 +168,21 @@ keywords: Linux, Ubuntu Server, Apache2, mod_mono, mono
 
 ![/etc/apache2 directory structure](/assets/post-images/etc-apache2-dir-structure.png)
 
-通过查看 `/etc/apache2/apache2.conf` 文件可以知道各个目录的含义， 只要在 `/etc/apache2/mods_enabled` 目录新建一个链接文件， 指向 `/etc/apache2/mod_mono.conf` 即可加载 mod_mono ， 切换到
+通过查看 `/etc/apache2/apache2.conf` 文件可以知道各个目录的含义， 只要在 `/etc/apache2/mods_enabled` 目录新建一个链接文件， 指向 `/etc/apache2/mod_mono.conf` 即可加载 mod_mono ， 切换到 `/etc/apache2/mods-enabled` 目录， 输入下面的命令添加链接：
+
+    cd /etc/apache2/mod-enabled
+    sudo ln -s ../mod_mono.conf ./mod_mono.conf
+
+现在输入 `ls -l /etc/apache2/mods-enabled/mod_*.conf` ， 输出如下所示：
+
+    ls -l /etc/apache2/mods-enabled/mod_*.conf
+    lrwxrwxrwx 1 root root 16 Sep  6 13:34 mod_mono.conf -> ../mod_mono.conf
+
+看到有 `mod_mono.conf -> ../mod_mono.conf` 的输出提示， 说明链接链接已经做好了， 重启 Apache 服务就会加载 mod_mono 。
 
 > 有兴趣的可以输入命令 `more /etc/apache2/mod_mono.conf` 查看一下这个文件的内容， 看是不是很熟悉的 aspx 、 asmx 、 ashx 等都出现了。
+
+现在在默认站点下添加一个名为 `MonoTest` 的测试程序， 需要编辑 `/etc/apache2/sites-available/default` 文件， 在文件的最后， `CustomLog` 指令之前， 插入下面的配置：
 
     Alias /MonoTest "/usr/local/lib/xsp/test"
     MonoServerPath MonoTest "/usr/bin/mod-mono-server2"
@@ -189,6 +201,12 @@ keywords: Linux, Ubuntu Server, Apache2, mod_mono, mono
     <IfModule mod_deflate.c>
       AddOutputFilterByType DEFLATE text/html text/plain text/xml text/javascript
     </IfModule>
+
+> 这些配置可以在 [Configure Apache Mod_Mono](http://go-mono.com/config-mod-mono/Default.aspx) 生成， 不比逐行输入。
+
+保存并关闭这个文件， 然后输入下面的命令重启 Apache2 服务：
+
+    sudo service apache2 restart
 
 ### 参考资料
 
