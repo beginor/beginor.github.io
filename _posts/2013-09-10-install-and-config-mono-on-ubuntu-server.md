@@ -208,6 +208,12 @@ keywords: Linux, Ubuntu Server, Apache2, mod_mono, mono
 
     sudo service apache2 restart
 
+然后再次打开浏览器， 输入地址： `http://server-name-or-address/MonoTest` ， 看到类似下面的画面就大功告成了：
+
+![mod_mono + Apache2 Success](/assets/post-images/mod-mono-apache2-success.png)
+
+当然， 一切只是个开始， 接下来将继续测试 ASP.Net MVC 、 EntityFramework 、 NHibernate 等常用组件在 Mono 上的表现。
+
 ### 参考资料
 
 * [http://download.mono-project.com/sources/](http://download.mono-project.com/sources/)
