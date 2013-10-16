@@ -1,10 +1,10 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="zh-cn">
 <head>
 	<title>{{ site.title }}</title>
 	{% include meta-icon-link.md %}
-	{% if site.keywords %}<meta name="keywords" content="{{ site.keywords }}" />{% endif %}
-	{% if site.description %}<meta name="description" content="{{ site.description }}" />{% endif %}
+	{% if site.keywords %}<meta name="keywords" content="{{ site.keywords }}" >{% endif %}
+	{% if site.description %}<meta name="description" content="{{ site.description }}" >{% endif %}
 </head>
 <body>
 
@@ -12,21 +12,17 @@
 
 <div class="container">
 	<div class="row">
-		<div class="span9">
+		<div class="col-md-9">
 			<div class="body-content">
 				{{ content }}
 			</div>
 		</div>
 		<!-- side bar -->
-		<div class="span3 side-bar hidden-print" valign="top" style="margin-top: 16px;">
-			<div class="well well-large" style="max-width: 340px; padding: 0px 0px;">
-				<ul class="nav nav-list">
-					{% include announce.md %}
-					{% include weibo.md %}
-					{% include tags.md %}
-					{% include recent-post.md %}
-				</ul>
-			</div>
+		<div class="col-md-3 hidden-print">
+			{% include announce.md %}
+			{% include weibo.md %}
+			{% include tags.md %}
+			{% include recent-post.md %}
 		</div>
 		<!-- /side bar -->
 	</div>
@@ -35,7 +31,7 @@
 {% include footer.md %}
 
 {% include comment-count.md %}
-<script type="text/javascript" src="/assets/bootstrap/js/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="/assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="../assets/bootstrap3/js/jquery-1.10.2.min.js"></script>
+<script src="../assets/bootstrap3/js/bootstrap.min.js"></script>
 </body>
 </html>
