@@ -1,5 +1,9 @@
-<div id="disqus_thread">
+<div class="panel panel-default">
+	<div class="panel-body">
+		<div id="disqus_thread"></div>
+	</div>
 </div>
+
 <script type="text/javascript">
 /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 var disqus_shortname = '{{ site.disqus.short_name }}'; // required: replace example with your forum shortname

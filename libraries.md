@@ -46,6 +46,4 @@ layout: default
 
 当然， 还有一些不值得一提的小项目， 甚至是我平时的一些练习， 就不列出来献丑了， 具体请浏览[我的 GitHub 页面](https://github.com/beginor)。
 
-<p>&nbsp;</p>
-
 {% include comment.md %}

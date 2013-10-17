@@ -4,49 +4,53 @@ layout: default
 ---
 
 {% for p in paginator.posts %}
-<div class="box">
-	<div class="box-title">
-		<span class="post-title"><a href="{{ p.url }}">{{ p.title }}</a></span>
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<a class="panel-title" href="{{ p.url }}">{{ p.title }}</a>
 		<span class="pull-right"><a href="{{ p.url }}#disqus_thread">评论</a></span>
 		<span class="pull-right" style="margin: 0 4px;">{{ p.date | date: "%Y-%m-%d" }}</span>
 	</div>
-	<div class="box-content">
+	<div class="panel-body">
 		{{ p.content | strip_html | truncate: 300 }}
-		<a class="read-more" href="{{ p.url }}">阅读全文</a>
+		<a class="btn btn-xs btn-success" href="{{ p.url }}">阅读全文</a>
+	</div>
+	<div class="panel-footer">
+		标签：
+		{% for t in p.tags %}
+		<a href="/pages.html#{{ t }}-ref" title="查看全部关于 {{ t }} 的文章">{{ t }}</a>
+		{% endfor %}
 	</div>
 </div>
 {% endfor %}
 
-<div class="pagination pagination-centered">
-	<ul>
-	{% if paginator.previous_page %}
-		{% if paginator.previous_page == 1 %}
-		<li><a href="/">前一页</a></li>
-		{% else %}
-		<li><a href="/page{{paginator.previous_page}}">前一页</a></li>
-		{% endif %}
+<ul class="pagination pagination-centered">
+{% if paginator.previous_page %}
+	{% if paginator.previous_page == 1 %}
+	<li><a href="/">前一页</a></li>
 	{% else %}
-		<li class="disabled"><span>前一页</span></li>
+	<li><a href="/page{{paginator.previous_page}}">前一页</a></li>
 	{% endif %}
+{% else %}
+	<li class="disabled"><span>前一页</span></li>
+{% endif %}
 
-	{% if paginator.page == 1 %}
-		<li class="active"><span>1</span></li>
+{% if paginator.page == 1 %}
+	<li class="active"><span>1</span></li>
+{% else %}
+	<li><a href="/">1</a></li>
+{% endif %}
+
+{% for count in (2..paginator.total_pages) %}
+	{% if count == paginator.page %}
+	<li class="active"><span>{{count}}</span></li>
 	{% else %}
-		<li><a href="/">1</a></li>
+	<li><a href="/page{{count}}">{{count}}</a></li>
 	{% endif %}
+{% endfor %}
 
-	{% for count in (2..paginator.total_pages) %}
-		{% if count == paginator.page %}
-		<li class="active"><span>{{count}}</span></li>
-		{% else %}
-		<li><a href="/page{{count}}">{{count}}</a></li>
-		{% endif %}
-	{% endfor %}
-
-	{% if paginator.next_page %}
-		<li><a href="/page{{paginator.next_page}}">后一页</a></li>
-	{% else %}
-		<li class="disabled"><span>后一页</span></li>
-	{% endif %}
-	</ul>
-</div>
+{% if paginator.next_page %}
+	<li><a href="/page{{paginator.next_page}}">后一页</a></li>
+{% else %}
+	<li class="disabled"><span>后一页</span></li>
+{% endif %}
+</ul>
