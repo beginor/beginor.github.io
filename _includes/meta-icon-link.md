@@ -6,10 +6,10 @@
 <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/imgs/min48.png">
 <link rel="apple-touch-icon-precomposed" href="/assets/imgs/min48.png">
 <link rel="shortcut icon" href="/assets/imgs/min32.png">
-<link href="/assets/bootstrap3/css/bootstrap.min.css" rel="stylesheet" media="screen" >
+<link href="/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" >
 <!--[if lt IE 9]>
-<script src="../assets/bootstrap3/js/html5shiv.js"></script>
-<script src="/assets/bootstrap3/js/respond.min.js"></script>
+<script src="/assets/bootstrap/js/html5shiv.js"></script>
+<script src="/assets/bootstrap/js/respond.min.js"></script>
 <![endif]-->
 <!-- Bootstrap -->
 <link href="/assets/styles/style2.css" rel="stylesheet" >
