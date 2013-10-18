@@ -8,6 +8,10 @@ img {
 	max-width: 100%;
 }
 
+a.navbar-brand {
+	color: #ffffff !important;
+}
+
 .footer {
 	text-align: center;
 	padding: 30px 0;

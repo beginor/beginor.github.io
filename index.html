@@ -7,8 +7,8 @@ layout: default
 <div class="panel panel-default">
 	<div class="panel-heading">
 		<a class="panel-title" href="{{ p.url }}">{{ p.title }}</a>
-		<span class="pull-right"><a href="{{ p.url }}#disqus_thread">评论</a></span>
-		<span class="pull-right" style="margin: 0 4px;">{{ p.date | date: "%Y-%m-%d" }}</span>
+		<a class="pull-right label label-default" href="{{ p.url }}#disqus_thread">评论</a>
+		<a class="pull-right label label-default" href="{{ p.url }}" style="margin: 0 4px;">{{ p.date | date: "%Y-%m-%d" }}</a>
 	</div>
 	<div class="panel-body">
 		{{ p.content | strip_html | truncate: 300 }}
@@ -17,7 +17,7 @@ layout: default
 	<div class="panel-footer">
 		标签：
 		{% for t in p.tags %}
-		<a href="/pages.html#{{ t }}-ref" title="查看全部关于 {{ t }} 的文章">{{ t }}</a>
+		<a href="/pages.html#{{ t }}-ref" title="查看全部关于 {{ t }} 的文章"><span class="badge">{{ t }}</span></a>
 		{% endfor %}
 	</div>
 </div>
