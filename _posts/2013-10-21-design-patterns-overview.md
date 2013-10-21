@@ -68,4 +68,4 @@ keywords: 设计模式, 单一职责, 开－闭, 里氏代换, 合成复用, 依
 
 在软件工程中结构型模式是设计模式，借由一以贯之的方式来了解元件间的关系，以简化设计。
 
-![](/assets/post-images/design-patterns-structural.jpg)
+![结构型设计模式](/assets/post-images/design-patterns-structural.jpg)
