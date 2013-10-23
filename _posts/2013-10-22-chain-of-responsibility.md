@@ -14,7 +14,7 @@ keywords: 设计模式, 职责链模式, chain of responsibility
 
 This pattern avoids coupling the sender of a request to its receiver by giving more than one object a chance to handle the request. It chains the receiving objects and passes the request along the chain until an object handles it.
 
-使多个对象都有机会处理请求， 从而避免了请求的发送者与接收者之间的耦合。 将接收对象组成链， 在链上传递请求， 知道有一个对象处理请求为止。
+使多个对象都有机会处理请求， 从而避免了请求的发送者与接收者之间的耦合。 将接收对象组成链， 在链上传递请求， 直到有一个对象处理请求为止。
 
 ## 适用条件
 
