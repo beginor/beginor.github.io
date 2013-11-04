@@ -6,26 +6,23 @@ tags: [转载, MVC]
 keywords: asp.net-mvc5, attribute, routing
 ---
 
-## Introduction
+## 简介
 
-- This Article shows how to use the Latest **ASP.net MVC 5 Attribute Routing** with your Application.
-- This Article has 2 parts.First part of this Article will show the basic usage of **Attribute Routing**.
-- The Second part of this Article will show some advance usage of Attribute Routing.
+- 本文介绍在应用程序中使用 **ASP.net MVC 5 Attribute Routing** 最新特性；
+- 本文分两部分， 第一部分介绍 **Attribute Routing** 的基本用法， 第二部分介绍一些高级用法。
 
-## What is Routing ?
+## 什么是 Routing ?
 
-Routing is how ASP.net MVC matches a URI to an Action
+Routing 是 ASP.net MVC 将地址映射为 Action 方法的技术。 
 
-## What is Attribute Routing ?
+## 什么是 Attribute Routing ?
 
-- **ASP.net MVC 5** supports a new type of Routing, called **Attribute Routing**
-- As the name implies, attribute routing uses **attributes to define routes**
-- Attribute routing gives you more control over the URIs in your web application
+**ASP.net MVC 5** 支持一种新类型的路由， 称之为 **Attribute Routing** 。 顾名思义， Attribute Routing 使用来标记定义路由， Attribute Routing 让你在程序中更好的控制资源地址。
 
-## How To Enable Attribute Routing ?
+## 如何启用 Attribute Routing ?
 
-- For that, You have to select the `RouteConfig.cs` inside the `App_Start` Folder.
-- After that call `MapMvcAttributeRoutes` is as below.
+- 要启用 Attribute Routing， 选中并打开 `App_Start` 目录中的 `RouteConfig.cs` ；
+- 如下所示， 调用 `MapMvcAttributeRoutes` 方法。
 
 RouteConfig.cs
 
@@ -47,16 +44,16 @@ RouteConfig.cs
         }
     }
 
-Key points of the above code
+代码要点
 
-- To enable Attribute Routing,You have to call MapMvcAttributeRoutes on RouteConfig File.
-- If you want, You can keep the Convention-based Routing also with the same file is as above.
-- But routes.MapMvcAttributeRoutes(); Should configure before the Convention-based Routing.
+- 要启用 Attribute Routing ，必须在 `RouteConfig.cs` 文件中调用 `MapMvcAttributeRoutes` 方法；
+- 如果需要， 可以向上面的代码一样保留基于约定的路由；
+- 但是， `routes.MapMvcAttributeRoutes()` 必须在基于约定的路由之前配置。
 
-## How to use Optional URI Parameters ?
+## 如何使用可选 URI 参数 ?
 
-- To that you can add a question mark to the Route parameter
-- Well, It's like this : `[Route("Pet/{petKey?}")]`
+- 在路由参数上添加一个问号；
+- 对， 就像这样： `[Route("Pet/{petKey?}")]`
 
 PetController.cs
 
@@ -71,18 +68,18 @@ PetController.cs
         }
     }
 
-Key point of the above code
+代码要点
 
-- In the above example, both `/Pet` and `/Pet/123` will Route to the `GetPet` Action
+- 在上面的例子中， `/Pet` 和 `/Pet/123` 都将被路由到 `GetPet` 方法；
 
-Above Route on Browser is as below
+上面的路由在浏览器中看起来是这样的：
 
-![](/assets/post-images/AR3.png)
+![可选 URI 参数](/assets/post-images/AR3.png)
 
-## How to use Default Values URI Parameters ?
+## 如何使用带默认值的 URI 参数 ?
 
-- To that you can specify a default value  to the route parameter
-- It's like this : `[Route("Pet/Breed/{petKey=123}")]`
+- 在路由参数中指定默认值；
+- 例如： `[Route("Pet/Breed/{petKey=123}")]`
 
 PetController.cs
 
@@ -97,18 +94,18 @@ PetController.cs
         }
     }
 
-Key point of the above code
+代码要点
 
-- In the above example, both `/Pet/Breed` and `/Pet/Breed/528` will route to the `GetSpecificPet` Action
+- 在上面的例子中， `/Pet/Breed` 和 `/Pet/Breed/528` 都会被路由到 `GetSpecificPet` 方法。
 
-Above Route on Browser is as below
+上面的路由在浏览器中看起来是这样的：
 
-![](/assets/post-images/AR4.png)
+![带默认值的 URI 参数](/assets/post-images/AR4.png)
 
-## How to use Route Prefixes ?
+## 如何使用路由前缀 ?
 
-- Normally, the routes in a controller all start with the same prefix
-- Well,It's like this : /Booking
+- 一般来说， 同一个 Controller 的路由都使用相同的前缀；
+- 例如： `/Booking`
 
 BookingController.cs
 
@@ -127,15 +124,15 @@ BookingController.cs
         public ActionResult Edit(int bookId) { return View(); }
     }
 
-Above Routes on Browser are as below
+上面的路由在浏览器中看起来是这样的：
 
-![](/assets/post-images/AR5.png)
+![路由前缀](/assets/post-images/AR5.png)
 
-## How to Set Common Route Prefix ?
+## 如何设置公用路由前缀 ?
 
-- If you want, you can specify a common prefix for an entire controller
-- To that you can use `[RoutePrefix]` attribute
-- It's like this : `[RoutePrefix("Booking")]`
+- 可以根据需要为整个 Controller 指定一个公用的路由前缀；
+- 那就需要使用 `[RoutePrefix]` 前缀；
+- 例如： `[RoutePrefix("Booking")]`
 
 BookingController.cs
 
@@ -157,14 +154,14 @@ BookingController.cs
 
     }
 
-Above Routes on Browser are as below
+上面的路由在浏览器中看起来是这样的：
 
-![](/assets/post-images/AR5.png)
+![公用路由前缀](/assets/post-images/AR5.png)
 
-## How to Override the Common Route Prefix ?
+## 如何覆盖公用路由前缀 ?
 
-- You can use a tilde (~) on the method attribute to override the route prefix
-- Well,It's like this : `[Route("~/PetBooking")]`
+- 可以在标记前面添加一个波浪线 (~) 来覆盖公用前缀；
+- 例如： `[Route("~/PetBooking")]`
 
 BookingController.cs
 
@@ -176,15 +173,15 @@ BookingController.cs
         public ActionResult PetBooking() { return View(); }
     }
 
-Above Route on Browser is as below
+上面的路由在浏览器中看起来是这样的：
 
+![覆盖公用路由前缀](/assets/post-images/AR6.png)
 
+## 如何使用默认路由 ?
 
-## How to use Default Route ?
-
-- You can apply the `[Route]` attribute on the Controller level and put the Action as a parameter
-- That Route will then be applied on all Actions in the Controller
-- Well,It's like this : `[Route("{action=index}")]`
+- 可以在 Controller 上使用 `[Route]` 标记， 并将 Action 作为参数；
+- 路由会在所有的 Action 方法中启用；
+- 例如： `[Route("{action=index}")]`
 
 BookingController.cs
 
@@ -203,9 +200,9 @@ BookingController.cs
 
     }
 
-Above Routes on Browser are as below
+上面的路由在浏览器中看起来是这样的：
 
-![](/assets/post-images/AR7.png)
+![使用默认路由](/assets/post-images/AR7.png)
 
 ## How to override Default Route ?
 
