@@ -52,7 +52,7 @@ RouteConfig.cs
 
 ## 如何使用可选 URI 参数 ?
 
-- 在路由参数上添加一个问号；
+- 在路由参数上添加一个问号
 - 对， 就像这样： `[Route("Pet/{petKey?}")]`
 
 PetController.cs
@@ -204,10 +204,10 @@ BookingController.cs
 
 ![使用默认路由](/assets/post-images/AR7.png)
 
-## How to override Default Route ?
+## 如何覆盖默认路由 ?
 
-- For that you have to use specific `[Route]` on a specific Action.
-- It'll override the default settings on the Controller.
+- 需要在一个指定的 Action 方法上使用 `[Route]` 标记；
+- 这样就会覆盖默认设置， 如下所示：
 
 BookingController.cs
 
@@ -224,15 +224,14 @@ BookingController.cs
 
     }
 
-Above overridden Route on Browser is as below
+上面的路由在浏览器中看起来是这样的：
 
-![](/assets/post-images/AR8.png)
+![覆盖默认路由](/assets/post-images/AR8.png)
 
-## How to give Route Names ?
+## 如何为路由指定名称 ?
 
-- You can specify a Name for a Route
-- By using that Name, you can easily allow URI generation for it
-- Well,It's like this : `[Route("Booking", Name = "Payments")]`
+- 可以为路由指定名称， 通过路由名称可以很容易的生成 URI 链接
+- 比如这样： `[Route("Booking", Name = "Payments")]`
 
 BookingController.cs
 
@@ -243,22 +242,20 @@ BookingController.cs
         public ActionResult Payments() { return View(); }
     }
 
-- After that you can generate a Link is using Url.RouteUrl
-- It's like this : `<a href="@Url.RouteUrl("Payments")">Payments Screen</a>`
+- 然后可以使用 `Url.RouteUrl` 方法来生成链接；
+- 就像这样： `<a href="@Url.RouteUrl("Payments")">Payments Screen</a>`
 
-Note : On the above code, "Payments" is a Route Name
+> 注意 : 在上面的代码中， "Payments" 是路由的名称。
 
-Advantages of Attribute Routing Over the Convention-based Routing
+## 相对于传统的基于约定的路由， Attribute Routing 的优点是：
 
-- Attribute Routing gives you more control over the URIs in your web application
-- Easy to Troubleshoot issues
-- No fear of modifying anything will break another route down the line 
-
-## Conclusion
-
-- You saw that how easily can configure the URI Routines with Attribute Routing
-- In my next article I will show how to apply Attribute Routing with Route Constraints, Custom Route Constraints and Areas
-- So enjoy this Awesome New Feature of ASP.net MVC 5
+- 在应用中可以更好的控制 URI 资源；
+- 容易诊断并解决问题；
+- 不用担心修改其中一个路由会影响到其它的路由；
 
 
-http://sampathloku.blogspot.com/2013/11/attribute-routing-with-aspnet-mvc-5.html
+[原文地址 (需要翻墙)][1]， 还有 [Attribute Routing in Web API 2][2]， [Create a REST API with Attribute Routing in Web API 2][3]
+
+[1]: http://sampathloku.blogspot.com/2013/11/attribute-routing-with-aspnet-mvc-5.html
+[2]: http://www.asp.net/web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2
+[3]: http://www.asp.net/web-api/overview/web-api-routing-and-actions/create-a-rest-api-with-attribute-routing
