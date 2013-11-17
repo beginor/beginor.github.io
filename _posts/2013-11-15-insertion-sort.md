@@ -26,3 +26,16 @@ keywords: 算法, 插入排序, insertion sort
 如果比较操作的代价比交换操作大的话，可以采用二分查找法来减少比较操作的数目。该算法可以认为是插入排序的一个变种，称为二分查找排序。
 
 C# 实现代码
+
+    static void InsertionSort(int[] array) {
+       int count = array.Length;
+       for (int i = 1; i < count; i++) {
+          int t = array[i];
+          int j = i;
+          while (j > 0 && array[j - 1] > t) {
+             array[j] = array[j - 1];
+             --j;
+          }
+          array[j] = t;
+       }
+    }
