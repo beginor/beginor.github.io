@@ -4,7 +4,7 @@ layout: default
 ---
 
 <ul class="tag-list">
-{% for tag in site.tags %}
+{% for tag in site.tags reversed %}
 <h3 id="{{ tag[0] }}-ref">{{ tag[0] }}</h3>
 <ul>
 	{% for post in tag[1] %}
