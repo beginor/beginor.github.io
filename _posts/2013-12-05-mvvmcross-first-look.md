@@ -1,5 +1,5 @@
 ---
-title: MvvmCross 初体验
+title: 跨平台开发框架 MvvmCross 初体验
 description: 跨平台移动开发框架 MvvmCross 初体验
 layout: post
 tags: [MvvmCross, Xamarin, iOS, Android]
@@ -191,6 +191,102 @@ FirstView 的界面如下图所示：
 绑定数据的代码非常简洁， 以后再详细介绍， 现在编译一下， 如果没有什么错误的话， 就可以直接运行了。
 
 ### Android 项目
+
+由于使用了相同的框架， 创建 Android 项目的过程和上面的 iOS 项目非常类似的， 这里只列出不同的部分。
+
+Android 项目需要引用的文件是：
+
+- Cirrious.CrossCore
+- Cirrious.CrossCore.Droid
+- Cirrious.MvvmCross
+- Cirrious.MvvmCross.Droid
+- Cirrious.MvvmCross.Binding
+- Cirrious.MvvmCross.Binding.Droid
+
+从引用列表可以看出， 和 iOS 项目添加的引用是等价的。
+
+Android 版本的 `Setup` 和 iOS 版本相比， 除了基类不同之外， 其余完全相同， 代码如下：
+
+    using Cirrious.MvvmCross.Droid.Platform;
+    using Android.Content;
+    using Cirrious.MvvmCross.ViewModels;
+    using Cirrious.CrossCore.Platform;
+    
+    namespace FirstMvxApp {
+    
+        public class Setup : MvxAndroidSetup {
+    
+            public Setup(Context applicationContext)
+                : base(applicationContext) {
+            }
+    
+            protected override IMvxApplication CreateApp() {
+                return new App();
+            }
+    
+            protected override IMvxTrace CreateDebugTrace() {
+                return new DebugTrace();
+            }
+    
+        }
+    }
+
+另外， Android 还需要一个 SplashScreen 做为启动项， 代码很简单， 如下所示：
+
+    using Android.App;
+    using Cirrious.MvvmCross.Droid.Views;
+    
+    namespace FirstMvxApp {
+    
+        [Activity(Label = "FirstMvxApp", MainLauncher = true, NoHistory = true)]
+        public class SplashScreen : MvxSplashScreenActivity {
+    
+            public SplashScreen() : base(Resource.Layout.splash_screen) {
+            }
+        }
+    }
+
+Android 的界面一般是以 xml 的形式声明的， MvvmCross 做了一些扩展， 可以再 xml 界面中直接进行数据绑定， first_view.axml 的内容如下所示：
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:mvx="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/first_name_edit_text"
+            android:hint="Enter first name"
+            mvx:MvxBind="Text FirstName" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/last_name_edit_text"
+            android:hint="Enter last name"
+            mvx:MvxBind="Text LastName" />
+        <Button
+            android:text="Get full name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/get_full_name_button"
+            mvx:MvxBind="Click FullNameCommand" />
+        <TextView
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/full_name_text_view"
+            android:hint="Full name is empty."
+            android:gravity="center_horizontal"
+            mvx:MvxBind="Text FullName" />
+    </LinearLayout>
+
+从上面的代码中能看到， 数据绑定全部通过 `mvx:MvxBind` 指令完成了， 不需要再添加数据绑定的代码。
+
+## 小结
+
+MvvmCross 给我的第一印象非常好， MVVM， DataBinding， 这些技术都是每一个 c# 开发者耳熟能详的， 而将这些技术跨平台使用是 MvvmCross 特有的， 接下来还会继续深入学习这个项目， 希望它能越来越好！
 
 [1]: http://msdn.microsoft.com/en-us/library/vstudio/gg597391(v=vs.100).aspx
 [2]: https://github.com/MvvmCross/MvvmCross
