@@ -17,7 +17,21 @@ Mvx 框架中， 用一个页面跳转到另一个页面， 对应的也会从�
         MvxRequestedBy requestedBy = null
     ) where TViewModel : IMvxViewModel { ... };
 
-**ShowViewModel**
+这个重载版本所有的参数的默认值都是 `null` ， 可以不提供任何参数。
+
+    protected bool ShowViewModel<TViewModel>(
+        object parameterValuesObject,
+        MvxBundle presentationBundle = null,
+        MvxRequestedBy requestedBy = null
+    ) where TViewModel : IMvxViewModel { ... };
+
+这个重载版本需要提供一个类型为 `object` 的对象， 通常会使用匿名对象或者一个复杂类型对象， 其它参数为可选。
+
+    protected bool ShowViewModel<TViewModel>(
+        IDictionary<string, string> parameterValues,
+        MvxBundle presentationBundle = null,
+        MvxRequestedBy requestedBy = null
+    ) where TViewModel : IMvxViewModel { ... };
 
 ## ViewModel 的生命周期
 
