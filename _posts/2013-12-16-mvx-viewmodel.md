@@ -33,9 +33,13 @@ Mvx 框架中， 用一个页面跳转到另一个页面， 对应的也会从�
         MvxRequestedBy requestedBy = null
     ) where TViewModel : IMvxViewModel { ... };
 
+这是使用字典参数的重载版本， 可以传入一个 Key 和 Value 均为字符串的字典。
+
+> 当然， 还有一些非泛型的版本没有列出来， 值得一提的是， 虽然有这么多重载版本的导航函数， 在项目中推荐使用统一一种风格的版本。
+
 ## ViewModel 的生命周期
 
-### 基于依赖注入的创建
+### 基于依赖注入的创建 (Construct)
 
 Mvx 提供了一个依赖注入容器， 它在初始化 ViewModel 时就使用了依赖注入， 比如 ViewModel 的构造函数是这样的： 
 
@@ -43,9 +47,11 @@ Mvx 提供了一个依赖注入容器， 它在初始化 ViewModel 时就使用�
 
 如果 `IEmailService` 已经在 Mvx 容器中注册过了， `IEmailService` 对应的实例就会自动注入给 `MyViewModel` ， 如果在程序中需要手工初始化一个对象， 也可以通过 `Mvx.IocConstruct<T>()` 方法来初始化指定的 ViewModel 。
 
-### 基于约定的初始化
+> 构造函数与不使用上面 `ShowViewModel` 方法中传递的参数， 参数会传递给下面要介绍的 Init 方法。
 
-ViewModel 的构造函数执行完成之后， Mvx 接下来会调用 ViewModel 的 `Init` 方法， `Init` 方法的参数可以有以下几种形式：
+### 基于约定的初始化 (Init)
+
+ViewModel 的构造函数执行完成之后， Mvx 接下来会调用 ViewModel 的 `Init` 方法， 这个方法接收 `ShowViewModel` 传递的参数， `Init` 方法的参数可以有以下几种形式：
 
 **多个简单类型的参数**
 
@@ -77,4 +83,41 @@ IMvxBundle 是 Mvx 提供的类型， 类似于字典， 可以自己读写需�
 
 ## ReloadState
 
+如果 ViewModel 是从墓碑状态中恢复的， 将会调用 ReloadState 方法， 否则不会调用这个方法。 这个方法支持的参数形式和 Init 相同， 一般 Mvx 期待的形式如下所示： 
+
+    public class DetailViewModel : MvxViewModel {
+      // ...
+    
+      public class SavedState {
+      
+        public string Name {get;set;}
+        public int Position {get;set;}
+      }
+    
+      public void ReloadState(SavedState savedState) {
+        // use savedState
+      }
+    
+      // ...
+    }
+
+既然有 ReloadState ， 就肯定会有 SaveState ， SaveState 也有两种实现形式：
+
+- 使用无参数的方法返回强类型的对象；
+- 重写 `SavedStateToBundle(IMvxBundle bundle)` 方法。
+
 ## Start
+
+调用完 `Construction` 、 `Init`  和 `ReloadState` 之后， 会调用 ViewModel 的 Start 方法， 如下所示：
+
+    public class DetailViewModel : MvxViewModel {
+      // ...
+    
+      public override void Start() {
+        // do any start
+      }
+    
+      // ...
+    }
+
+> 在安卓系统下使用了 `MvxFragment` 可以在 `Fragment` 的 `OnStart` 方法中调用 ViewModel 的 `Start` 方法。
