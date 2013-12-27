@@ -103,8 +103,34 @@ IMvxBundle 是 Mvx 提供的类型， 类似于字典， 可以自己读写需�
 
 既然有 ReloadState ， 就肯定会有 SaveState ， SaveState 也有两种实现形式：
 
-- 使用无参数的方法返回强类型的对象；
-- 重写 `SavedStateToBundle(IMvxBundle bundle)` 方法。
+**使用无参数的方法返回强类型的对象**
+
+    public class DetailViewModel : MvxViewModel {
+    
+      public class SavedState {
+        public string Name {get;set;}
+        public int Position {get;set;}
+      }
+    
+      public SavedState SaveState() {
+        return new SavedState() {
+          Name = _name,
+          Position = _position
+        };
+      }
+    
+    }
+
+**重写 `SavedStateToBundle(IMvxBundle bundle)` 方法**
+
+    public class DetailViewModel : MvxViewModel {
+    
+      protected override void SaveStateToBundle(IMvxBundle bundle) {
+        bundle.Data["Name"] = _name;
+        bundle.Data["Position"] = _position.ToString();
+      }
+    
+    }
 
 ## Start
 
