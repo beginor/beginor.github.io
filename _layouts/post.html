@@ -15,11 +15,15 @@
 	<div class="row">
 		<div class="col-md-9">
 
+		<div class="post">
+
 			<div class="page-header">
 				<h1>{{ page.title }}</h1>
 			</div>
 
+			<div class="post-content">
 			{{ content }}
+			</div>
 
 			<ul class="pager">
 				{% if page.previous %}
@@ -41,7 +45,7 @@
 			</ul>
 			
 			{% include comment.md %}
-				
+		</div>		
 		</div>
 		<!-- side bar -->
 		<div class="col-md-3 hidden-print">
