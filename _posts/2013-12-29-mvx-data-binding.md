@@ -103,9 +103,84 @@ Swiss 绑定语法看起来比 Xaml 平台下的绑定语法要简洁一些， �
 
     Text Title, Converter=Length
 
-将 `Text` 绑定到 ViewModel 的 `Title` 属性， 并使用 Length 
+将 `Text` 绑定到 ViewModel 的 `Title` 属性， 并使用名称为 Length 的 ValueConverter ， 而这个 ValueConverter 是 LengthValueConverter 的默认实例；
+
+    Text Order.Amount, Converter=Trim, ConverterParameter='£'
+
+将 `Text` 属性绑定到 ViewModel 的 `Order.Amount` ， 并应用 `Trim` ValueConverter , Converter 的参数是字符串 `'£'` ；
+
+    Text Order.Amount, Converter=Trim, ConverterParameter='£', FallbackValue='N/A'
+
+Bind the Text property to Order.Amount on the ViewModel, but apply the Trim value converter, passing it the string "£". If no Order is available, or if the Order object doesn't have an Amount value, then display "N/A"
+
+将 `Text` 属性绑定到 ViewModel 的 `Order.Amount` ， 并应用 `Trim` ValueConverter , Converter 的参数是字符串 `'£'` ， 如果不能成功获取 `Order.Amount` 的值， 则显示 `"N/A"` 。
+
+    Value Count, BindingMode=TwoWay
+
+将 `Value` 属性绑定到 ViewModel 的 `Count` 属性， 并指明是双向绑定；
+
+    Click DayCommand, CommandParameter='Thursday'
+
+Bind the Click event to the DayCommand property on the ViewModel (which should implement ICommand). When invoked, ensure that Execute is passeda parameter value of "Thursday"
+将 `Click` 事件绑定到 ViewModel 的 `DayCommand` 属性 ( `ICommand` 的实现)， 当事件被激发时， 传递 `"Thursday"` 参数。
 
 ## Fluent 绑定 API
+
+Mvx 还为数据绑定提供了 Fluent API ， 可以很方便的使用 C# 代码进行绑定， 通常使用 `CreateBindingSet<TView, TViewModel>` 扩展方法来完成， 包括：
+
+    Bind($ViewObject$) 
+
+where $ViewObject$ is the view target for binding.
+
+    For(v => v.$ViewProperty$) 
+
+where $ViewProperty$ is the property on the view for binding. If `For` is not provided, then the default view property is used - e.g. for a `UILabel` the default is `Text`
+
+    To(vm => vm.$ViewModelPath$)
+
+where `$ViewModelPath$` is the path to the view model 'source' property for binding.
+
+    OneWay()
+    TwoWay()
+    OneWayToSource()
+    OneTime()
+
+all of which provide the mode for the binding
+
+    WithConversion($name$, $parameter$)
+
+where $name$ is the name of the value converter to use, and $parameter$ is the parameter to pass in.
+
+Using this syntax, an example binding set is:
+
+    var set = this.CreateBindingSet<MyView, MyViewModel>();
+    set.Bind(nameLabel)
+       .For(v => v.Text)
+       .To(vm => vm.Customer.FirstName);
+    set.Bind(creditLabel)
+       .For(v => v.Text)
+       .To(vm => vm.Customer.Total)
+       .WithConversion("CurrencyFormat", "$");
+    set.Bind(cardLabel)
+       .For(v => v.Text)
+       .To(vm => vm.Customer.Cards["Primary"].Number)
+       .WithConversion("LastFour")
+       .OneWay()
+       .FallbackValue("N/A");
+    set.Bind(warningView)
+       .For(v => v.Hidden)
+       .To(vm => vm.Customer.Alert)
+       .WithConversion("Not")
+       .FallbackValue(true);
+    set.Apply(); 
+
+In addition to the Expression based Fluent bindings, string based Fluent bindings are also available. This is particularly useful for situations where bindings are needed to View events or to binding targets which are not fully exposed as C# properties. For example, even though a UIButton does not have a Title property in C#, a 'Title' property can still be set using:
+
+    set.Bind(okButton)
+       .For("Title")
+       .To(vm => vm.Caption);
+
+> Note: when using a fluent binding, always remember to use .Apply() - if this is missed then the binding won't ever be created.
 
 ## Tilbet 绑定语法
 
