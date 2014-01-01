@@ -36,15 +36,15 @@ Swiss 绑定语法看起来比 Xaml 平台下的绑定语法要简洁一些， �
 
 而 `$SourcePath$` 则可以 ViewModel 的属性， 也可以是 ViewModel上 C# 风格的属性路径 (PropertyPath) ， 例如：
 
-- UserId
-- RememberMe
-- Password
-- Customer.FirstName
-- Customer.Address.City
-- Customer.Orders[0].Date
-- Customer.Orders[0].Total
-- Customer.Cards["Primary"].Expiry
-- Customer.Cards["Primary"].Number
+- `UserId`
+- `RememberMe`
+- `Password`
+- `Customer.FirstName`
+- `Customer.Address.City`
+- `Customer.Orders[0].Date`
+- `Customer.Orders[0].Total`
+- `Customer.Cards["Primary"].Expiry`
+- `Customer.Cards["Primary"].Number`
 - … 
 
 在这个最基本的绑定之上， 还可以：
@@ -130,28 +130,28 @@ Mvx 还为数据绑定提供了 Fluent API ， 可以很方便的使用 C# 代�
 
     Bind($ViewObject$) 
 
-where $ViewObject$ is the view target for binding.
+其中 `$ViewObject$` 是要进行绑定的视图对象；
 
     For(v => v.$ViewProperty$) 
 
-where $ViewProperty$ is the property on the view for binding. If `For` is not provided, then the default view property is used - e.g. for a `UILabel` the default is `Text`
+`$ViewProperty$` 是视图上的属性， 如果没有提供 `For`， 将使用默认的属性， 例如： 对于 `UILabel` 默认的属性是 `Text` ；
 
     To(vm => vm.$ViewModelPath$)
 
-where `$ViewModelPath$` is the path to the view model 'source' property for binding.
+`$ViewModelPath$` 是 ViewModel 上的属性路径， 数据源；
 
     OneWay()
     TwoWay()
     OneWayToSource()
     OneTime()
 
-all of which provide the mode for the binding
+指定绑定模式， OneWay， TwoWay， OneWayToSource 还是 OneTime ；
 
     WithConversion($name$, $parameter$)
 
-where $name$ is the name of the value converter to use, and $parameter$ is the parameter to pass in.
+`$name$` 是 ValueConverter 的名称, `$parameter$` 是参数；
 
-Using this syntax, an example binding set is:
+一些具体的绑定示例如下所示：
 
     var set = this.CreateBindingSet<MyView, MyViewModel>();
     set.Bind(nameLabel)
@@ -174,13 +174,13 @@ Using this syntax, an example binding set is:
        .FallbackValue(true);
     set.Apply(); 
 
-In addition to the Expression based Fluent bindings, string based Fluent bindings are also available. This is particularly useful for situations where bindings are needed to View events or to binding targets which are not fully exposed as C# properties. For example, even though a UIButton does not have a Title property in C#, a 'Title' property can still be set using:
+除了上面的基于 lambda 表达式的 Fluent 绑定， 还可以使用基于字符串的 fluent 绑定， 在绑定视图的事件或者视图的属性没有被暴露成 c# 属性时非常有用。 比如， UIButton 并没有暴露 C# 的 Title 属性， 但是依然可以这样进行绑定：
 
     set.Bind(okButton)
        .For("Title")
        .To(vm => vm.Caption);
 
-> Note: when using a fluent binding, always remember to use .Apply() - if this is missed then the binding won't ever be created.
+> 注意： 当使用 fluent 进行绑定时， 别忘记在最后加上 `.Apply()` ， 否则整个绑定不会起作用。
 
 ## Tilbet 绑定语法
 
