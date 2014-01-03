@@ -2,11 +2,11 @@
 title: Mvvm 框架中的数据绑定语法
 description: 介绍Mvvm 框架中的绑定语法
 layout: post
-keywords: mvx, mvvmcross, databinding, swiss, fluent, tilbet, rio
+keywords: mvx, mvvmcross, databinding, swiss, fluent, Tibet, rio
 tags: [MvvmCross, Xamarin, iOS, Android]
 ---
 
-数据绑定一直是 MvvmCross (Mvx) 框架的核心， 随着 Mvx 版本的版本更新， 绑定语法由 Json 变化到了 Swiss 语法， 并逐渐向 Tilbet 过度。 由于基于 Json 的绑定语法在 Mvx 3.0 之后的版本已经标记为过时， 不再支持， 因此不做介绍， 本文详细介绍 Swiss 和 Tilbet 语法。
+数据绑定一直是 MvvmCross (Mvx) 框架的核心， 随着 Mvx 版本的版本更新， 绑定语法由 Json 变化到了 Swiss 语法， 并逐渐向 Tibet 过度。 由于基于 Json 的绑定语法在 Mvx 3.0 之后的版本已经标记为过时， 不再支持， 因此不做介绍， 本文详细介绍 Swiss 和 Tibet 语法。
 
 Mvx 实现了跨平台的数据绑定， 概念与 WPF/Silverlight/WinPhone (Xaml) 的数据绑定一致， 可以在 Android 和 iOS 平台使用， 这也正是 Mvx 框架的魅力所在。
 
@@ -182,8 +182,63 @@ Mvx 还为数据绑定提供了 Fluent API ， 可以很方便的使用 C# 代�
 
 > 注意： 当使用 fluent 进行绑定时， 别忘记在最后加上 `.Apply()` ， 否则整个绑定不会起作用。
 
-## Tilbet 绑定语法
+## Tibet 绑定语法
 
+Tibet 是 Swiss 的扩展， 经过精心的设计， 即保持了与现有的 Swiss 绑定的兼容行， 又添加了几个新的特性， 它们是：
 
+**多属性属性**
 
+如果一个 ViewModel 有两个属性 `Firstname` 和 `Lastname` ， 而需要在界面上显示完整的名称 `Fullname` ， 通常需要在 ViewModel 上再创建一个额外的属性， 比如：
+
+    private string _firstName, _lastName;
+
+    public string FirstName {
+       get { return _firstName; }
+       set { 
+          _firstName = value;
+          RaisePropertyChanged(() => FirstName);
+          RaisePropertyChanged(() => FullName);
+       }
+    }
+
+    public string LastName {
+       get { return _lastName; }
+       set { 
+          _lastName = value;
+          RaisePropertyChanged(() => LastName);
+          RaisePropertyChanged(() => FullName);
+       }
+    }
+
+    public string FullName { get { return _firstName + " " + _lastName; } }
+
+在 Swiss 绑定中， 绑定的写法是：
+
+    Text Fullname
+
+而在 Tibet 绑定中， 可以这样写：
+
+    Text Firstname + ' ' + Lastname
+
+这样就不再需要创建那个额外的属性了。
+
+**属性合成**
+
+Tibet 提供了属性合成技术， 将数据源上的多个值合成为一个， 比如上面的多值绑定， 就使用了两个 `Add`
+属性合成器将三个值合成为一个。 目前， tibet 只提供了为数不多的几个属性合成器， 它们是：
+
+* `If(test, if_true, if_false)` 类似于 C# 中的 `? :` 算符；
+* `Format(format, args…)` 类似于 `string.Format` 函数；
+* `Add(one,two)` 将两个值相加， 可以在绑定中使用直接使用 `+` 代替；
+* `GreaterThan(one, two)` 判断两个值的大小， 可以在绑定中使用 `>` 代替；
+
+> 重要提示： 属性合成还处于开发中， 只是基本可以工作的原型， 在未来的版本中随时都可能变化。
+
+**语义绑定**
+
+**绑定宏**
+
+**针对 ValueConverters 和 ValueCombiners 的函数式语法**
+
+**嵌套转换**
 
