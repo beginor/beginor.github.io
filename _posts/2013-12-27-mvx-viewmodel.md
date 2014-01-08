@@ -1,5 +1,5 @@
 ---
-title: Mvvm 框架中 ViewModel  之间的导航以及生命周期
+title: MvvmCross 框架中 ViewModel  之间的导航以及生命周期
 description: 介绍 MvvmCross 框架中的 ViewModel 之间的导航以及 ViewModel 的生命周期
 layout: post
 keywords: mvx, mvvmcross, viewmodel, lifecycle, construct, init, showviewmodel
