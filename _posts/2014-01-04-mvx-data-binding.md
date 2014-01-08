@@ -1,6 +1,6 @@
 ---
-title: Mvvm 框架中的数据绑定语法
-description: 介绍Mvvm 框架中的绑定语法
+title: MvvmCross 框架中的数据绑定语法
+description: 介绍 MvvmCross 框架中的绑定语法
 layout: post
 keywords: mvx, mvvmcross, databinding, swiss, fluent, Tibet, rio
 tags: [MvvmCross, Xamarin, iOS, Android]
