@@ -17,10 +17,10 @@
 			<!-- .nav, .navbar-search, .navbar-form, etc -->
 			<ul class="nav navbar-nav">
 				<!-- <li class="active"><a href="/">首页</a></li> -->
-				<li><a href="/pages.html">全部文章</a></li>
-				<li><a href="/atom.xml">订阅</a></li>
-				<li><a href="/libraries.html">开源项目</a></li>
-				<li><a href="/about.html">关于</a></li>
+				<li><a href="/pages.html"><span class="glyphicon glyphicon-list"></span> 全部文章</a></li>
+				<li><a href="/atom.xml"><span class="glyphicon glyphicon-signal"></span> 订阅</a></li>
+				<li><a href="/libraries.html"><span class="glyphicon glyphicon-book"></span> 开源项目</a></li>
+				<li><a href="/about.html"><span class="glyphicon glyphicon-info-sign"></span> 关于</a></li>
 			</ul>
 			<form class="navbar-form navbar-right" role="search" method="get" target="_blank" action="http://www.google.com/search">
 				<div class="form-group">
