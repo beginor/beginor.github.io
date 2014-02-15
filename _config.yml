@@ -1,4 +1,4 @@
-title: "张志敏的技术专栏"
+﻿title: "张志敏的技术专栏"
 subtitle: "我是一个靠谱的程序员, 目前关注 MonoTouch、 Mono for Android、 Silverlight、  ASP.NET MVC 以及 NHibernate。"
 public_url: "http://beginor.github.io"
 keywords: "mono, ios, android, silverlight, asp.net mvc, asp.net web api, nhibernate, c, sql server, xml, linux, mac osx"
@@ -10,3 +10,4 @@ disqus:
   short_name: "beginor-github"
 paginate: 10
 exclude: [start-jekyll.bat, Github.sln, Github.v11.suo]
+encoding: utf-8
