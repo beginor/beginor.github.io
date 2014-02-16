@@ -9,5 +9,5 @@ owner:
 disqus:
   short_name: "beginor-github"
 paginate: 10
-exclude: [start-jekyll.bat, Github.sln, Github.v11.suo]
+exclude: [start-jekyll.bat, Github.sln, Github.v11.suo, Github.v12.suo]
 encoding: utf-8
