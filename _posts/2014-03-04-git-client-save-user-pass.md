@@ -6,7 +6,7 @@ keywords: git, netrc, windows, linux, osx
 tags: [Git]
 ---
 
-Git 每次进行 `Pull` 和 `Push` 操作时都要输入用户名和密码， 非常不便。 虽然有客户端 [SmartGit/HG][1] 以及 [TortiseGig][2] 可以帮你记一下客户端， 但是每个代码库都要记录一次， 如果项目包含很多个 submodule 的话， 用起来也有些不方便。 经过一番搜索， 最终找到了让 git 客户端记住密码的方法， 先总结如下：
+Git 每次进行 `Pull` 和 `Push` 操作时都要输入用户名和密码， 非常不便。 虽然有客户端 [SmartGit/HG][1] 以及 [TortiseGig][2] 可以帮你记一下客户端， 但是每个代码库都要记录一次， 如果项目包含很多个 submodule 的话， 用起来也有些不方便。 经过一番搜索， 最终找到了让 git 客户端记住密码的方法， 现总结如下：
 
 ### Linux/Unix/Mac 系统
 
