@@ -77,34 +77,39 @@ Implementation of existing law enforcement systems on iPad, the main feature wil
 4. Technical support, provide ArcGIS soluation with MonoTouch;
 5. Assist project deployment and acceptance;
 
-#### 2011-03 ~ 2011-11 环保建设项目审批与跟踪  
+#### Environmental protection projects approval and tracking (2011-03 ~ 2011-11)
 
 **Software** Silverlight 5， iOS 5  
 
 **Description**
 
-涉及环境建设项目审批与跟踪调查， 审批模块通过 ArcGIS Silverlight API 结合 ArcGIS Server 实现， 主要功能是分析拟建项目周边环境信息，包括饮用水源保护区， 河流排污情况， 建成区分析， 为审批工作提供宏观的GIS平局； 而跟踪调查模块为方便执法人员外出办公， 在 iPad 终端上实现， 软件上采用 MonoTouch 进行开发， 主要功能是对环保建设项目的实地考察与跟踪， 作为建设项目审批的补充。  
+The approval and tracking of Environmental protection related projects, include two main modules:
+
+1. The approval module was implemented with ArcGIS Silverlight API and ArcGIS Server,  main function is to analyze the environment around the proposed project information, including drinking water reserves, rivers leakages, analysis of built-up area, provide macro-GIS credentials;
+
+2. The tracking module to facilitate the law enforcement officers out of the Office, implemented on iPad device, build with MonoTouch and iOS, the main function is on the construction project environmental field trips and tracking, as a complement to project approval.
 
 **Responsibility**  
 
-1. 学习 ArcGIS 相关技术， 包括客户端 Silverlight API 架构， 以及服务端提供的 REST 服务架构； 
-2. 指导其他同事进行 ArcGIS 相关的开发工作； 
-3. 学习 iOS 相关知识， 使用 MonoTouch 完成移动端开发工作；
+1. Learning of ArcGIS related technology, include ArcGIS Silverlight Client API, and ArcGIS Server REST API;
+2. Guidance development work related to other colleagues for ArcGIS; 
+3. Learn iOS related knowledge, Complete mobile development work using MonoTouch;
 
-#### 2010-03 ~ 2010-09 环境质量亚运保障项目  
+####  Environmental assurance project for The Asian Games (2010-03 ~ 2010-09)
 
 **Software** ASP.NET MVC, Silverlight  
 
 **Description**
 
-与广州亚运会相关的环境质量信息整合与发布， 包括饮用水源水质、空气污染指数、河流污染情况、亚运场地周边污染源重点监控等， 经过开发部全体人员的共同努力，这个项目终于在亚运前上线，能够实时反应亚运相关监测点的监测数据，能够预报涉亚城市未来7天内的空气质量，在亚运期间起到了一定的作用。  
+The Asian Games (2010 Guangzhou) related environment quality information integration and publishing, including drinking water water, and air pollution index, and river pollution situation, and Asia Games venues around sources focus monitoring, with the common efforts of entire development department, this project went online just before The Asian Games starts, can show monitoring data of related points, and can show 7 days weather forecast  and air quality information of related cities, do some works during The Asian Games;
+
 
 **Responsibility** 
 
-1. 系统架构设计；
-2. 主要的技术难点公关，比如部分模块的总体、详细设计与实现、模块间相互切换效果；
-3. 以及指导其他同事完成工作任务；
-4. 协助项目的测试与部署工作；
+1. Software archtecture design;
+2. Major technical difficulties attack, such as part of overall, detailed design and implementation of module, switch effect between modules;
+3. Guide the work of other colleagues to complete tasks;
+4. Assist in the testing and deployment of the project;
 
 #### Water Analysis System For Pearl River Delta (2008-12 ~ Present)
 
