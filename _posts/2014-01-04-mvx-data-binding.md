@@ -23,7 +23,7 @@ Mvx 实现了跨平台的数据绑定， 概念与 WPF/Silverlight/WinPhone (Xam
 
 Swiss 绑定语法看起来比 Xaml 平台下的绑定语法要简洁一些， 接下来详细介绍。
 
-先来看一个最基本的绑定， 将视图 ViewModel 的属性 $Target$ 绑定到数据模型 ViewModel 的属性 $SourcePath$ ， 如下所示：
+先来看一个最基本的绑定， 将视图 View 的属性 $Target$ 绑定到数据模型 ViewModel 的属性 $SourcePath$ ， 如下所示：
 
     $Target$ $SourcePath$
 
