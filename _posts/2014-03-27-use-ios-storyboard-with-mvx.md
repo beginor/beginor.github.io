@@ -8,7 +8,7 @@ tags: [Xamarin, iOS, MvvmCross]
 
 ![Storyboard](/assets/post-images/storyboard.jpg)
 
-Storyboard 的优点
+Storyboard 的优点：
 
 - 可视化;
 - XamarinStudio 自带 Storyboard 编辑器， 不用启动 Xcode 。
