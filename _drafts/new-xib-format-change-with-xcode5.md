@@ -2,7 +2,7 @@
 layout: post
 title: Xcode 5 中 xib 文件格式的调整
 description: 描述 Xcode 5 中 xib 文件的变化以及处理
-keywords: xamarin, iOS, xib, MvvmCross, ViewsContainer, 
+keywords: xamarin, iOS, xib, MvvmCross, ViewsContainer
 tags: [Xamarin, iOS, MvvmCross]
 ---
 
