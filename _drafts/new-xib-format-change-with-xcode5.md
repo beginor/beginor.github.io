@@ -6,7 +6,9 @@ keywords: xamarin, iOS, xib, MvvmCross, ViewsContainer
 tags: [Xamarin, iOS, MvvmCross]
 ---
 
-old xib like :
+Xcode 升级到 5 之后， iOS 的 xib 文件发生了变化， 导致 Xamarin Studio 中自带的 iOS ViewController 模板出错了， 本文分析发生的错误， 并给出对应的解决方法。 
+
+旧的 xib 文件的代码是这样子的：
 
     <?xml version="1.0" encoding="UTF-8" standalone="no"?>
     <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4469" systemVersion="13A476u" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
@@ -26,9 +28,14 @@ old xib like :
         </objects>
     </document>
 
-![](/assets/post-images/old-view-controller.png)
+`objects` 数组下面的第一个对象是 `View` ， 在 Xcode 的界面设计器中看起来是这样子的：
 
-new xib like :
+![Old xib in xcode](/assets/post-images/old-view-controller.png)
+
+在界面设计器中， 看到第第一个对象是 `View` 。 上面的 xib 文件在 MonoTouch 下运行没有任何问题。
+
+
+在 Xcode 更新到 5.x 之后， 默认的 xib 文件如下：
 
     <?xml version="1.0" encoding="UTF-8" standalone="no"?>
     <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
@@ -48,14 +55,19 @@ new xib like :
         </objects>
     </document>
 
+第一个对象由原来的 `View` 变成了 `ViewController` ， 在 Xcode 的界面设计器中看起来是这样子的：
 
-![](/assets/post-images/new-view-controller-1.png)
+![View Controller](/assets/post-images/new-view-controller-1.png)
 
-![](/assets/post-images/new-view-controller-2.png)
+当编译目标为 iOS7 是还能显示额外的布局指南 (Layout Guide) ：
 
-![](/assets/post-images/new-view-controller-3.png)
+![Layout Guide](/assets/post-images/new-view-controller-2.png)
 
-new view controller
+还有一些 ViewController 额外的属性：
+
+![View Controller Properties](/assets/post-images/new-view-controller-3.png)
+
+不过， xib 格式升级之后问题来了， Xamarin Studio 相应生成的代码文件没变， 如下所示：
 
     public partial class NewViewController : UIViewController {
 
@@ -76,14 +88,26 @@ new view controller
         }
     }
 
-![](/assets/post-images/new-view-controller-error-1.png)
+上面的代码在运行时会抛出下面的异常：
+
+![MissingCtorResolution](/assets/post-images/new-view-controller-error-1.png)
+
+上面的异常时说找不到参数类型为 `IntPtr` 的构造函数， 我们添加一个接受 `IntPtr` 类型的构造函数， 如下所示：
 
     public NewViewController(IntPtr handle) : base(handle) {
     }
 
-![](/assets/post-images/new-view-controller-error-2.png)
+再次运行， 却发现又出现了下面的异常：
+
+![view outlet is not set](/assets/post-images/new-view-controller-error-2.png)
+
+最后， 只好用最古老的方法， 直接手工初始化 xib 文件， 然后返回 xib 对象数组里面的 ViewController ：
 
     public static NewViewController Create() {
         var objects = UINib.FromName("NewViewController", null).Instantiate(null, null);
         return (NewViewController)objects[0];
     }
+
+通过这个静态的 Create 方法创建的 ViewController 终于可以使用了。
+
+> 注意： 使用 MvvmCross 的也可能会遇到同样的问题， 这就需要重写 mvx 默认的 MvxTouchViewsContainer 的 CreateViewOfType 方法 （默认只简单的通过反射创建 ViewController）， 通过手工初始化 xib 文件的方法返回对应的 ViewController 。
