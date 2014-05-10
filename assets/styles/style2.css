@@ -10,6 +10,15 @@
 	background-color: #000;
 }
 
+.top .container .navbar {
+	margin: 0px;
+	background-color: #000;
+}
+
+a.navbar-brand {
+	color: #ffffff !important;
+}
+
 .middle {
     background-color: #CCC;
 }
@@ -26,10 +35,6 @@ img {
 	display: block;
 	height: auto;
 	max-width: 100%;
-}
-
-a.navbar-brand {
-	color: #ffffff !important;
 }
 
 .footer {
