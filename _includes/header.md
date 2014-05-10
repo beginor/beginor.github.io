@@ -1,21 +1,15 @@
-<!-- header -->
-<header class="navbar navbar-inverse navbar-fixed-top">
+<header class="top" role="header">
 	<div class="container">
-		<div class="navbar-header">
-			<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".bs-navbar-collapse">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
+		<a class="navbar-brand pull-left" href="/">张志敏的技术专栏</a>
+		<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+		<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+			<span class="glyphicon glyphicon-align-justify"></span>
+		</button>
 			<!-- Be sure to leave the brand out there if you want it shown -->
-			<a class="navbar-brand" href="/">张志敏的技术专栏</a>
-		</div>
 		<!-- Everything you want hidden at 940px or less, place within here -->
-		<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+		<nav class="navbar-collapse collapse" role="navigation">
 			<!-- .nav, .navbar-search, .navbar-form, etc -->
-			<ul class="nav navbar-nav">
+			<ul class="navbar-nav nav">
 				<!-- <li class="active"><a href="/">首页</a></li> -->
 				<li><a href="/pages.html"><span class="glyphicon glyphicon-list"></span> 全部文章</a></li>
 				<li><a href="/atom.xml"><span class="glyphicon glyphicon-signal"></span> 订阅</a></li>
@@ -33,4 +27,3 @@
 		</nav>
 	</div>
 </header>
-<!-- /header -->

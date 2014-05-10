@@ -7,25 +7,24 @@
 	{% if site.description %}<meta name="description" content="{{ site.description }}" >{% endif %}
 </head>
 <body>
-
 {% include header.md %}
-
-<div class="container">
-	<div class="row">
-		<div class="col-md-9">
-			{{ content }}
+<div class="middle">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-9">
+				{{ content }}
+			</div>
+			<!-- side bar -->
+			<div class="col-md-3 hidden-print">
+				{% include reading.md %}
+				{% include weibo.md %}
+				{% include tags.md %}
+				{% include recent-post.md %}
+			</div>
+			<!-- /side bar -->
 		</div>
-		<!-- side bar -->
-		<div class="col-md-3 hidden-print">
-			{% include reading.md %}
-			{% include weibo.md %}
-			{% include tags.md %}
-			{% include recent-post.md %}
-		</div>
-		<!-- /side bar -->
 	</div>
 </div>
-
 {% include footer.md %}
 
 {% include bootstrap-script.md %}
