@@ -1,10 +1,14 @@
 <!DOCTYPE HTML>
 <html lang="zh-cn">
 <head>
-	<title>{{ page.title }}- {{ site.title }}</title>
-	{% include meta-icon-link.md %}
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	{% if page.keywords %}<meta name="keywords" content="{{ page.keywords }}">{% endif %}
 	{% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+	<title>{{ page.title }}- {{ site.title }}</title>
+	<link href="/assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link href="/assets/styles/style2.css" rel="stylesheet" >
+	<link rel="shortcut icon" href="/assets/imgs/min32.png">	
 </head>
 <body>
 {% include header.md %}
