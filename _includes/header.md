@@ -12,11 +12,18 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="navbar-nav nav">
-					<!-- <li class="active"><a href="/">首页</a></li> -->
-					<li><a href="/pages.html">全部文章</a></li>
-					<li><a href="/atom.xml">订阅</a></li>
-					<li><a href="/libraries.html">开源项目</a></li>
-					<li><a href="/about.html">关于</a></li>
+					<li {% if page.navbar_active == 'pages' %}class="active"{% endif %}>
+						<a href="/pages.html">全部文章</a>
+					</li>
+					<li>
+						<a href="/atom.xml">订阅</a>
+					</li>
+					<li {% if page.navbar_active == 'library' %}class="active"{% endif %}>
+						<a href="/libraries.html">开源项目</a>
+					</li>
+					<li {% if page.navbar_active == 'about' %}class="active"{% endif %}>
+						<a href="/about.html">关于</a>
+					</li>
 				</ul>
 				<form class="navbar-form navbar-right" role="search" method="get" target="_blank" action="http://www.google.com/search">
 					<div class="form-group">

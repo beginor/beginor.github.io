@@ -8,6 +8,8 @@
 
 .top .container {
 	background-color: #000;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .top .container .navbar {
@@ -17,6 +19,7 @@
 
 a.navbar-brand {
 	color: #ffffff !important;
+  /*font-size: 1em;*/
 }
 
 .middle {
