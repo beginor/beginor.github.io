@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 设计模式之原型模式
-description: 定义一个接口用于创建对象，但是让子类决定初始化哪个类。工厂方法把一个类的初始化下放到子类
+description: 用原型实例指定创建对象的种类，并且通过拷贝这些原型创建新的对象
 tags: [设计模式]
 keywords: 设计模式, 原型模式, prototype
 ---
