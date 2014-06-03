@@ -6,7 +6,7 @@ keywords: NHibernate, .net, mono, batchsize, batchupdate
 tags: [Mono, NHibernate]
 ---
 
-## .Net 开发环境下测试
+## .Net 环境下测试
 
 ### 数据库环境以及 NHibernate 配置
 
@@ -70,7 +70,7 @@ NHibernate 没有提供针对 MySQL 的 BatchingBatcherFactory ， 针对 MySQL 
 实体类约束关系， 比如有重复 Id 的实体类。
 </div>
 
-### 测试结果
+### 开发环境测试结果
 
 运行单元测试的结果如下图所示：
 
@@ -78,4 +78,35 @@ NHibernate 没有提供针对 MySQL 的 BatchingBatcherFactory ， 针对 MySQL 
 
 从上图单元测试运行时间看， 在同一台机器上， SqlServer 的性能大概是 MariaDB 5~6 倍。
 
-## Mono 开发环境下测试
+### 生产环境测试结果
+
+将测试数据库分别部署在 SQL Server 2012 和 MariaDB 内网的服务器上， 服务器硬件配置几乎一致， 数据库版本也与开发环境
+一致， 反复运行测试， 结果大致如下：
+
+![nhibernate-batch-insert-unit-test](/assets/post-images/nhibernate-batch-insert-unit-test-2.jpg)
+
+<div class="alert alert-info">
+测试结果说明，在内网环境下， 两者的性能接近， 可以说不相上下。
+</div>
+
+## Mono 环境下测试
+
+听到有同事说同样的代码在 mono 上运行会慢很多， 只有五分之一甚至十分之一的性能， 带着这个疑问， 分别在 OS X 和 Ubuntu 
+Server 环境下再次运行测试。
+
+<div class="alert alert-warning">
+由于 SqlClientBatchingBatcherFactory 在 mono 环境下无法运行， 所以以下两个测试都不使用 batch 。
+</div>
+
+在 OS X 开发环境下测试结果如下：
+
+![nhibernate-batch-insert-unit-test](/assets/post-images/nhibernate-batch-insert-unit-test-3.jpg)
+
+在 Ubuntu Server 环境下测试结果如下：
+
+![nhibernate-batch-insert-unit-test](/assets/post-images/nhibernate-batch-insert-unit-test-4.jpg)
+
+## 测试总结
+
+从上面的测试结果可以看出， mono 和 .net 的性能是差不多的， 可以说是不相伯仲， MySQL 的性能也是不错的， 最终的结论是 mono + mysql
+是可以值得信赖的。
