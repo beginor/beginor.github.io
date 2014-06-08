@@ -37,4 +37,6 @@ tags: [Mono, MVC, Linux]
 
 
 
-[1]: http://graemechristie.github.io/graemechristie/blog/2014/05/26/asp-dot-net-vnext-on-osx-and-linux/
+[1]: http://graemechristie.github.io/graemechristie/blog/2014/05/26/asp-dot-net-vnext-on-osx-and-linux/ "ASP.NET vNext on OSX and Linux"
+[2]: http://beginor.github.io/2013/10/15/install-and-config-mono-on-ubuntu-server.html "在 Ubuntu Server 上安装配置 Mono 生产环境"
+[3]: http://www.cnblogs.com/shanyou/p/3218611.html "CentOS 6.3下 安装 Mono 3.2 和Jexus 5.4"
