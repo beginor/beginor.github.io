@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 在 mono 下尝试 ASP.NET MVC vNext
+title: 在 mono 下尝试 ASP.NET vNext
 description: 
 keywords: asp.net vnext, mono, mvc vnext
 tags: [Mono, MVC, Linux]
