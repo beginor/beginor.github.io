@@ -8,26 +8,24 @@ tags: [iOS, Xamarin]
 
 可以使用
 
-<table class="table table-bordered">
-<tr>
-	<td align="center"><img src="/assets/post-images/ios-cursom-nav-bar-1.png"></td>
-	<td align="center"><img src="/assets/post-images/ios-cursom-nav-bar-2.png"></td>
-</tr>
-<tr>
-	<td align="center"><img src="/assets/post-images/ios-cursom-nav-bar-3.png"></td>
-	<td align="center"><img src="/assets/post-images/ios-cursom-nav-bar-4.png"></td>
-</tr>
-</table>
+| ![](/assets/post-images/ios-cursom-nav-bar-1.png) | ![](/assets/post-images/ios-cursom-nav-bar-1.png) |
+| ------------------------------------------------- | ------------------------------------------------- |
+| ![](/assets/post-images/ios-cursom-nav-bar-3.png) | ![](/assets/post-images/ios-cursom-nav-bar-4.png) |
 
 也可以使用 
 
-<table class="table table-bordered">
-<tr>
-	<td align="center"><img src="/assets/post-images/ios-custom-nav-bar-5.png"></td>
-	<td align="center"><img src="/assets/post-images/ios-custom-nav-bar-6.png"></td>
-</tr>
-<tr>
-	<td align="center"><img src="/assets/post-images/ios-custom-nav-bar-7.png"></td>
-	<td align="center"><img src="/assets/post-images/ios-custom-nav-bar-8.png"></td>
-</tr>
-</table>
+| ![](/assets/post-images/ios-custom-nav-bar-5.png) | ![](/assets/post-images/ios-custom-nav-bar-6.png) |
+| ------------------------------------------------- | ------------------------------------------------- |
+| ![](/assets/post-images/ios-custom-nav-bar-8.png) | ![](/assets/post-images/ios-custom-nav-bar-8.png) |
+
+C# code
+
+```csharp
+public class Test {
+
+    public static void Main(string[] args) {
+        Console.WriteLine("Hello, world!");
+    }
+    
+}
+```
