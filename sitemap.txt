@@ -1,5 +1,4 @@
 ---
-layout: nil
 title : Sitemap
 ---
 {% for page in site.pages %}{% if page.show_in_sitemap != false %}

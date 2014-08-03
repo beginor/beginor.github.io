@@ -12,4 +12,4 @@ paginate: 12
 exclude: [start-jekyll.bat, Github.sln, Github.v11.suo, Github.v12.suo]
 encoding: utf-8
 markdown: rdiscount
-hightlighter: pygments
+highlighter: pygments

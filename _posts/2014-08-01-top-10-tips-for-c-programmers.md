@@ -14,7 +14,7 @@ tags: [转载, 参考, 教程]
 目来说是不可见的。 c# 可以通过在 `AssemblyInfo.cs` 中添加下面的标记
 (`InternalsVisibleToAttribute`) ， 让内部成员对其它组件可见。
 
-``` csharp
+```csharp
 //Make the internals visible to the test assembly
 [assembly: InternalsVisibleTo("MyTestAssembly")]
 ```
@@ -24,7 +24,7 @@ tags: [转载, 参考, 教程]
 曾经见到过有人仅仅因为函数要返回多个值而创建了一个 POCO 类， 其实 .Net 4.0 中的
 `Tuples` 类型会更加适用， 例如：
 
-{% highlight csharp %}
+```csharp
 public Tuple<int, string, string> GetEmployee() {
     int employeeId = 1001;
     string firstName = "Rudy";
@@ -33,7 +33,7 @@ public Tuple<int, string, string> GetEmployee() {
     //Create a tuple and return
     return Tuple.Create(employeeId, firstName, lastName);
 }
-{% endhighlight %}
+```
 
 ### 3: 用 yield 替代临时集合
 
