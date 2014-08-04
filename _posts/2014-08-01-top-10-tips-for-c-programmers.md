@@ -14,7 +14,7 @@ tags: [转载, 参考, 教程]
 目来说是不可见的。 c# 可以通过在 `AssemblyInfo.cs` 中添加下面的标记
 (`InternalsVisibleToAttribute`) ， 让内部成员对其它组件可见。
 
-```csharp
+``` csharp
 //Make the internals visible to the test assembly
 [assembly: InternalsVisibleTo("MyTestAssembly")]
 ```
@@ -24,7 +24,7 @@ tags: [转载, 参考, 教程]
 曾经见到过有人仅仅因为函数要返回多个值而创建了一个 POCO 类， 其实 .Net 4.0 中的
 `Tuples` 类型会更加适用， 例如：
 
-```csharp
+``` csharp
 public Tuple<int, string, string> GetEmployee() {
     int employeeId = 1001;
     string firstName = "Rudy";
@@ -40,7 +40,7 @@ public Tuple<int, string, string> GetEmployee() {
 从集合中选出部分成员时， 通常会创建一个临时集合/列表来保存成员并返回， 例如下面
 的代码：
 
-```csharp
+``` csharp
 public List<int> GetValuesGreaterThan100(List<int> masterCollection) {
     List<int> tempResult = new List<int>();
 
@@ -55,7 +55,7 @@ public List<int> GetValuesGreaterThan100(List<int> masterCollection) {
 
 要避免这样的临时集合， 可以使用 `yield` 关键字， 示例如下：
 
-```
+``` csharp
 public IEnumerable<int> GetValuesGreaterThan100(List<int> masterCollection) {
     foreach (var value in masterCollection) {
         if (value > 100) {
@@ -72,7 +72,7 @@ public IEnumerable<int> GetValuesGreaterThan100(List<int> masterCollection) {
 当你有一个组件时， 并且你打算替换其中的一个方法时， 可以先为方法添加过时标记以通
 知客户端， 示例代码如下：
 
-```csharp
+``` csharp
 [Obsolete("This method will be deprecated soon. You could use XYZ alternatively.")]
 public void MyComponentLegacyMethod() {
     //Here is the implementation
@@ -82,7 +82,7 @@ public void MyComponentLegacyMethod() {
 使用这个方法客户端在编译时会发出一个警告， 如果你不再允许客户端使用过时的方法时，
 可以为过时标记添加一个额外的布尔参数， 在下面的例子中， 客户但程序将编译失败：
 
-```csharp
+``` csharp
 [Obsolete("This method is deprecated. You could use XYZ alternatively.", true)]
 public void MyComponentLegacyMethod() {
     //Here is the implementation
@@ -97,7 +97,7 @@ public void MyComponentLegacyMethod() {
 
 为了避免重复 LINQ 查询的重复执行， 可以先将查询转换成列表， 如下所示：
 
-```csharp
+``` csharp
 public void MyComponentLegacyMethod(List<int> masterCollection) {
     // 在下面示例中， 如果没有调用 ToList ， LINQ 查询将会被执行两次
     var result = masterCollection.Where(i => i > 100).ToList();
@@ -111,7 +111,7 @@ public void MyComponentLegacyMethod(List<int> masterCollection) {
 使用 `explicit` 关键字来定义业务实体类型之间的转换， 当代码中出现类型转换请求时，
 转换方法会自动执行， 下面是示例代码：
 
-```csharp
+``` csharp
 class Program {
 
     static void Main(string[] args) {
@@ -150,7 +150,7 @@ class ExternalEntity {
 方法中出现的异常， 异常的堆栈就会只显示到 `RunDataOperation` 方法， 这样就会丢失
 异常原始的堆栈跟踪信息导致不能找到确切的错误源头。
 
-```csharp
+``` csharp
 public void RunDataOperation() {
     try {
         Intialize();
@@ -165,7 +165,7 @@ public void RunDataOperation() {
 
 保持原始堆栈跟踪的代码如下：
 
-```csharp
+``` csharp
 public void RunDataOperation() {
     try {
         Intialize();
@@ -183,7 +183,7 @@ public void RunDataOperation() {
 在 c# 中为枚举类型添加 `Flags` 标记可以将枚举作为位域（即一组标志）处理， 这样可
 以对枚举值进行自由组合， 示例代码如下：
 
-```csharp
+``` csharp
 class Program {
     static void Main(string[] args) {
         int snakes = 14;
@@ -209,7 +209,7 @@ enum Reptile {
 创建泛型类型时， 需要指定提供的泛型类型必须实现指定的参数或者继承自特定的基类时，
 可以这样做：
 
-```csharp
+``` csharp
 class MyGenricClass<T> where T : IMyInterface {
     //Body of the class come in here
 }
@@ -217,7 +217,7 @@ class MyGenricClass<T> where T : IMyInterface {
 
 当然， 也可以在方法级别这样做：
 
-```csharp
+``` csharp
 class MyGenricClass {
 
     public void MyGenericMethod<T>(T t) where T : IMyInterface {
@@ -232,7 +232,7 @@ class MyGenricClass {
 在你创建的类型中， 暴露了一个类型为 `IEnumerable` 的只读属性， 但是调用者依然可
 以通过类型转换来修改属性的内容， 比如这样：
 
-```csharp
+``` csharp
 class Program {
 
     static void Main(string[] args) {
@@ -269,7 +269,7 @@ class MyClass {
 上面的代码修改了列表， 添加了一个新项目， 要避免这种情况， 应使用 `AsReadOnly`
 而不是 `AsEnumerable` ：
 
-```csharp
+``` csharp
 public IEnumerable<string> ReadOnlyNameCollection {
     get { return _nameCollection.AsReadOnly(); }
 }

@@ -27,7 +27,7 @@ Scss 是 CSS3 的扩展， 在 CSS3 的基础上， 添加了下面几个重要�
 
 Scss 使用 `$` 符号来定义变量， 支持的变量类型有 `数字（可带单位）`、 `字符串` 、`颜色` 以及 `布尔值` 等， 示例如下：
 
-```css
+```scss
 $font-stack:    Helvetica, sans-serif;
 $primary-color: #333;
 
@@ -50,7 +50,7 @@ body {
 
 CSS 本身支持嵌套， 但是并不直观， Scss 提供了更加直观的嵌套语法：
 
-```css
+```scss
 nav {
   ul {
     margin: 0;
@@ -96,7 +96,7 @@ nav a {
 
 比如有这样的一个部分文件 (`_reset.Scss`)：
 
-```css
+```scss
 // _reset.Scss
 
 html,
@@ -110,7 +110,7 @@ ol {
 
 在 `base.css` 文件中导入这个文件：
 
-```css
+```scss
 /* base.Scss */
 
 @import 'reset';
@@ -139,7 +139,7 @@ body {
 
 定义 `border-radius` ， 并将其添加到 `.box` 类：
 
-```css
+```scss
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
      -moz-border-radius: $radius;
@@ -165,7 +165,7 @@ body {
 
 Scss 扩展了 CSS 的继承， 例如：
 
-```css
+```scss
 .message {
   border: 1px solid #ccc;
   padding: 10px;
@@ -214,7 +214,7 @@ Scss 扩展了 CSS 的继承， 例如：
 
 Scss 可以支持 `+` `-` `*` `/` 等常用的运算符号：
 
-```css
+```scss
 .container { width: 100%; }
 
 article[role="main"] {
