@@ -189,11 +189,11 @@ private Node DeleteMax(Node x) {
 
 ![节点 t 没有子节点](http://beginor.github.io/assets/post-images/bst-08.png) 
 
-节点 `t` 的右节点为空， 则用 `t` 的左节点替换掉 `t` 即可；
+节点 `t` 的右节点或左节点为空， 则用 `t` 的另一个节点替换掉 `t` 即可；
 
-![节点 t 的右节点为空](http://beginor.github.io/assets/post-images/bst-09.png)
+![节点 t 的右节点或左节点为空](http://beginor.github.io/assets/post-images/bst-09.png)
 
-节点 `t` 的右节点不为空， 则需要从 `t` 的右节点开始找到并删除最小的节点 `x` ，
+节点 `t` 的左右节点均不为空， 则需要从 `t` 的右节点开始找到并删除最小的节点 `x` ，
 并用节点 `x` 替换 `t` 的位置；
 
 ![节点 t 的右节点不为空](http://beginor.github.io/assets/post-images/bst-10.png)
