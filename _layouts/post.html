@@ -9,8 +9,8 @@
     {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
     <title>{{ page.title }}- {{ site.title }}</title>
     <link href="/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    {% include highlight.md %}
     <link href="/assets/styles/style2.css" rel="stylesheet" >
-    <link type="text/css" rel="stylesheet" href="/assets/syntaxhighlighter/styles/shCoreDefault.css"/>
     <link rel="shortcut icon" href="/assets/imgs/min32.png">
 </head>
 <body>
@@ -66,6 +66,5 @@
 
 {% include footer.md %}
 {% include bootstrap-script.md %}
-{% include syntax-highlighter.md %}
 </body>
 </html>
