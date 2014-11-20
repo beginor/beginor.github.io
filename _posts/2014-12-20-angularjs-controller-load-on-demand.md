@@ -10,7 +10,7 @@ keywords: AngularJS, controller, load on demand, async loader , requirejs
 
 AngularJS 通过路由支持多视图应用， 可以根据路由动态加载所需的视图， 在 AngularJS 的文档中有[详细的介绍][1]，  网上也有不少教程， 就不用介绍了！
 
-随着视图的不断增加， js文件 会越来越多， 而 AngularJS 默认需要把全部的 js 都一次性夹杂， 因此按需加载模块的需求会越来越强， 不过， AngularJS 并没有实现按需加载。
+随着视图的不断增加， js文件 会越来越多， 而 AngularJS 默认需要把全部的 js 都一次性加载， 使用起来非常不便， 因此按需加载模块的需求会越来越强， 不过， AngularJS 并没有实现按需加载。
 
 ## 异步加载
 
