@@ -8,17 +8,25 @@ tags: [NHibernate]
 
 ## 关于代码映射
 
+
+
 ## 实体关系
 
-![实体关系](/assets/post-images/entity-relation.png)
+要映射的类
+
+![实体关系](http://beginor.github.io/assets/post-images/entity-relation.png)
 
 ## 使用代码映射
+
+使用 xml 做实体类映射时， 推荐一个实体类对应一个 xml 文件， 用代码映射时也推荐这样， 一个实体类对应一个映射类， 一个映射类一个文件。
+
+映射类继承自 `ClassMapping<T>` , `T` 标识要映射的实体类， 如下所示：
 
 ```c#
 public class ProductMapping : ClassMapping<Product> {
 
     public ProductMapping() {
-        // 
+        // 此处添加映射代码
     }
 }
 ```
@@ -130,7 +138,7 @@ Bag(
 );
 ```
 
-## 将映射添加到数据库
+## 将映射添加到配置
 
 ```c#
 var config = new Configuration();
@@ -153,4 +161,4 @@ schemaExport.SetDelimiter(";");
 schemaExport.Execute(true, true, false);
 ```
 
-![导出的数据库结构](/assets/post-images/schema-export.png)
+![导出的数据库结构](http://beginor.github.io/assets/post-images/schema-export.png)
