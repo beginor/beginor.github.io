@@ -70,7 +70,6 @@ beginor@qq.com | http://beginor.github.io
     - 指导开发人员在 .NET MVC 框架下实现 OAuth 认证；
     - 指导开发人员用 Bootstrap 实现响应式布局；
 
-
 - 环保 REST 服务规范
 
     **软件环境** OWIN, WebAPI
@@ -79,7 +78,16 @@ beginor@qq.com | http://beginor.github.io
 
     环保业务服务由不同的开发团队实现， 实现出来的业务服务也多样化， 为了便于统一管理， 制定环保 REST 服务规范。
 
+    - 使用 HTTP 1.1 协议；
+    - 使用标准的 RML 语言描述服务；
+    - 使用 JSON Schema 约束；
+
     **责任描述**
+
+    1. 环保 REST 服务规范设计；
+    2. 对开发人员进行培训；
+    3. 指导开发人员对现有服务进行重构， 适配环保 REST 服务规范；
+    4. 依据规范编写服务测试脚本， 为项目验收提供量化数据；
 
 - 移动设备反向代理
 
@@ -92,16 +100,20 @@ beginor@qq.com | http://beginor.github.io
     **责任描述**
 
     1. 反向代理架构设计与实现
-    2. 性能优化
-
+    2. 性能优化， 充分利用 OWIN 异步处理管线；
 
 - 北江水质预警
 
-  **软件环境** ASP.NET MVC, Silverlight, NHibernate
+    **软件环境** ASP.NET MVC, Silverlight, NHibernate
 
-  **项目描述**
+    **项目描述**
 
-  **责任描述**
+    在现有 SilverGIS 平台上开发
+
+    **责任描述**
+
+    1. 指导开发人员进行水质模型集成， 包括数据预处理、 运算、 以及运算结果处理；
+    2. 实现水质模型结果在 GIS 平台上演示；
 
 - 广东省环境信息综合发布平台更新 (2013-09 ~ 2013-12)
 
@@ -115,7 +127,6 @@ beginor@qq.com | http://beginor.github.io
 
     1. 服务端以及客户端架构设计；
     2. 研究跨平台的 MvvmCross 开发框架, 为后续的开发工作奠定基础；
-
 
 -  广东省环境监察局移动执法管理系统 (2012-03 ~ 至今)
 
