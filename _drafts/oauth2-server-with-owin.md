@@ -16,10 +16,83 @@ keywords: OWIN, OAuth2, ASP.NET MVC, WebAPI, resource owner, token, resource ser
 
 很多知名网站都采用支持[OAuth2][1]认证， 允许第三方应用接入， 客户端接入 OAuth2 服务器这方面的资料已经很多了， 但是关于怎么搭建自己的 OAuth 服务器这方面的资料则比较少， 接下来就介绍一下怎么用微软的 OWIN 中间件搭建自己的 OAuth 服务， 实现 OAuth2 框架中的认证服务器和资源服务器 。
 
-## 使用 OWIN 搭建 OAuth2 服务器
+## 使用 OWIN 搭建 OAuth2 认证服务器
+
+认证服务器指 [authorization server][2] ， 负责在资源所有者 （最终用户） 通过认证之后， 向客户端应用颁发凭据 (code) 和对客户端授权 (access_token) 。
 
 ### 新建空的 Web 项目
+
+这一步很容易， 只要用 Visual Studio 新建一个空的 Web 项目， 并用 nuget 管理器添加下面几个 package：
+
+- Owin
+- Microsoft.Owin
+- Microsoft.Owin.Host.SystemWeb
+- Microsoft.Owin.Security
+- Microsoft.Owin.Security.Cookies
+- Microsoft.Owin.Security.OAuth
+- Microsoft.AspNet.Mvc
+
+打开项目属性， 设置项目使用 `IIS Express` ， 虚拟目录为 `/OWin04_OAuthServer` , 如下图所示：
+
+![认证服务器项目属性](/assets/post-images/oauth-server-web-info.png)
+
+<div class="alert alert-info">
+<span class="glyphicon glyphicon-info-sign"></span> 这个配置是可选的， 也可以设置成你自己喜欢的值。
+</div>
+
 ### 配置 OWIN OAuth 中间件
+
+添加一个 `OWIN Startup Class` ， 名称为 `Startup.cs` ， 如下所示：
+
+```c#
+using Microsoft.Owin;
+using Owin;
+
+[assembly: OwinStartup(typeof(Owin04_OAuthServer.Startup))]
+
+namespace Owin04_OAuthServer {
+
+    public partial class Startup {
+
+        public void Configuration(IAppBuilder app) {
+            ConfigureAuth(app);
+        }
+
+    }
+}
+```
+
+在项目中添加 `App_Start` 目录， 并在这个目录添加一个部分类文件 `Startup.Auth.cs` ， 在这个文件中来实现上面的 `ConfigureAuth` 方法：
+
+```c#
+using Owin04_Consts;
+using Microsoft.Owin.Security.OAuth;
+using System.Threading.Tasks;
+using Microsoft.Owin.Security.Infrastructure;
+
+namespace Owin04_OAuthServer {
+
+    partial class Startup {
+
+        public const string AuthenticationType = "OAuth2";
+
+        private void ConfigureAuth(IAppBuilder app) {
+        }
+    }
+}
+```
+
+既然要认证用户， 首先启用 Cookie 认证， 在 `ConfigureAuth` 方法中添加下面的代码：
+
+```c#
+app.UseCookieAuthentication(new CookieAuthenticationOptions {
+    AuthenticationType = AuthenticationType,
+    AuthenticationMode = AuthenticationMode.Passive,
+    LoginPath = new PathString(Paths.LoginPath),
+    LogoutPath = new PathString(Paths.LogoutPath)
+});
+```
+
 ### 用户登录与授权
 
 ## 创建受保护资源服务
@@ -29,4 +102,5 @@ keywords: OWIN, OAuth2, ASP.NET MVC, WebAPI, resource owner, token, resource ser
 注： 本文搭建 OAuth2 服务器部分参考 [OWIN OAuth 2.0 Authorization Server][2] 实现。
 
 [1]: http://tools.ietf.org/html/rfc6749
+[2]: http://tools.ietf.org/html/rfc6749#section-1.1
 [2]: http://www.asp.net/aspnet/overview/owin-and-katana/owin-oauth-20-authorization-server
