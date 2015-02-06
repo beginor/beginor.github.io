@@ -6,120 +6,154 @@ tags: [OAuth2, OWIN, WebAPI]
 keywords: OWIN, OAuth2, ASP.NET MVC, WebAPI, code, access_token, 
 ---
 
-
+搭建好了[基于 OWIN 的 OAuth2 服务器][1]之后， 接下来就是如何从服务器取得授权了， 下面就介绍如何实现 OAuth2 定义的四种授权方式。
 
 ## 认证码授权 (Authorization Code Grant)
 
-The authorization code grant type is used to obtain both access
-tokens and refresh tokens and is optimized for confidential clients.
-Since this is a redirection-based flow, the client must be capable of
-interacting with the resource owner's user-agent (typically a web
-browser) and capable of receiving incoming requests (via redirection)
-from the authorization server.
+[认证码授权][2]针对机密的客户端优化， 可以同时获取访问凭据 (access token) 和刷新凭据 (refresh token) ， 因为是基于 HTTP 重定向的方式， 所以客户端必须能够操纵资源所有者的用户代理（通常是浏览器）并且能够接收从认证服务器重定向过来的请求。
 
 ![authorization-code-grant](http://beginor.github.io/assets/post-images/oauth2-1-authorization-code-grant.png)
 
-<div class="alert alert-warning">
-<b>Note: </b> Note: The lines illustrating steps (A), (B), and (C) are broken into two parts as they pass through the user-agent.
-</div>
-
-   (A)  The client initiates the flow by directing the resource owner's
-        user-agent to the authorization endpoint.  The client includes
-        its client identifier, requested scope, local state, and a
-        redirection URI to which the authorization server will send the
-        user-agent back once access is granted (or denied).
-
-   (B)  The authorization server authenticates the resource owner (via
-        the user-agent) and establishes whether the resource owner
-        grants or denies the client's access request.
-
-   (C)  Assuming the resource owner grants access, the authorization
-        server redirects the user-agent back to the client using the
-        redirection URI provided earlier (in the request or during
-        client registration).  The redirection URI includes an
-        authorization code and any local state provided by the client
-        earlier.
-
-   (D)  The client requests an access token from the authorization
-        server's token endpoint by including the authorization code
-        received in the previous step.  When making the request, the
-        client authenticates with the authorization server.  The client
-        includes the redirection URI used to obtain the authorization
-        code for verification.
-
-   (E)  The authorization server authenticates the client, validates the
-        authorization code, and ensures that the redirection URI
-        received matches the URI used to redirect the client in
-        step (C).  If valid, the authorization server responds back with
-        an access token and, optionally, a refresh token.
+在实现上使用开源的 [DotNetOpenAuth][3] 来简化实现代码， DotNetOpenAuth 可以[通过 NuGet 获取][4]， 示例代码如下：
 
 ```c#
-// Sample code.
+// init a new oauth web server client;
+var authServer = new AuthorizationServerDescription {
+    AuthorizationEndpoint = new Uri(Paths.AuthorizePath),
+    TokenEndpoint = new Uri(Paths.TokenPath)
+};
+var webServerClient = new WebServerClient(authServer, clientId, clientSecret);
+
+// redirect user user-agent to authorization endpoint;
+var userAuthorization = webServerClient.PrepareRequestUserAuthorization(new[] { "bio", "notes" });
+userAuthorization.Send(HttpContext);
+Response.End();
+
+// get access token from request (redirect from oauth server)
+var authorizationState = webServerClient.ProcessUserAuthorization(Request);
+if (authorizationState != null) {
+    ViewBag.AccessToken = authorizationState.AccessToken;
+    ViewBag.RefreshToken = authorizationState.RefreshToken;
+    ViewBag.Action = Request.Path;
+}
+
+//refresh token
+var state = new AuthorizationState {
+    AccessToken = Request.Form["AccessToken"],
+    RefreshToken = Request.Form["RefreshToken"]
+};
+if (webServerClient.RefreshAuthorization(state)) {
+    ViewBag.AccessToken = state.AccessToken;
+    ViewBag.RefreshToken = state.RefreshToken;
+}
+
+// call protected user resource
+var client = new HttpClient(webServerClient.CreateAuthorizingHandler(accessToken));
+var body = await client.GetStringAsync(new Uri(Paths.ResourceUserApiPath));
+ViewBag.ApiResponse = body;
 ```
 
-## Implicit Grant
+## 隐式授权 (Implicit Grant)
 
-   The implicit grant type is used to obtain access tokens (it does not
-   support the issuance of refresh tokens) and is optimized for public
-   clients known to operate a particular redirection URI.  These clients
-   are typically implemented in a browser using a scripting language
-   such as JavaScript.
+[隐式授权][5]为已知的公开客户端优化， 用于客户端操作一个特定的重定向地址， 只能获取访问凭据 (access token) ， 不支持刷新凭据 (refresh token) 。 客户端通常在浏览器内用 Javascript 实现。
 
-   Since this is a redirection-based flow, the client must be capable of
-   interacting with the resource owner's user-agent (typically a web
-   browser) and capable of receiving incoming requests (via redirection)
-   from the authorization server.
+因为是基于 HTTP 重定向的方式， 所以客户端必须能够操纵资源所有者的用户代理（通常是浏览器）并且能够接收从认证服务器重定向过来的请求。
 
-   Unlike the authorization code grant type, in which the client makes
-   separate requests for authorization and for an access token, the
-   client receives the access token as the result of the authorization
-   request.
+与认证码授权方式不同的是， 客户端不需要为认证和访问凭据分别发送单独的请求， 可以直接从认证请求获取访问凭据。
 
-   The implicit grant type does not include client authentication, and
-   relies on the presence of the resource owner and the registration of
-   the redirection URI.  Because the access token is encoded into the
-   redirection URI, it may be exposed to the resource owner and other
-   applications residing on the same device.
+隐式授权不包括客户端认证， 依赖资源所有者（用户）的现场判断以及客户端重定向地址， 由于访问凭据是在 URL 中编码的， 所以有可能会暴漏给用户或客户端上的其它应用。
 
 ![implicit-grant](http://beginor.github.io/assets/post-images/oauth2-2-implicit-grant.png)
 
-<div class="alert alert-warning">
-<b>Note:</b> The lines illustrating steps (A) and (B) are broken into two parts as they pass through the user-agent.
-</div>
+由于这种认证方式一般是通过浏览器实现的， 所以就不用依赖 DotNetOpenAuth 了， 只需要 Javascript 就行了， 示例代码如下：
 
-   (A)  The client initiates the flow by directing the resource owner's
-        user-agent to the authorization endpoint.  The client includes
-        its client identifier, requested scope, local state, and a
-        redirection URI to which the authorization server will send the
-        user-agent back once access is granted (or denied).
+```js
+// index.html
+var authorizeUri = '@(Paths.AuthorizePath)';
+var tokenUri = '@(Paths.TokenPath)';
+var apiUri = '@Paths.ResourceUserApiPath';
 
-   (B)  The authorization server authenticates the resource owner (via
-        the user-agent) and establishes whether the resource owner
-        grants or denies the client's access request.
+var clientId = '@clientId';
+var returnUri = '@clientRedirectUrl';
+var nonce = 'my-nonce';
 
-   (C)  Assuming the resource owner grants access, the authorization
-        server redirects the user-agent back to the client using the
-        redirection URI provided earlier.  The redirection URI includes
-        the access token in the URI fragment.
+$('#authorize').click(function () {
+    // build redirect url
+    var uri = addQueryString(authorizeUri, {
+        'client_id': clientId,
+        'redirect_uri': returnUri,
+        'state': nonce,
+        'scope': 'bio notes',
+        'response_type': 'token'
+    });
+    // login callback
+    window.oauth = {};
+    window.oauth.signin = function (data) {
+        if (data.state !== nonce) {
+            return;
+        }
+        $('#accessToken').val(data.access_token);
+    }
+    // open login.html in a new window.
+    window.open(uri, 'authorize', 'width=640,height=480');
+});
+// add query string to uri
+function addQueryString(uri, parameters) {
+    var delimiter = (uri.indexOf('?') == -1) ? '?' : '&';
+    for (var parameterName in parameters) {
+        var parameterValue = parameters[parameterName];
+        uri += delimiter + encodeURIComponent(parameterName) + '=' + encodeURIComponent(parameterValue);
+        delimiter = '&';
+    }
+    return uri;
+}
 
-   (D)  The user-agent follows the redirection instructions by making a
-        request to the web-hosted client resource (which does not
-        include the fragment per [RFC2616]).  The user-agent retains the
-        fragment information locally.
+// login.html
+// get fragment and call opener's signin function.
+var fragments = getFragment();
+if (window.opener && window.opener.oauth && window.opener.oauth.signin) {
+    window.opener.oauth.signin(fragments);
+}
+window.close();
 
-   (E)  The web-hosted client resource returns a web page (typically an
-        HTML document with an embedded script) capable of accessing the
-        full redirection URI including the fragment retained by the
-        user-agent, and extracting the access token (and other
-        parameters) contained in the fragment.
+// get fragment from window uri
+function getFragment() {
+    if (window.location.hash.indexOf("#") === 0) {
+        return parseQueryString(window.location.hash.substr(1));
+    } else {
+        return {};
+    }
+}
+// parse query string to object;
+function parseQueryString(queryString) {
+    var data = {}, pairs, pair, separatorIndex, escapedKey, escapedValue, key, value;
 
-   (F)  The user-agent executes the script provided by the web-hosted
-        client resource locally, which extracts the access token.
+    if (queryString === null) {
+        return data;
+    }
 
-   (G)  The user-agent passes the access token to the client.
+    pairs = queryString.split("&");
 
-```c#
-// sample code
+    for (var i = 0; i < pairs.length; i++) {
+        pair = pairs[i];
+        separatorIndex = pair.indexOf("=");
+
+        if (separatorIndex === -1) {
+            escapedKey = pair;
+            escapedValue = null;
+        } else {
+            escapedKey = pair.substr(0, separatorIndex);
+            escapedValue = pair.substr(separatorIndex + 1);
+        }
+
+        key = decodeURIComponent(escapedKey);
+        value = decodeURIComponent(escapedValue);
+
+        data[key] = value;
+    }
+
+    return data;
+}
 ```
 
 ## Resource Owner Password Credentials Grant
@@ -171,3 +205,9 @@ from the authorization server.
 
    (B)  The authorization server authenticates the client, and if valid,
         issues an access token.
+
+[1]: http://beginor.github.io/2015/01/24/oauth2-server-with-owin.html
+[2]: http://tools.ietf.org/html/rfc6749#section-4.1
+[3]: http://dotnetopenauth.net/
+[4]: https://www.nuget.org/packages/dotnetopenauth
+[5]: http://tools.ietf.org/html/rfc6749#section-4.2
