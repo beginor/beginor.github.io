@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 从 OAuth2 服务器获取认证授权
+title: 从 OAuth2 服务器获取授权授权
 description: 本文介绍 OAuth2 定义的四种授权方式及其对应的实现方式
 tags: [OAuth2, OWIN, WebAPI]
 keywords: OWIN, OAuth2, ASP.NET MVC, WebAPI, code, access_token, 
@@ -8,9 +8,9 @@ keywords: OWIN, OAuth2, ASP.NET MVC, WebAPI, code, access_token,
 
 搭建好了[基于 OWIN 的 OAuth2 服务器][1]之后， 接下来就是如何从服务器取得授权了， 下面就介绍如何实现 OAuth2 定义的四种授权方式。
 
-## 认证码授权 (Authorization Code Grant)
+## 授权码授权 (Authorization Code Grant)
 
-[认证码授权][2]针对机密的客户端优化， 可以同时获取访问凭据 (access token) 和刷新凭据 (refresh token) ， 因为是基于 HTTP 重定向的方式， 所以客户端必须能够操纵资源所有者的用户代理（通常是浏览器）并且能够接收从认证服务器重定向过来的请求。
+[授权码授权][2]针对机密的客户端优化， 可以同时获取访问凭据 (access token) 和刷新凭据 (refresh token) ， 因为是基于 HTTP 重定向的方式， 所以客户端必须能够操纵资源所有者的用户代理（通常是浏览器）并且能够接收从授权服务器重定向过来的请求。
 
 ![authorization-code-grant](http://beginor.github.io/assets/post-images/oauth2-1-authorization-code-grant.png)
 
@@ -57,15 +57,15 @@ ViewBag.ApiResponse = body;
 
 [隐式授权][5]为已知的公开客户端优化， 用于客户端操作一个特定的重定向地址， 只能获取访问凭据 (access token) ， 不支持刷新凭据 (refresh token) 。 客户端通常在浏览器内用 Javascript 实现。
 
-因为是基于 HTTP 重定向的方式， 所以客户端必须能够操纵资源所有者的用户代理（通常是浏览器）并且能够接收从认证服务器重定向过来的请求。
+因为是基于 HTTP 重定向的方式， 所以客户端必须能够操纵资源所有者的用户代理（通常是浏览器）并且能够接收从授权服务器重定向过来的请求。
 
-与认证码授权方式不同的是， 客户端不需要为认证和访问凭据分别发送单独的请求， 可以直接从认证请求获取访问凭据。
+与授权码授权方式不同的是， 客户端不需要为授权和访问凭据分别发送单独的请求， 可以直接从授权请求获取访问凭据。
 
-隐式授权不包括客户端认证， 依赖资源所有者（用户）的现场判断以及客户端重定向地址， 由于访问凭据是在 URL 中编码的， 所以有可能会暴漏给用户或客户端上的其它应用。
+隐式授权不包括客户端授权， 依赖资源所有者（用户）的现场判断以及客户端重定向地址， 由于访问凭据是在 URL 中编码的， 所以有可能会暴漏给用户或客户端上的其它应用。
 
 ![implicit-grant](http://beginor.github.io/assets/post-images/oauth2-2-implicit-grant.png)
 
-由于这种认证方式一般是通过浏览器实现的， 所以就不用依赖 DotNetOpenAuth 了， 只需要 Javascript 就行了， 示例代码如下：
+由于这种授权方式一般是通过浏览器实现的， 所以就不用依赖 DotNetOpenAuth 了， 只需要 Javascript 就行了， 示例代码如下：
 
 ```js
 // index.html
@@ -156,58 +156,84 @@ function parseQueryString(queryString) {
 }
 ```
 
-## Resource Owner Password Credentials Grant
+## 资源所有者密码凭据授权 (Resource Owner Password Credentials Grant)
 
-   The resource owner password credentials grant type is suitable in
-   cases where the resource owner has a trust relationship with the
-   client, such as the device operating system or a highly privileged
-   application.  The authorization server should take special care when
-   enabling this grant type and only allow it when other flows are not
-   viable.
+[资源所有者密码凭据授权][6]适用于那些被充分信任的应用， 比如设备操作系统或者权限很高的应用。 授权服务器启用这类授权是要格外注意， 只能在其它授权方式不能用的时候才使用这种授权方式。
 
-   This grant type is suitable for clients capable of obtaining the
-   resource owner's credentials (username and password, typically using
-   an interactive form).  It is also used to migrate existing clients
-   using direct authentication schemes such as HTTP Basic or Digest
-   authentication to OAuth by converting the stored credentials to an
-   access token.
+这种授权方式适用于能够取得用户的凭据 （通常是通过可交互的表单） 的应用， 也可以用于迁移现有的那些需要直接授权 (HTTP Basic 或 Digest ) 的应用， 将保存的用户凭据改为保存访问凭据 (access token) 。
 
 ![resource-owner-password-credentials-grant](http://beginor.github.io/assets/post-images/oauth2-3-resource-owner-password-credentials-grant.png)
 
-   (A)  The resource owner provides the client with its username and
-        password.
+对于 DotNetOpenAuth 来说， 这种授权也是十分容易实现的， 示例代码如下：
 
-   (B)  The client requests an access token from the authorization
-        server's token endpoint by including the credentials received
-        from the resource owner.  When making the request, the client
-        authenticates with the authorization server.
+```c#
+// create auth server description 
+var authServer = new AuthorizationServerDescription {
+    AuthorizationEndpoint = new Uri(Paths.AuthorizePath),
+    TokenEndpoint = new Uri(Paths.TokenPath)
+};
+// create web server client
+var webServerClient = new WebServerClient(authServer, clientId, clientSecret);
+// use user name and password to exchange access token;
+var state = webServerClient.ExchangeUserCredentialForToken(
+    username, password,
+    new[] {"scope1", "scope2", "scope3"}
+);
+// get access token;
+var token = state.AccessToken;
+```
 
-   (C)  The authorization server authenticates the client and validates
-        the resource owner credentials, and if valid, issues an access
-        token.
+## 客户端凭据授权 (Client Credentials Grant)
 
-## Client Credentials Grant
-
-   The client can request an access token using only its client
-   credentials (or other supported means of authentication) when the
-   client is requesting access to the protected resources under its
-   control, or those of another resource owner that have been previously
-   arranged with the authorization server (the method of which is beyond
-   the scope of this specification).
-
-   The client credentials grant type MUST only be used by confidential
-   clients.
+[客户端凭据授权][7]是指客户端可以只通过客户端自己的凭据 (client_id 和 client_secret) （或者其它方式的认证） 来获取访问凭据， 客户端可以根据自己的需要来访问受保护的资源， 或者资源所有者已经访问过认证服务器时， 才能使用这种授权方式。 只有对完全受信任的客户端才能使用这种授权方式， 因为对受保护的资源方来说， 认证信息的内容是客户端程序的凭据， 而不是资源所有者的凭据。
 
 ![client-credentials-grant](http://beginor.github.io/assets/post-images/oauth2-4-client-credentials-grant.png)
 
-   (A)  The client authenticates with the authorization server and
-        requests an access token from the token endpoint.
+DotNetOpenAuth 也支持这种授权方式， 示例代码如下：
 
-   (B)  The authorization server authenticates the client, and if valid,
-        issues an access token.
+```c#
+// create auth server description 
+var authServer = new AuthorizationServerDescription {
+    AuthorizationEndpoint = new Uri(Paths.AuthorizePath),
+    TokenEndpoint = new Uri(Paths.TokenPath)
+};
+// create web server client
+var webServerClient = new WebServerClient(authServer, clientId, clientSecret);
+// get client access token;
+var state = webServerClient.GetClientAccessToken(
+  new[] { "test1", "test2", "test3" }
+);
+// get access token;
+var token = state.AccessToken;
+```
+
+## 使用访问凭据访问受保护的资源
+
+上面介绍的都是如何取得访问凭据 (access_token) ， 拿到了访问凭据之后如何来使用呢？ 对于使用微软的 OWIN 中间件 [Microsoft.Owin.Security.OAuth][8] 搭建的服务器来说， 需要设置 HTTP 请求的 Authorization 标头为 `Bearer {access_token}` 就可以了， 这个属于 OAuth 的规范之内了， 示例代码如下：
+
+使用 jQuery 的 Ajax 请求时， 示例代码如下：
+
+```js
+var accessToken = '@AccessToken';
+
+$.ajax({
+    url: '@ResourcePath',
+    beforeSend: function(jqr) {
+        jqr.setRequestHeader('Authorization', 'Bearer ' + accessToken);
+    }
+})
+.done(function (data) {
+    // other code here.
+});
+```
+
+使用其它语言的代码与上面的 js 代码大同小异，上面只是一些代码片段， 在 github 上有[完整的项目代码][8]， 不清楚的地方可以直接查看源代码。
 
 [1]: http://beginor.github.io/2015/01/24/oauth2-server-with-owin.html
 [2]: http://tools.ietf.org/html/rfc6749#section-4.1
 [3]: http://dotnetopenauth.net/
 [4]: https://www.nuget.org/packages/dotnetopenauth
 [5]: http://tools.ietf.org/html/rfc6749#section-4.2
+[6]: http://tools.ietf.org/html/rfc6749#section-4.3
+[7]: http://tools.ietf.org/html/rfc6749#section-4.4
+[8]: https://github.com/beginor/owin-samples
