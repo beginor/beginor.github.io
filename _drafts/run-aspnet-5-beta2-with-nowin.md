@@ -55,6 +55,8 @@ namespace Nowin.vNext {
 
 ### 实现 IServerFactory
 
+上面的 `NowinServerInformation` 比较简单， 只是简单的提供服务器信息， 接下来要实现的 `IServerFactory` 就是关键了， `IServerFactory` 的定义如下：
+
 ```c#
 namespace Microsoft.AspNet.Hosting.Server {
 
@@ -72,6 +74,53 @@ namespace Microsoft.AspNet.Hosting.Server {
 
 }
 ```
+
+ASP.NET 5 既然是基于 OWIN 运行的， 自然少不了 OWIN 的标志性函数 'Func<IDictionary<string, object>, Task>' 了， 在我们的实现中， 自然也会体现这个函数， 我们先来定义这样一个 HandleRequest 函数， 作为 OWIN 的处理函数：
+
+```c#
+private Task HandleRequest(IDictionary<string, object> env) {
+}
+```
+
+第一步， 将当前 ASP.NET 5 应用适配成一个标准的 OWIN 应用， 代码如下：
+
+```c#
+IServerInformation IServerFactory.Initialize(IConfiguration configuration) {
+    // adapt aspnet to owin app Func<IDictionary<string, object>, Task>;
+    var owinApp = OwinWebSocketAcceptAdapter.AdaptWebSockets(HandleRequest);
+}
+```
+
+第二步， 从 configuration 参数中提取必要的服务器信息 （服务器名称、要监听的地址）， 并返回 `IServerInformation` 的实例， 在上面的 `Inisitlize` 方法中继续添加下面的代码：
+
+```c#
+// Get server info, write to console.
+var server = configuration.Get("server");
+var serverUrls = configuration.Get("server.urls");
+Console.WriteLine("Owin server is: {0}, listening at {1}", server, serverUrls);
+// parse ip address and port.
+var uri = new Uri(serverUrls, UriKind.Absolute);
+IPAddress ip;
+if (!IPAddress.TryParse(uri.Host, out ip)) {
+    if (uri.Host.Equals("localhost", StringComparison.OrdinalIgnoreCase)) {
+        ip = IPAddress.Parse("127.0.0.1");
+    }
+    else {
+        ip = IPAddress.Any;
+    }
+}
+var port = uri.Port;
+
+// build nowin server;
+var builder = ServerBuilder.New()
+    .SetAddress(ip)
+    .SetPort(port)
+    .SetOwinApp(owinApp);
+
+var serverInfo = new NowinServerInformation(builder);
+return serverInfo;
+```
+
 
 ## 运行测试程序
 
