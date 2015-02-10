@@ -75,7 +75,7 @@ namespace Microsoft.AspNet.Hosting.Server {
 }
 ```
 
-ASP.NET 5 既然是基于 OWIN 运行的， 自然少不了 OWIN 的标志性函数 'Func<IDictionary<string, object>, Task>' 了， 在我们的实现中， 自然也会体现这个函数， 我们先来定义这样一个 HandleRequest 函数， 作为 OWIN 的处理函数：
+ASP.NET 5 既然是基于 OWIN 运行的， 自然少不了 OWIN 的标志性函数 `Func<IDictionary<string, object>, Task>` 了， 在我们的实现中， 自然也必须用到这个函数， 我们先来定义这样一个 HandleRequest 函数， 作为 OWIN 的处理函数：
 
 ```c#
 private Task HandleRequest(IDictionary<string, object> env) {
@@ -121,16 +121,45 @@ var serverInfo = new NowinServerInformation(builder);
 return serverInfo;
 ```
 
+第三步继续来实现 `IServerFactory.Start` 方法， 这个方法有两个参数：
+
+1. `IServerInformation` 就是在 initialize 方法中返回的 NowinServerInformation 实例；
+2. `Func<object, Task>` 是 ASP.NET 5 运行时提供给 OWIN 环境调用的处理函数， 也就是说， 在 OWIN 环境下运行 ASP.NET 5 就是调用这个函数。
+
+实现代码如下：
+
+```c#
+IDisposable IServerFactory.Start(
+    IServerInformation serverInformation,
+    Func<object, Task> application
+    ) {
+    // get server info,
+    var info = (NowinServerInformation)serverInformation;
+    // save the application callback
+    this.callback = application;
+    // build and start nowin server.
+    var server = info.Builder.Build();
+    server.Start();
+    return server;
+}
+
+private Func<object, Task> callback;
+
+private Task HandleRequest(IDictionary<string, object> env) {
+    // just call the application callback ASP.NET 5 provided.
+    return callback(new OwinFeatureCollection(env));
+}
+```
 
 ## 运行测试程序
 
-![](/assets/post-images/run-aspnet-5-beta2-with-nowin-win.png)
+![在 Windows 下运行 Nowin.vNext](http://beginor.github.io/assets/post-images/run-aspnet-5-beta2-with-nowin-win.png)
 
-![](/assets/post-images/run-aspnet-5-beta2-with-nowin-win-ie.png)
+![Windows 下浏览器截图](http://beginor.github.io/assets/post-images/run-aspnet-5-beta2-with-nowin-win-ie.png)
 
-![](/assets/post-images/run-aspnet-5-beta2-with-nowin-mac.png)
+![在 Mac 下运行 Nowin.vNext](http://beginor.github.io/assets/post-images/run-aspnet-5-beta2-with-nowin-mac.png)
 
-![](/assets/post-images/run-aspnet-5-beta2-with-nowin-mac-safari.png)
+![Mac 下浏览器截图](http://beginor.github.io/assets/post-images/run-aspnet-5-beta2-with-nowin-mac-safari.png)
 
 本文所有源代码： https://github.com/beginor/mvc-vnext
 
