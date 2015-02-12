@@ -2,7 +2,7 @@
 title: 在 Nowin 下运行 ASP.NET 5 Beta 2
 layout: post
 description: 在 owin 环境下使用 Nowin 创建 ASP.NET 5 服务器， 运行 ASP.NET 5 Beta 2
-tags: [M, Xamarin, Mono, .Net, OWIN]
+tags: [Xamarin, Mono, ASP.NET, MVC, OWIN]
 keywords: asp.net5, mvc, vnext, owin, nowin, server factory, server information
 ---
 
