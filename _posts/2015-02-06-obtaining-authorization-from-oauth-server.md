@@ -2,7 +2,7 @@
 layout: post
 title: 从 OAuth2 服务器获取授权授权
 description: 本文介绍 OAuth2 定义的四种授权方式及其对应的实现方式
-tags: [OAuth2, OWIN, WebAPI]
+tags: [OAuth2, OWIN, ASP.NET, WebAPI]
 keywords: OWIN, OAuth2, ASP.NET MVC, WebAPI, code, access_token, 
 ---
 

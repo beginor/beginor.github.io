@@ -2,7 +2,7 @@
 layout: post
 title: Attribute Routing With ASP.net MVC 5
 description: Attribute Routing With ASP.net MVC 5
-tags: [转载, MVC]
+tags: [转载, ASP.NET, MVC]
 keywords: asp.net-mvc5, attribute, routing
 ---
 

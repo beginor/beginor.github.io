@@ -2,7 +2,7 @@
 layout: post
 title: 使用 OWIN 搭建 OAuth2 服务器
 description: 本文介绍如何使用微软提供的 OWIN 中间件一步一步搭建自己的 OAuth2 服务器
-tags: [OWIN, OAuth2, WebAPI]
+tags: [OWIN, OAuth2, ASP.NET, WebAPI]
 keywords: OWIN, OAuth2, ASP.NET MVC, WebAPI, resource owner, token, resource server, authorization server
 ---
 

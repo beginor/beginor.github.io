@@ -3,7 +3,7 @@ layout: post
 title: 在 mono 下尝试 ASP.NET vNext
 description: 
 keywords: asp.net vnext, mono, mvc vnext
-tags: [Mono, MVC, Linux]
+tags: [Mono, ASP.NET, MVC, Linux]
 ---
 
 ## 从源代码编译最新版本的 mono
