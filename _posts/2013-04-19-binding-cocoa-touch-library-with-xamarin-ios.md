@@ -2,7 +2,7 @@
 title: MonoTouch绑定CocoaTouch类库
 description: 互联网上有很多热心网友提供的 CacoaTouch 类库， 如果想使用这些类库， 完全用 C# 重写是不可取的， 所以就要用到 MonoTouch 的绑定技术。
 layout: post
-tags: [Mono, iOS]
+tags: [Mono, Xamarin, iOS]
 ---
 
 #### 绑定概述

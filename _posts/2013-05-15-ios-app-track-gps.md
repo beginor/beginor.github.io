@@ -2,7 +2,7 @@
 layout: post
 title: iOS 应用使用位置信息
 description: 介绍 iOS 应用使用位置信息，以及如何在后台继续获取位置信息
-tags: [iOS, Mono]
+tags: [iOS, Mono, Xamarin]
 keywords: ios, track gps background, lock screen, switch app, xamarin.ios, monotouch
 ---
 
