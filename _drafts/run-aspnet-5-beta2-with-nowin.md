@@ -12,6 +12,42 @@ ASP.NET Mvc vNext 改名为 ASP.NET 5 ， 看来距离正式发布已经不远�
 
 ## 使用 Nowin 搭建 ASP.NET 5 服务器
 
+用 VS 2015 CTP5 创建一个 ASP.NET 5 类库项目， 命名为 Nowin.vNext 如下图所示：
+
+![ ASP.NET 5 类库项目](/assets/post-images/owin-vnext-proj.png)
+
+打开 project.json 文件， 添加下面三个依赖项：
+
+```json
+{
+    "dependencies": {
+        "Microsoft.AspNet.Hosting": "1.0.0-beta2",
+        "Microsoft.AspNet.Owin": "1.0.0-beta2",
+        "Nowin": "0.13.6.0"
+    }
+}
+```
+
+由于使用 `Nowin` 这个传统类库， 不适用于 `aspnetcore50` ， 因此要从 `frameworks` 下删除， 只保留 `aspnet50` ， 最后的 project.json 如下所示：
+
+```json
+{
+    "version": "1.0.0-*",
+    "dependencies": {
+        "Microsoft.AspNet.Hosting": "1.0.0-beta2",
+        "Microsoft.AspNet.Owin": "1.0.0-beta2",
+        "Nowin": "0.13.6.0"
+    },
+
+    "frameworks" : {
+        "aspnet50" : { 
+            "dependencies": {
+            }
+        }
+    }
+}
+```
+
 要搭建 ASP.NET 5 服务器， 至少需要实现两个接口 `IServerInformation` 和 `IServerFactory` ， 对这两个接口的实现分别如下：
 
 ### 实现 IServerInformation
@@ -151,11 +187,102 @@ private Task HandleRequest(IDictionary<string, object> env) {
 }
 ```
 
+到现在为止， 基于 Nowin 的 ASP.NET 5 OWIN 服务器已经建好了， 接下来添加一个 ASP.NET 5 应用来测试一下。
+
 ## 运行测试程序
+
+新建一个 ASP.NET 5 空 Web 项目， 命名为 MvcEmptyApp ， 如下图所示：
+
+![ASP.NET 5 空 Web 项目](/assets/post-images/aspnet-5-empty-app.png)
+
+打开 project.json 文件， 添加如下的依赖项：
+
+```json
+{
+    "dependencies": {
+        "Microsoft.AspNet.Hosting": "1.0.0-beta2",
+        "Microsoft.AspNet.Mvc": "6.0.0-beta2",
+        "Microsoft.AspNet.Server.IIS": "1.0.0-beta2",
+        "Microsoft.AspNet.Server.WebListener": "1.0.0-beta2",
+        "Microsoft.Framework.DependencyInjection": "1.0.0-beta2",
+        "Nowin.vNext": ""
+    }
+}
+```
+
+同样， 需要将 `aspnetcore50` 从 `frameworks` 节点下删除， 并添加一个名称为 `nowin` 的启动命令， 如下所示：
+
+```json
+{
+    "commands": {
+        "web": "Microsoft.AspNet.Hosting --server Microsoft.AspNet.Server.WebListener --server.urls http://localhost:8080",
+        "nowin": "Microsoft.AspNet.Hosting --server Nowin.vNext --server.urls http://localhost:8080"
+    },
+    "frameworks" : {
+        "aspnet50" : { }
+    }
+}
+```
+
+将 MvcEmptyApp 设置为启动项目， 并设置 `Nowin` 为启动命令， 如下图所示：
+
+![设置 Nowin 为启动命令](/assets/post-images/set-nowin-as-start-command.png)
+
+编辑 `Startup.cs` ， 代码如下所示：
+
+```cs
+using Microsoft.AspNet.Builder;
+using Microsoft.AspNet.Routing;
+using Microsoft.Framework.DependencyInjection;
+using Microsoft.AspNet.Hosting;
+
+namespace MvcApp {
+
+    public class Startup {
+
+        public void ConfigureServices(IServiceCollection services) {
+            services.AddMvc();
+        }
+
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env) {
+            app.UseMvc(routeBuilder => {
+                routeBuilder.MapRoute(
+                    name: "Default",
+                    template: "{controller=Home}/{action=Index}/{id?}"
+                );
+            });
+        }
+    }
+}
+```
+再添加一个 HomeController ， 代码如下：
+
+```cs
+using Microsoft.AspNet.Mvc;
+using System;
+
+// For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+
+namespace MvcApp.Controllers {
+
+    public class HomeController : Controller {
+
+        // GET: /<controller>/
+        public IActionResult Index() {
+            return Content("Hello, ASP.NET Mvc under " + Environment.OSVersion.ToString());
+        }
+
+    }
+}
+```
+
+接下来可以 `F5` 直接在 VS 下运行， 也可以在命令行窗口直接输入 `k nowin` 命令来运行， 在 Windows 下运行如下图所示：
 
 ![在 Windows 下运行 Nowin.vNext](http://beginor.github.io/assets/post-images/run-aspnet-5-beta2-with-nowin-win.png)
 
 ![Windows 下浏览器截图](http://beginor.github.io/assets/post-images/run-aspnet-5-beta2-with-nowin-win-ie.png)
+
+Mac 系统下运行
 
 ![在 Mac 下运行 Nowin.vNext](http://beginor.github.io/assets/post-images/run-aspnet-5-beta2-with-nowin-mac.png)
 
