@@ -5,17 +5,14 @@ navbar_active: pages
 ---
 
 <ul class="nav nav-tabs">
-  <li role="presentation" class="active"><a href="#">分类</a></li>
-  <li role="presentation"><a href="pages-date.html">时间</a></li>
+  <li role="presentation" class="active"><a href="#">时间</a></li>
+  <li role="presentation"><a href="pages-tags.html">分类</a></li>
 </ul>
 
-<ul class="tag-list">
-{% for tag in site.tags reversed %}
-<h3 id="{{ tag[0] }}-ref">{{ tag[0] }}</h3>
-<ul>
-	{% for post in tag[1] %}
-		<li><a href="{{ post.url }}">{{ post.title }}</a></li>
-	{% endfor %}
-</ul>
+<br />
+
+<ol>
+{% for post in site.posts %}
+    <li>{{ post.date | date: "%Y-%m-%d" }} <a href="{{ post.url }}">{{ post.title }}</a></li>
 {% endfor %}
-</ul>
+</ol>
