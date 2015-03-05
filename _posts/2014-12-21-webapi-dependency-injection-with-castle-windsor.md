@@ -2,7 +2,7 @@
 layout: post
 title: 使用 Castle Windsor 实现 Web API 依赖注入
 description: 使用 Castle Windsor 实现 .NET Web API 依赖注入
-tags: WebAPI
+tags: [ASP.NET, WebAPI]
 keywords: WebAPI, IDependencyResolver, IDependencyScope, Castle Windsor, Ioc, Dependency Injection
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title: 按需加载 AngularJS 的 Controller
 description: 本文提供 AngularJS 多视图应用的按需加载解决方案
-tags: AngularJS
+tags: [AngularJS]
 keywords: AngularJS, controller, load on demand, async loader , requirejs 
 ---
 

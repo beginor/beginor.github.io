@@ -2,7 +2,7 @@
 layout: post
 title: 使用 RequireJS 加载 AngularJS
 description: 使用 RequireJS 加载 AngularJS
-tags: AngularJS
+tags: [AngularJS]
 keywords: AngularJS, RequireJS, AMD
 ---
 
