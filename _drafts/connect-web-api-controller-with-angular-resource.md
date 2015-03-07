@@ -6,7 +6,7 @@ tags: [AngularJS, ASP.NET, WebAPI]
 keywords: rest, web api controller, angular
 ---
 
-使用 ASP.NET Web API 是 .NET 平台创建 [REST][1] 风格的 HTTP 服务的理想框架， REST 风格的 HTTP 服务可以被多种客户端使用， 包括浏览器和移动设备， 使用 REST 风格的 HTTP 服务也越来越多。
+ASP.NET Web API 是 .NET 平台创建 [REST][1] 风格的 HTTP 服务的理想框架， REST 风格的 HTTP 服务可以被多种客户端使用， 包括浏览器和移动设备， 使用 REST 风格的 HTTP 服务也越来越多。
 
 由于 REST 服务的逐渐流行， 越来越多的客户端类库都提供了 REST 服务的专用类库， AngularJS 也不例外， 提供了 `$resource` 来实现 REST 服务的支持。
 
