@@ -146,7 +146,7 @@ INSERT INTO [User_Role]  ([UserId], [RoleId]) VALUES (@p0, @p1);@p0 = 1 [Type: I
 INSERT INTO [User_Role]  ([UserId], [RoleId]) VALUES (@p0, @p1);@p0 = 1 [Type: Int32 (0)], @p1 = 10 [Type: Int32 (0)]
 ```
 
-居然是先将属于该用户的全部角色删除， 再添加一份新的进来， 完全无法接受， 反过来思考觉得肯定是自己的问题， 经过一番搜索， 发现 StackOverflow 上也有人问类似的问题， 并且最终在 [NHibernate Tip: Use set for many-to-many associations][1] 发现了解决方案， 将多对多的映射的 `bag` 改为用 `set` ， 问题终于得到了解决， 改过后的映射如下：
+居然是先将属于该用户的全部角色删除， 再添加一份新的进来， 完全无法接受， 反过来思考觉得肯定是自己的问题， 经过一番搜索 (Google)， 发现 StackOverflow 上也有人问类似的问题， 并且最终在 [NHibernate Tip: Use set for many-to-many associations][1] 发现了解决方案， 将多对多的映射的 `bag` 改为用 `set` ， 问题终于得到了解决， 改过后的映射如下：
 
 ```c#
 Set(
@@ -171,6 +171,36 @@ DELETE FROM [User_Role] WHERE [UserId] = @p0 AND [RoleId] = @p1;@p0 = 1 [Type: I
 INSERT INTO [User_Role]  ([UserId], [RoleId]) VALUES (@p0, @p1);@p0 = 1 [Type: Int32 (0)], @p1 = 9 [Type: Int32 (0)]
 ```
 
-由此可见， `bag` 在多对多映射更新是性能较差， 而 `set` 在多对多映射是更好的选择。 
+在 NHibernate 参考文档的 [19.5. Understanding Collection performance][2] 中这样描述：
+
+> Bags are the worst case. Since a bag permits duplicate element values and has no index column,
+> no primary key may be defined. NHibernate has no way of distinguishing between duplicate rows.
+> NHibernate resolves this problem by completely removing (in a single DELETE) and recreating the
+> collection whenever it changes. This might be very inefficient.
+
+不只是多对多， 如果你的集合需要更新， NHibernate 推荐的是：
+
+> 19.5.2. Lists, maps, idbags and sets are the most efficient collections to update
+
+然而 bags 也不是一无是处：
+
+> 19.5.3. Bags and lists are the most efficient inverse collections
+
+> Just before you ditch bags forever, there is a particular case in which bags (and also lists)
+> are much more performant than sets. For a collection with inverse="true" (the standard bidirectional
+> one-to-many relationship idiom, for example) we can add elements to a bag or list without needing to
+> initialize (fetch) the bag elements! This is because IList.Add() must always succeed for a bag or
+> IList<T> (unlike an ISet<T>). This can make the following common code much faster.
+
+```c#
+Parent p = sess.Load(id);
+Child c = new Child();
+c.Parent = p;
+p.Children.Add(c);  //no need to fetch the collection!
+sess.Flush();
+```
+
+由此可见， `bag` 在多对多映射更新时性能较差， 如果不需要更新，则可以放心使用， 在需要更新时则 `set` 是更好的选择。 
 
 [1]: http://www.codinginstinct.com/2010/03/nhibernate-tip-use-set-for-many-to-many.html
+[2]: http://nhibernate.info/doc/nh/en/index.html#performance-collections
