@@ -6,7 +6,7 @@ keywords: asp.net, webapi, data validation,
 tags: [ASP.NET, WebAPI]
 ---
 
-为了 Web 服务的安全， 通常在服务端也会做数据验证， 不过数据验证的代码确实是优点枯燥， 以简单的用户注册来说， 需要的注册信息如下：
+为了 Web 服务的安全， 通常在服务端也会做数据验证， 不过数据验证的代码确实是有点儿枯燥， 以简单的用户注册来说， 需要的注册信息如下：
 
 ```c#
 public class RegisterModel {
