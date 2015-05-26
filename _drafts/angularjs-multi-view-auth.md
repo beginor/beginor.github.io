@@ -52,3 +52,5 @@ angular
     $rootScope.$on('$routeChangeStart', onRouteChangeStart);
 });
 ```
+
+这样， AngularJS 在开始切换视图时 (`$routeChangeStart`) 会调用 (`onRouteChangeStart`) 函数进行检查， 如果要切换的路由不允许匿名访问， 则会重定向到路由中定义的 `/login` 对应的视图。
