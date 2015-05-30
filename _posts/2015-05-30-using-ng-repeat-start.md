@@ -38,20 +38,20 @@ function MyController($scope) {
 对应的 HTML 视图代码如下：
 
 ```xml
-<table class="table">
-    <tr>
-        <th>id</th>
-        <th>name</th>
-        <th>description</th>
-        <th>action</th>
-    </tr>
-    <tr ng-repeat="p in products">
-        <td>{{p.id}}</td>
-        <td>{{p.name}}</td>
-        <td>{{p.description}}</td>
-        <td><a href="#">Buy</a></td>
-    </tr>
-</table>
+    <table class="table">
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>description</th>
+            <th>action</th>
+        </tr>
+        <tr ng-repeat="p in products">
+            <td>{{p.id}}</td>
+            <td>{{p.name}}</td>
+            <td>{{p.description}}</td>
+            <td><a href="#">Buy</a></td>
+        </tr>
+    </table>
 ```
 
 运行效果图：
@@ -65,52 +65,52 @@ function MyController($scope) {
 每个产品占表格的两行， 这样的效果用 `ng-repeat` 就没办法实现了。 不过 AngularJS 提供了 `ng-repeat-start` 和 `ng-repeat-end` 来实现上面的需求， `ng-repeat-start` 和 `ng-repeat-end` 的语法如下： 
 
 ```xml
-<header ng-repeat-start="item in items">
-  Header {{ item }}
-</header>
-<div class="body">
-  Body {{ item }}
-</div>
-<footer ng-repeat-end>
-  Footer {{ item }}
-</footer>
+    <header ng-repeat-start="item in items">
+      Header {{ item }}
+    </header>
+    <div class="body">
+      Body {{ item }}
+    </div>
+    <footer ng-repeat-end>
+      Footer {{ item }}
+    </footer>
 ```
 
 假设提供了 `['A','B']` 两个产品， 则生成的 HTML 结果如下：
 
 ```html
-<header>
-  Header A
-</header>
-<div class="body">
-  Body A
-</div>
-<footer>
-  Footer A
-</footer>
-<header>
-  Header B
-</header>
-<div class="body">
-  Body B
-</div>
-<footer>
-  Footer B
-</footer>
+    <header>
+      Header A
+    </header>
+    <div class="body">
+      Body A
+    </div>
+    <footer>
+      Footer A
+    </footer>
+    <header>
+      Header B
+    </header>
+    <div class="body">
+      Body B
+    </div>
+    <footer>
+      Footer B
+    </footer>
 ```
 
 了解了 `ng-repeat-start` 和 `ng-repeat-end` 的用法之后， 上面要求的界面就很容易实现了， 代码如下：
 
 ```xml
-<table class="table table-bordered">
-    <tr ng-repeat-start="p in products">
-        <td>{{p.name}}</td>
-        <td rowspan="2"><a href="#">Buy</a></td>
-    </tr>
-    <tr ng-repeat-end>
-        <td>{{p.description}}</td>
-    </tr>
-</table>
+    <table class="table table-bordered">
+        <tr ng-repeat-start="p in products">
+            <td>{{p.name}}</td>
+            <td rowspan="2"><a href="#">Buy</a></td>
+        </tr>
+        <tr ng-repeat-end>
+            <td>{{p.description}}</td>
+        </tr>
+    </table>
 ```
 
 本文参考资料： [https://code.angularjs.org/1.3.15/docs/api/ng/directive/ngRepeat](https://code.angularjs.org/1.3.15/docs/api/ng/directive/ngRepeat)
