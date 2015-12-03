@@ -4,11 +4,11 @@ title: 张志敏的简历
 show_in_sitemap: false
 ---
 
-# 基本信息
+### 基本信息
 
 张志敏 | 男 | 本科 | 10 年工作经验 | 134-1805-6213 | beginor@qq.com | http://beginor.github.io
 
-# 期望工作
+### 期望工作
 
 广州，全职，月薪20k-25k，软件架构师 > 技术经理 > 高级软件工程师
 
@@ -21,7 +21,7 @@ show_in_sitemap: false
 - 熟练掌握 HTML5/CSS3/Javascript， 熟悉 AngularJS、 Bootstrap、 Compass 等前端开发框架；
 - 熟悉常用的数据结构与算法；
 
-# 技能清单
+### 技能清单
 
 以下均为我熟练使用的技能：
 
