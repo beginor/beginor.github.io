@@ -79,8 +79,26 @@ show_in_sitemap: false
   
   1. 架构设计与原型实现；
   2. 学习 Linux + NGINX 服务器技术；
-  3. 指导开发人员学习和使用 Angular 和 Compass；
+  3. 指导开发人员学习和使用 AngularJS 和 Compass；
   4. 指导开发人员使用和扩展 WebApi 与 OWIN ；
+
+- 广东省排污许可证管理系统 (2014-12 ~ 2015-05)
+
+  **软件环境** AngularJS, Compass, ASP.NET WebApi, OWIN, NHibernate
+  
+  **项目描述**
+
+  该项目是环保企业服务平台的一部分， 实现企业的的基于互联网对排污许可证进行申报、续期、撤销等， 以及环保部门对企业排污许可证的审批与管理。
+
+  该项目在服务端使用 ASP.NET WebApi 提供 REST 服务， 简化了客户端的调用， 在浏览器端使用 AngularJS 实现 SPA 应用。
+  
+  **责任描述**
+
+  1. 架构设计与原型实现；
+  2. 指导开发人员使用和扩展 WebApi 与 OWIN ；
+  3. 指导开发人员学习和使用 AngularJS 和 Compass；
+  4. 系统缓存中间件设计；
+  5. AngularJS 性能优化；
 
 - 北江水质预警 (2014-09 ~ 2014-12)
 
@@ -131,19 +149,20 @@ show_in_sitemap: false
 
 - 环保开放认证 (OAuth2) (2014-02 ~ 2014-03)
 
-  **软件环境** ASP.NET MVC, Bootstrap
+  **软件环境** ASP.NET MVC, Bootstrap, AngularJS
 
   **项目描述**
 
   环保认证原来采用的是基于活动目录的统一认证， 缺点是所有的业务服务都需要直接访问活动目录， 因此对活动目录的安全构成一定的威胁， 因此决定转向标准的 OAuth 认证。
 
-  服务端采用 .NET MVC 架构实现标准的 OAuth2 认证流程， 适配环保活动目录做人员认证； 界面上采用 Bootstrap 实现响应式布局， 兼容多种 (PC/Tablet/Mobile) 浏览器。
+  服务端采用 .NET MVC 架构实现标准的 OAuth2 认证流程， 适配环保活动目录做人员认证； 界面上采用 Bootstrap 实现响应式布局， 兼容多种 (PC/Tablet/Mobile) 浏览器， 客户端开发才用 Angular 实现双向绑定， 模块化开发；
 
   **责任描述**
 
   - 架构设计， 遵循 OAuth2 规范的基础上， 遵循 .NET MVC 设计规范；
   - 指导开发人员在 .NET MVC 框架下实现 OAuth 认证；
   - 指导开发人员用 Bootstrap 实现响应式布局；
+  - 指导开发人员用 AngularJS 实现管理页面；
 
 - 广东省环境信息综合发布平台更新 (2013-09 ~ 2013-12)
 

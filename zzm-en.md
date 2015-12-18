@@ -82,6 +82,25 @@ I am familiar with those skills:
   4. Guide developers to learn and use Angular and Compass;
   5. Guide developers to use and extend WebApi and OWIN;
 
+- Pollution License Management System (2014-12 ~ 2015-05)
+  
+
+  **Software** AngularJS, Compass, ASP.NET WebApi, OWIN, NHibernate
+  
+  **Description**
+
+  This project is part of the Enterprise Service Platform Of GDEP, it is build for the enterprises of Guangdong province, who can apply, renewal, or cancel their polluation licenses, and for the agency of GDEP, who can manage the licenses.
+
+  This project uses ASP.NET WebApi at the server side to provide RESTful service, which is very easy to use at the client browser side, and uses AngularJS to build Single Page Application (SPA) at the client side to gain a good user experience.
+  
+  **Responsibility**
+
+  1. Architect design and prototype implement;
+  2. Guide developers to use and extend WebApi and OWIN;
+  3. Guide developers to learn and use Angular and Compass;
+  4. OWIN cache middleware design and implement;
+  5. AngularJS perfermance hacking;
+
 - Water Quality Pre-Warning (2014-09 ~ 2014-12)
 
   **Software** ASP.NET MVC, Silverlight, NHibernate
@@ -131,19 +150,20 @@ I am familiar with those skills:
 
 - OAuth2 Server of GDEP (OAuth2) (2014-02 ~ 2014-03)
 
-  **Software** ASP.NET MVC, Bootstrap
+  **Software** ASP.NET MVC, Bootstrap, AngularJS
 
   **Description**
 
   The SSO of GDEP is using windows active directory authority, the shortcoming is every application need to access AD, this is a threation of the security of AD, so we deside to switch to OAuth2;
 
-  On the service side, we use implement a standard OAuth2 server using standard ASP.NET MVC, active directory as authorize adapter; We use Bootstrap to implement responsive layout, compatible with multi browsers on defferent devices;
+  On the service side, we use implement a standard OAuth2 server using standard ASP.NET MVC, active directory as authorize adapter; We use Bootstrap to implement responsive layout, compatible with multi browsers on defferent devices, use AngularJS to implement two way data binding and modular development;
 
   **Responsibility**
 
   - Architect design, follow OAuth2 specification， follow ASP.NET MVC standard；
   - Guide developers to implement OAuth2 with ASP.NET MVC;
-  - Guide developers to implement responsive layout with Bootstrap.
+  - Guide developers to implement responsive layout with Bootstrap;
+  - Guide developers to implement manage views with AngularJS;
 
 - EQPub platform update (2013-09 ~ 2013-12)
 
