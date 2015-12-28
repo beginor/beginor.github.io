@@ -16,11 +16,11 @@ tags: [OWIN, .Net, Mono]
 
   [实体标签](https://zh.wikipedia.org/wiki/HTTP_ETag) 是HTTP协议提供的若干机制中的一种Web缓存验证机制，并且允许客户端进行缓存协商。这就使得缓存变得更加高效，而且节省带宽。(参考维基百科)
 
-- 支持 Html5 路径模式；
+- 支持 Html5 路径模式
 
   支持 [AngularJS](https://angularjs.org/) 的 [html5Mode](https://docs.angularjs.org/guide/$location) 路径（其它前端框架应该也有类似的）， 相信熟悉前端的同学对这个不陌生， Html5 路径模式的优点很多， 对搜索引擎友好， 对浏览器友好， 对用户也又好， 但是需要服务端配合。
 
-- 支持扩展， 可以自定义 MimeTypeProvider 和 ETagProvider ；
+- 支持扩展， 可以自定义 MimeTypeProvider 和 ETagProvider
 
   默认的 `MimeTypeProvider` 可以识别绝大多数静态文件的 mimetype ， 如果不够用或者觉得默认的不爽， 可以使用自定义的 MimeTypeProvider ， 只要实现接口 `IMimeTypeProvider` 即可。
 
