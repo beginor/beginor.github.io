@@ -11,7 +11,8 @@ disqus:
 paginate: 12
 exclude: [start-jekyll.bat.sh, start-jekyll.bat, Github.sln, Github.v11.suo, Github.v12.suo]
 encoding: utf-8
-markdown: rdiscount
+markdown: kramdown
 highlighter: pygments
+gems: [jekyll-paginate]
 host: 127.0.0.1
 port: 4004
