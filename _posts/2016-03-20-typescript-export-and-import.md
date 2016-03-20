@@ -118,6 +118,7 @@ import "module-name";
 
   ```typescript
   import { myMember } from 'my-module';
+  ```
   
 - 导入模块的多个导出成员， 在当前作用域插入 `foo` 和 `bar` 变量：
 
