@@ -9,10 +9,15 @@ owner:
 disqus:
   short_name: "beginor-github"
 paginate: 12
-exclude: [start-jekyll.bat.sh, start-jekyll.bat, Github.sln, Github.v11.suo, Github.v12.suo]
+exclude: [start-jekyll.sh, start-jekyll.bat, Github.sln, Github.v11.suo, Github.v12.suo]
 encoding: utf-8
 markdown: kramdown
 highlighter: rouge
-gems: [jekyll-paginate]
+kramdown:
+  input: GFM
+  hard_wrap: false
+gems:
+  - jekyll-coffeescript
+  - jekyll-paginate
 host: 127.0.0.1
 port: 4004
