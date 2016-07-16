@@ -1,24 +1,24 @@
 ﻿html {
-	background-color: #474747;
+    background-color: #474747;
 }
 
 .top {
-	background-color: #474747;
+    background-color: #474747;
 }
 
 .top .container {
-	background-color: #000;
+    background-color: #000;
   padding-left: 0px;
   padding-right: 0px;
 }
 
 .top .container .navbar {
-	margin: 0px;
-	background-color: #000;
+    margin: 0px;
+    background-color: #000;
 }
 
 a.navbar-brand {
-	color: #ffffff !important;
+    color: #ffffff !important;
   /*font-size: 1em;*/
 }
 
@@ -31,37 +31,29 @@ a.navbar-brand {
 }
 
 .middle .container .row {
-	margin-top: 15px;
+    /*margin-top: 15px;*/
 }
 
 img {
-	display: block;
-	height: auto;
-	max-width: 100%;
+    display: block;
+    height: auto;
+    max-width: 100%;
 }
 
 .footer {
-	background-color: #474747;
+    background-color: #474747;
 }
 
 .footer .container {
-	text-align: center;
-	background-color: #373737;
+    text-align: center;
+    background-color: #373737;
     color: #FFF;
     padding-top: 10px;
 }
 
-pre {
-	border: 0px solid #cccccc;
-}
-
-pre code.hljs {
-  background-color: transparent;
-}
-
 .page-header h1 {
-	font-size: 32px;
-	font-weight: bold;
+    font-size: 32px;
+    font-weight: bold;
 }
 
 .post-content h1 {
