@@ -21,9 +21,6 @@
                     <li {% if page.navbar_active == 'library' %}class="active"{% endif %}>
                         <a href="/libraries.html">开源项目</a>
                     </li>
-                    <li {% if page.navbar_active == 'service' %}class="active"{% endif %}>
-                        <a href="/service.html">服务</a>
-                    </li>
                     <li {% if page.navbar_active == 'about' %}class="active"{% endif %}>
                         <a href="/about.html">关于</a>
                     </li>
