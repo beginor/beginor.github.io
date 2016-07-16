@@ -9,7 +9,7 @@ owner:
 disqus:
   short_name: "beginor-github"
 paginate: 12
-exclude: [start-jekyll.sh, start-jekyll.bat, Github.sln, Github.v11.suo, Github.v12.suo]
+exclude: ["start-jekyll.sh", "start-jekyll.bat", "bower.json"]
 encoding: utf-8
 markdown: kramdown
 highlighter: rouge
