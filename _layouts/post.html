@@ -26,18 +26,18 @@
 
                 <ul class="pager">
                     {% if page.previous %}
-                    <li class="previous"><a href="{{ page.previous.url }}">&larr; {{ page.previous.title }}</a></li>
+                    <li class="pager-previous"><a href="{{ page.previous.url }}">&larr; {{ page.previous.title }}</a></li>
                     {% else %}
-                    <li class="previous disabled">
+                    <li class="pager-previous disabled">
                     <a href="#">没有了</a>
                     </li>
                     {% endif %}
                     {% if page.next %}
-                    <li class="next">
+                    <li class="pager-next">
                     <a href="{{ page.next.url }}">{{ page.next.title }} &rarr;</a>
                     </li>
                     {% else %}
-                    <li class="next disabled">
+                    <li class="pager-next disabled">
                     <a href="{{ page.next.url }}">没有了</a>
                     </li>
                     {% endif %}
