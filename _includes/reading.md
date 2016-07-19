@@ -1,9 +1,8 @@
 <div class="card">
     <div class="card-header">
-        <h4 class="card-title">正在阅读</h4>
+        正在阅读
     </div>
     <div class="card-block">
-        
         <div class="card-text">
             <a href="http://algs4.cs.princeton.edu/" target="_blank"><img src="/assets/imgs/algs4-cover.png" class="img-rounded"></a>
         </div>
