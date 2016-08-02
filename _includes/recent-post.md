@@ -2,10 +2,10 @@
     <div class="card-header">最近发表</div>
     <div class="list-group list-group-flush">
         {% for post in site.posts limit:15 %}
-        <div class="list-group-item">
-            <a href="{{post.url}}">{{ post.title }}</a>
-            <span class="label label-default">{{ post.date | date: "%Y-%m-%d" }}</span>
-        </div>
+        <a class="list-group-item list-group-item-action" href="{{post.url}}">
+            {{ post.title }}
+            <span class="tag tag-default">{{ post.date | date: "%Y-%m-%d" }}</span>
+        </a>
         {% endfor %}
     </div>
 </div>

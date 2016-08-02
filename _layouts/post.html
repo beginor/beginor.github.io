@@ -24,24 +24,34 @@
                 {{ content }}
                 </div>
 
-                <ul class="pager">
+                <div class="row">
+                    <div class="pull-xs-left">
                     {% if page.previous %}
-                    <li class="pager-previous"><a href="{{ page.previous.url }}">&larr; {{ page.previous.title }}</a></li>
+                    <a class="btn btn-secondary btn-sm" href="{{ page.previous.url }}">
+                        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                        {{ page.previous.title }}
+                    </a>
                     {% else %}
-                    <li class="pager-previous disabled">
-                    <a href="#">没有了</a>
-                    </li>
+                    <a class="btn btn-secondary btn-sm disabled" href="#">
+                        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                        没有了
+                    </a>
                     {% endif %}
+                    </div>
+                    <div class="pull-xs-right">
                     {% if page.next %}
-                    <li class="pager-next">
-                    <a href="{{ page.next.url }}">{{ page.next.title }} &rarr;</a>
-                    </li>
+                    <a class="btn btn-secondary btn-sm" href="{{ page.next.url }}">
+                        {{ page.next.title }}
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    </a>
                     {% else %}
-                    <li class="pager-next disabled">
-                    <a href="{{ page.next.url }}">没有了</a>
-                    </li>
+                    <a class="btn btn-secondary btn-sm disabled" href="{{ page.next.url }}">
+                        没有了
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    </a>
                     {% endif %}
-                </ul>
+                    </div>
+                </div>
                 
                 {% include comment.md %}
             </div>        

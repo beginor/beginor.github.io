@@ -1,9 +1,9 @@
 <header class="top" role="header">
     <div class="container">
-        <nav class="navbar navbar-dark" role="navigation">
+        <nav class="navbar navbar-dark bg-inverse" role="navigation">
 
-            <button class="navbar-toggler hidden-sm-up pull-xs-right" type="button" data-toggle="collapse" data-target="#collapsenav">
-                &#9776;
+            <button class="navbar-toggler hidden-sm-up pull-xs-right" style="color: #FFF;" type="button" data-toggle="collapse" data-target="#collapsenav">
+                <i class="fa fa-bars" aria-hidden="true"></i>
             </button>
 
             <a class="navbar-brand" href="/">张志敏的技术专栏</a>
