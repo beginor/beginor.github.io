@@ -1,6 +1,6 @@
 <header class="top" role="header">
     <div class="container">
-        <nav class="navbar navbar-dark bg-inverse" role="navigation">
+        <nav class="navbar navbar-dark" role="navigation">
 
             <button class="navbar-toggler hidden-sm-up pull-xs-right" type="button" data-toggle="collapse" data-target="#collapsenav">
                 &#9776;
