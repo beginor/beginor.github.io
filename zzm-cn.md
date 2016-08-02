@@ -6,7 +6,7 @@ show_in_sitemap: false
 
 ### 基本信息
 
-张志敏 | 男 | 本科 | 10 年工作经验 | 134-1805-6213 | beginor@qq.com | http://beginor.github.io
+张志敏 | 男 | 本科 | 11 年工作经验 | 186-2047-5721 | beginor@qq.com | http://beginor.github.io
 
 ### 期望工作
 
@@ -25,14 +25,19 @@ show_in_sitemap: false
 
 以下均为我熟练使用的技能：
 
-- 开发语言：C#, C/C++, Javascript
-- Web开发：ASP.NET, MVC, WebApi
-- 后端框架：NHibernate, MyBatis.NET(iBatis.NET), EntityFramework, Unity
-- 前端框架：AngularJS, Bootstrap, ExtJS, HTML5, jQuery, SCSS
+- 开发语言：C#, C/C++, Javascript, TypeScript
+- 后端技术栈：ASP.NET, MVC, WebApi, NHibernate, MyBatis.NET(iBatis.NET), EntityFramework, Unity, Castle.Windsor
+- 前端技术栈：AngularJS, Bootstrap, ExtJS, HTML5, jQuery, SCSS
 - 数据库：SQL Server, MySQL, SQLite
 - 版本管理：Git, Svn, TFS
 
 ### 工作经验
+
+- 广州市绘天信息科技有限公司 技术负责人 (2015-12 ~ 至今)
+
+  1. 开发团队建设与管理；
+  2. 公司产品规划与方案制定；
+  3. 开发与实施规范化管理；
 
 - 加拿大 2020 科技（中国）有限公司 技术主管 (2015-05 ~ 2015-11)
 
@@ -51,6 +56,24 @@ show_in_sitemap: false
   3. 在 Mobile + Service 架构及阶段， 移动端的需求愈发强烈， 鉴于信息中心现有的资源以及多年来在 .NET 方面的积累， 采用 Xamarin (Mono) 作为跨平台移动开发解决方案； 服务端也转化为使用 ASP.NET WebAPI 专注于提供 REST 风格的服务， 同时也开始使用 OWIN 规范， 在 Linux + Mono 环境下运行 ASP.NET WebAPI ； 在 BS 应用方面则开始使用 AngularJS ＋ Bootstrap 作为基础类库， 结合 RequireJS 的 AMD 规范， 实现了按需加载 AngularJS 的模块的机制； 广东环保移动执法项目是 Mobile + Service 架构中比较成功的项目， 在广东省内多个地市已经开始实施；
 
 ### 项目经验
+
+- 云图 GIS 协作平台 (2016-05 ~ 至今)
+
+  **软件环境** AngularJS, Bootstrap, ArcGIS Javascript API, OWIN.NET WebAPI, MongoDB, OAuth2, ArcGIS Server, Docker
+
+  **项目描述**
+
+  基于浏览器的地理信息系统协作平台， 支持创建交互式地图和应用程序， 并与组中的其他人共享， 提供适合 web、 智能手机和平板电脑即用型内容、 应用程序和模板提高工作效率。 支持 OAuth2 标准认证， 集成社会化登录， 也可以集成到 OA 系统之中。
+
+  客户端采用 AngularJS 以及 ArcGIS Javascript API， 结合 ArcGIS Server 提供的基础地图服务、地理编码服务、数据查询服务、路网分析服务、专题地图服务实现专业的地理制图， 可以在组织内部进行共享与协作。
+
+  服务端采用 OWIN.NET WebAPI 结合 MongoDB 实现非关系型数据的存储。
+
+  **责任描述**
+
+  - 平台架构选型以及原型实现；
+  - 学习 MongoDB 以及 Docker 部署环境；
+  - 指导开发人员学习和使用用到的技术；
 
 - Kit 云平台 (2015-05 ~ 2015-08)
 

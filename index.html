@@ -7,8 +7,8 @@ layout: default
 <div class="card">
     <div class="card-header">
         <a href="{{ p.url }}">{{ p.title }}</a>
-        <a class="pull-right label label-default" href="{{ p.url }}#disqus_thread">评论</a>
-        <span class="pull-right label label-default" style="margin: 0 4px;">{{ p.date | date: "%Y-%m-%d" }}</span>
+        <a class="pull-right tag tag-default" href="{{ p.url }}#disqus_thread">评论</a>
+        <span class="pull-right tag tag-default" style="margin: 0 4px;">{{ p.date | date: "%Y-%m-%d" }}</span>
     </div>
     <div class="card-block">
         <p class="card-text">{{ p.content | strip_html | truncate: 300 }} <a class="card-link" href="{{ p.url }}">阅读全文</a></p>
@@ -16,7 +16,7 @@ layout: default
     <div class="card-footer">
         标签：
         {% for t in p.tags %}
-        <a href="/pages-tags.html#{{ t }}-ref" title="查看全部关于 {{ t }} 的文章"><span class="label label-pill label-default">{{ t }}</span></a>
+        <a href="/pages-tags.html#{{ t }}-ref" title="查看全部关于 {{ t }} 的文章"><span class="tag tag-pill tag-default">{{ t }}</span></a>
         {% endfor %}
     </div>
 </div>
