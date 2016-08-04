@@ -2,17 +2,19 @@
     background-color: #474747;
 }
 
-.top {
+header.top {
     background-color: #474747;
+    border-radius: 0;
 }
 
-.top .container {
+header.top .container {
     background-color: #000;
-  padding-left: 0px;
-  padding-right: 0px;
+    padding: 0.5rem 1rem;
+    margin-top: -0.5rem;
+    margin-bottom: -0.5rem;
 }
 
-.top .container .navbar {
+header.top .container nav {
     margin: 0px;
     background-color: #000;
 }

@@ -1,14 +1,16 @@
-<header class="top" role="header">
+<header class="top navbar navbar-dark" role="header">
     <div class="container">
-        <nav class="navbar navbar-dark bg-inverse" role="navigation">
+        <nav>
 
-            <button class="navbar-toggler hidden-sm-up pull-xs-right" style="color: #FFF;" type="button" data-toggle="collapse" data-target="#collapsenav">
-                <i class="fa fa-bars" aria-hidden="true"></i>
-            </button>
-
-            <a class="navbar-brand" href="/">张志敏的技术专栏</a>
+            <div class="clearfix">
+                <button class="navbar-toggler hidden-sm-up pull-xs-right collapsed" style="color: #FFF;" type="button" data-toggle="collapse" data-target="#collapsenav">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </button>
+                <a class="navbar-brand hidden-sm-up" href="/">张志敏的技术专栏</a>
+            </div>
 
             <div class="collapse navbar-toggleable-xs" id="collapsenav">
+                <a class="navbar-brand hidden-xs-down" href="/">张志敏的技术专栏</a>
                 <ul class="nav navbar-nav">
                     <li class="nav-item {% if page.navbar_active == 'pages' %}active{% endif %}">
                         <a class="nav-link" href="/pages.html"><i class="fa fa-list"></i> 全部文章</a>
