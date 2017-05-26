@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+    <title>{{ page.title }}- {{ site.title }}</title>
+    {% include common-meta.md %}
+    {% if page.keywords %}<meta name="keywords" content="{{ page.keywords }}">{% endif %}
+    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+    {% include highlight.md %}
+</head>
+<body>
+{% include header.md %}
+<div class="middle">
+    <div class="container">
+        <div class="row" style="padding-top:16px;">
+            <div class="col-md-9">
+
+            <div class="post">
+
+                <div class="page-header">
+                    <h1>{{ page.title }}</h1>
+                </div>
+
+                <div class="post-content">
+                {{ content }}
+                </div>
+
+                <div class="row">
+                    <div class="pull-xs-left">
+                    {% if page.previous %}
+                    <a class="btn btn-secondary btn-sm" href="{{ page.previous.url }}">
+                        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                        {{ page.previous.title }}
+                    </a>
+                    {% else %}
+                    <a class="btn btn-secondary btn-sm disabled" href="#">
+                        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                        没有了
+                    </a>
+                    {% endif %}
+                    </div>
+                    <div class="pull-xs-right">
+                    {% if page.next %}
+                    <a class="btn btn-secondary btn-sm" href="{{ page.next.url }}">
+                        {{ page.next.title }}
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    </a>
+                    {% else %}
+                    <a class="btn btn-secondary btn-sm disabled" href="{{ page.next.url }}">
+                        没有了
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    </a>
+                    {% endif %}
+                    </div>
+                </div>
+                
+                {% include gitment.md %}
+            </div>        
+            </div>
+            <!-- side bar -->
+            <div class="col-md-3 hidden-print">
+                {% include reading.md %}
+                {% include weibo.md %}
+                {% include tags.md %}
+                {% include recent-post.md %}
+            </div>
+            <!-- /side bar -->
+        </div>
+    </div>
+</div>
+
+{% include footer.md %}
+{% include bootstrap-script.md %}
+</body>
+</html>
