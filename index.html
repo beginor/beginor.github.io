@@ -7,7 +7,6 @@ layout: default
 <div class="card">
     <div class="card-header">
         <a href="{{ p.url }}">{{ p.title }}</a>
-        <a class="pull-right tag tag-default" href="{{ p.url }}#disqus_thread">评论</a>
         <span class="pull-right tag tag-default" style="margin: 0 4px;">{{ p.date | date: "%Y-%m-%d" }}</span>
     </div>
     <div class="card-block">
@@ -53,5 +52,3 @@ layout: default
     <li class="page-item disabled"><a class="page-link" href="#">后一页</a></li>
 {% endif %}
 </ul>
-
-{% include comment-count.md %}
