@@ -28,7 +28,7 @@ sudo usermod -a -G sudo $USER
 
 ### 使用 Docker 官方源安装
 
-1. 设置 Docker CE 仓库
+1、 设置 Docker CE 仓库
 
 在 Ubuntu 系统上设置 Docker CE 仓库。 使用 `lsb_release -cs` 命令打印你的 Ubuntu 版本的名字， 比如： `xenial` 或者 `trusty` 。
 
@@ -54,7 +54,7 @@ sudo add-apt-repository \
 sudo apt-get update
 ```
 
-2. 获取 Docker CE
+2、 获取 Docker CE
 
 使用下面的命令安装最新版本的 Docker CE ：
 
@@ -62,7 +62,7 @@ sudo apt-get update
 sudo apt-get install -y docker-ce
 ```
 
-3. 测试 Docker CE 安装
+3、 测试 Docker CE 安装
 
 在命令行窗口， 输入下面的命令：
 
