@@ -4,7 +4,7 @@
     </div>
     <div class="card-block">
         <div class="card-text">
-            <a href="http://algs4.cs.princeton.edu/" target="_blank"><img src="/assets/imgs/algs4-cover.png" class="img-rounded"></a>
+            <a href="https://algs4.cs.princeton.edu/" target="_blank"><img src="/assets/imgs/algs4-cover.png" class="img-rounded"></a>
         </div>
     </div>
 </div>

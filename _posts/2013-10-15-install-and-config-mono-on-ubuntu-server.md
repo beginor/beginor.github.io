@@ -28,7 +28,7 @@ keywords: Linux, Ubuntu Server, Apache2, mod_mono, mono
 
 下载 libgdiplus 最新版的源代码：
 
-    wget http://download.mono-project.com/sources/libgdiplus/libgdiplus-2.10.9.tar.bz2
+    wget https://download.mono-project.com/sources/libgdiplus/libgdiplus-2.10.9.tar.bz2
 
 下载完成之后解压， 并且换到源代码的目录：
 
@@ -107,13 +107,13 @@ keywords: Linux, Ubuntu Server, Apache2, mod_mono, mono
 
 安装好了 libgdiplus 之后， 接下来的 mono 和 xsp 就是一路顺风了， 只要简单的敲几行命令就可以了：
 
-    wget http://download.mono-project.com/sources/mono/mono-3.2.3.tar.bz2
+    wget https://download.mono-project.com/sources/mono/mono-3.2.3.tar.bz2
     tar -jxvf mono-3.2.3.tar.bz2
     cd mono-3.2.3
     make
     sudo make install
 
-    wget http://download.mono-project.com/sources/xsp/xsp-2.10.2.tar.bz2
+    wget https://download.mono-project.com/sources/xsp/xsp-2.10.2.tar.bz2
     tar -jxvf xsp-2.10.2.tar.bz2
     cd xsp-2.10.2.tar.bz2
     make
@@ -153,7 +153,7 @@ keywords: Linux, Ubuntu Server, Apache2, mod_mono, mono
 
 现在， 安装 mod_mono 也是非常简单的：
 
-    wget http://origin-download.mono-project.com/sources/mod_mono/mod_mono-2.10.tar.bz2
+    wget https://origin-download.mono-project.com/sources/mod_mono/mod_mono-2.10.tar.bz2
     tar -jxvf mod_mono-2.10.tar.bz2
     cd mod_mono-2.10
     ./configure
@@ -202,13 +202,13 @@ keywords: Linux, Ubuntu Server, Apache2, mod_mono, mono
       AddOutputFilterByType DEFLATE text/html text/plain text/xml text/javascript
     </IfModule>
 
-> 这些配置可以在 [Configure Apache Mod_Mono](http://go-mono.com/config-mod-mono/Default.aspx) 生成， 不比逐行输入。
+> 这些配置可以在 [Configure Apache Mod_Mono](https://go-mono.com/config-mod-mono/Default.aspx) 生成， 不比逐行输入。
 
 保存并关闭这个文件， 然后输入下面的命令重启 Apache2 服务：
 
     sudo service apache2 restart
 
-然后再次打开浏览器， 输入地址： `http://server-name-or-address/MonoTest` ， 看到类似下面的画面就大功告成了：
+然后再次打开浏览器， 输入地址： `https://server-name-or-address/MonoTest` ， 看到类似下面的画面就大功告成了：
 
 ![mod_mono + Apache2 Success](/assets/post-images/mod-mono-apache2-success.png)
 
@@ -216,6 +216,6 @@ keywords: Linux, Ubuntu Server, Apache2, mod_mono, mono
 
 ### 参考资料
 
-* [http://download.mono-project.com/sources/](http://download.mono-project.com/sources/)
-* [Mod mono](http://www.mono-project.com/Mod_mono)
-* [Configure Apache Mod_Mono](http://go-mono.com/config-mod-mono/Default.aspx)
+* [https://download.mono-project.com/sources/](https://download.mono-project.com/sources/)
+* [Mod mono](https://www.mono-project.com/Mod_mono)
+* [Configure Apache Mod_Mono](https://go-mono.com/config-mod-mono/Default.aspx)

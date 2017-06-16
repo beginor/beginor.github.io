@@ -13,21 +13,21 @@ Sony Z13 系列笔记本的驱动程序一直停留在 2010 年的版本， 在 
 
 Sony 笔记本的 BIOS 锁定了高级菜单， 屏蔽了很多高级的功能， 包括显卡切换策略， 因此必须先破解高级菜单才能继续。
 
-英文教程在[这里](http://forum.notebookreview.com/sony/473226-insyde-hacking-new-vaio-z-advanced-menu-bios-44.html#post7932873)，现整理如下：
+英文教程在[这里](https://forum.notebookreview.com/sony/473226-insyde-hacking-new-vaio-z-advanced-menu-bios-44.html#post7932873)，现整理如下：
 
 #### 准备工作 ####
 
 **FreeDOS 启动 U 盘**
 
-为什么是 DOS ？ 因为在 DOS 下可以直接读写 BIOS ， 下载 [UNetbootin](http://unetbootin.sourceforge.net/) ， 并根据提示做一个 FreeDos 启动 U 盘， 这个对于技术宅来说， 不是什么问题。
+为什么是 DOS ？ 因为在 DOS 下可以直接读写 BIOS ， 下载 [UNetbootin](https://unetbootin.sourceforge.net/) ， 并根据提示做一个 FreeDos 启动 U 盘， 这个对于技术宅来说， 不是什么问题。
 
-做好启动 U 盘之后， 下载这个 [FLASHZ1.EXE](http://computercowboy.com/downloads/FLASHZ1.EXE) ， 保存到 U 盘的根目录， 后面将使用这个工具在 FreeDOS 下读写 BIOS。
+做好启动 U 盘之后， 下载这个 [FLASHZ1.EXE](https://computercowboy.com/downloads/FLASHZ1.EXE) ， 保存到 U 盘的根目录， 后面将使用这个工具在 FreeDOS 下读写 BIOS。
 
 **Portable Python** 
 
-修改 BIOS 的工具就是用 Python 编写的， 所以需要 Python 环境， 访问 [Portable Python](http://www.portablepython.com/wiki/Download) ， 下载 2.7.x 的最新版本并安装到 U 盘上。 
+修改 BIOS 的工具就是用 Python 编写的， 所以需要 Python 环境， 访问 [Portable Python](https://www.portablepython.com/wiki/Download) ， 下载 2.7.x 的最新版本并安装到 U 盘上。 
 
-安装好之后， 下载 [advanced_menu.py](http://forum.notebookreview.com/attachments/sony/48026d1270415701-insyde-hacking-new-vaio-z-advanced-menu-bios-advanced_menu.zip) , 把压缩包的内容解压到 Portable Python 安装目录下的 App 目录内。
+安装好之后， 下载 [advanced_menu.py](https://forum.notebookreview.com/attachments/sony/48026d1270415701-insyde-hacking-new-vaio-z-advanced-menu-bios-advanced_menu.zip) , 把压缩包的内容解压到 Portable Python 安装目录下的 App 目录内。
 
 **修改 BIOS ，打开高级菜单**
 
@@ -61,9 +61,9 @@ Sony 笔记本的 BIOS 锁定了高级菜单， 屏蔽了很多高级的功能�
 
 ### 3、 安装 NVIDIA 最新版驱动 ###
 
-访问 NVIDIA 的支持网站， 下载支持 [GT330](http://www.nvidia.cn/object/product_geforce_gt_330m_cn.html) 的[最新驱动程序](http://www.geforce.cn/drivers/results/55125)， 并解压到一个临时目录， 还需要做一些修改才能直接安装。
+访问 NVIDIA 的支持网站， 下载支持 [GT330](https://www.nvidia.cn/object/product_geforce_gt_330m_cn.html) 的[最新驱动程序](https://www.geforce.cn/drivers/results/55125)， 并解压到一个临时目录， 还需要做一些修改才能直接安装。
 
-根据[这里](http://forum.notebookreview.com/sony/602497-latest-vpc-z1-330m-drivers-bios-hack-people.html)的提示， 打开 Display.Driver 目录下的 /nvszc.inf 文件， 查找：
+根据[这里](https://forum.notebookreview.com/sony/602497-latest-vpc-z1-330m-drivers-bios-hack-people.html)的提示， 打开 Display.Driver 目录下的 /nvszc.inf 文件， 查找：
 
 	%NVIDIA_DEV.0A29.02% = Section010, PCI\VEN_10DE&DEV_0A29&SUBSYS_9067104D
 

@@ -20,7 +20,7 @@
             <a class="nav-link" href="/about.html"><i class="fa fa-info"></i> 关于</a>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0" role="search" method="get" target="_blank" action="http://www.google.com/search">
+        <form class="form-inline my-2 my-lg-0" role="search" method="get" target="_blank" action="https://www.google.com/search">
           <input type="text" class="form-control" placeholder="Google 搜索" name="q" maxlength="200"/>
           <input type="hidden" name="oe" value="GB2312" />
           <input type="hidden" name="hl" value="zh-CN" />

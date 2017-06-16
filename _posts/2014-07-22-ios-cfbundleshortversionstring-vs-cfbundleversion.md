@@ -54,4 +54,4 @@ CFBundleVersion 表示构建版本号， 因此推荐使用 `CFBundleVersion` �
 
 [1]: https://developer.apple.com/library/ios/documentation/general/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html#//apple_ref/doc/uid/20001431-111349
 [2]: https://developer.apple.com/library/ios/documentation/general/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html#//apple_ref/doc/uid/20001431-102364
-[3]: http://semver.org/lang/zh-CN/
+[3]: https://semver.org/lang/zh-CN/

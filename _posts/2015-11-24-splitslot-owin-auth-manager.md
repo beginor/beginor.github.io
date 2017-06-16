@@ -118,5 +118,5 @@ container.Register(
 
 ![Resolve IAuthenticationManager](/assets/post-images/resolve-authentication-manager.png)
 
-本文参考： [Registering OWIN IAuthenticationManager using Castle Windsor](http://stackoverflow.com/questions/31807415/registering-owin-iauthenticationmanager-using-castle-windsor)
+本文参考： [Registering OWIN IAuthenticationManager using Castle Windsor](https://stackoverflow.com/questions/31807415/registering-owin-iauthenticationmanager-using-castle-windsor)
 

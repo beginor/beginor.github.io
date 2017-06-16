@@ -5,7 +5,7 @@ description: Silverlight 中的 UIElement 与 FrameworkElement 的研究，讨�
 tags: [Silverlight]
 
 ---
-在 Silverlight 中， 有两个比较重要的基础控件 [UIElement](http://msdn.microsoft.com/zh-cn/library/system.windows.uielement(v=vs.95).aspx) 和 [FrameworkElement](http://msdn.microsoft.com/zh-cn/library/system.windows.frameworkelement(v=vs.95).aspx)， 如果你要开发自定义控件或者模版控件， 那么就可能要经常使用这两个基础控件， MSDN 中对这两个控件的描述如下： 
+在 Silverlight 中， 有两个比较重要的基础控件 [UIElement](https://msdn.microsoft.com/zh-cn/library/system.windows.uielement(v=vs.95).aspx) 和 [FrameworkElement](https://msdn.microsoft.com/zh-cn/library/system.windows.frameworkelement(v=vs.95).aspx)， 如果你要开发自定义控件或者模版控件， 那么就可能要经常使用这两个基础控件， MSDN 中对这两个控件的描述如下： 
 
 > **UIElement**  is a base class for most of the objects that have visual appearance and can process basic input in Silverlight. (UIElement  是 Silverlight 中具有可视外观并可以处理基本输入的大多数对象的基类。)
 

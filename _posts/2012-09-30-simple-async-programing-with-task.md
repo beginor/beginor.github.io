@@ -77,7 +77,7 @@ tags: [.Net]
 1. 根据用户选择的点查询出缓冲区；
 2. 查询缓冲区内的建筑物信息；
 
-这个例子在 GIS 查询中可以说是非常简单的， 也是很典型的， [ESRI 的例子中也给出了完整的源代码](http://help.arcgis.com/en/webapi/silverlight/samples/start.htm#BufferQuery)， 这个例子的核心逻辑代码是：
+这个例子在 GIS 查询中可以说是非常简单的， 也是很典型的， [ESRI 的例子中也给出了完整的源代码](https://help.arcgis.com/en/webapi/silverlight/samples/start.htm#BufferQuery)， 这个例子的核心逻辑代码是：
 
     _geometryService = new GeometryService(GeoServerUrl);
     _geometryService.BufferCompleted += GeometryService_BufferCompleted;
@@ -119,4 +119,4 @@ tags: [.Net]
 
 从上面的代码可以看出， 使用 Task 对象可以把原本分散在三个函数中的逻辑集中在一个函数中即可完成， 代码的可读性、可维护性比原来增加了很多。
 
-Task 能完成的任务远不止这些，比如并行计算、 协调多个并发任务等， 有兴趣的可以进一步阅读[相关的 MSDN 资料](http://msdn.microsoft.com/zh-cn/library/dd997405.aspx)。
+Task 能完成的任务远不止这些，比如并行计算、 协调多个并发任务等， 有兴趣的可以进一步阅读[相关的 MSDN 资料](https://msdn.microsoft.com/zh-cn/library/dd997405.aspx)。

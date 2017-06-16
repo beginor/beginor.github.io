@@ -6,7 +6,7 @@ description: 本文介绍 NuGet 使用自定义本地类库目录。
 tags: [NuGet]
 ---
 
-在项目中使用 [NuGet](http://www.nuget.org/) 作为第三方类库管理器是非常方便的， NuGet 默认会在解决方案的目录下建立一个名为 packages 的目录， 把解决方案所需的第三方类库都放到 packages 目录下， 解决方案下所有的项目都引用 packages 目录内的类库， 对于单个解决方案来说， 非常不错。
+在项目中使用 [NuGet](https://www.nuget.org/) 作为第三方类库管理器是非常方便的， NuGet 默认会在解决方案的目录下建立一个名为 packages 的目录， 把解决方案所需的第三方类库都放到 packages 目录下， 解决方案下所有的项目都引用 packages 目录内的类库， 对于单个解决方案来说， 非常不错。
 
 如果要在多个解决方案之间共享类库的话， NuGet 默认的设置明显就不能满足需要了， 解决方案可能位于不同的目录， 如果每个解决方案目录内都再都有一个 packages 目录的话， 就会重复下载很多类库， 大家自然会想到将所有的第三方资源都放到一个统一的目录内， 这个特性在早期的 NuGet 版本下是不支持的， 随着 NuGet 2.x 系列版本的发布， 这个功能可以通过 NuGet 配置文件来实现。
 
@@ -55,4 +55,4 @@ tags: [NuGet]
 
 有了这样的 NuGet 一个配置文件， 在 MyProjects 目录下所有的解决方案将会公用一个 packages 目录， 并且自动下载缺失的 package 。
 
-当然， NuGet 的配置远不止这些， 像深入挖掘的话， 需要好好看看[NuGet 提供的文档](http://docs.nuget.org/)。
+当然， NuGet 的配置远不止这些， 像深入挖掘的话， 需要好好看看[NuGet 提供的文档](https://docs.nuget.org/)。

@@ -88,7 +88,7 @@ ArcGIS API 用到的资源文件， 比如 ESRI 和 Bind 的 Logo ， GPS 位置
         
         AGSTiledMapServiceLayer *tiledLayer =
         [AGSTiledMapServiceLayer
-         tiledMapServiceLayerWithURL:[NSURL URLWithString:@"http://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer"]];
+         tiledMapServiceLayerWithURL:[NSURL URLWithString:@"https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer"]];
         [self.mapView addMapLayer:tiledLayer withName:@"Basemap Tiled Layer"];
         
         //Set the map view's layerDelegate to self so that our
@@ -120,7 +120,7 @@ Binding项目只是对 ArcGIS API 的绑定， 因此对外暴露的 API 函数�
     public override void ViewDidLoad() {
        base.ViewDidLoad();
        // add a basemap tiled layer.
-       var url = NSUrl.FromString("http://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer");
+       var url = NSUrl.FromString("https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer");
        var tiledLayer = AGSTiledMapServiceLayer.TiledMapServiceLayerWithURL(url);
        this.MapView.AddMapLayer(tiledLayer, "Basemap Tiled Layer");
     }
@@ -128,5 +128,5 @@ Binding项目只是对 ArcGIS API 的绑定， 因此对外暴露的 API 函数�
 [1]: https://developers.arcgis.com/en/ios/
 [2]: https://developers.arcgis.com/en/features/
 [3]: https://developers.arcgis.com/en/sign-in/
-[4]: http://www.esri.com/apps/products/download/index.cfm#ArcGIS_Runtime_SDK_for_iOS
+[4]: https://www.esri.com/apps/products/download/index.cfm#ArcGIS_Runtime_SDK_for_iOS
 [5]: https://github.com/beginor/MonoTouch.ArcGIS

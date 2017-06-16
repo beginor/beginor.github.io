@@ -8,7 +8,7 @@ tags: [NHibernate]
 
 ## 关于代码映射
 
-NHibernate 3.2 自带了代码映射机制， 作为 xml 映射之外的一种映射方式， 由于推出的时间比较晚， 所以资料相对比较少， 而且与社区版的 [Fluent Mapping](https://github.com/jagregory/fluent-nhibernate) 和 [Attribute Mapping](http://sourceforge.net/projects/nhcontrib/files/NHibernate.Mapping.Attributes/) 不同， 有其独特的设计风格。
+NHibernate 3.2 自带了代码映射机制， 作为 xml 映射之外的一种映射方式， 由于推出的时间比较晚， 所以资料相对比较少， 而且与社区版的 [Fluent Mapping](https://github.com/jagregory/fluent-nhibernate) 和 [Attribute Mapping](https://sourceforge.net/projects/nhcontrib/files/NHibernate.Mapping.Attributes/) 不同， 有其独特的设计风格。
 
 下面就通过一个实例来说明怎么使用 NHibernate 自带的代码映射。
 
@@ -16,7 +16,7 @@ NHibernate 3.2 自带了代码映射机制， 作为 xml 映射之外的一种�
 
 要映射的类关系图如下：
 
-![实体关系](http://beginor.github.io/assets/post-images/entity-relation.png)
+![实体关系](https://beginor.github.io/assets/post-images/entity-relation.png)
 
 上图中有三个实体类， 他们之间的关系说明如下：
 
@@ -189,7 +189,7 @@ schemaExport.SetDelimiter(";");
 schemaExport.Execute(true, true, false);
 ```
 
-![导出的数据库结构](http://beginor.github.io/assets/post-images/schema-export.png)
+![导出的数据库结构](https://beginor.github.io/assets/post-images/schema-export.png)
 
 ## 总结
 

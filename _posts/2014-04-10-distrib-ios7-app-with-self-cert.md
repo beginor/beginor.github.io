@@ -57,8 +57,8 @@ iOS 升级到 7.1 之后， 原来通过[网页分发应用的方法][1]出现�
 - [在iOS上使用自签名的SSL证书][3]
 - [IIS8中使用OpenSSL来创建CA并且签发SSL证书][4]
 
-[1]: http://beginor.github.io/2013/01/25/ios-app-enterprise-adhoc-distribution.html
-[2]: http://stackoverflow.com/questions/20276907/enterprise-app-deployment-doesnt-work-on-ios-7-1/22325916#22325916
-[3]: http://beyondvincent.com/blog/2014/03/17/five-tips-for-using-self-signed-ssl-certificates-with-ios/
-[4]: http://www.cnblogs.com/mosquitos/p/3147539.html
+[1]: https://beginor.github.io/2013/01/25/ios-app-enterprise-adhoc-distribution.html
+[2]: https://stackoverflow.com/questions/20276907/enterprise-app-deployment-doesnt-work-on-ios-7-1/22325916#22325916
+[3]: https://beyondvincent.com/blog/2014/03/17/five-tips-for-using-self-signed-ssl-certificates-with-ios/
+[4]: https://www.cnblogs.com/mosquitos/p/3147539.html
 

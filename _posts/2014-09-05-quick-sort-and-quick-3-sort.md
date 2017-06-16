@@ -245,5 +245,5 @@ public static class Quick3<T> where T : IComparable {
 ```
 考虑使用快速排序算法时， 通常应优先考虑三路快速排序。
 
-[1]: http://zh.wikipedia.org/wiki/%E5%88%86%E6%B2%BB%E6%B3%95
-[2]: http://upload.wikimedia.org/wikipedia/commons/6/6a/Sorting_quicksort_anim.gif
+[1]: https://zh.wikipedia.org/wiki/%E5%88%86%E6%B2%BB%E6%B3%95
+[2]: https://upload.wikimedia.org/wikipedia/commons/6/6a/Sorting_quicksort_anim.gif

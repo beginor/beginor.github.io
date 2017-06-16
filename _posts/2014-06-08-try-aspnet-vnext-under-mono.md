@@ -76,7 +76,7 @@ https 证书， 否则无法继续后面的 asp.net vNext 的安装 （参考自
 在 mono 上运行 asp.net vNext 只能到此为止了， 目前这个错误无解， 或者我还没找到 。。。
 </div>
 
-[1]: http://graemechristie.github.io/graemechristie/blog/2014/05/26/asp-dot-net-vnext-on-osx-and-linux/ "ASP.NET vNext on OSX and Linux"
-[2]: http://beginor.github.io/2013/10/15/install-and-config-mono-on-ubuntu-server.html "在 Ubuntu Server 上安装配置 Mono 生产环境"
-[3]: http://www.cnblogs.com/shanyou/p/3218611.html "CentOS 6.3下 安装 Mono 3.2 和Jexus 5.4"
+[1]: https://graemechristie.github.io/graemechristie/blog/2014/05/26/asp-dot-net-vnext-on-osx-and-linux/ "ASP.NET vNext on OSX and Linux"
+[2]: https://beginor.github.io/2013/10/15/install-and-config-mono-on-ubuntu-server.html "在 Ubuntu Server 上安装配置 Mono 生产环境"
+[3]: https://www.cnblogs.com/shanyou/p/3218611.html "CentOS 6.3下 安装 Mono 3.2 和Jexus 5.4"
 [4]: https://github.com/aspnet/Home "asp.net Home"

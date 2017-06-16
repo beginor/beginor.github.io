@@ -85,9 +85,9 @@ tags: [转载]
 
 没有什么绝对的方法能让你绝对说服客户又确保你是正确的。在未来的日子里，说服别人的诀窍包括：尊重、乐意聆听他们的意见、用对方了解的术语展示你的想法。
 
-原文地址：[http://www.smashingmagazine.com/2009/10/11/how-to-persuade-your-users-boss-or-clients/](http://www.smashingmagazine.com/2009/10/11/how-to-persuade-your-users-boss-or-clients/)
+原文地址：[https://www.smashingmagazine.com/2009/10/11/how-to-persuade-your-users-boss-or-clients/](https://www.smashingmagazine.com/2009/10/11/how-to-persuade-your-users-boss-or-clients/)
 
-译文地址：[http://davidw.cn/how-to/how-to-persuade-your-users-boss-or-clients/](http://davidw.cn/how-to/how-to-persuade-your-users-boss-or-clients/)
+译文地址：[https://davidw.cn/how-to/how-to-persuade-your-users-boss-or-clients/](https://davidw.cn/how-to/how-to-persuade-your-users-boss-or-clients/)
 
-译者信息： [http://davidw.cn/about/](http://davidw.cn/about/)
+译者信息： [https://davidw.cn/about/](https://davidw.cn/about/)
 

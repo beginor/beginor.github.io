@@ -39,7 +39,7 @@ tags: [iOS]
 
 将上一部最终生成的 ipa 以及 plist 文件复制到内部的 Web 服务器，  在网页上添加类似这样的链接：
 
-    <a href="itms-services://?action=download-manifest&url=http://url-to-your-app.plist">安装移动办公iOS版</a>
+    <a href="itms-services://?action=download-manifest&url=https://url-to-your-app.plist">安装移动办公iOS版</a>
 
 Web 服务器上可能需要添加 .plist 和 .ipa 的 Mime 类型， 它们的 Mime 类型分别为：
 

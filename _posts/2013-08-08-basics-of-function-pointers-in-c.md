@@ -230,10 +230,10 @@ main 函数调用了两次 domath 函数，一次用了 add，一次用了 subtr
 我删掉了关于描述`(*sayHelloPrt)(void)`跟`(*sayHelloPrt)()`相同的那一部分，那其实是错误的。在评论区中，Dave G给出了一个关于这个问题很好的解释。
 
 原文链接： [Dennis Kubes][2]   翻译： [伯乐在线][3] - [伯乐在线读者][4]
-译文链接： [http://blog.jobbole.com/44639/][5]
+译文链接： [https://blog.jobbole.com/44639/][5]
 
-[1]: http://weibo.com/HackerYangHJ
-[2]: http://denniskubes.com/2013/03/22/basics-of-function-pointers-in-c/
-[3]: http://blog.jobbole.com/
-[4]: http://blog.jobbole.com/author/jobbole/
-[5]: http://blog.jobbole.com/44639/
+[1]: https://weibo.com/HackerYangHJ
+[2]: https://denniskubes.com/2013/03/22/basics-of-function-pointers-in-c/
+[3]: https://blog.jobbole.com/
+[4]: https://blog.jobbole.com/author/jobbole/
+[5]: https://blog.jobbole.com/44639/

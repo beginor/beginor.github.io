@@ -159,4 +159,4 @@ E. 了解各个菜系的起源和发展，以及对各地区文化的影响
 -   见天地——根据天时地利，为每道题找到对自己最有利的答案和回答方式
 -   见众生——搞定面试官，挤死比自己学历高、能力强、经验多、做题猛的竞争者。
 
-原文地址[http://www.mitbbs.com/article_t/JobHunting/32327557.html](http://www.mitbbs.com/article_t/JobHunting/32327557.html)
+原文地址[https://www.mitbbs.com/article_t/JobHunting/32327557.html](https://www.mitbbs.com/article_t/JobHunting/32327557.html)

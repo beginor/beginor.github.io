@@ -56,16 +56,16 @@ keywords: xamarin, mono, c#, ios, uiview, animation
 
 在 Begin/Commit 函数之间， 可以通过下面的方法设置动画的参数和选项：
 
-- [`setAnimationStartDate:`](http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/setAnimationStartDate:)
-- [`setAnimationDelay:`](http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/setAnimationDelay:)
-- [`setAnimationDuration:`](http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/setAnimationDuration:)
-- [`setAnimationCurve:`](http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/setAnimationCurve:)
-- [`setAnimationRepeatCount:`](http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/setAnimationRepeatCount:)
-- [`setAnimationRepeatAutoreverses:`](http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/setAnimationRepeatAutoreverses:)
-- [`setAnimationDelegate:`](http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/setAnimationDelegate:)
-- [`setAnimationWillStartSelector:`](http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/setAnimationWillStartSelector:)
-- [`setAnimationDidStopSelector:`](http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/setAnimationDidStopSelector:)
-- [`setAnimationBeginsFromCurrentState:`](http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/setAnimationBeginsFromCurrentState:)
+- [`setAnimationStartDate:`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/setAnimationStartDate:)
+- [`setAnimationDelay:`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/setAnimationDelay:)
+- [`setAnimationDuration:`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/setAnimationDuration:)
+- [`setAnimationCurve:`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/setAnimationCurve:)
+- [`setAnimationRepeatCount:`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/setAnimationRepeatCount:)
+- [`setAnimationRepeatAutoreverses:`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/setAnimationRepeatAutoreverses:)
+- [`setAnimationDelegate:`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/setAnimationDelegate:)
+- [`setAnimationWillStartSelector:`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/setAnimationWillStartSelector:)
+- [`setAnimationDidStopSelector:`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/setAnimationDidStopSelector:)
+- [`setAnimationBeginsFromCurrentState:`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/setAnimationBeginsFromCurrentState:)
 
 > **注意：** 如果不是为了支持很旧的设备， 则推荐使用下面的 lambda (block based method) 来实现动画效果， 虽然 begin/commit 还能够使用， 按照官方的说法， 对新系统来说是不推荐的了。
 
@@ -266,20 +266,20 @@ iOS 支持嵌套的动画， 也就是说在一个动画代码段中， 可以�
 
 
 [1]:https://developer.apple.com/library/ios/#documentation/Cocoa/Conceptual/CoreAnimation_guide/Introduction/Introduction.html "Core Animation"
-[2]:http://developer.apple.com/library/ios/#documentation/windowsviews/conceptual/viewpg_iphoneos/animatingviews/animatingviews.html "View Programming Guide for iOS: Animations"
-[3]:http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/animateWithDuration:animations: "animateWithDuration:animations:"
-[4]:http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/animateWithDuration:animations:completion: "animateWithDuration:animations:completion:"
-[5]:http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/animateWithDuration:delay:options:animations:completion: "animateWithDuration:delay:options:animations:completion:"
-[6]:http://iosapi.xamarin.com/?link=M%3aMonoTouch.UIKit.UIView.Animate(System.Double%2cMonoTouch.Foundation.NSAction)
-[7]:http://iosapi.xamarin.com/?link=M%3aMonoTouch.UIKit.UIView.Animate(System.Double%2cMonoTouch.Foundation.NSAction%2cMonoTouch.Foundation.NSAction)
-[8]:http://iosapi.xamarin.com/?link=M%3aMonoTouch.UIKit.UIView.Animate(System.Double%2cSystem.Double%2cMonoTouch.UIKit.UIViewAnimationOptions%2cMonoTouch.Foundation.NSAction%2cMonoTouch.Foundation.NSAction)
-[9]:http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/beginAnimations:context:
-[10]:http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/commitAnimations
-[11]:http://iosapi.xamarin.com/?link=M%3aMonoTouch.UIKit.UIView.BeginAnimations(System.String)
-[12]:http://iosapi.xamarin.com/?link=M%3aMonoTouch.UIKit.UIView.BeginAnimations(System.String%2cSystem.IntPtr)
-[13]:http://iosapi.xamarin.com/?link=M%3aMonoTouch.UIKit.UIView.CommitAnimations
-[14]:http://developer.apple.com/library/ios/featuredarticles/ViewControllerPGforiPhoneOS/Introduction/Introduction.html#//apple_ref/doc/uid/TP40007457
-[15]:http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/transitionWithView:duration:options:animations:completion:
-[16]:http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/setAnimationTransition:forView:cache:
-[17]:http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/setAnimationDelegate:
-[18]:http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/transitionFromView:toView:duration:options:completion:
+[2]:https://developer.apple.com/library/ios/#documentation/windowsviews/conceptual/viewpg_iphoneos/animatingviews/animatingviews.html "View Programming Guide for iOS: Animations"
+[3]:https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/animateWithDuration:animations: "animateWithDuration:animations:"
+[4]:https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/animateWithDuration:animations:completion: "animateWithDuration:animations:completion:"
+[5]:https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/animateWithDuration:delay:options:animations:completion: "animateWithDuration:delay:options:animations:completion:"
+[6]:https://iosapi.xamarin.com/?link=M%3aMonoTouch.UIKit.UIView.Animate(System.Double%2cMonoTouch.Foundation.NSAction)
+[7]:https://iosapi.xamarin.com/?link=M%3aMonoTouch.UIKit.UIView.Animate(System.Double%2cMonoTouch.Foundation.NSAction%2cMonoTouch.Foundation.NSAction)
+[8]:https://iosapi.xamarin.com/?link=M%3aMonoTouch.UIKit.UIView.Animate(System.Double%2cSystem.Double%2cMonoTouch.UIKit.UIViewAnimationOptions%2cMonoTouch.Foundation.NSAction%2cMonoTouch.Foundation.NSAction)
+[9]:https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/beginAnimations:context:
+[10]:https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/commitAnimations
+[11]:https://iosapi.xamarin.com/?link=M%3aMonoTouch.UIKit.UIView.BeginAnimations(System.String)
+[12]:https://iosapi.xamarin.com/?link=M%3aMonoTouch.UIKit.UIView.BeginAnimations(System.String%2cSystem.IntPtr)
+[13]:https://iosapi.xamarin.com/?link=M%3aMonoTouch.UIKit.UIView.CommitAnimations
+[14]:https://developer.apple.com/library/ios/featuredarticles/ViewControllerPGforiPhoneOS/Introduction/Introduction.html#//apple_ref/doc/uid/TP40007457
+[15]:https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/transitionWithView:duration:options:animations:completion:
+[16]:https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/setAnimationTransition:forView:cache:
+[17]:https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/setAnimationDelegate:
+[18]:https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/UIView/UIView.html#//apple_ref/occ/clm/UIView/transitionFromView:toView:duration:options:completion:

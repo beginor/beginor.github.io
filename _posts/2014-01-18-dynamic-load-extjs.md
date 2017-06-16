@@ -16,8 +16,8 @@ keywords: ExtJS, 动态加载, loader,
     <html>
     <head>
         <title></title>
-        <link rel="stylesheet" type="text/css" href="http://localhost/ext-4/resources/css/ext-all.css" />
-        <script type="text/javascript" src="http://localhost/ext-4/ext-debug.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://localhost/ext-4/resources/css/ext-all.css" />
+        <script type="text/javascript" src="https://localhost/ext-4/ext-debug.js"></script>
     </head>
     <body>
         

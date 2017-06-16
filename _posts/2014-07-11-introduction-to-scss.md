@@ -248,7 +248,7 @@ aside[role="complimentary"] {
 
 以上只是基本的 Scss 语法， 想了解更多请参考 [Sass 官方网站][4] 。 
 
-[1]: http://sass-lang.com/documentation/Sass/Script/Functions.html
-[2]: http://sass-lang.com/documentation/file.SASS_REFERENCE.html#control_directives
+[1]: https://sass-lang.com/documentation/Sass/Script/Functions.html
+[2]: https://sass-lang.com/documentation/file.SASS_REFERENCE.html#control_directives
 [3]: https://addons.mozilla.org/en-US/firefox/addon/103988
-[4]: http://sass-lang.com/
+[4]: https://sass-lang.com/

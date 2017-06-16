@@ -202,5 +202,5 @@ sess.Flush();
 
 由此可见， `bag` 在多对多映射更新时性能较差， 如果不需要更新，则可以放心使用， 在需要更新时则 `set` 是更好的选择。 
 
-[1]: http://www.codinginstinct.com/2010/03/nhibernate-tip-use-set-for-many-to-many.html
-[2]: http://nhibernate.info/doc/nh/en/index.html#performance-collections
+[1]: https://www.codinginstinct.com/2010/03/nhibernate-tip-use-set-for-many-to-many.html
+[2]: https://nhibernate.info/doc/nh/en/index.html#performance-collections

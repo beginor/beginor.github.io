@@ -179,6 +179,6 @@ container.Register(
 
 参考 [Dependency Injection in ASP.NET Web API 2][3]
 
-[1]: http://msdn.microsoft.com/en-us/library/system.web.http.dependencies.idependencyresolver(v=vs.118).aspx
-[2]: http://msdn.microsoft.com/en-us/library/system.web.http.dependencies.idependencyscope(v=vs.118).aspx
-[3]: http://www.asp.net/web-api/overview/advanced/dependency-injection
+[1]: https://msdn.microsoft.com/en-us/library/system.web.http.dependencies.idependencyresolver(v=vs.118).aspx
+[2]: https://msdn.microsoft.com/en-us/library/system.web.http.dependencies.idependencyscope(v=vs.118).aspx
+[3]: https://www.asp.net/web-api/overview/advanced/dependency-injection

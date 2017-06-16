@@ -2,7 +2,7 @@
 title : 张志敏的技术专栏
 ---
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed xmlns="https://www.w3.org/2005/Atom">
  
  <title>{{ site.title }}</title>
  <link href="{{ site.public_url }}/atom.xml" rel="self"/>

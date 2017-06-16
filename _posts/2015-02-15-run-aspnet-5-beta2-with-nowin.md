@@ -215,8 +215,8 @@ private Task HandleRequest(IDictionary<string, object> env) {
 ```json
 {
     "commands": {
-        "web": "Microsoft.AspNet.Hosting --server Microsoft.AspNet.Server.WebListener --server.urls http://localhost:8080",
-        "nowin": "Microsoft.AspNet.Hosting --server Nowin.vNext --server.urls http://localhost:8080"
+        "web": "Microsoft.AspNet.Hosting --server Microsoft.AspNet.Server.WebListener --server.urls https://localhost:8080",
+        "nowin": "Microsoft.AspNet.Hosting --server Nowin.vNext --server.urls https://localhost:8080"
     },
     "frameworks" : {
         "aspnet50" : { }
@@ -261,7 +261,7 @@ namespace MvcApp {
 using Microsoft.AspNet.Mvc;
 using System;
 
-// For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace MvcApp.Controllers {
 
@@ -278,18 +278,18 @@ namespace MvcApp.Controllers {
 
 接下来可以 `F5` 直接在 VS 下运行， 也可以在命令行窗口直接输入 `k nowin` 命令来运行， 在 Windows 下运行如下图所示：
 
-![在 Windows 下运行 Nowin.vNext](http://beginor.github.io/assets/post-images/run-aspnet-5-beta2-with-nowin-win.png)
+![在 Windows 下运行 Nowin.vNext](https://beginor.github.io/assets/post-images/run-aspnet-5-beta2-with-nowin-win.png)
 
-![Windows 下浏览器截图](http://beginor.github.io/assets/post-images/run-aspnet-5-beta2-with-nowin-win-ie.png)
+![Windows 下浏览器截图](https://beginor.github.io/assets/post-images/run-aspnet-5-beta2-with-nowin-win-ie.png)
 
 Mac 系统下运行
 
-![在 Mac 下运行 Nowin.vNext](http://beginor.github.io/assets/post-images/run-aspnet-5-beta2-with-nowin-mac.png)
+![在 Mac 下运行 Nowin.vNext](https://beginor.github.io/assets/post-images/run-aspnet-5-beta2-with-nowin-mac.png)
 
-![Mac 下浏览器截图](http://beginor.github.io/assets/post-images/run-aspnet-5-beta2-with-nowin-mac-safari.png)
+![Mac 下浏览器截图](https://beginor.github.io/assets/post-images/run-aspnet-5-beta2-with-nowin-mac-safari.png)
 
 本文所有源代码： https://github.com/beginor/mvc-vnext
 
-[1]: http://beginor.github.io/2014/06/08/try-aspnet-vnext-under-mono.html
-[2]: http://owin.org/
+[1]: https://beginor.github.io/2014/06/08/try-aspnet-vnext-under-mono.html
+[2]: https://owin.org/
 [3]: https://github.com/beginor/Nowin

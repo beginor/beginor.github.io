@@ -99,7 +99,7 @@ OWIN 通过 NuGet 包的形式发布， 获取和使用都非常方便。 下面
    class MainClass {
    
        public static void Main(string[] args) {
-           var url = "http://localhost:8080/";
+           var url = "https://localhost:8080/";
            var startOpts = new StartOptions(url) {
    
            };
@@ -115,18 +115,18 @@ OWIN 通过 NuGet 包的形式发布， 获取和使用都非常方便。 下面
 
    ![OWIN Hello](/assets/post-images/owin-hello-03.png)
 
-   打开浏览器， 访问 http://localhost:8080/ ， 得到的响应如下：
+   打开浏览器， 访问 https://localhost:8080/ ， 得到的响应如下：
 
    ![OWIN Hello](/assets/post-images/owin-hello-04.png)
 
 到目前为止， 没有 Windows ， 更没有 IIS ， OWIN 应用就能正常运行了。
 
-[1]: http://owin.org/
-[2]: http://katanaproject.codeplex.com/
+[1]: https://owin.org/
+[2]: https://katanaproject.codeplex.com/
 [3]: https://github.com/Bobris/Nowin/
-[4]: http://nancyfx.org/
-[5]: http://signalr.net/
+[4]: https://nancyfx.org/
+[5]: https://signalr.net/
 [6]: https://aspnetwebstack.codeplex.com/
-[7]: http://mvc.fubu-project.org/
-[8]: http://github.com/markrendle/Simple.Web
-[9]: http://github.com/duovia/duovia-http
+[7]: https://mvc.fubu-project.org/
+[8]: https://github.com/markrendle/Simple.Web
+[9]: https://github.com/duovia/duovia-http

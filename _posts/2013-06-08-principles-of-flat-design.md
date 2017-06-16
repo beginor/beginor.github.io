@@ -6,7 +6,7 @@ tags: [转载]
 keywords: flat design, 扁平化, 设计
 ---
 
-[扁平化设计](http://designmodo.com/flat-design/) —— 设计社区不得不谈论的话题， 这种趋势的感觉是强烈的， 大多数设计师不能顺应这种趋势， 甚至讨厌这种趋势。
+[扁平化设计](https://designmodo.com/flat-design/) —— 设计社区不得不谈论的话题， 这种趋势的感觉是强烈的， 大多数设计师不能顺应这种趋势， 甚至讨厌这种趋势。
 
 我是属于中间派， 良好的设计是创建可工作的有用的事物， 如果这么做的答案是顺应潮流的扁平化设计， 那就是它了。 但是这种趋势不能适用于所有的项目， 所以不能强制使用。
 
@@ -14,11 +14,11 @@ keywords: flat design, 扁平化, 设计
 
 ## 不添加效果
 
-[![不添加效果](/assets/post-images/no-added-effect-1.jpg)](http://www.triplagent.com/)
+[![不添加效果](/assets/post-images/no-added-effect-1.jpg)](https://www.triplagent.com/)
 
-[![不添加效果](/assets/post-images/no-added-effect-2.jpg)](http://www.intothearctic.gp/)
+[![不添加效果](/assets/post-images/no-added-effect-2.jpg)](https://www.intothearctic.gp/)
 
-[![不添加效果](/assets/post-images/no-added-effect-3.jpg)](http://dribbble.com/shots/947749-Task-app)
+[![不添加效果](/assets/post-images/no-added-effect-3.jpg)](https://dribbble.com/shots/947749-Task-app)
 
 扁平化设计的概念来自于其自身形象，采用了非常独特的简约而扁平的设计风格。
 
@@ -30,13 +30,13 @@ keywords: flat design, 扁平化, 设计
 
 ## 简单的元素
 
-[![简单的元素](/assets/post-images/simple-element-1.jpg)](http://dribbble.com/shots/917819-iPad-Calendar-Login)
+[![简单的元素](/assets/post-images/simple-element-1.jpg)](https://dribbble.com/shots/917819-iPad-Calendar-Login)
 
-[![简单的元素](/assets/post-images/simple-element-2.jpg)](http://dribbble.com/shots/962125-Filetypes)
+[![简单的元素](/assets/post-images/simple-element-2.jpg)](https://dribbble.com/shots/962125-Filetypes)
 
-[![简单的元素](/assets/post-images/simple-element-3.jpg)](http://designmodo.com/square/)
+[![简单的元素](/assets/post-images/simple-element-3.jpg)](https://designmodo.com/square/)
 
-[![简单的元素](/assets/post-images/simple-element-4.jpg)](http://simonemarcarino.com/)
+[![简单的元素](/assets/post-images/simple-element-4.jpg)](https://simonemarcarino.com/)
 
 扁平化设计采用大量的简单的界面元素， 包括按钮和图表。 设计师通常坚持使用简单的图形， 例如矩形、 圆形或正方形， 并且允许他们单独存在， 图形的边沿可以是完美的圆角或直角。
 
@@ -44,15 +44,15 @@ keywords: flat design, 扁平化, 设计
 
 除了简约的风格外， 鼓励在按钮上大胆地使用颜色， 但是请不要混淆简单元素与简单的设计， 扁平化设计理念可以向其它任何设计风格一样复杂。
 
-需要入门帮助么？ Designmodo 提供了大量的采用扁平化风格的界面套件 —— 从免费的 [Square UI Free](http://designmodo.com/square-free/) 和 [Flat UI Free](http://designmodo.com/flat-free/) ， 包含基础组件的 PSD/HTML 界面套件， 到 [Square UI](http://designmodo.com/square/) 和 [Flat UI Pr](http://designmodo.com/flat/) ， 一套完整的 PSD/HTML 格式的网站和应用界面设计。
+需要入门帮助么？ Designmodo 提供了大量的采用扁平化风格的界面套件 —— 从免费的 [Square UI Free](https://designmodo.com/square-free/) 和 [Flat UI Free](https://designmodo.com/flat-free/) ， 包含基础组件的 PSD/HTML 界面套件， 到 [Square UI](https://designmodo.com/square/) 和 [Flat UI Pr](https://designmodo.com/flat/) ， 一套完整的 PSD/HTML 格式的网站和应用界面设计。
 
 ## 关注字体
 
-[![关注字体](/assets/post-images/focus-on-typography-1.jpg)](http://courtneyandrew.com/)
+[![关注字体](/assets/post-images/focus-on-typography-1.jpg)](https://courtneyandrew.com/)
 
 [![关注字体](/assets/post-images/focus-on-typography-2.jpg)](https://plover.co/)
 
-[![关注字体](/assets/post-images/focus-on-typography-4.jpg)](http://www.flatmate.se/)
+[![关注字体](/assets/post-images/focus-on-typography-4.jpg)](https://www.flatmate.se/)
 
 由于扁平化设计采用了简单自然的元素，因此字体很重要。
 
@@ -64,13 +64,13 @@ keywords: flat design, 扁平化, 设计
 
 ## 关注颜色
 
-[![关注颜色](/assets/post-images/focus-on-color-1.jpg)](http://dribbble.com/shots/968439-Close-landing-page)
+[![关注颜色](/assets/post-images/focus-on-color-1.jpg)](https://dribbble.com/shots/968439-Close-landing-page)
 
-[![关注颜色](/assets/post-images/focus-on-color-2.jpg)](http://dribbble.com/shots/963964-Online-Radio)
+[![关注颜色](/assets/post-images/focus-on-color-2.jpg)](https://dribbble.com/shots/963964-Online-Radio)
 
-[![关注颜色](/assets/post-images/focus-on-color-3.jpg)](http://dribbble.com/shots/1021883-Squirrel-Settings)
+[![关注颜色](/assets/post-images/focus-on-color-3.jpg)](https://dribbble.com/shots/1021883-Squirrel-Settings)
 
-颜色是扁平化设计的一大部分， 与其它站点相比， 扁平化设计使用[更加明亮和更加丰富的颜色](http://designmodo.com/flat-design-colors/)。 
+颜色是扁平化设计的一大部分， 与其它站点相比， 扁平化设计使用[更加明亮和更加丰富的颜色](https://designmodo.com/flat-design-colors/)。 
 
 扁平化设计经常使用更多颜色， 一般项目通常最多使用两种或者三种颜色， 而扁平化设计则可使用 6 到 8 中颜色。
 
@@ -78,11 +78,11 @@ keywords: flat design, 扁平化, 设计
 
 ## 简约实现
 
-[![简约实现](/assets/post-images/minimalist-approach-1.jpg)](http://dribbble.com/shots/981593-Personal-Site)
+[![简约实现](/assets/post-images/minimalist-approach-1.jpg)](https://dribbble.com/shots/981593-Personal-Site)
 
-[![简约实现](/assets/post-images/minimalist-approach-2.jpg)](http://fltdsgn.com/)
+[![简约实现](/assets/post-images/minimalist-approach-2.jpg)](https://fltdsgn.com/)
 
-[![简约实现](/assets/post-images/minimalist-approach-3.jpg)](http://cdns.designmodo.com/wp-content/uploads/2013/05/Mud.jpg)
+[![简约实现](/assets/post-images/minimalist-approach-3.jpg)](https://cdns.designmodo.com/wp-content/uploads/2013/05/Mud.jpg)
 
 扁平化设计简洁的特质，配以简约的设计实现是非常棒的。
 
@@ -92,15 +92,15 @@ keywords: flat design, 扁平化, 设计
 
 ## “接近” 扁平化设计
 
-[![“接近” 扁平化设计](/assets/post-images/almost-flat-design-1.jpg)](http://dribbble.com/shots/1024811-Nagging-popup)
+[![“接近” 扁平化设计](/assets/post-images/almost-flat-design-1.jpg)](https://dribbble.com/shots/1024811-Nagging-popup)
 
-[![“接近” 扁平化设计](/assets/post-images/almost-flat-design-2.jpg)](http://dribbble.com/shots/1054539-Calc)
+[![“接近” 扁平化设计](/assets/post-images/almost-flat-design-2.jpg)](https://dribbble.com/shots/1054539-Calc)
 
-[![“接近” 扁平化设计](/assets/post-images/almost-flat-design-3.jpg)](http://dribbble.com/shots/992907-SimpleMail-Full-View-The-easy-way-to-email-anything)
+[![“接近” 扁平化设计](/assets/post-images/almost-flat-design-3.jpg)](https://dribbble.com/shots/992907-SimpleMail-Full-View-The-easy-way-to-email-anything)
 
-[![“接近” 扁平化设计](/assets/post-images/almost-flat-design-5.jpg)](http://dribbble.com/shots/1053618-Coming-project)
+[![“接近” 扁平化设计](/assets/post-images/almost-flat-design-5.jpg)](https://dribbble.com/shots/1053618-Coming-project)
 
-[![“接近” 扁平化设计](/assets/post-images/almost-flat-design-6.jpg)](http://dribbble.com/shots/1001719-Music-Web-Application)
+[![“接近” 扁平化设计](/assets/post-images/almost-flat-design-6.jpg)](https://dribbble.com/shots/1001719-Music-Web-Application)
 
 更多设计师愿意接受的是＂接近＂扁平化的设计。
 
@@ -114,9 +114,9 @@ keywords: flat design, 扁平化, 设计
 
 Designmodo 是扁平化设计趋势讨论中的领军人物， 阅读我们更多关于扁平化的文章：
 
-- [扁平化设计： 你能从中获益么？](http://designmodo.com/flat-design)
-- [扁平化网站设计： 漂亮的网站示例](http://designmodo.com/flat-design-examples/)
-- [漂亮的扁平化图标设计示例](http://designmodo.com/flat-icons-examples/)
-- [让它可行： 扁平化设计与颜色](http://designmodo.com/flat-design-colors/)
+- [扁平化设计： 你能从中获益么？](https://designmodo.com/flat-design)
+- [扁平化网站设计： 漂亮的网站示例](https://designmodo.com/flat-design-examples/)
+- [漂亮的扁平化图标设计示例](https://designmodo.com/flat-icons-examples/)
+- [让它可行： 扁平化设计与颜色](https://designmodo.com/flat-design-colors/)
 
-原文地址： [Principles of Flat Design](http://designmodo.com/flat-design-principles/)
+原文地址： [Principles of Flat Design](https://designmodo.com/flat-design-principles/)

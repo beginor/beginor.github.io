@@ -92,7 +92,7 @@ tags: [转载]
 
 当客户、朋友或家庭成员用电脑的时候，他们也许会受挫，进而想砸电脑，或气冲冲地离开。我一直在 告诉他们，“是你掌控电脑，不是电脑掌控你。”对于用作编程的电脑，你要有一定的耐心。一旦程序员知道问题所在后，他们就会站在电脑的角度看问题，并且说 “哦，这就是为什么它是这样做。”
 
-[原文地址](http://www.dcs-media.com/Archive/20-20-top-20-programming-lessons-ive-learned-in-20-years-FH)
+[原文地址](https://www.dcs-media.com/Archive/20-20-top-20-programming-lessons-ive-learned-in-20-years-FH)
 
 编者后话
 

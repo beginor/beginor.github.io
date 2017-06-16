@@ -6,7 +6,7 @@ show_in_sitemap: false
 
 ### Basic Info
 
-Zhimin Zhang | Male | 10 Years of Exp | 134-1805-6213 | beginor@qq.com | http://beginor.github.io
+Zhimin Zhang | Male | 10 Years of Exp | 134-1805-6213 | beginor@qq.com | https://beginor.github.io
 
 ### Desired Position
 
@@ -370,7 +370,7 @@ I am familiar with those skills:
 
 - [Xamarin binding of ArcGIS for Android](https://github.com/beginor/MonoDroid.ArcGIS):
 
-  Xamarin binding of [ArcGIS](http://www.arcgis.com/) for Android ， almost all features can be used, incuding GraphicsLayer, FeatureLayer, Symbol, DynamicLayer etc.
+  Xamarin binding of [ArcGIS](https://www.arcgis.com/) for Android ， almost all features can be used, incuding GraphicsLayer, FeatureLayer, Symbol, DynamicLayer etc.
 
 - [Assembly Navigation for Silverlight 5](https://github.com/beginor/AssemblyNavigation) :
 
@@ -378,12 +378,12 @@ I am familiar with those skills:
 
 ### Technical articles:
 
-- [Async task queue for Silverlight](http://www.cnblogs.com/beginor/archive/2010/12/24/1915910.html)
-- [The limits of MonoTouch](http://www.cnblogs.com/beginor/archive/2011/09/24/2189767.html)
-- [Summary of development with ExtJS](http://www.cnblogs.com/beginor/archive/2008/12/14/1354922.html)
-- [Good habits of senior programer](http://beginor.github.io/2013/04/08/senior-programer-good-habits.html)
-- [Ten tips for C# programer](http://beginor.github.io/2014/08/01/top-10-tips-for-c-programmers.html) 
-- [Comparison of acchitecture presentation patterns](http://beginor.github.io/2012/10/17/Comparison-of-Architecture-presentation-patterns.html)
+- [Async task queue for Silverlight](https://www.cnblogs.com/beginor/archive/2010/12/24/1915910.html)
+- [The limits of MonoTouch](https://www.cnblogs.com/beginor/archive/2011/09/24/2189767.html)
+- [Summary of development with ExtJS](https://www.cnblogs.com/beginor/archive/2008/12/14/1354922.html)
+- [Good habits of senior programer](https://beginor.github.io/2013/04/08/senior-programer-good-habits.html)
+- [Ten tips for C# programer](https://beginor.github.io/2014/08/01/top-10-tips-for-c-programmers.html) 
+- [Comparison of acchitecture presentation patterns](https://beginor.github.io/2012/10/17/Comparison-of-Architecture-presentation-patterns.html)
 
 ### Education
 

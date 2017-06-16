@@ -94,13 +94,13 @@ GitLab 有两种安装方式， 分别是从源代码安装和用 deb 软件包�
      sudo gitlab-ctl start
      ```
 
-现在来看看成果吧， 打开浏览器， 浏览 `http://127.0.0.1/` ， 截图如下：
+现在来看看成果吧， 打开浏览器， 浏览 `https://127.0.0.1/` ， 截图如下：
 
 ![GitLab CE](/assets/post-images/gitlab-first-look.png)
 
 当然， 这只是一个简单而愉快的开始， 真正用起来的话还要考虑日常的维护、 备份等， 这个还需要以后慢慢研究了。
 
-[1]: http://beginor.github.io/2016/03/12/http-git-server-on-nginx.html
+[1]: https://beginor.github.io/2016/03/12/http-git-server-on-nginx.html
 [2]: https://about.gitlab.com/
 [3]: https://about.gitlab.com/downloads/#ubuntu1604
 [4]: https://larryli.cn/2015/07/644905

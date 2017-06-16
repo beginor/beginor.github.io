@@ -1,11 +1,11 @@
 ﻿title: "张志敏的技术专栏"
 subtitle: "我是一个靠谱的程序员, 目前关注 MonoTouch、 Mono for Android、 Silverlight、  ASP.NET MVC 以及 NHibernate。"
-public_url: "http://beginor.github.io"
+public_url: "https://beginor.github.io"
 keywords: "mono, ios, android, silverlight, asp.net mvc, asp.net web api, nhibernate, c, sql server, xml, linux, mac osx"
 owner:
   name: "张志敏"
   mail: "beginor(at)qq.com"
-  weibo: "http://weibo.com/beginor"
+  weibo: "https://weibo.com/beginor"
 disqus:
   short_name: "beginor-github"
 paginate: 12

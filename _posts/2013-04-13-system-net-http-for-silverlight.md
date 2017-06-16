@@ -13,18 +13,18 @@ System.Net.Http 是微软推出的最新的 HTTP 应用程序的编程接口， 
 1. 用户通过 HTTP 使用现代化的 Web Service 的客户端组件；
 2. 能够同时在客户端与服务端同时使用的 HTTP 组件（比如处理 HTTP 标头和消息）， 为客户端和服务端提供一致的编程模型。
 
-命名空间 [System.Net.Http](http://msdn.microsoft.com/en-us/library/system.net.http.aspx) 以及 [System.Net.Http.Headers](http://msdn.microsoft.com/en-us/library/system.net.http.headers.aspx) 提供了如下内容：
+命名空间 [System.Net.Http](https://msdn.microsoft.com/en-us/library/system.net.http.aspx) 以及 [System.Net.Http.Headers](https://msdn.microsoft.com/en-us/library/system.net.http.headers.aspx) 提供了如下内容：
 
-1. [HttpClient](http://msdn.microsoft.com/en-us/library/system.net.http.httpclient.aspx) 发送和接收 HTTP 请求与响应;
-2. [HttpRequestMessage](http://msdn.microsoft.com/en-us/library/system.net.http.httprequestmessage.aspx) and [HttpResponseMessage](http://msdn.microsoft.com/en-us/library/system.net.http.httpresponsemessage.aspx) 封装了 RFC 2616 定义的 HTTP 消息；
-3. [HttpHeaders](http://msdn.microsoft.com/en-us/library/system.net.http.headers.httpheaders.aspx) 封装了 RFC 2616 定义的 HTTP 标头；
-4. [HttpClientHandler](http://msdn.microsoft.com/en-us/library/system.net.http.httpclienthandler.aspx) 负责生成HTTP响应消息的HTTP处理程序。
+1. [HttpClient](https://msdn.microsoft.com/en-us/library/system.net.http.httpclient.aspx) 发送和接收 HTTP 请求与响应;
+2. [HttpRequestMessage](https://msdn.microsoft.com/en-us/library/system.net.http.httprequestmessage.aspx) and [HttpResponseMessage](https://msdn.microsoft.com/en-us/library/system.net.http.httpresponsemessage.aspx) 封装了 RFC 2616 定义的 HTTP 消息；
+3. [HttpHeaders](https://msdn.microsoft.com/en-us/library/system.net.http.headers.httpheaders.aspx) 封装了 RFC 2616 定义的 HTTP 标头；
+4. [HttpClientHandler](https://msdn.microsoft.com/en-us/library/system.net.http.httpclienthandler.aspx) 负责生成HTTP响应消息的HTTP处理程序。
 
 System.Net.Http 能够处理多种类型的 RFC 2616 定义的 HTTP 实体正文， 如下图所示：
 
 ![HttpContent Class Diagrams](/assets/post-images/system-net-http-httpcontent.png)
 
-此外， System.Net.Http 对 HTTP 消息的处理采用了职责链模式， [这里有一遍不错的介绍](http://www.asp.net/web-api/overview/working-with-http/http-message-handlers)， 这里就不再多说了。
+此外， System.Net.Http 对 HTTP 消息的处理采用了职责链模式， [这里有一遍不错的介绍](https://www.asp.net/web-api/overview/working-with-http/http-message-handlers)， 这里就不再多说了。
 
 ### Silverlight 版本的 System.Net.Http
 
@@ -32,12 +32,12 @@ System.Net.Http 最早和 Asp.Net Mvc4 同时出现， 可以在 .Net 4.0 中使
 
 幸好， .Net 有开源的实现， 那就是 Mono ， 其中有大量开源的 .Net 基础类实现， 在 Mono 3.x 版本中， 就有开源的 System.Net.Http , Xamarin 发布的 Android 和 iOS 版本的 System.Net.Http 就是源自 Mono 的， 既然 Android 和 iOS 可以， 相信 Silverlight 也肯定可以， 抱着试试看的态度， 下载了 Mono 下的 System.Net.Http 源代码， 并整理成了一个 Silverlight 项目。 经过一番努力， Silverlight 版本的 System.Net.Http 终于可以使用了， GitHub 项目地址： [https://github.com/beginor/System_Net_Http](https://github.com/beginor/System_Net_Http) ， 欢迎围观。
 
-[由于 Silverlight 平台对 HTTP 的限制](http://msdn.microsoft.com/library/cc838250.aspx)， 移除了部分功能， 例如 Proxy 、 AllowAutoRedirect 、 PreAuthenticate 以及 KeepAlive 设置等， 这些都是 Silverlight 不支持的。
+[由于 Silverlight 平台对 HTTP 的限制](https://msdn.microsoft.com/library/cc838250.aspx)， 移除了部分功能， 例如 Proxy 、 AllowAutoRedirect 、 PreAuthenticate 以及 KeepAlive 设置等， 这些都是 Silverlight 不支持的。
 
 对于 Silverlight 的 BrowserHttp ， 仅仅支持 GET 和 POST 方法， 示例代码如下：
 
     HttpClient client = new HttpClient {
-       BaseAddress = new Uri("http://localhost:8080/HttpTestWeb/api/")
+       BaseAddress = new Uri("https://localhost:8080/HttpTestWeb/api/")
     };
 
     // Get string from server
@@ -127,11 +127,11 @@ System.Net.Http 最早和 Asp.Net Mvc4 同时出现， 可以在 .Net 4.0 中使
         InnerHandler = new HttpClientHandler()
     };
     var client = new HttpClient(customHandler, true) {
-        BaseAddress = new Uri("http://localhost:8080/HttpTestWeb/api/")
+        BaseAddress = new Uri("https://localhost:8080/HttpTestWeb/api/")
     };
 
 ### 参考资料：
 
-- MSDN 官方文档：[http://msdn.microsoft.com/library/system.net.http.aspx](http://msdn.microsoft.com/library/system.net.http.aspx)
-- ASP.NET Web API 介绍中的 Working with HTTP： [http://www.asp.net/web-api/overview/working-with-http](http://www.asp.net/web-api/overview/working-with-http)
+- MSDN 官方文档：[https://msdn.microsoft.com/library/system.net.http.aspx](https://msdn.microsoft.com/library/system.net.http.aspx)
+- ASP.NET Web API 介绍中的 Working with HTTP： [https://www.asp.net/web-api/overview/working-with-http](https://www.asp.net/web-api/overview/working-with-http)
 - Mono 源代码： [https://github.com/mono/mono/tree/master/mcs/class/System.Net.Http](https://github.com/mono/mono/tree/master/mcs/class/System.Net.Http)

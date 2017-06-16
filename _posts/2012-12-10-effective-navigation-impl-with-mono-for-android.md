@@ -5,7 +5,7 @@ description: Android 4.0 系统定义了一系列的高效导航方式 (Effectiv
 tags: [Mono, Android]
 ---
 
-Android 4.0 系统定义了一系列的[高效导航方式 (Effective Navigation)](http://developer.android.com/training/design-navigation/index.html)， 主要包括标签、下拉列表、以及向上和返回等， 本文介绍如何用 Mono for Android 实现这些的导航方式。
+Android 4.0 系统定义了一系列的[高效导航方式 (Effective Navigation)](https://developer.android.com/training/design-navigation/index.html)， 主要包括标签、下拉列表、以及向上和返回等， 本文介绍如何用 Mono for Android 实现这些的导航方式。
 
 ### 准备 Android 4.0 ICS 项目
 
@@ -25,7 +25,7 @@ Android 4.0 系统定义了一系列的[高效导航方式 (Effective Navigation
 
 ![引用 android-support-v4.jar](/assets/post-images/eff-nav-ref-to-android-support-v4-jar.png)
 
-本文提到的导航都是根据 Android 4.0 设计规范中推荐的 [ActionBar](http://developer.android.com/reference/android/app/ActionBar.html) 实现的， 因此整个应用程序启用带 ActionBar 的主题， 如果使用 Java 的话， 需要手工编辑 AppManifest.xml 文件的设置， 而用 Mono for Android 的话， 基本上不需要手工编辑这个文件。
+本文提到的导航都是根据 Android 4.0 设计规范中推荐的 [ActionBar](https://developer.android.com/reference/android/app/ActionBar.html) 实现的， 因此整个应用程序启用带 ActionBar 的主题， 如果使用 Java 的话， 需要手工编辑 AppManifest.xml 文件的设置， 而用 Mono for Android 的话， 基本上不需要手工编辑这个文件。
 
 Mono for Android 的做法是， 新建一个 App 类， 继承自 `Android.App.Application` 类， 并添加 `Android.App.ApplicationAttribute` 标记， 在编译时， Mono for Android 会根据这些标记自动生成一个 AppManifest.xml 文件并打包到最终的 apk 文件中。
 
@@ -121,7 +121,7 @@ Android 的标签用 ActionBar 实现， 用户既可以点击标签切换视图
 因为要显示标题， 所以这个 Activity 的 Layout 添加了一个 PagerTitleStrip ， Layout 源代码如下：
 
 	<android.support.v4.view.ViewPager
-	    xmlns:android="http://schemas.android.com/apk/res/android"
+	    xmlns:android="https://schemas.android.com/apk/res/android"
 		android:id="@+id/Pager"
 		android:orientation="vertical"
 		android:layout_width="match_parent"
@@ -198,7 +198,7 @@ Android 的标签用 ActionBar 实现， 用户既可以点击标签切换视图
 
 ### 向上导航
 
-所谓的向上导航， 就是在 Activity 的图标上显示一个向左的箭头， 点击图标返回应用程序的上一级 Activity ， 注意是上一级 Activity ， 不是上一个 Activity ， 关于向上与返回的区别， 可以看看 Android SDK 中的 [Providing Ancestral and Temporal Navigation](http://developer.android.com/training/design-navigation/ancestral-temporal.html) 一文， 将向上和返回讲解的非常清楚， 在这里只讨论 Mono for Android 的实现方式。
+所谓的向上导航， 就是在 Activity 的图标上显示一个向左的箭头， 点击图标返回应用程序的上一级 Activity ， 注意是上一级 Activity ， 不是上一个 Activity ， 关于向上与返回的区别， 可以看看 Android SDK 中的 [Providing Ancestral and Temporal Navigation](https://developer.android.com/training/design-navigation/ancestral-temporal.html) 一文， 将向上和返回讲解的非常清楚， 在这里只讨论 Mono for Android 的实现方式。
 
 要显示向上导航的按钮， 需要在 `OnCreate` 方法中对 ActionBar 做如下设置：
 

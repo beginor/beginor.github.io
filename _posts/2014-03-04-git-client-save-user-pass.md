@@ -34,5 +34,5 @@ Git 每次进行 `Pull` 和 `Push` 操作时都要输入用户名和密码， �
 
 有了 netrc 文件， 使用 git 时就不用再输入用户名和密码了。
 
-[1]: http://www.syntevo.com/smartgithg/
+[1]: https://www.syntevo.com/smartgithg/
 [2]: https://code.google.com/p/tortoisegit/

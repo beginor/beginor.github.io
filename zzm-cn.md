@@ -6,7 +6,7 @@ show_in_sitemap: false
 
 ### 基本信息
 
-张志敏 | 男 | 本科 | 11 年工作经验 | 186-2047-5721 | beginor@qq.com | http://beginor.github.io
+张志敏 | 男 | 本科 | 11 年工作经验 | 186-2047-5721 | beginor@qq.com | https://beginor.github.io
 
 ### 期望工作
 
@@ -407,7 +407,7 @@ show_in_sitemap: false
 
 - [ArcGIS for Android 的 Xamarin.Android 绑定](https://github.com/beginor/MonoDroid.ArcGIS) : 
 
-  [ArcGIS](http://www.arcgis.com/) for Android 的 Xamarin.Android 绑定， 绝大多数功能都已经可以使用， 包括 GraphicsLayer, FeatureLayer, Symbol, DynamicLayer等。
+  [ArcGIS](https://www.arcgis.com/) for Android 的 Xamarin.Android 绑定， 绝大多数功能都已经可以使用， 包括 GraphicsLayer, FeatureLayer, Symbol, DynamicLayer等。
 
 - [Assembly Navigation for Silverlight 5](https://github.com/beginor/AssemblyNavigation) :
 
@@ -415,12 +415,12 @@ show_in_sitemap: false
 
 ## 技术文章
 
-- [Silverlight 异步任务队列实现](http://www.cnblogs.com/beginor/archive/2010/12/24/1915910.html)
-- [MonoTouch 的限制](http://www.cnblogs.com/beginor/archive/2011/09/24/2189767.html)
-- [ExtJS 开发总结](http://www.cnblogs.com/beginor/archive/2008/12/14/1354922.html)
-- [优秀程序员无他-善假于物也(翻译文章)](http://beginor.github.io/2013/04/08/senior-programer-good-habits.html)
-- [给 c# 程序员的十个重要提示(翻译文章)](http://beginor.github.io/2014/08/01/top-10-tips-for-c-programmers.html) 
-- [MVP(SC),MVP(PV),PM,MVVM 和 MVC 表现模式架构对比(翻译文章)](http://beginor.github.io/2012/10/17/Comparison-of-Architecture-presentation-patterns.html)
+- [Silverlight 异步任务队列实现](https://www.cnblogs.com/beginor/archive/2010/12/24/1915910.html)
+- [MonoTouch 的限制](https://www.cnblogs.com/beginor/archive/2011/09/24/2189767.html)
+- [ExtJS 开发总结](https://www.cnblogs.com/beginor/archive/2008/12/14/1354922.html)
+- [优秀程序员无他-善假于物也(翻译文章)](https://beginor.github.io/2013/04/08/senior-programer-good-habits.html)
+- [给 c# 程序员的十个重要提示(翻译文章)](https://beginor.github.io/2014/08/01/top-10-tips-for-c-programmers.html) 
+- [MVP(SC),MVP(PV),PM,MVVM 和 MVC 表现模式架构对比(翻译文章)](https://beginor.github.io/2012/10/17/Comparison-of-Architecture-presentation-patterns.html)
 
 ### 教育经历
 

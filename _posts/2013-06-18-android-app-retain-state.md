@@ -100,8 +100,8 @@ Activity 有两个方法来创建 SharedPreference ， [getPreferences][4] 和 [
 
 保存用户状态建议积极一些， 不要总是等待系统调用 onPause 方法， 只要用户操作了界面， 就可以进行状态保存， 这样会让应用更加可靠一些。
 
-[1]:http://developer.android.com/reference/android/os/Bundle.html
-[2]:http://developer.android.com/reference/android/app/Activity.html
-[3]:http://developer.android.com/reference/android/content/SharedPreferences.html
+[1]:https://developer.android.com/reference/android/os/Bundle.html
+[2]:https://developer.android.com/reference/android/app/Activity.html
+[3]:https://developer.android.com/reference/android/content/SharedPreferences.html
 [4]:https://developer.android.com/reference/android/app/Activity.html#getPreferences(int)
 [5]:https://developer.android.com/reference/android/content/Context.html#getSharedPreferences(java.lang.String, int)

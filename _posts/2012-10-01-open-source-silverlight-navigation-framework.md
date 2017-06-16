@@ -26,7 +26,7 @@ tags: [Silverlight]
 
 2、 在主页面的 xaml 代码添加下面的 xmlns 引用：
 
-	xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+	xmlns:sdk="https://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
 	xmlns:asmNav="clr-namespace:Beginor.AssemblyNavigation;assembly=Beginor.AssemblyNavigation"
 
 3、 添加 Frame 控件并设置 ContentLoader， 代码如下：

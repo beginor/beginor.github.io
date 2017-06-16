@@ -12,7 +12,7 @@ keywords: OWIN, OAuth2, ASP.NET MVC, WebAPI, code, access_token,
 
 [授权码授权][2]针对机密的客户端优化， 可以同时获取访问凭据 (access token) 和刷新凭据 (refresh token) ， 因为是基于 HTTP 重定向的方式， 所以客户端必须能够操纵资源所有者的用户代理（通常是浏览器）并且能够接收从授权服务器重定向过来的请求。
 
-![authorization-code-grant](http://beginor.github.io/assets/post-images/oauth2-1-authorization-code-grant.png)
+![authorization-code-grant](https://beginor.github.io/assets/post-images/oauth2-1-authorization-code-grant.png)
 
 在实现上使用开源的 [DotNetOpenAuth][3] 来简化实现代码， DotNetOpenAuth 可以[通过 NuGet 获取][4]， 示例代码如下：
 
@@ -63,7 +63,7 @@ ViewBag.ApiResponse = body;
 
 隐式授权不包括客户端授权， 依赖资源所有者（用户）的现场判断以及客户端重定向地址， 由于访问凭据是在 URL 中编码的， 所以有可能会暴漏给用户或客户端上的其它应用。
 
-![implicit-grant](http://beginor.github.io/assets/post-images/oauth2-2-implicit-grant.png)
+![implicit-grant](https://beginor.github.io/assets/post-images/oauth2-2-implicit-grant.png)
 
 由于这种授权方式一般是通过浏览器实现的， 所以就不用依赖 DotNetOpenAuth 了， 只需要 Javascript 就行了， 示例代码如下：
 
@@ -162,7 +162,7 @@ function parseQueryString(queryString) {
 
 这种授权方式适用于能够取得用户的凭据 （通常是通过可交互的表单） 的应用， 也可以用于迁移现有的那些需要直接授权 (HTTP Basic 或 Digest ) 的应用， 将保存的用户凭据改为保存访问凭据 (access token) 。
 
-![resource-owner-password-credentials-grant](http://beginor.github.io/assets/post-images/oauth2-3-resource-owner-password-credentials-grant.png)
+![resource-owner-password-credentials-grant](https://beginor.github.io/assets/post-images/oauth2-3-resource-owner-password-credentials-grant.png)
 
 对于 DotNetOpenAuth 来说， 这种授权也是十分容易实现的， 示例代码如下：
 
@@ -187,7 +187,7 @@ var token = state.AccessToken;
 
 [客户端凭据授权][7]是指客户端可以只通过客户端自己的凭据 (client_id 和 client_secret) （或者其它方式的认证） 来获取访问凭据， 客户端可以根据自己的需要来访问受保护的资源， 或者资源所有者已经访问过认证服务器时， 才能使用这种授权方式。 只有对完全受信任的客户端才能使用这种授权方式， 因为对受保护的资源方来说， 认证信息的内容是客户端程序的凭据， 而不是资源所有者的凭据。
 
-![client-credentials-grant](http://beginor.github.io/assets/post-images/oauth2-4-client-credentials-grant.png)
+![client-credentials-grant](https://beginor.github.io/assets/post-images/oauth2-4-client-credentials-grant.png)
 
 DotNetOpenAuth 也支持这种授权方式， 示例代码如下：
 
@@ -229,11 +229,11 @@ $.ajax({
 
 使用其它语言的代码与上面的 js 代码大同小异，上面只是一些代码片段， 在 github 上有[完整的项目代码][8]， 不清楚的地方可以直接查看源代码。
 
-[1]: http://beginor.github.io/2015/01/24/oauth2-server-with-owin.html
-[2]: http://tools.ietf.org/html/rfc6749#section-4.1
-[3]: http://dotnetopenauth.net/
+[1]: https://beginor.github.io/2015/01/24/oauth2-server-with-owin.html
+[2]: https://tools.ietf.org/html/rfc6749#section-4.1
+[3]: https://dotnetopenauth.net/
 [4]: https://www.nuget.org/packages/dotnetopenauth
-[5]: http://tools.ietf.org/html/rfc6749#section-4.2
-[6]: http://tools.ietf.org/html/rfc6749#section-4.3
-[7]: http://tools.ietf.org/html/rfc6749#section-4.4
+[5]: https://tools.ietf.org/html/rfc6749#section-4.2
+[6]: https://tools.ietf.org/html/rfc6749#section-4.3
+[7]: https://tools.ietf.org/html/rfc6749#section-4.4
 [8]: https://github.com/beginor/owin-samples

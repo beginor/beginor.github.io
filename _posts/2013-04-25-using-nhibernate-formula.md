@@ -38,7 +38,7 @@ Nhibernate 对 Formula 的要求如下：
 
 ### 场景2: 映射复杂的 SQL 类型
 
-SQL 2008 支持空间数据类型 [geography](http://msdn.microsoft.com/zh-cn/library/cc280766) 和 [geometry](http://msdn.microsoft.com/zh-cn/library/cc280487) ， 映射空间数据类型可以通过 Nhibernate 的空间扩展解决， 操作起来比较麻烦， 在客户端不需要空间数据类型或者不能处理空间数据类型的情况下， 可以用 Formula 处理。 示例表结构定义如下：
+SQL 2008 支持空间数据类型 [geography](https://msdn.microsoft.com/zh-cn/library/cc280766) 和 [geometry](https://msdn.microsoft.com/zh-cn/library/cc280487) ， 映射空间数据类型可以通过 Nhibernate 的空间扩展解决， 操作起来比较麻烦， 在客户端不需要空间数据类型或者不能处理空间数据类型的情况下， 可以用 Formula 处理。 示例表结构定义如下：
 
     CREATE TABLE SpatialTable (
        id int IDENTITY (1,1),

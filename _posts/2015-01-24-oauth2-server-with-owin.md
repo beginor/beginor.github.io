@@ -251,9 +251,9 @@ public class UserController : ApiController {
 
 注： 本文搭建 OAuth2 服务器部分参考 [OWIN OAuth 2.0 Authorization Server][6] 实现。
 
-[1]: http://tools.ietf.org/html/rfc6749
-[2]: http://tools.ietf.org/html/rfc6749#section-1.1
+[1]: https://tools.ietf.org/html/rfc6749
+[2]: https://tools.ietf.org/html/rfc6749#section-1.1
 [3]: https://msdn.microsoft.com/en-us/library/microsoft.owin.security.cookies.cookieauthenticationoptions(v=vs.113).aspx
-[4]: http://tools.ietf.org/html/rfc6749#appendix-A.2
+[4]: https://tools.ietf.org/html/rfc6749#appendix-A.2
 [5]: https://msdn.microsoft.com/en-us/library/microsoft.owin.security.oauth.oauthauthorizationserveroptions(v=vs.113).aspx
-[6]: http://www.asp.net/aspnet/overview/owin-and-katana/owin-oauth-20-authorization-server
+[6]: https://www.asp.net/aspnet/overview/owin-and-katana/owin-oauth-20-authorization-server

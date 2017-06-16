@@ -40,7 +40,7 @@ keywords: ios, track gps background, lock screen, switch app, xamarin.ios, monot
 
 ## 在锁屏情况下继续更新 GPS 信息
 
-当程序运行时， 用户直接锁定屏幕， 会调用 AppDelegate 的 DidEnterBackground 方法， 但是对于 iOS 应用来说， 用户切换程序或者点击 Home 按钮是， 也会调用这个函数， 这两种操作的区别在当前应用实例([UIApplication](http://developer.apple.com/library/ios/#documentation/uikit/reference/UIApplication_Class/Reference/Reference.html#//apple_ref/doc/c_ref/UIApplication))的状态， 当用户切换程序或者点击 Home 按钮时， 应用的状态是 UIApplicationStateBackground ， 而锁定屏幕时， 应用状态是 UIApplicationStateInactive ， 使用下面的代码可以区分这两种情况：
+当程序运行时， 用户直接锁定屏幕， 会调用 AppDelegate 的 DidEnterBackground 方法， 但是对于 iOS 应用来说， 用户切换程序或者点击 Home 按钮是， 也会调用这个函数， 这两种操作的区别在当前应用实例([UIApplication](https://developer.apple.com/library/ios/#documentation/uikit/reference/UIApplication_Class/Reference/Reference.html#//apple_ref/doc/c_ref/UIApplication))的状态， 当用户切换程序或者点击 Home 按钮时， 应用的状态是 UIApplicationStateBackground ， 而锁定屏幕时， 应用状态是 UIApplicationStateInactive ， 使用下面的代码可以区分这两种情况：
 
     public override void DidEnterBackground(UIApplication application) {
        if (application.ApplicationState == UIApplicationState.Background) {

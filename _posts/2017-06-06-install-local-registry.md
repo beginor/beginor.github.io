@@ -47,7 +47,7 @@ docker run \
   registry:latest
 ```
 
-在地址栏输入 `http://127.0.0.1:5000/v2/_catalog` ， 将会看到类似下面的输出：
+在地址栏输入 `https://127.0.0.1:5000/v2/_catalog` ， 将会看到类似下面的输出：
 
 ```json
 {"repositories":[]}
@@ -91,13 +91,13 @@ d4930e247b49: Pushed
 alpine: digest: sha256:bf63c02f35f7f8d0a95af4904d38ea17ef3f0c86e6b95d716200bdd9963f5ec5 size: 1154
 ```
 
-现在来浏览 `http://127.0.0.1:5000/v2/_catalog` ， 将会看到这样的结果：
+现在来浏览 `https://127.0.0.1:5000/v2/_catalog` ， 将会看到这样的结果：
 
 ```json
 {"repositories":["nginx"]}
 ```
 
-表示已经有了 `nginx` 这个镜像， 如果要看这个镜像有什么版本， 需要输入地址 `http://127.0.0.1:5000/v2/nginx/tags/list` ， 结果如下：
+表示已经有了 `nginx` 这个镜像， 如果要看这个镜像有什么版本， 需要输入地址 `https://127.0.0.1:5000/v2/nginx/tags/list` ， 结果如下：
 
 ```json
 {"name":"nginx","tags":["alpine"]}

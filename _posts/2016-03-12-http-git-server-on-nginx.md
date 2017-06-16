@@ -6,7 +6,7 @@ keywords: git, git-http-backend, nginx, ubuntu
 tags: [Git, Linux, Nginx]
 ---
 
-多年前发表过一篇[在 Windows 系统上配置 Apache Git 服务器](http://beginor.github.io/2013/03/01/config-apache-git-server-on-windows.html)的博文， 主要是用 Apache 的 Basic 认证 ＋ git-http-backend 实现， 现在需要在公司的 vps 上再部署一个类似的简单 git 服务器， 这次的软件环境如下：
+多年前发表过一篇[在 Windows 系统上配置 Apache Git 服务器](https://beginor.github.io/2013/03/01/config-apache-git-server-on-windows.html)的博文， 主要是用 Apache 的 Basic 认证 ＋ git-http-backend 实现， 现在需要在公司的 vps 上再部署一个类似的简单 git 服务器， 这次的软件环境如下：
 
 - Ubuntu 14.04.4 LTS
 - nginx/1.4.6 (Ubuntu)
@@ -51,7 +51,7 @@ location ~ /git(/.*) {
 
 ## 创建 nginx 认证用户文件
 
-参考 nginx [ngx http auth basic module](http://nginx.org/en/docs/http/ngx_http_auth_basic_module.html) ， 用户认证文件格式如下：
+参考 nginx [ngx http auth basic module](https://nginx.org/en/docs/http/ngx_http_auth_basic_module.html) ， 用户认证文件格式如下：
 
 ```
 # comment
@@ -89,5 +89,5 @@ chmod a+rw -R test.git
 
 ```sh
 nginx -s reload
-git clone http://server-name/git/test.git
+git clone https://server-name/git/test.git
 ```

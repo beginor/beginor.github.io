@@ -256,6 +256,6 @@ BookingController.cs
 
 [原文地址 (需要翻墙)][1]， 还有 [Attribute Routing in Web API 2][2]， [Create a REST API with Attribute Routing in Web API 2][3]
 
-[1]: http://sampathloku.blogspot.com/2013/11/attribute-routing-with-aspnet-mvc-5.html
-[2]: http://www.asp.net/web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2
-[3]: http://www.asp.net/web-api/overview/web-api-routing-and-actions/create-a-rest-api-with-attribute-routing
+[1]: https://sampathloku.blogspot.com/2013/11/attribute-routing-with-aspnet-mvc-5.html
+[2]: https://www.asp.net/web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2
+[3]: https://www.asp.net/web-api/overview/web-api-routing-and-actions/create-a-rest-api-with-attribute-routing

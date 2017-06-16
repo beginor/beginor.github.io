@@ -41,7 +41,7 @@ Android 系统上添加虚拟内存已经不是什么新鲜事了， 很多手�
 
 	swapon: /data/swap.swp: Invalid argument
 
-看来不能按照原来的方式添加虚拟内存， 经过一番搜索， 在 xda 论坛上找到了[解决方法](http://forum.xda-developers.com/showthread.php?t=586750)， 就是将 swap.swp 文件模拟成一个设备， 然后将这个设备挂载为虚拟内存， 最终挂载虚拟内存的脚本如下：
+看来不能按照原来的方式添加虚拟内存， 经过一番搜索， 在 xda 论坛上找到了[解决方法](https://forum.xda-developers.com/showthread.php?t=586750)， 就是将 swap.swp 文件模拟成一个设备， 然后将这个设备挂载为虚拟内存， 最终挂载虚拟内存的脚本如下：
 
 	#!/system/bin/sh
 

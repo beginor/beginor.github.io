@@ -151,4 +151,4 @@ Given a language, define a representation for its grammar along with an interpre
        }
     }
 
-[1]: http://zh.wikipedia.org/wiki/Reverse_Polish_notation
+[1]: https://zh.wikipedia.org/wiki/Reverse_Polish_notation

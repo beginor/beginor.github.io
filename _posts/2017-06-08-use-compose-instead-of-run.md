@@ -58,7 +58,7 @@ docker 提供了一个命令行工具 `docker-compose` 帮助完成镜像的编�
 
 > YAML 是一个可读性高，用来表达数据序列的格式。YAML参考了其他多种语言，包括：C语言、Python、Perl，并从XML、电子邮件的数据格式（RFC 2822）中获得灵感。
 
-如果想了解详细信息， 请[参考 YAML 官方网站](http://yaml.org/)或者[维基百科](https://zh.wikipedia.org/wiki/YAML)。
+如果想了解详细信息， 请[参考 YAML 官方网站](https://yaml.org/)或者[维基百科](https://zh.wikipedia.org/wiki/YAML)。
 
 docker 网站上提供了 docker-compose 的[入门教程](https://docs.docker.com/compose/gettingstarted/)， 如果不熟悉的话可以去学习一下。
 

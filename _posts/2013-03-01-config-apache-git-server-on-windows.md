@@ -61,7 +61,7 @@ tags: [Git]
         Require valid-user
     </Directory>
 
-现在保存 httpd.conf 、 git.conf， 启动 Apache http 服务， 如果顺利的话， 访问 http://localhost 会显示 **It works!** 表示 http 服务正常运行， 访问 http://localhost/git 会弹出登录框， 输入用户名以及密码之后可以顺利访问。
+现在保存 httpd.conf 、 git.conf， 启动 Apache http 服务， 如果顺利的话， 访问 https://localhost 会显示 **It works!** 表示 http 服务正常运行， 访问 https://localhost/git 会弹出登录框， 输入用户名以及密码之后可以顺利访问。
 
 ### 配置 Git Smart Http ###
 
@@ -111,14 +111,14 @@ tags: [Git]
 
 再开一个新的命令行窗口， 输入下面的命令进行测试：
 
-   git clone http://localhost/git/Test.git
+   git clone https://localhost/git/Test.git
 
 接下来会提示让你输入用户名和密码， 最后看到下面的提示就表示成功了：
 
-    C:\temp>git clone http://localhost/git/Test.git
+    C:\temp>git clone https://localhost/git/Test.git
     Cloning into 'Test'...
-    Username for 'http://localhost': zhangzhimin
-    Password for 'http://zhangzhimin@localhost':
+    Username for 'https://localhost': zhangzhimin
+    Password for 'https://zhangzhimin@localhost':
     warning: You appear to have cloned an empty repository.
 
 如果出错， 则可以看看 C:\Apache2.2\logs\error.log ，如果错误原因是 “Repository not exported”， 需要在 Test.git 目录下建一个名称为 git-daemon-export-ok 的空文件即可。 如果是提示关于 git-http-backend.exe 的问题， 则应该是 git-http-backend.exe 无法运行造成的。
@@ -145,7 +145,7 @@ tags: [Git]
 - 多运行 Apache 的 Test Configuration 快捷方式， 如果配置有错， 会有详细提示， 并等待 30 秒钟；
 - 用事件查看器查看系统日志， 有时这里也会有详细的错误信息。
 
-[httpd]:http://httpd.apache.org/
-[Apache Httpd 的 Windows 最新版]:http://www.fayea.com/apache-mirror//httpd/binaries/win32/
+[httpd]:https://httpd.apache.org/
+[Apache Httpd 的 Windows 最新版]:https://www.fayea.com/apache-mirror//httpd/binaries/win32/
 [msysgit]:https://code.google.com/p/msysgit/downloads/list
 

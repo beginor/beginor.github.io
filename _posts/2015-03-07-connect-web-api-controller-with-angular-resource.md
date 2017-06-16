@@ -186,5 +186,5 @@ categories.query().promise.then(function(data) {
 });
 ```
 
-[1]: http://zh.wikipedia.org/wiki/REST
+[1]: https://zh.wikipedia.org/wiki/REST
 [2]: https://docs.angularjs.org/api/ng/service/$http#usage

@@ -49,7 +49,7 @@ UserInfoActivity 注册了两个 `intent-filter` ， 第一个注册的 url 是 
 不过， 上面代码的前提是用户已经安装了新浪微博客户端，否则运行会报错， 幸好还有第二个， 我们可以使用下面的代码进行调用：
 
     var intent = new Intent(Intent.ActionView);
-    var uri = Android.Net.Uri.Parse("http://weibo.cn/qr/userinfo?uid=3444956000");
+    var uri = Android.Net.Uri.Parse("https://weibo.cn/qr/userinfo?uid=3444956000");
     intent.SetData(uri);
     var chooseIntent = Intent.CreateChooser(intent, "Weibo");
     StartActivity(chooseIntent);

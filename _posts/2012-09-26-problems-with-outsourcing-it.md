@@ -39,4 +39,4 @@ tags: [转载]
 
 外包这个问题是争论不完的。我很少有见到外包能完成预定的目标和任务。有很多问题在你为了节省工资而选择外包的时候被忽视。所以请正确审视你的的IT工作，这项工作的好坏有可能影响你公司的命运！
 
-点击阅读 [英文原文](http://www.techrepublic.com/blog/10things/10-problems-with-outsourcing-it/3016)
+点击阅读 [英文原文](https://www.techrepublic.com/blog/10things/10-problems-with-outsourcing-it/3016)

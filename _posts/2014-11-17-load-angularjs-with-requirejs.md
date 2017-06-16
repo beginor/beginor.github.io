@@ -89,4 +89,4 @@ require(['app'], function(app){
 
 [1]: https://angularjs.org/
 [2]: https://github.com/amdjs/amdjs-api/wiki/AMD
-[3]: http://requirejs.org/
+[3]: https://requirejs.org/

@@ -213,5 +213,5 @@ app.Use(new Func<AppFunc, AppFunc>(next => (async env => {
 })));
 ```
 
-[1]: http://msdn.microsoft.com/en-us/library/microsoft.owin.owinmiddleware(v=vs.113).aspx
-[2]: http://benfoster.io/blog/how-to-write-owin-middleware-in-5-different-steps
+[1]: https://msdn.microsoft.com/en-us/library/microsoft.owin.owinmiddleware(v=vs.113).aspx
+[2]: https://benfoster.io/blog/how-to-write-owin-middleware-in-5-different-steps

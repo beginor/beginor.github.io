@@ -193,7 +193,7 @@ Nh 默认未启用二级缓存， 启用二级缓存需要如下步骤：
 
 这三个属性的作用是显而易见的， 第一个是指定使用什么二级缓存的实现， 第二个是启用二级缓存， 第三个是为查询启用二级缓存缓存。
 
-NHibernate 的二级缓存是可以扩展的， [NHibernate.ControlLib](http://sourceforge.net/projects/nhcontrib/files/NHibernate.Caches/) 提供了几个实现， 分别适用于不同的场景：
+NHibernate 的二级缓存是可以扩展的， [NHibernate.ControlLib](https://sourceforge.net/projects/nhcontrib/files/NHibernate.Caches/) 提供了几个实现， 分别适用于不同的场景：
 
 * NHibernate.Caches.MemCache
 * NHibernate.Caches.Prevalence

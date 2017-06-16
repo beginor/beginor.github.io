@@ -11,7 +11,7 @@ Mono for Android 初体验， 学习怎么使用 Mono for Anrdoid 创建 android
 
 #### 下载并安装 Mono for Android
 
-在 OSX 系统下准备 Mono for Android 开发环境时比较容易的， 只要去 [Xamarin](http://xamarin.com/monoforandroid) 下载一个在线安装程序， 安装程序会自动下载并安装所有的文件， 甚至包括 JDK、 Android SDK 等， 没什么好说的， 一句话， 很简单。
+在 OSX 系统下准备 Mono for Android 开发环境时比较容易的， 只要去 [Xamarin](https://xamarin.com/monoforandroid) 下载一个在线安装程序， 安装程序会自动下载并安装所有的文件， 甚至包括 JDK、 Android SDK 等， 没什么好说的， 一句话， 很简单。
 
 #### 配置 Android 模拟器
 
@@ -117,7 +117,7 @@ Mono for Android 初体验， 学习怎么使用 Mono for Anrdoid 创建 android
 文件名输入 MainActivityLayout ， MonoDevelop 默认会打开设计视图， 先切换到代码视图， 粘贴下面的代码：
 
 	<?xml version="1.0" encoding="utf-8"?>
-	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	<LinearLayout xmlns:android="https://schemas.android.com/apk/res/android"
 	    android:orientation="horizontal"
 	    android:layout_width="match_parent"
 	    android:layout_height="match_parent">
@@ -145,7 +145,7 @@ Mono for Android 初体验， 学习怎么使用 Mono for Anrdoid 创建 android
 用同样的方法， 创建 SecondActivity 以及 SecondActivityLayout ， SecondActivityLayout 的代码以及设计界面如下：
 
 	<?xml version="1.0" encoding="utf-8"?>
-	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	<LinearLayout xmlns:android="https://schemas.android.com/apk/res/android"
 	    android:orientation="vertical"
 	    android:layout_width="fill_parent"
 	    android:layout_height="fill_parent">

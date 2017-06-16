@@ -8,15 +8,15 @@ tags: [OWIN, OAuth2, .Net]
 
 微软在 OWIN 框架中对 OAuth 认证的支持非常好， 使用现有的 OWIN 中间件可以做到：
 
-  - 使用 [Microsoft.Owin.Security.OAuth](http://www.nuget.org/packages/Microsoft.Owin.Security.OAuth/) 搭建自己的 OAuth2 服务端， 没做过的可以参考这个简单教程： [使用 OWIN 搭建 OAuth2 服务器](http://beginor.github.io/2015/01/24/oauth2-server-with-owin.html) ；
-  - 使用 [Microsoft.Owin.Security.Facebook](http://www.nuget.org/packages/Microsoft.Owin.Security.Facebook/) 连接 Facbook 认证， 让用户使用 Facebook 帐户来登录；
-  - 使用 [Microsoft.Owin.Security.Google](http://www.nuget.org/packages/Microsoft.Owin.Security.Google/) 连接 Google 认证， 让用户使用 Google 帐户登录；
-  - 使用 [Microsoft.Owin.Security.MicrosoftAccount](http://www.nuget.org/packages/Microsoft.Owin.Security.MicrosoftAccount/) 连接 Microsoft 认证， 让用户使用 Microsoft 帐户登录；
-  - 使用 [Microsoft.Owin.Security.Twitter](http://www.nuget.org/packages/Microsoft.Owin.Security.Twitter/) 连接 Twitter 认证， 让用户使用 Twitter 帐户登录；
+  - 使用 [Microsoft.Owin.Security.OAuth](https://www.nuget.org/packages/Microsoft.Owin.Security.OAuth/) 搭建自己的 OAuth2 服务端， 没做过的可以参考这个简单教程： [使用 OWIN 搭建 OAuth2 服务器](https://beginor.github.io/2015/01/24/oauth2-server-with-owin.html) ；
+  - 使用 [Microsoft.Owin.Security.Facebook](https://www.nuget.org/packages/Microsoft.Owin.Security.Facebook/) 连接 Facbook 认证， 让用户使用 Facebook 帐户来登录；
+  - 使用 [Microsoft.Owin.Security.Google](https://www.nuget.org/packages/Microsoft.Owin.Security.Google/) 连接 Google 认证， 让用户使用 Google 帐户登录；
+  - 使用 [Microsoft.Owin.Security.MicrosoftAccount](https://www.nuget.org/packages/Microsoft.Owin.Security.MicrosoftAccount/) 连接 Microsoft 认证， 让用户使用 Microsoft 帐户登录；
+  - 使用 [Microsoft.Owin.Security.Twitter](https://www.nuget.org/packages/Microsoft.Owin.Security.Twitter/) 连接 Twitter 认证， 让用户使用 Twitter 帐户登录；
 
 微软提供了这么多的 OAuth 认证中间件， 对天朝的墙内用户来说， 只能用三个字来概括“然并卵”。
 
-要接入国内[腾讯微信](https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&id=open1419316505&token=&lang=zh_CN)、[新浪微博](http://open.weibo.com/authentication/)提供的 OAuth2 认证， 还是要根据现有的中间件 [Microsoft.Owin.Security](http://www.nuget.org/packages/Microsoft.Owin.Security/) 进行二次开发， 上面微软提供的 Facebook、 Google 等实现可以作为参考。
+要接入国内[腾讯微信](https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&id=open1419316505&token=&lang=zh_CN)、[新浪微博](https://open.weibo.com/authentication/)提供的 OAuth2 认证， 还是要根据现有的中间件 [Microsoft.Owin.Security](https://www.nuget.org/packages/Microsoft.Owin.Security/) 进行二次开发， 上面微软提供的 Facebook、 Google 等实现可以作为参考。
 
 先来简单回顾一下 OAuth2 的[认证流程](https://tools.ietf.org/html/rfc6749#section-4.1)， 如下图所示：
 
@@ -150,4 +150,4 @@ if (context.SignInAsAuthenticationType != null && context.Identity != null) {
 }
 ```
 
-到现在为止， 自定义的 OAuth2 认证中间件基本上就完成了， 代码量不算多， 如果有不清楚的地方， 可以参阅 [katanaproject](http://katanaproject.codeplex.com/SourceControl/latest#README) 的源代码。
+到现在为止， 自定义的 OAuth2 认证中间件基本上就完成了， 代码量不算多， 如果有不清楚的地方， 可以参阅 [katanaproject](https://katanaproject.codeplex.com/SourceControl/latest#README) 的源代码。

@@ -226,8 +226,8 @@ ls -hl
 [2]:https://angular.io/docs/ts/latest/quickstart.html
 [3]:https://github.com/beginor/ng-app-aot-rollup-build/releases/tag/step1
 [4]:https://github.com/beginor/ng-app-aot-rollup-build/releases/tag/step2
-[5]:http://rollupjs.org/
+[5]:https://rollupjs.org/
 [6]:https://github.com/beginor/ng-app-aot-rollup-build/releases/tag/step3
 [7]:https://angular.io/docs/ts/latest/quickstart.html
-[8]:http://blog.mgechev.com/2016/06/26/tree-shaking-angular2-production-build-rollup-javascript/
+[8]:https://blog.mgechev.com/2016/06/26/tree-shaking-angular2-production-build-rollup-javascript/
 [9]:https://angular.io/docs/ts/latest/cookbook/aot-compiler.html

@@ -90,5 +90,5 @@ tags: [转载]
 
 转自[博谈网][1]， [原文链接][2]
 
-[1]: http://www.botanwang.com/
-[2]: http://www.botanwang.com/articles/201406/12%E4%BB%B6%E5%9C%A8%E5%AD%A6%E4%B9%A0%E6%97%B6%E4%B8%8D%E5%AE%9C%E5%81%9A%E7%9A%84%E4%BA%8B%E6%83%85.html
+[1]: https://www.botanwang.com/
+[2]: https://www.botanwang.com/articles/201406/12%E4%BB%B6%E5%9C%A8%E5%AD%A6%E4%B9%A0%E6%97%B6%E4%B8%8D%E5%AE%9C%E5%81%9A%E7%9A%84%E4%BA%8B%E6%83%85.html

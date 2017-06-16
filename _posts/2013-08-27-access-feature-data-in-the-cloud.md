@@ -17,12 +17,12 @@ ArcGIS API 提供的专题图层 ([AGSFeatureLayer][3]) 可以用来访问并编
     public override void ViewDidLoad() {
         base.ViewDidLoad();
         // 添加地图底图
-        var url = NSUrl.FromString("http://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer");
+        var url = NSUrl.FromString("https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer");
         var tiledLayer = AGSTiledMapServiceLayer.TiledMapServiceLayerWithURL(url);
         this.MapView.AddMapLayer(tiledLayer, "Basemap Tiled Layer");
     
         // 专题图层
-        var featureLayerUrl = NSUrl.FromString("http://services.arcgis.com/oKgs2tbjK6zwTdvi/arcgis/rest/services/Major_World_Cities/FeatureServer/0");
+        var featureLayerUrl = NSUrl.FromString("https://services.arcgis.com/oKgs2tbjK6zwTdvi/arcgis/rest/services/Major_World_Cities/FeatureServer/0");
         var featureLayer = AGSFeatureLayer.FeatureServiceLayerWithURL(featureLayerUrl, AGSFeatureLayerMode.OnDemand);
         featureLayer.OutFields = new string[] { "*" };
         this.MapView.AddMapLayer(featureLayer, "CloudData");

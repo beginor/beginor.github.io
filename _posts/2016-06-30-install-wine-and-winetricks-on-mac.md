@@ -10,7 +10,7 @@ Windows 上也有很多优秀的工具软件是 Mac 上没有的， 装虚拟机
 
 ## 安装 Wine 和 WineTricks
 
-这一步推荐通过 [HomeBrew](http://brew.sh/) 进行安装， 命令如下：
+这一步推荐通过 [HomeBrew](https://brew.sh/) 进行安装， 命令如下：
 
 ```sh
 brew install wine

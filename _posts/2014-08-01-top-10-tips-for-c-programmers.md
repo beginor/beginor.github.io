@@ -277,4 +277,4 @@ public IEnumerable<string> ReadOnlyNameCollection {
 
 希望这些提示对你有用！
 
-原文地址： [Top 10 Tips for C# Programmers](http://www.developer.com/net/top-10-tips-for-c-programmers.html)
+原文地址： [Top 10 Tips for C# Programmers](https://www.developer.com/net/top-10-tips-for-c-programmers.html)

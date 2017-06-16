@@ -8,7 +8,7 @@ keywords: 算法, 红黑树, bst, balance search tree, red black bst
 
 在[二叉查找树][1]的最后提到， 二叉树最终的形状如下图所示：
 
-![二叉树最终形状](http://beginor.github.io/assets/post-images/bst-04.png)
+![二叉树最终形状](https://beginor.github.io/assets/post-images/bst-04.png)
 
 实际上，为了避免二叉树形状向最坏情况靠拢， 通常会创建能够自平衡的 [2-3 树][3]。 而 [红黑树][2]
 是 [2-3 树][3]比较简单的一种实现形式：
@@ -16,7 +16,7 @@ keywords: 算法, 红黑树, bst, balance search tree, red black bst
 1. 红黑树将用二叉树表示 2-3 树， 实现起来相对容易； 
 2. 内部使用向左倾斜的链接表示第三个节点；
 
-![红黑树节点](http://beginor.github.io/assets/post-images/red-black-bst-01.png)
+![红黑树节点](https://beginor.github.io/assets/post-images/red-black-bst-01.png)
 
 红黑树定义如下：
 
@@ -26,7 +26,7 @@ keywords: 算法, 红黑树, bst, balance search tree, red black bst
 
 用红黑树来表示 2-3 树例子：
 
-![红黑树来表示 2-3 树例子](http://beginor.github.io/assets/post-images/red-black-bst-02.png)
+![红黑树来表示 2-3 树例子](https://beginor.github.io/assets/post-images/red-black-bst-02.png)
 
 ## 红黑树的节点定义
 
@@ -65,8 +65,8 @@ private static bool IsRed(Node h) {
 
 <table>
 <tr>
-<td><img src="http://beginor.github.io/assets/post-images/red-black-bst-rotate-left-1.png"/></td>
-<td><img src="http://beginor.github.io/assets/post-images/red-black-bst-rotate-left-2.png"/></td>
+<td><img src="https://beginor.github.io/assets/post-images/red-black-bst-rotate-left-1.png"/></td>
+<td><img src="https://beginor.github.io/assets/post-images/red-black-bst-rotate-left-2.png"/></td>
 </tr>
 </table>
 
@@ -92,8 +92,8 @@ private Node RotateLeft(Node h) {
 
 <table>
 <tr>
-<td><img src="http://beginor.github.io/assets/post-images/red-black-bst-rotate-right-1.png"/></td>
-<td><img src="http://beginor.github.io/assets/post-images/red-black-bst-rotate-right-2.png"/></td>
+<td><img src="https://beginor.github.io/assets/post-images/red-black-bst-rotate-right-1.png"/></td>
+<td><img src="https://beginor.github.io/assets/post-images/red-black-bst-rotate-right-2.png"/></td>
 </tr>
 </table>
 
@@ -119,8 +119,8 @@ private Node RotateRight(Node h) {
 
 <table>
 <tr>
-<td><img src="http://beginor.github.io/assets/post-images/red-black-bst-flip-color-1.png"/></td>
-<td><img src="http://beginor.github.io/assets/post-images/red-black-bst-flip-color-2.png"/></td>
+<td><img src="https://beginor.github.io/assets/post-images/red-black-bst-flip-color-1.png"/></td>
+<td><img src="https://beginor.github.io/assets/post-images/red-black-bst-flip-color-2.png"/></td>
 </tr>
 </table>
 
@@ -143,7 +143,7 @@ private void FlipColors(Node h) {
 
 1. 向单节点添加新节点， 在底部形成双节点， 如下图所示：
 
-    ![向单节点添加新节点](http://beginor.github.io/assets/post-images/red-black-bst-put-01.png)
+    ![向单节点添加新节点](https://beginor.github.io/assets/post-images/red-black-bst-put-01.png)
     
     这种情况下比较容易处理， 需要的步骤如下：
 
@@ -152,7 +152,7 @@ private void FlipColors(Node h) {
 
 2. 向双节点添加新节点， 在底部形成三节点， 如下图所示：
 
-   ![向双节点添加新节点](http://beginor.github.io/assets/post-images/red-black-bst-put-02.png)
+   ![向双节点添加新节点](https://beginor.github.io/assets/post-images/red-black-bst-put-02.png)
 
    这种情况稍微麻烦一些， 需要的步骤如下：
 
@@ -162,7 +162,7 @@ private void FlipColors(Node h) {
    4. 如果需要， 通过旋转形成左倾的红色节点；
    5. 如果需要， 以此方法向上递归；
 
-   ![向双节点添加新节点](http://beginor.github.io/assets/post-images/red-black-bst-put-03.png)
+   ![向双节点添加新节点](https://beginor.github.io/assets/post-images/red-black-bst-put-03.png)
 
 最终红黑树添加节点的 c# 代码如下：
 
@@ -204,6 +204,6 @@ private Node Put(Node h, TKey key, TValue val) {
 }
 ```
 
-[1]: http://beginor.github.io/2014/09/06/binary-search-tree.html
-[2]: http://zh.wikipedia.org/wiki/%E7%BA%A2%E9%BB%91%E6%A0%91
-[3]: http://zh.wikipedia.org/wiki/2-3%E6%A0%91
+[1]: https://beginor.github.io/2014/09/06/binary-search-tree.html
+[2]: https://zh.wikipedia.org/wiki/%E7%BA%A2%E9%BB%91%E6%A0%91
+[3]: https://zh.wikipedia.org/wiki/2-3%E6%A0%91

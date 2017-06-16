@@ -8,7 +8,7 @@ tags: [MvvmCross, Xamarin, iOS, Android]
 ## MvvmCross 的特点
 
 <ul>
-<li>尽量使用<a href="http://msdn.microsoft.com/en-us/library/vstudio/gg597391(v=vs.100).aspx">可移植类库</a>进行编码， 可以包括 视图模型 (ViewModel) 、 模型 (Model) 、 服务 (Service) 甚至界面 (View)</li>
+<li>尽量使用<a href="https://msdn.microsoft.com/en-us/library/vstudio/gg597391(v=vs.100).aspx">可移植类库</a>进行编码， 可以包括 视图模型 (ViewModel) 、 模型 (Model) 、 服务 (Service) 甚至界面 (View)</li>
 <li>使用 MVVM 模式和数据绑定 (Data Binding) 技术</li>
 <li>使用目标平台的本地化界面</li>
 <li>框架的任何部分都可以被重写</li>
@@ -249,8 +249,8 @@ Android 版本的 `Setup` 和 iOS 版本相比， 除了基类不同之外， �
 Android 的界面一般是以 xml 的形式声明的， MvvmCross 做了一些扩展， 可以再 xml 界面中直接进行数据绑定， first_view.axml 的内容如下所示：
 
     <?xml version="1.0" encoding="utf-8"?>
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:mvx="http://schemas.android.com/apk/res-auto"
+    <LinearLayout xmlns:android="https://schemas.android.com/apk/res/android"
+        xmlns:mvx="https://schemas.android.com/apk/res-auto"
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
@@ -288,7 +288,7 @@ Android 的界面一般是以 xml 的形式声明的， MvvmCross 做了一些�
 
 MvvmCross 给我的第一印象非常好， MVVM， DataBinding， 这些技术都是每一个 c# 开发者耳熟能详的， 而将这些技术跨平台使用是 MvvmCross 特有的， 接下来还会继续深入学习这个项目， 希望它能越来越好！
 
-[1]: http://msdn.microsoft.com/en-us/library/vstudio/gg597391(v=vs.100).aspx
+[1]: https://msdn.microsoft.com/en-us/library/vstudio/gg597391(v=vs.100).aspx
 [2]: https://github.com/MvvmCross/MvvmCross
 [3]: https://github.com/beginor/MvvmCross-Learning.git
 [4]: https://github.com/MvvmCross/MvvmCross/wiki

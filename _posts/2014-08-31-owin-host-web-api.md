@@ -120,7 +120,7 @@ Owin02_WebApi_Katana ， 然后向项目中添加下面的 NuGet 包：
 ```c#
 public static void Main(string[] args) {
 
-    var baseAddress = "http://localhost:9000/";
+    var baseAddress = "https://localhost:9000/";
 
     var startOpts = new StartOptions(baseAddress) {
         // katana http listener
@@ -150,7 +150,7 @@ public static void Main(string[] args) {
 
 ![OWIN WebApi](/assets/post-images/owin-webapi-03.png)
 
-也可以通过浏览器来访问 `http://localhost:9000/api/values` ， 得到的结果如下：
+也可以通过浏览器来访问 `https://localhost:9000/api/values` ， 得到的结果如下：
 
 ![OWIN WebApi](/assets/post-images/owin-webapi-04.png)
 
@@ -162,7 +162,7 @@ OWIN 兼容的应用可以在任何 OWIN 服务器上运行， 下面就看看�
 后在添加 Nowin 包就可以运行了：
 
 ```c#
-var baseAddress = "http://localhost:9000/";
+var baseAddress = "https://localhost:9000/";
 
 var startOpts = new StartOptions(baseAddress) {
     // Nowin
@@ -200,7 +200,7 @@ public static void Main(string[] args) {
 
         Task.Run(() => server.Start());
 
-        var baseAddress = "http://" + ip + ":" + port + "/";
+        var baseAddress = "https://" + ip + ":" + port + "/";
         Console.WriteLine("Nowin server listening " + baseAddress);
 
         var client = new HttpClient {
@@ -226,6 +226,6 @@ public static void Main(string[] args) {
 
 ![OWIN WebApi](/assets/post-images/owin-webapi-05.png)
 
-[1]: http://www.asp.net/web-api
-[2]: http://katanaproject.codeplex.com/
+[1]: https://www.asp.net/web-api
+[2]: https://katanaproject.codeplex.com/
 [3]: https://github.com/Bobris/Nowin
