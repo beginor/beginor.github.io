@@ -1,3 +1,11 @@
+---
+layout: post2
+title: Dockerfile 的 ENTRYPOINT 与 CMD
+description: 介绍 Dockerfile 中的 ENTRYPOINT 与 CMD
+keywords: docker, dockerfile, entry, cmd
+tags: [Docker]
+---
+
 ## Dockerfile 的 ENTRYPOINT 与 CMD
 
 Dockerfile 有两个启动配置， `CMD` 和 `ENTRYPOINT` ， 可以在 Dockerfile 中来配置容器启动时自动执行的命令， 但是这二者有什么区别呢， 接下来总结如下：
