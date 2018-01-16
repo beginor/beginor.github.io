@@ -6,8 +6,6 @@ keywords: ubuntu, artiful aradvark, stock gnome, gnome
 tags: [Linux]
 ---
 
-## Ubuntu-Gnome
-
 Ubuntu 17.10 发布已经有一段时间了， 终于下定决心全新安装， 安装系统容易， 下载 iso 直接安装即可， 安装之后要配置自己习惯的桌面环境确需要不少的时间。 下面是安装后基本的折腾记录。
 
 > 如果电脑是 EFI 启动的， 只需要把 iso 的内容复制到 U 盘根目录即可启动， 不需要在费心的去格式化做什么启动盘了， 真是省心！
@@ -62,7 +60,7 @@ sudo apt remove --purge gnome-mines gnome-mahjongg gnome-sudoku
 sudo apt remove --purge imagemagick 
 ```
 
-## 获取原生 GNOME 体验
+## 安装原生 GNOME 环境
 
 个人比较喜欢 GNOME ， 所以之前一直使用 Ubuntu GNOME ， 虽然 Ubuntu 17.10 采用了 GNOME ， 但是经过一番魔改之后， 默认居然和 unity 一模一样了， 所以还是得装回原生的 GNOME 环境。
 
