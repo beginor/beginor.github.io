@@ -15,7 +15,7 @@ header.top {
 }
 
 header.top .container {
-    background-color: #000;
+    /* background-color: #000; */
     padding: 0.5rem 1rem;
     margin-top: -0.5rem;
     margin-bottom: -0.5rem;
@@ -23,7 +23,7 @@ header.top .container {
 
 header.top .container nav {
     margin: 0px;
-    background-color: #000;
+    /* background-color: #000; */
 }
 
 a.navbar-brand {
@@ -55,7 +55,7 @@ img {
 
 .footer .container {
     text-align: center;
-    background-color: #373737;
+    /* background-color: #373737; */
     color: #FFF;
     padding-top: 10px;
 }
@@ -107,4 +107,28 @@ img {
 .post-content pre code.hljs {
     background-color: #f7f7f9;
     border-radius: 0.25rem;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #474747;
+}
+
+.footer .container a {
+  color: #FFF;
+  text-decoration: none;
+}
+
+.footer .container a:hover {
+  color: #FFF;
+  text-decoration: none;
+}
+
+p.copyright {
+  padding-bottom: 10px;
+  margin-bottom: 0px;
 }
