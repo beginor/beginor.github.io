@@ -7,8 +7,8 @@ var gitment = new Gitment({
   owner: 'beginor',
   repo: 'beginor.github.io',
   oauth: {
-    client_id: '3923f5bda4f4ec12beed',
-    client_secret: '3ce07e16135f6c2ccc6d365d14d7d14d4e2cad2b',
+    client_id: '38041aabf493656eafb8',
+    client_secret: 'd9eee6be54d64b4c4b13c64c74c4401011904493',
   },
 })
 gitment.render('gitment')
