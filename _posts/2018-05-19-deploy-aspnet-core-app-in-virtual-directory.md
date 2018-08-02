@@ -3,7 +3,7 @@ layout: post2
 title: 在虚拟目录中部署 ASP.NET Core 应用
 description: 介绍如何实现在虚拟目录中部署 ASP.NET Core 应用
 keywords: aspnetcore, deploy, virtual directory
-tags: [.Net Core]
+tags: [.NET Core]
 ---
 
 ASP.NET Core 已经发布了 2.0 RC1 (Go Live) 版本， API 已经不在变化， 但是很多人期待的已久的在虚拟目录中部署的功能还是没有出现， 看来只能自己想办法解决这个问题了。
