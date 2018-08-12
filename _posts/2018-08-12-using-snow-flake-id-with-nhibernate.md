@@ -97,9 +97,26 @@ values ('snow flake id test')
 
 数据库的到的结果为
 
-| id                  | name               |
-| ------------------- | ------------------ |
-| 1534042851390050075 | snow flake id test |
+<table class="table table-bordered" style="width: 80%;">
+  <thead>
+    <tr>
+      <th>
+        <div>id</div>
+        <div>bigint</div>
+      </th>
+      <th>
+        <div>name</div>
+        <div>character varying(32)</div>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1534042851390050075</td>
+      <td>snow flake id test</td>
+    </tr>
+  </tbody>
+</table>
 
 ## NHibernate 配置
 
