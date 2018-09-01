@@ -14,7 +14,9 @@ layout: default
   <div class="card-footer">
     <span>
     {% for t in p.tags %}
-    <a href="/pages-tags.html#{{ t }}-ref" title="查看全部关于 {{ t }} 的文章"><span class="badge badge-secondary badge-pill">{{ t }}</span></a>
+    <a href="/pages-tags.html#{{ t }}-ref" title="查看全部关于 {{ t }} 的文章">
+      <span class="badge badge-secondary badge-pill">{{ t }}</span>
+    </a>
     {% endfor %}
     </span>
     <span class="mt-1 float-right badge badge-default">{{ p.date | date: "%Y-%m-%d" }}</span>
