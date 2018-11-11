@@ -8,10 +8,6 @@ show_in_sitemap: false
 
 张志敏 | 男 | 本科 | 13 年工作经验 | 186-2047-5721 | beginor@qq.com | https://beginor.github.io
 
-### 期望工作
-
-广州，全职，其它面议。
-
 ### 自我评价
 
 - 13 年 .Net 软件开发, 8 年开发团队管理；
