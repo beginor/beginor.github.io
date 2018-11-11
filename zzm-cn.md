@@ -6,38 +6,41 @@ show_in_sitemap: false
 
 ### 基本信息
 
-张志敏 | 男 | 本科 | 11 年工作经验 | 186-2047-5721 | beginor@qq.com | https://beginor.github.io
+张志敏 | 男 | 本科 | 13 年工作经验 | 186-2047-5721 | beginor@qq.com | https://beginor.github.io
 
 ### 期望工作
 
-广州，全职，月薪20k-25k，软件架构师 > 技术经理 > 高级软件工程师
+广州，全职，其它面议。
 
 ### 自我评价
 
-- 10 年 .Net 软件开发, 5 年开发团队管理；
+- 13 年 .Net 软件开发, 8 年开发团队管理；
 - 开发团队中优秀的导师；
 - 熟悉常用设计模式， 对常见的开源框架一定的了解， 对互联网产品有一定的见解；
-- 熟练掌握 C# 语言， 熟悉 .Net 基础类库， 熟悉 SQL Server；
-- 熟练掌握 HTML5/CSS3/Javascript， 熟悉 AngularJS、 Bootstrap、 Compass 等前端开发框架；
+- 熟练掌握 C# 语言， 熟悉 .Net/.Net Core 基础类库， 熟悉 SQL Server/Postgres；
+- 熟练掌握 HTML5/CSS3/Javascript， 熟悉 Angular 全家桶相关前端技术；
 - 熟悉常用的数据结构与算法；
+- 熟练掌握基于 GIS 的数据展示；
+- 熟悉 Docker 容器技术以及 DevOps 开发/运维一体化；
+- 热衷于开源，为多个著名的开源项目提交贡献；
 
 ### 技能清单
 
 以下均为我熟练使用的技能：
 
-- 开发语言：C#, C/C++, Javascript, TypeScript
-- 后端技术栈：ASP.NET, MVC, WebApi, NHibernate, MyBatis.NET(iBatis.NET), EntityFramework, Unity, Castle.Windsor
-- 前端技术栈：AngularJS, Bootstrap, ExtJS, HTML5, jQuery, SCSS
-- 数据库：SQL Server, MySQL, SQLite
+- 开发语言：C#, C/C++, TypeScript, Javascript; 
+- 后端技术栈：ASP.NET (Core) MVC, WebApi, OWIN, NHibernate, EntityFramework/EntityFrameCore, Castle.Windsor
+- 前端技术栈：Angular, Bootstrap, SCSS, NodeJS, ArcGIS, Mapbox
+- 数据库：Postgres, SQL Server, MongoDB
 - 版本管理：Git, Svn, TFS
 
 ### 工作经验
 
 - 广州市绘天信息科技有限公司 技术负责人 (2015-12 ~ 至今)
 
-  1. 开发团队建设与管理；
-  2. 公司产品规划与方案制定；
-  3. 开发与实施规范化管理；
+  1. 开发团队建设与管理， 制定代码规范、 开发工作流程、 团队成员之间的协作规范以及考核；
+  2. 公司产品规划与方案制定， 基础架构与框架选型， 形成公司特有的技术栈；
+  3. 开发与实施规范化管理， 利用容器化技术， 实现开发/运维一体化 (DevOps) ；
 
 - 加拿大 2020 科技（中国）有限公司 技术主管 (2015-05 ~ 2015-11)
 
