@@ -492,7 +492,7 @@ show_in_sitemap: false
 
 ## 参考技能关键字
 
-`web` `uml` `html` `css` `soa` `nhibernate` `ios` `android` `mvc` `oop` `json` 
+`web` `uml` `html` `css` `soa` `nhibernate` `ios` `android` `mvc` `oop` `json` `devops` `docker` `.net` `.net core`
 
 ---
 
