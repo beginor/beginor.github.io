@@ -19,5 +19,5 @@ kramdown:
 plugins:
   - jekyll-coffeescript
   - jekyll-paginate
-host: 127.0.0.1
-port: 4004
+host: 0.0.0.0
+port: 4000
