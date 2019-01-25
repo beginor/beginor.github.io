@@ -48,62 +48,13 @@ img {
   padding-top: 10px;
 }
 
-.page-header h1 {
-  font-size: 32px;
-  font-weight: bold;
-}
-
-.post-content h1 {
-  font-size: 32px;
-  font-weight: bold;
-  margin: 21.44px 0px;
-}
-
-.post-content h2 {
-  font-size: 24px;
-  font-weight: bold;
-  margin: 19.92px 0px;
-}
-
-.post-content h3 {
-  font-size: 19px;
-  font-weight: bold;
-  margin: 18.72px 0px;
-}
-
-.post-content h4 {
-  font-weight: bold;
-  margin: 22.178px 0px;
-}
-
-.post-content h5 {
-  font-size: 13px;
-  font-weight: bold;
-  margin: 21.44px 0px;
-}
-
-.post-content h6 {
-  font-size: 11px;
-  font-weight: bold;
-  margin: 24.978px 0px;
-}
-
-.post-content p {
-  margin: 16px 0px;
-}
-
-.post-content pre code.hljs {
-  background-color: #f7f7f9;
-  border-radius: 0.25rem;
-}
-
-a {
-  color: #000;
+.middle a {
+  color: var(--dark) !important;
   text-decoration: none;
 }
 
-a:hover {
-  color: #474747;
+.middle a:hover {
+  color: var(--gray) !important;
 }
 
 .footer .container a {

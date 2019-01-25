@@ -8,6 +8,6 @@
 <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/imgs/min48.png" />
 <link rel="apple-touch-icon-precomposed" href="/assets/imgs/min48.png" />
 <link rel="shortcut icon" href="/assets/imgs/min32.png" />
-<link href="/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-<link href="/assets/font-awesome/css/fontawesome-all.min.css" rel="stylesheet"/>
-<link href="/assets/styles/style2.css" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/font-awesome/css/fontawesome-all.min.css" />
+<link rel="stylesheet" href="/assets/styles/style2.css" />
+<link rel="stylesheet" href="/assets/styles/markdown.css" />

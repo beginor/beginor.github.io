@@ -16,5 +16,5 @@ var gitment = new Gitment({
     client_secret: 'd9eee6be54d64b4c4b13c64c74c4401011904493',
   },
 })
-gitment.render('gitment')
+gitment.render('gitment');
 </script>
