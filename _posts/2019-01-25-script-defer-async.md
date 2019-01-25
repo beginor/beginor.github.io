@@ -20,9 +20,7 @@ Script 标记的 defer 和 async 属性可能会显著影响页面加载的性�
 
 ![没有标记 defer 或 async 时](/assets/post-images/without-defer-async-head.png)
 
-<Blockquote>
-block
-</Blockquote>
+> 除非特殊情况， 一般不采取这种做法。
 
 ## 标记 defer 时
 
@@ -33,8 +31,6 @@ block
   <script defer src="app.js"></script>
 </header>
 ```
-
-> 除非特殊情况， 一般不采取这种做法。
 
 ![标记 defer 时](/assets/post-images/with-defer.png)
 
