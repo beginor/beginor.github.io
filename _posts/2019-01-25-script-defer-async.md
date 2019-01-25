@@ -67,4 +67,4 @@ Script 标记的 defer 和 async 属性可能会显著影响页面加载的性�
 
 ## 最后
 
-async 和 defer 都不能保证一定不会中断 HTML 渲染， 所以请确认你的脚本在 onLoad 事件之后才开始运行。
+async 和 defer 都不能保证一定不会中断 HTML 渲染， 所以请确认你的脚本在 onLoad 事件之后才开始运行。
