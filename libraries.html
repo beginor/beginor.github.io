@@ -4,93 +4,94 @@ layout: default
 navbar_active: library
 ---
 
-<div class="page-header">
+<div class="markdown-body">
+
   <h1>开源项目</h1>
+
+  <p>.Net 开发自然少不了开源项目的支持， 以下是我参与或者编写的部分开源项目， 为我的开发工作提供了不少
+  帮助， 希望能够对你有所帮助。</p>
+
+  <h2><i class="fa fa-cube"></i> OWIN 静态文件中间件</h2>
+
+  <p>自己写的 OWIN 静态文件处理中间件， 功能如下：</p>
+
+  <ol>
+    <li>支持标准的 OWIN 环境， 跨平台运行 (.Net, Mono)；</li>
+    <li>支持实体标签 (HTTP ETag)；</li>
+    <li>支持 Html5 路径模式；</li>
+    <li>支持扩展， 可以自定义 MimeTypeProvider 和 ETagProvider ；</li>
+  </ol>
+
+  <p>项目主页： <a href="https://github.com/beginor/beginor.owin/tree/master/src/Beginor.Owin.StaticFile">OWIN 静态文件中间件</a>， <a href="https://beginor.github.io/2015/12/28/owin-static-file-middleware.html">博文介绍</a>。</p>
+
+  <h2><i class="fa fa-cube"></i> PNChart for iOS 的 Xamarin.iOS 绑定</h2>
+
+  <p>iOS 上(当时)大名鼎鼎的 <a href="https://github.com/kevinzhow/PNChart">PNChart</a> ， 超简约，超易用，带有动画效果的 Chart 库， 支持下面 4 种类型 Chart：</p>
+
+  <ol>
+    <li>Line Chart</li>
+    <li>Bar Chart</li>
+    <li>Circle Chart</li>
+    <li>Pie Chart</li>
+  </ol>
+
+  <p>项目主页： <a href="https://github.com/beginor/PNChartTouch">PNChartTouch</a></p>
+
+  <h2><i class="fa fa-cube"></i> ArcGIS for Android 的 Xamarin.Android 绑定</h2>
+
+  <p>ArcGIS for Android 的 Xamarin.Android 绑定， 绝大多数功能都已经可以使用， 包括 GraphicsLayer, FeatureLayer, Symbol, DynamicLayer 等。</p>
+
+  <p>项目主页： <a href="https://github.com/beginor/MonoDroid.ArcGIS">MonoDroid.ArcGIS</a></p>
+
+  <h2><i class="fa fa-cube"></i> 百度地图 Android SDK 的 Xamarin.Android 绑定</h2>
+
+  <p>百度地图 Android SDK 的 Xamarin.Android 绑定， 目前绑定的的版本是 v2.3.1。</p>
+
+  <ol>
+    <li>需要自己下载百度地图 Android SDK v2.3.1， 将 jar 和 so 文件放到 AndroidBinding 项目下指定的位置， 本项目不包含 SDK 的任何文件;</li>
+    <li>需要自己申请 ApiKey ， 本项目也不包括任何 ApiKey ； </li>
+    <li>百度地图 Android SDK 只提供了 armeabi 版本的 so 文件， 所以测试项目只支持 armeabi 架构；</li>
+    <li>其它请参考百度地图 SDK 的文档。</li>
+  </ol>
+
+  <p>项目主页： <a href="https://github.com/beginor/BaiduMapBinding">Baidu Map Android SDK Binding</a></p>
+
+  <h2><i class="fa fa-cube"></i> MonoTouch.ArcGIS</h2>
+
+  <p><a href="https://developers.arcgis.com/en/ios/">ESRI ArcGIS Runtime SDK for iOS</a> 的 MonoTouch 绑定，
+  如果是做 iOS 平台开发， 并且采用了 Xamarin.iOS （MonoTouch） 平台， 需要用到高级地图功能的话， 可
+  以考虑这个类库， 当然， 这个项目还不是很完善， 并且 ESRI 也在不断更新， 因此还需要继续折腾！</p>
+
+  <p>项目主页： <a href="https://github.com/beginor/MonoTouch.ArcGIS">https://github.com/beginor/MonoTouch.ArcGIS</a></p>
+
+  <h2><i class="fa fa-cube"></i> System.Net.Http for Silverlight 5</h2>
+
+  <p>微软推出的最新的 HTTP 应用程序的编程接口， 被称之为“现代化的 HTTP 编程接口”， 提供了现代化的 Web Service 的客户端组件， 能够同时在客户端与服务端同时使用的 HTTP 组件（比如处理 HTTP 标头和消息）， 为客户端和服务端提供一致的编程模型， 这个组件在开源之后， 在 Xamarin.iOS 和 Xamarin.Android 中也出现了， 但是唯独没有推出官方的 Silverlight 版本， 我从 mono 的源代码中分离出了这个项目， 针对 Silverlight 平台修改， 保留了绝大部分功能， 这里有<a href="https://beginor.github.io/2013/04/13/system-net-http-for-silverlight.html">这个项目的介绍</a>。</p>
+
+  <p>项目主页： <a href="https://github.com/beginor/System_Net_Http">https://github.com/beginor/System_Net_Http</a></p>
+
+  <h2><i class="fa fa-cube"></i> Assembly Navigation for Silverlight 5</h2>
+
+  <p>开源的 Silverlight 导航与加载相结合的框架， 我的原创作品， 最大特点是按需从服务端加载所需的 dll 文件， 能够明显减少 Silverlight 程序的初次加载时间， 项目越大、 模块越多， 效果越明显。 这里有一篇<a href="https://beginor.github.io/2012/10/01/open-source-silverlight-navigation-framework.html">详细的介绍</a>， 推荐所有做 Silverlight 开发的同学采用。</p>
+
+  <p>项目主页： <a href="https://github.com/beginor/AssemblyNavigation">https://github.com/beginor/AssemblyNavigation</a></p>
+
+  <h2><i class="fa fa-cube"></i> MonoTouch.KKGridView</h2>
+
+  <p>做 iOS 5.0 开发时， 需要用到一个 GridView ， 最终决定采用 <a href="https://github.com/kolinkrewinkel/KKGridView">KKGridView</a> ， 因此便有了这个 MonoTouch.KKGridView ， 也就是 KKGridView 的 MonoTouch 绑定， 如果你需要为 iOS 6.0 之前的旧设备开发或者 iOS 自带的 GridView 不能满足需要时， 可以使用这个项目。</p>
+
+  <p>项目主页： <a href="https://github.com/beginor/MonoTouch.KKGridView">https://github.com/beginor/MonoTouch.KKGridView</a></p>
+
+  <h2><i class="fa fa-cube"></i> iBATIS.NET for .Net 4.0</h2>
+
+  <p>当初大名鼎鼎的 iBATIS.Net 现在已经改名为 <a href="https://code.google.com/p/mybatisnet/">MyBatis.Net</a> ， 以灵活的 dynamic sql 著称， 自从 1.6.2 （for .Net 2.0）之后就不再更新了， 曾经在项目中使用过相当长一段时间， 也曾经是 iBATIS 的铁杆粉丝， 由于要在 .Net 4.0 项目中要用到它， 所以有了这个针对 .Net 4.0 的升级版本， 通过了 SQL Server 的全部测试， 可以直接在生产环境使用。</p>
+
+  <p>项目主页： <a href="https://github.com/beginor/iBATIS_2010">https://github.com/beginor/iBATIS_2010</a></p>
+
+  <h2><i class="fa fa-cubes"></i> 更多</h2>
+
+  <p>当然， 还有一些不值得一提的小项目， 甚至是我平时的一些练习， 就不列出来献丑了， 具体请浏览<a href="https://github.com/beginor">我的 GitHub 页面</a>。</p>
+
+  {% include gitment.md %}
+
 </div>
-
-<div class="post-content">
-<p>.Net 开发自然少不了开源项目的支持， 以下是我参与或者编写的部分开源项目， 为我的开发工作提供了不少
-帮助， 希望能够对你有所帮助。</p>
-
-<h3><i class="fa fa-cube"></i> OWIN 静态文件中间件</h3>
-
-<p>自己写的 OWIN 静态文件处理中间件， 功能如下：</p>
-
-<ol>
-  <li>支持标准的 OWIN 环境， 跨平台运行 (.Net, Mono)；</li>
-  <li>支持实体标签 (HTTP ETag)；</li>
-  <li>支持 Html5 路径模式；</li>
-  <li>支持扩展， 可以自定义 MimeTypeProvider 和 ETagProvider ；</li>
-</ol>
-
-<p>项目主页： <a href="https://github.com/beginor/beginor.owin/tree/master/src/Beginor.Owin.StaticFile">OWIN 静态文件中间件</a>， <a href="https://beginor.github.io/2015/12/28/owin-static-file-middleware.html">博文介绍</a>。</p>
-
-<h3><i class="fa fa-cube"></i> PNChart for iOS 的 Xamarin.iOS 绑定</h3>
-
-<p>iOS 上(当时)大名鼎鼎的 <a href="https://github.com/kevinzhow/PNChart">PNChart</a> ， 超简约，超易用，带有动画效果的 Chart 库， 支持下面 4 种类型 Chart：</p>
-
-<ol>
-  <li>Line Chart</li>
-  <li>Bar Chart</li>
-  <li>Circle Chart</li>
-  <li>Pie Chart</li>
-</ol>
-
-<p>项目主页： <a href="https://github.com/beginor/PNChartTouch">PNChartTouch</a></p>
-
-<h3><i class="fa fa-cube"></i> ArcGIS for Android 的 Xamarin.Android 绑定</h3>
-
-<p>ArcGIS for Android 的 Xamarin.Android 绑定， 绝大多数功能都已经可以使用， 包括 GraphicsLayer, FeatureLayer, Symbol, DynamicLayer 等。</p>
-
-<p>项目主页： <a href="https://github.com/beginor/MonoDroid.ArcGIS">MonoDroid.ArcGIS</a></p>
-
-<h3><i class="fa fa-cube"></i> 百度地图 Android SDK 的 Xamarin.Android 绑定</h3>
-
-<p>百度地图 Android SDK 的 Xamarin.Android 绑定， 目前绑定的的版本是 v2.3.1。</p>
-
-<ol>
-  <li>需要自己下载百度地图 Android SDK v2.3.1， 将 jar 和 so 文件放到 AndroidBinding 项目下指定的位置， 本项目不包含 SDK 的任何文件;</li>
-  <li>需要自己申请 ApiKey ， 本项目也不包括任何 ApiKey ； </li>
-  <li>百度地图 Android SDK 只提供了 armeabi 版本的 so 文件， 所以测试项目只支持 armeabi 架构；</li>
-  <li>其它请参考百度地图 SDK 的文档。</li>
-</ol>
-
-<p>项目主页： <a href="https://github.com/beginor/BaiduMapBinding">Baidu Map Android SDK Binding</a></p>
-
-<h3><i class="fa fa-cube"></i> MonoTouch.ArcGIS</h3>
-
-<p><a href="https://developers.arcgis.com/en/ios/">ESRI ArcGIS Runtime SDK for iOS</a> 的 MonoTouch 绑定，
-如果是做 iOS 平台开发， 并且采用了 Xamarin.iOS （MonoTouch） 平台， 需要用到高级地图功能的话， 可
-以考虑这个类库， 当然， 这个项目还不是很完善， 并且 ESRI 也在不断更新， 因此还需要继续折腾！</p>
-
-<p>项目主页： <a href="https://github.com/beginor/MonoTouch.ArcGIS">https://github.com/beginor/MonoTouch.ArcGIS</a></p>
-
-<h3><i class="fa fa-cube"></i> System.Net.Http for Silverlight 5</h3>
-
-<p>微软推出的最新的 HTTP 应用程序的编程接口， 被称之为“现代化的 HTTP 编程接口”， 提供了现代化的 Web Service 的客户端组件， 能够同时在客户端与服务端同时使用的 HTTP 组件（比如处理 HTTP 标头和消息）， 为客户端和服务端提供一致的编程模型， 这个组件在开源之后， 在 Xamarin.iOS 和 Xamarin.Android 中也出现了， 但是唯独没有推出官方的 Silverlight 版本， 我从 mono 的源代码中分离出了这个项目， 针对 Silverlight 平台修改， 保留了绝大部分功能， 这里有<a href="https://beginor.github.io/2013/04/13/system-net-http-for-silverlight.html">这个项目的介绍</a>。</p>
-
-<p>项目主页： <a href="https://github.com/beginor/System_Net_Http">https://github.com/beginor/System_Net_Http</a></p>
-
-<h3><i class="fa fa-cube"></i> Assembly Navigation for Silverlight 5</h3>
-
-<p>开源的 Silverlight 导航与加载相结合的框架， 我的原创作品， 最大特点是按需从服务端加载所需的 dll 文件， 能够明显减少 Silverlight 程序的初次加载时间， 项目越大、 模块越多， 效果越明显。 这里有一篇<a href="https://beginor.github.io/2012/10/01/open-source-silverlight-navigation-framework.html">详细的介绍</a>， 推荐所有做 Silverlight 开发的同学采用。</p>
-
-<p>项目主页： <a href="https://github.com/beginor/AssemblyNavigation">https://github.com/beginor/AssemblyNavigation</a></p>
-
-<h3><i class="fa fa-cube"></i> MonoTouch.KKGridView</h3>
-
-<p>做 iOS 5.0 开发时， 需要用到一个 GridView ， 最终决定采用 <a href="https://github.com/kolinkrewinkel/KKGridView">KKGridView</a> ， 因此便有了这个 MonoTouch.KKGridView ， 也就是 KKGridView 的 MonoTouch 绑定， 如果你需要为 iOS 6.0 之前的旧设备开发或者 iOS 自带的 GridView 不能满足需要时， 可以使用这个项目。</p>
-
-<p>项目主页： <a href="https://github.com/beginor/MonoTouch.KKGridView">https://github.com/beginor/MonoTouch.KKGridView</a></p>
-
-<h3><i class="fa fa-cube"></i> iBATIS.NET for .Net 4.0</h3>
-
-<p>当初大名鼎鼎的 iBATIS.Net 现在已经改名为 <a href="https://code.google.com/p/mybatisnet/">MyBatis.Net</a> ， 以灵活的 dynamic sql 著称， 自从 1.6.2 （for .Net 2.0）之后就不再更新了， 曾经在项目中使用过相当长一段时间， 也曾经是 iBATIS 的铁杆粉丝， 由于要在 .Net 4.0 项目中要用到它， 所以有了这个针对 .Net 4.0 的升级版本， 通过了 SQL Server 的全部测试， 可以直接在生产环境使用。</p>
-
-<p>项目主页： <a href="https://github.com/beginor/iBATIS_2010">https://github.com/beginor/iBATIS_2010</a></p>
-
-<h3><i class="fa fa-cubes"></i> 更多</h3>
-
-<p>当然， 还有一些不值得一提的小项目， 甚至是我平时的一些练习， 就不列出来献丑了， 具体请浏览<a href="https://github.com/beginor">我的 GitHub 页面</a>。</p>
-</div>
-{% include gitment.md %}
