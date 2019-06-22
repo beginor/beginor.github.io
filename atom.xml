@@ -3,7 +3,7 @@ title : 张志敏的技术专栏
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="https://www.w3.org/2005/Atom">
- 
+
  <title>{{ site.title }}</title>
  <link href="{{ site.public_url }}/atom.xml" rel="self"/>
  <link href="{{ site.public_url }}"/>
@@ -14,7 +14,7 @@ title : 张志敏的技术专栏
    <email>{{ site.owner.mail }}</email>
  </author>
 
- {% for post in site.posts limit:20 %}
+ {% for post in site.posts limit:10 %}
  <entry>
    <title>{{ post.title }}</title>
    <link href="{{ site.public_url }}{{ post.url }}"/>
@@ -23,5 +23,5 @@ title : 张志敏的技术专栏
    <content type="html"><![CDATA[{{ post.content }}]]></content>
  </entry>
  {% endfor %}
- 
+
 </feed>
