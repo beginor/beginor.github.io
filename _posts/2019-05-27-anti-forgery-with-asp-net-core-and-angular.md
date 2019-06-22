@@ -11,7 +11,7 @@ tags: [.NET Core, Angular]
 
 想了解更多，请查看维基百科上的[详细介绍](https://zh.wikipedia.org/wiki/跨站请求伪造)。
 
-##使用 Asp.Net Core 内置的 Antiforgery
+## 使用 Asp.Net Core 内置的 Antiforgery
 
 Asp.Net Core 应用中内置了 `Microsoft.AspNetCore.Antiforgery` 包来支持跨站请求伪造。 如果你的应用引用了 `Microsoft.AspNetCore.App` 包， 则就已经包含了 `Microsoft.AspNetCore.Antiforgery` 。 如果没有， 则可以使用下面的命令来添加这个包：
 
