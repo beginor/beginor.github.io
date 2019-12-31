@@ -2,8 +2,8 @@
 layout: post2
 title: 在 NHibernate 中使用 Snow Flake ID
 description: 介绍如何在数据库中生成 Snow Flake ID， 以及如何在 NHibernate 中使用
-keywords: snow flake id, postgres, nhibernate
-tags: [NHibernate]
+keywords: snow flake id, postgresql, nhibernate
+tags: [NHibernate, PostgreSQL]
 ---
 
 ## Snow Flake ID 算法简介
@@ -29,7 +29,7 @@ Snow Flake ID 算法的优点是：
 
 ## 数据库实现
 
-关于  Snow Flake ID 算法的实现， 已经有多种语言版本的实现， 这里以 Postgresql 为例， 使用 sql 实现个简化版。
+关于  Snow Flake ID 算法的实现， 已经有多种语言版本的实现， 这里以 PostgreSQL 为例， 使用 sql 实现个简化版。
 
 先创建一个序列， 生成毫秒内的流水号， sql 语句如下：
 

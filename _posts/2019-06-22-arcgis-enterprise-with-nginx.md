@@ -3,7 +3,7 @@ layout: post2
 title: ArcGIS Enterprise 配置 nginx 反向代理
 description: 使用 nginx 作为 ArcGIS Enterprise 的反向代理
 keywords: arcgis enterprise, arcgis portal, arcgis server, reverse proxy, nginx
-tags: [参考, ArcGIS]
+tags: [参考, ArcGIS, NGINX]
 ---
 
 三台服务器， 部署软件分别为：
