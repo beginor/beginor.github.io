@@ -13,7 +13,7 @@ show_in_sitemap: false
 - 13 年 .Net 软件开发, 8 年开发团队管理；
 - 开发团队中优秀的导师；
 - 熟悉常用设计模式， 对常见的开源框架一定的了解， 对互联网产品有一定的见解；
-- 熟练掌握 C# 语言， 熟悉 .Net/.Net Core 基础类库， 熟悉 SQL Server/Postgres；
+- 熟练掌握 C# 语言， 熟悉 .Net/.Net Core 基础类库， 熟悉 SQL Server/PostgreSQL；
 - 熟练掌握 HTML5/CSS3/Javascript， 熟悉 Angular 全家桶相关前端技术；
 - 熟悉常用的数据结构与算法；
 - 熟练掌握基于 GIS 的数据展示；
@@ -27,7 +27,7 @@ show_in_sitemap: false
 - 开发语言：C#, C/C++, TypeScript, Javascript; 
 - 后端技术栈：ASP.NET (Core) MVC, WebApi, OWIN, NHibernate, EntityFramework/EntityFrameCore, Castle.Windsor
 - 前端技术栈：Angular, Bootstrap, SCSS, NodeJS, ArcGIS, Mapbox
-- 数据库：Postgres, SQL Server, MongoDB
+- 数据库：PostgreSQL, SQL Server, MongoDB
 - 版本管理：Git, Svn, TFS
 
 ### 工作经验
