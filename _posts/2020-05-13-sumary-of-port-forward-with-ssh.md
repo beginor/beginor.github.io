@@ -63,4 +63,3 @@ ssh -T -N -R 192.168.6.67:9090:127.0.0.1:9090 ubuntu@192.168.6.67
 - `R [ssh_server_ip:]ssh_server_port:local_ip:local_port` SSH 服务器到本地/局域网计算机的的 TCP 隧道；
 
 > 如果不成功， SSH 服务可能默认没有启用远程端口转发， 需要编辑 SSH 服务器上的 `/etc/ssh/sshd_confif` 文件， 添加或者编辑 `GatewayPorts yes` 选项， 并重启 sshd 服务。
-
