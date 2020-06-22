@@ -1,6 +1,12 @@
-# 备份和恢复 timescaledb 的超级表 (hypertables)
+---
+layout: post2
+title: 备份和恢复 timescaledb 的超级表 (hypertables)
+description: 使用 PostgreSQL 内置的工具 `pg_dump` 和 `psql` 对超级表 `conditions` 进行备份和恢复
+keywords: PostgreSQL, timescaledb, hypertables, backup, restore, pg_dump, psql, copy
+tags: [PostgreSQL]
+---
 
-下面是 PostgreSQL 内置的工具 `pg_dump` 和 `psql` 对超级表 `conditions` 进行备份和恢复的步骤。
+下面是使用 PostgreSQL 内置的工具 `pg_dump` 和 `psql` 对超级表 `conditions` 进行备份和恢复的步骤。
 
 ## 备份
 
