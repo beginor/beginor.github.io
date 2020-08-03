@@ -1,6 +1,6 @@
 ---
 layout: post2
-title: 在 ASP.NET Core 中实现修改配置的重新加载
+title: 在 ASP.NET Core 中修改配置文件后自动加载新的配置
 description: 在 ASP.NET Core 应用中实现配置文件改变时自动重新加载新的配置到应用
 keywords: asp.net core, configuration, reload on change, ioptionssnapshot, ioptionsmonitor
 tags: [.NET Core]
@@ -9,8 +9,16 @@ tags: [.NET Core]
 在 ASP.NET Core 默认的应用程序模板中， 配置文件的处理如下面的代码所示：
 
 ```cs
-config.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-      .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true);
+config.AddJsonFile(
+    path: "appsettings.json",
+    optional: true,
+    reloadOnChange: true
+);
+config.AddJsonFile(
+    path: $"appsettings.{env.EnvironmentName}.json",
+    optional: true,
+    reloadOnChange: true
+);
 ```
 
 `appsettings.json` 和 `appsettings.{env.EnvironmentName}.json` 两个配置文件都是可选的， 并且支持当文件被修改时能够重新加载。
@@ -77,7 +85,7 @@ public class WeatherForecastController : ControllerBase {
 }
 ```
 
-当然， 如果不希望在控制器中使用这个 `IOptionsSnapshot` 接口类型（可能会带来一些现有代码重构和修改， 还是有一定的风险的）， 可以在 `ConfigureServices` 中添加对 `WeatherOption` 的注入， 代码如下：
+当然， 如果不希望在控制器中使用这个 `IOptionsSnapshot` 接口类型（会带来一些对现有代码重构和修改， 还是有一定的风险的）， 可以在 `ConfigureServices` 中添加对 `WeatherOption` 的注入， 代码如下：
 
 ```cs
 public void ConfigureServices(IServiceCollection services) {
