@@ -2,7 +2,7 @@
 layout: post2
 title: 在 ASP.NET Core 中实现修改配置的重新加载
 description: 在 ASP.NET Core 应用中实现配置文件改变时自动重新加载新的配置到应用
-keywords: keyword1, keyword2, keyword3
+keywords: asp.net core, configuration, reload on change, ioptionssnapshot, ioptionsmonitor
 tags: [.NET Core]
 ---
 
