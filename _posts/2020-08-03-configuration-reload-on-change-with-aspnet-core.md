@@ -124,7 +124,7 @@ public class WeatherForecastController : ControllerBase {
 
 这样控制器就无需修改任何代码即可加载修改过后的新配置。
 
-## 在中间件 (Middleware) 或者中加载修改过后的配置
+## 在中间件 (Middleware) 中加载修改过后的配置
 
 中间件 (Middleware) 在 ASP.NET Core 应用的依赖注入容器中注册的生命周期是 `Singleton` ， 即单例的， 只有在当应用启动时， 根据中间件创建处理连时创建一次全局实例， 所以只能通过注入 `IOptionsMonitor<T>` 来监听配置文件的修改情况， 示例代码如下：
 
