@@ -1,8 +1,8 @@
 ---
 layout: post2
-title: .NET Core 3.x 单文件应用
-description: .NET Core 3.x 单文件应用的内容路径
-keywords: .net core 3.x, single file app, content location
+title: 关于 .NET 发布单文件应用
+description: .NET Core 3.x 以及 .NET 5 单文件应用
+keywords: .net core 3.x, .net 5, single file app, content location
 tags: [.NET Core, .NET]
 ---
 
