@@ -30,3 +30,41 @@ tags: [.NET Core, .NET]
 .NET Core 3.x 发布的单文件应用文件最小大概是 30 兆左右， 和 Go 发布的 10 兆左右的单文件应用相比确实大一些， 但是如果在发布之后用 7zip 压缩一下， 也是 10 多兆， 和 Go 发布的单文件应用不相上下。
 
 .NET 5.0 发布的单文件应用大小也差不多是这样子的。
+
+## 发布单文件测试
+
+测试环境的操作系统为 Ubuntu 20.04.1 LTS ， 安装 .NET 5.0.100-preview.8.20417.9 , 以一个控制台程序为例， 发布命令为
+
+```sh
+dotnet publish -r osx-x64 -c Release \
+  -p:PublishSingleFile=true \
+  -p:PublishTrimmed=true \
+  -p:SelfContained=true \
+  -p:PublishReadyToRun=false \
+  -p:DebugType=None -o ./bin/Publish/osx-x64
+```
+
+经过测试， 使用 .NET 5.0 Preview 8 发布的单文件应用， 如果应用稍微复杂一些， 只有在目标是 Linux 系统时， 发布结果只有一个可执行文件， Windows 和 macOS 都会额外带上几个小尾巴。
+
+当输出目标为 Linux 系统时， 发布的结果为：
+
+- YourApp
+
+当输出目标为 Windows 系统时， 发布的结果可能为：
+
+- YourApp.exe
+- mscordaccore.dll
+- coreclr.dll
+- clrjit.dll
+- clrcompression.dll
+
+而当输出目标为 macOS 系统时， 发布的结果可能为：
+
+- YourApp
+- libclrjit.dylib
+- libcoreclr.dylib
+- libSystem.IO.Compression.Native.dylib
+- libSystem.Native.dylib
+- libSystem.Net.Security.Native.dylib
+- libSystem.Security.Cryptography.Native.Apple.dylib
+- libSystem.Security.Cryptography.Native.OpenSsl.dylib
