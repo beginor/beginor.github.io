@@ -42,12 +42,13 @@ System.Console.WriteLine("Hello World!");
 
 > 注意， 一个程序中， 只能有一个文件使用顶级语句， 并且顶级语句必须位于命名空间或类型定义之前！
 
-## 忽略 Lambda 参数
+## 弃元参数
 
-在 lambda 表达式中如果要忽略某个参数， 可以用 `_` 代替。
+在 lambda 表达式或者匿名函数中如果要忽略某个参数， 可以用 `_` 代替。
 
 ```c#
 var button = new Button("Click Me!");
+
 button.Click += (_, e) => { /* other code goes here. */ };
 ```
 
