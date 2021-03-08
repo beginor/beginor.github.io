@@ -96,6 +96,7 @@ show_in_sitemap: false
   **责任描述**
 
   - 负责
+  - 使用 three.js 对 ArcGIS JS API 进行 WebGL 扩展， 弥补其在动效和交互上的不足；
 
 - 广东省水污染防治挂图作战项目
 
