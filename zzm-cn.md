@@ -4,39 +4,44 @@ title: 张志敏的简历
 show_in_sitemap: false
 ---
 
-### 基本信息
+## 基本信息
 
-张志敏 | 男 | 本科 | 13 年工作经验 | 186-2047-5721 | beginor@qq.com | https://beginor.github.io
+张志敏 | 男 | 本科 | 15 年工作经验 | 186-2047-5721 | beginor@qq.com | <https://beginor.github.io>
 
-### 自我评价
+## 自我评价
 
-- 13 年 .Net 软件开发, 8 年开发团队管理；
-- 开发团队中优秀的导师；
+- 15 年 .Net 软件开发, 10 年开发团队管理，开发团队中优秀的导师；
 - 熟悉常用设计模式， 对常见的开源框架一定的了解， 对互联网产品有一定的见解；
-- 熟练掌握 C# 语言， 熟悉 .Net/.Net Core 基础类库， 熟悉 SQL Server/PostgreSQL；
-- 熟练掌握 HTML5/CSS3/Javascript， 熟悉 Angular 全家桶相关前端技术；
+- 熟练掌握 C# 语言， 熟悉 .Net/.Net Core 基础类库， 熟悉 SQL Server、PostgreSQL/PostGIS， 了解 Java 平台的 Spring Boot 框架；
+- 熟练掌握 Angular 全家桶相关前端技术， 了解 React/Vue 相关前端技术；
 - 熟悉常用的数据结构与算法；
-- 熟练掌握基于 GIS 的数据展示；
+- 熟练掌握基于 GIS 的数据可视化；
 - 熟悉 Docker 容器技术以及 DevOps 开发/运维一体化；
-- 热衷于开源，为多个著名的开源项目提交贡献；
+- 热衷于开源，为多个著名的开源项目提交贡献，目前是 NHibernate 项目组成员；
 
-### 技能清单
+## 技能清单
 
 以下均为我熟练使用的技能：
 
-- 开发语言：C#, C/C++, TypeScript, Javascript; 
-- 后端技术栈：ASP.NET (Core) MVC, WebApi, OWIN, NHibernate, EntityFramework/EntityFrameCore, Castle.Windsor
-- 前端技术栈：Angular, Bootstrap, SCSS, NodeJS, ArcGIS, Mapbox
-- 数据库：PostgreSQL, SQL Server, MongoDB
-- 版本管理：Git, Svn, TFS
+- 开发语言：C#, TypeScript, Java, C/C++, Python;
+- 后端技术：
+  - .NET/.NET Core, NHibernate, EntityFramework;
+  - Spring Boot, Spring Mvc, Spring Security, Hibernate;
+- 前端技术：Angular, React, Bootstrap;
+- GIS 技术:
+  - ArcMap, ArcGIS Pro, ArcGIS Server/Portal, ArcGIS JS API;
+  - QGIS, GeoServer, MapBox GL, OpenLayers, Leaflet;
+- 数据库：PostgreSQL/PostGIS, SQL Server, MongoDB;
+- 版本管理：GitHub, GitLab, SmartGit;
 
-### 工作经验
+## 工作经验
 
 - 广州市绘天信息科技有限公司 技术负责人(CTO) (2015-12 ~ 至今)
 
-  1. 开发团队建设与管理， 制定代码规范、 开发工作流程、 团队成员之间的协作规范以及考核；
-  2. 公司产品规划与方案制定， 基础架构与框架选型， 形成公司特有的技术栈；
-  3. 开发与实施规范化管理， 利用容器化技术， 实现开发/运维一体化 (DevOps) ；
+  1. 参与公司产品规划与方案制定， 基础架构与框架选型， 形成公司特有的技术栈；
+  2. 参与公司的项目决策，总体设计，架构评审，需求评审；
+  3. 开发团队建设与管理， 制定代码规范、 开发工作流程、 团队成员之间的协作规范以及考核；
+  4. 开发与实施规范化管理， 利用容器化技术， 实现开发/运维一体化 (DevOps) ；
 
 - 加拿大 2020 科技（中国）有限公司 技术主管 (2015-05 ~ 2015-11)
 
@@ -49,12 +54,84 @@ show_in_sitemap: false
 - 广东省环境信息中心 软件开发部部长 (2005-03 ~ 2015-04)
 
   负责系统架构设计与研发， 经历了 BS 应用架构、 RIA (Silverlight) 应用架构、 以及 Mobile ＋ Service 应用架构三个阶段的变迁与重构；
-  
+
   1. 在早期的 BS 应用架构阶段， 浏览器端采用 ExtJS ， 服务端采用自主研发的 AjaxHandler ， 和 iBATIS.NET 数据访问以及 CodeSmith 代码模板， 开发了一套较完整的快速开发框架， 并且成功的应用到软件开发工作中； 广东环保污染源在线监控系统是 BS 架构中最成功的产品， 部署到广东省内十多个地市， 占有广东省污染源在线监控市场一定的份额。
   2. 在 RIA 应用架构阶段， 鉴于 BS 应用性能较差， 而业务需要结合地理信息系统进行大量的数据渲染与展示， 浏览器端采用了微软的 Silverlight 技术以及 ESRI 的 ArcGIS Silverlight API， 服务端也转向完善的 ASP.NET MVC + NHibernate , 由于客户端和服务端都是 C# 代码， 采用在客户端动态解析 Lambda 表达式的的方式来与服务端通讯， 减少了客户端硬编码出错的几率， 提高了开发效率； 根据项目业务的需要， 使用微软的 Unity 企业库作为依赖注入容器， 实现模块化的开发方式， 保证模块之间的松散耦合； Silverlight 端广东环境信息综合发布平台是 RIA 架构中最成功的产品， 部署到广东省内多个地市， 在环保系统内部有一定的影响力；
   3. 在 Mobile + Service 架构及阶段， 移动端的需求愈发强烈， 鉴于信息中心现有的资源以及多年来在 .NET 方面的积累， 采用 Xamarin (Mono) 作为跨平台移动开发解决方案； 服务端也转化为使用 ASP.NET WebAPI 专注于提供 REST 风格的服务， 同时也开始使用 OWIN 规范， 在 Linux + Mono 环境下运行 ASP.NET WebAPI ； 在 BS 应用方面则开始使用 AngularJS ＋ Bootstrap 作为基础类库， 结合 RequireJS 的 AMD 规范， 实现了按需加载 AngularJS 的模块的机制； 广东环保移动执法项目是 Mobile + Service 架构中比较成功的项目， 在广东省内多个地市已经开始实施；
 
-### 项目经验
+## 项目经验
+
+- 广东省三线一单智慧管控项目
+
+  **软件环境** Spring Boot Spring Mvc, Spring Security
+
+  **项目描述**
+
+  该项目 ...
+
+  **责任描述**
+
+  - 负责
+
+- 土壤预警平台
+
+  **软件环境** Spring Boot Spring Mvc, Spring Security
+
+  **项目描述**
+
+  该项目 ...
+
+  **责任描述**
+
+  - 负责
+
+- 广东省生态遥感监测中心GIS平台
+
+  **软件环境** Angular, Bootstrap, ArcGIS JS API 4.x, ThreeJS, .Net Core, Docker, Ubuntu 20.04
+
+  **项目描述**
+
+  该项目 ...
+
+  **责任描述**
+
+  - 负责
+
+- 广东省水污染防治挂图作战项目
+
+  **软件环境** Angular, Bootstrap, ArcGIS JS API 4.x, .Net/Mono, Docker, Ubuntu 20.04
+
+  **项目描述**
+
+  该项目 ...
+
+  **责任描述**
+
+  - 负责
+
+- 广东省饮用水源地保护区管理平台
+
+  **软件环境** Angular, Bootstrap, ArcGIS JS API 3.x, .Net/Mono, Docker, Ubuntu 20.04
+
+  **项目描述**
+
+  该项目 ...
+
+  **责任描述**
+
+  - 负责
+
+- 华南区域土壤样品制备与流转中心建设项目
+
+  **软件环境** Angular, Bootstrap, Cordova, .Net/Mono, Docker, Ubuntu 20.04
+
+  **项目描述**
+
+  该项目 ...
+
+  **责任描述**
+
+  - 负责
 
 - 云图 GIS 协作平台 (2016-05 ~ 至今)
 
@@ -338,7 +415,7 @@ show_in_sitemap: false
 - 国家“十一五”城市环境综合整治定量考核信息管理系统 (2005-12 ~ 2006-05)
 
   **软件环境** ASP.Net2.0, WindowsServer2003, DotNetNuke 4.0, SQL Server 2005  
- 
+
   **项目描述**
 
   国家“十一五”城市环境综合整治定量考核信息管理系统（城考）服务端基于开源的 DNN (DotNetNuke) 框架 4.0 开发，客户端采用当时最新的微软的 Ajax 框架 (Atlas) 开发， 主要包括数据管理、 Excel 数据导入导出、 报表管理、 用户权限管理几个较大模块组成， 各个模块的详细信息如下：
@@ -396,36 +473,37 @@ show_in_sitemap: false
   3. 通讯录模块的设计实现；
   4. 论坛模块的二次开发与整合；
 
-# 开源项目和作品
-
 ## 开源项目
 
-- [ PNChart for iOS 的 Xamarin.iOS 绑定](https://github.com/beginor/PNChartTouch) : 
+- [NHibernate.AspNetCore.Identity](https://github.com/nhibernate/NHibernate.AspNetCore.Identity)
+
+  使用 NHibernate 实现 ASP.NET Core 认证服务的适配，不再局限于微软的 Entity Framework Core ，这个项目得到了 NHibernate 项目组的认可， 我也非常荣幸的的加入了 NHibernate 项目组。
+
+- [Jexus 独立版 Docker 镜像](https://hub.docker.com/r/beginor/jexus-x64)
+
+  Jexus 是一款国产的 Linux 平台上的高性能WEB服务器，在工作中也用到了这个 Jexus 服务器， 效果还挺好， 于是我便制作了这个 Docker 镜像， 并得 到了 Jexus 作者宇内流云的认可。
+
+- [GeoServer Docker 镜像](https://hub.docker.com/r/beginor/geoserver)
+
+  GeoServer 是 OpenGIS Web 服务器规范的 J2EE 实现， 利用 GeoServer 可以方便的将空间数据发布成空间服务。 镜像中除 GeoServer 之外， 还包括了一些常用的插件 (CSS, YSLD, Vector Tile, MBStyle 等) ， 开箱可用。 
+
+- [ PNChart for iOS 的 Xamarin.iOS 绑定](https://github.com/beginor/PNChartTouch)
 
   iOS 上大名鼎鼎的 [PNChart](https://github.com/kevinzhow/PNChart) ， 超简约，超易用，带有动画效果的 Chart 库， 为了能够在 Xamarin 平台上使用， 我做了这个绑定项目。
 
-- [ArcGIS for Android 的 Xamarin.Android 绑定](https://github.com/beginor/MonoDroid.ArcGIS) : 
+- [ArcGIS for Android 的 Xamarin.Android 绑定](https://github.com/beginor/MonoDroid.ArcGIS)
 
   [ArcGIS](https://www.arcgis.com/) for Android 的 Xamarin.Android 绑定， 绝大多数功能都已经可以使用， 包括 GraphicsLayer, FeatureLayer, Symbol, DynamicLayer等。
 
-- [Assembly Navigation for Silverlight 5](https://github.com/beginor/AssemblyNavigation) :
+- [Assembly Navigation for Silverlight 5](https://github.com/beginor/AssemblyNavigation)
 
   开源的 Silverlight 导航与加载相结合的框架， 我的原创作品， 最大特点是按需从服务端加载所需的 dll 文件， 能够明显减少 Silverlight 程序的初次加载时间， 项目越大、 模块越多，效果越明显。
 
-## 技术文章
-
-- [Silverlight 异步任务队列实现](https://www.cnblogs.com/beginor/archive/2010/12/24/1915910.html)
-- [MonoTouch 的限制](https://www.cnblogs.com/beginor/archive/2011/09/24/2189767.html)
-- [ExtJS 开发总结](https://www.cnblogs.com/beginor/archive/2008/12/14/1354922.html)
-- [优秀程序员无他-善假于物也(翻译文章)](https://beginor.github.io/2013/04/08/senior-programer-good-habits.html)
-- [给 c# 程序员的十个重要提示(翻译文章)](https://beginor.github.io/2014/08/01/top-10-tips-for-c-programmers.html) 
-- [MVP(SC),MVP(PV),PM,MVVM 和 MVC 表现模式架构对比(翻译文章)](https://beginor.github.io/2012/10/17/Comparison-of-Architecture-presentation-patterns.html)
-
-### 教育经历
+## 教育经历
 
 - 华南师范大学 物理学 本科 (2001-09 ~ 2005-06)
 
-### 培训经历
+## 培训经历
 
 - 中程在线 软件开发中的详细设计 (2010-06 ~ 2010-06)；
 - 中程在线 软件架构最佳实践与工程化方法 (2009-12 ~ 2009-12)；
@@ -433,11 +511,11 @@ show_in_sitemap: false
 - 微软广州技术中心 Microsoft SharePoint 高级应用开发 (2006-05 ~ 2006-05)；
 - 广州嘉为计算机网络教育中心 .Net XML Windows Service 高级开发指南 (2005-04 ~ 2005-04)；
 
-### 语言能力
+## 语言能力
 
 - 英语六级， 读写能力良好。
 
-# 阅读清单
+## 阅读清单
 
 - Algorithms 4th edition
 
@@ -490,12 +568,12 @@ show_in_sitemap: false
 
    这本书是我对设计模式理解的入门书籍， 堪称入门经典。 通过阅读这本书， 我了解了设计模式的概念， 开始注重面向接口编程。
 
-## 参考技能关键字
+## 技能关键字
 
-`web` `uml` `html` `css` `soa` `nhibernate` `ios` `android` `mvc` `oop` `json` `devops` `docker` `.net` `.net core`
+`web` `uml` `html` `css` `soa` `nhibernate` `mvc` `oop` `json` `devops` `docker` `.net` `.net core`
 
 ---
 
-# 致谢
+## 致谢
 
 感谢您花时间阅读我的简历，期待能有机会和您共事。
