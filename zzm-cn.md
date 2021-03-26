@@ -63,7 +63,7 @@ show_in_sitemap: false
 
 - 广东省三线一单智慧管控项目
 
-  **软件环境** Spring Boot Spring Mvc, Spring Security
+  **软件环境** Spring Boot Spring Mvc, Spring Security, .NET 5
 
   **项目描述**
 
@@ -71,7 +71,9 @@ show_in_sitemap: false
 
   **责任描述**
 
-  - 负责
+  - 参与项目的实施计划评审， 需求评审， 项目过程文档评审等工作；
+  - 整体架构设计， 在数据库层面实现了 Spring 应用和 .NET 应用认证的共存与共用， 两个平台可以使用同一套数据库的用户信息进行认证与授权；
+  - 开发基于前端微服务的中台架构， 实现在一个页面上可以同时使用主流的前端框架（Angular、React、Vue 以及原生 JS）创建模块化应用进行组合， 并解决各个模块之间的通讯；
 
 - 土壤预警平台
 
