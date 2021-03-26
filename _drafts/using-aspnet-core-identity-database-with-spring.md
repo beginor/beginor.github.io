@@ -1,12 +1,12 @@
 ---
 layout: post2
-title: 在 Java Spring 应用中使用 ASP.NET Identity 的数据库进行用户认证
-description: post description
-keywords: keyword1, keyword2, keyword3
-tags: [tag1, tag2, tag3]
+title: 在 Java Spring 应用中使用 ASP.NET Core Identity 的数据库进行用户认证
+description: 本文介绍如何让 Spring Web 应用使用 ASP.NET Core Identity 的数据库进行用户认证
+keywords: nhibernate, asp.net core identity, spring-web/mvc, spring security, apache shiro
+tags: [.NET, Spring]
 ---
 
-## Asp.Net Core Api With NHibernate
+## 使用 NHibernate 创建 Asp.Net Core 应用
 
 ASP.NET Core Identity 拥有完整的的用户认证、角色以及授权、开放认证的接口规范， 并且默认使用自家的 EntityFramework 进行了实现。
 
