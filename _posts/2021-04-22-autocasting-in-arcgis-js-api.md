@@ -216,9 +216,9 @@ export async function createLayer<T extends __esri.Layer>(
 
 这里只贴出了部分代码， 如果继续了解， 请查看这个 [esri-service](https://github.com/beginor/esri-service/blob/master/src/esri-service.ts) 的代码。
 
-这个类库也发布了 npm 包 [esri-service](https://www.npmjs.com/package/esri-service)， 如果使用了 nodejs 的话， 只要通过命令 `npm i esri-service` 即可安装这。
+这个类库也发布了 npm 包 [esri-service](https://www.npmjs.com/package/esri-service)， 如果使用了 nodejs 的话， 只要通过命令 `npm i esri-service` 即可安装。
 
-装了 `esri-service` 之后， 可以更加方便的创建图层和地图：
+有了 `esri-service` 之后， 可以更加方便的创建图层和地图：
 
 ### 创建要素图层
 
