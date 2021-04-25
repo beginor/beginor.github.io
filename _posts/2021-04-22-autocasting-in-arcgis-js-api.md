@@ -64,7 +64,7 @@ require([ "esri/layers/FeatureLayer" ], function (FeatureLayer) {
 });
 ```
 
-要知道一个类能否被自动转换， 得查看这个类在 ArcGIS API for JavaScript 中的对应类的文档， 如果一个一个属性能够进行自动转换， 就会出现 `Autocast` 标记。
+要知道一个类能否被自动转换， 得查看这个类在 ArcGIS API for JavaScript 中的对应类的文档， 如果一个属性能够进行自动转换， 就会出现 `Autocast` 标记。
 
 比如 `FeatureLayer` 的 [renderer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html#renderer) 就有 `autocast` 标记。
 
@@ -214,7 +214,7 @@ export async function createLayer<T extends __esri.Layer>(
 }
 ```
 
-这里只贴出了部分代码， 如果继续了解， 请查看这个 [esri-service](https://github.com/beginor/esri-service/blob/master/src/esri-service.ts) 的代码。
+这里只贴出了部分代码， 如果继续了解详细的实现， 请查看这个 [esri-service](https://github.com/beginor/esri-service/blob/master/src/esri-service.ts) 的代码。
 
 这个类库也发布了 npm 包 [esri-service](https://www.npmjs.com/package/esri-service)， 如果使用了 nodejs 的话， 只要通过命令 `npm i esri-service` 即可安装。
 
