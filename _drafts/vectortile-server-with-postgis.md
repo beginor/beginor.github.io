@@ -95,12 +95,14 @@ select (
 有了上面的 SQL 语句， 开发矢量切片服务器就是非常简单的了， 任何开发语言都可以实现， 下面以 C# 代码为例：
 
 ```c#
-[HttpGet("{z:int}/{y:int}/{x:int}")]
-public async Task<ActionResult> GetAll(int z, int y, int x) {
+[HttpGet("{source}/{z:int}/{y:int}/{x:int}")]
+public async Task<ActionResult> GetTile(string source, int z, int y, int x) {
     try {
-        var sql = BuildVectorSql(z, y, x);
-        var result = await GetMvtResultAsync(sql);
-        return result;
+        var buffer = await provider.GetTileContentAsync(source, z, y, x);
+        if (buffer == null || buffer.Length == 0) {
+            return NotFound();
+        }
+        return File(buffer, "application/vnd.mapbox-vector-tile");
     }
     catch (Exception ex) {
         logger.LogError(ex.Message);
@@ -109,35 +111,89 @@ public async Task<ActionResult> GetAll(int z, int y, int x) {
 }
 ```
 
-通过 appsettings.json 配置两个图层
+通过 appsettings.json 配置两个矢量切片源：
+
+```jsonc
+{
+  "connectionStrings": {
+    "geo_db": "server=127.0.0.1;port=5432;database=geo_db;user id=geo_db_user;password=********;"
+  },
+  "vectors": {
+    "guangzhou": {
+      "connectionString": "geo_db",
+      "layers": [
+        {
+          "name": "road",
+          "minzoom": 9,
+          "maxzoom": 15,
+          "srid": 3857,
+          "schema": "public",
+          "tableName": "sr3857_guangzhou_road",
+          "idColumn": "id",
+          "geometryColumn": "geom",
+          "attributeColumns": "name, fclass, ref, oneway, maxspeed, bridge, tunnel, layer"
+        },
+        {
+          "name": "building",
+          "minzoom": 13,
+          "maxzoom": 17,
+          "srid": 3857,
+          "schema": "public",
+          "tableName": "sr3857_guangzhou_building",
+          "idColumn": "objectid",
+          "geometryColumn": "geom",
+          "attributeColumns": "name, height, flag, type, area_id"
+        }
+      ]
+    }
+  }
+}
+```
+
+这样生成的矢量切片服务的地址是： <http://127.0.0.1:5000/api/vector/guangzhou/{z}/{y}/{x}> ， 包含了 `road` 和 `building` 两个图层。
+
+## 使用矢量切片服务
+
+生成的是基于 Web 墨卡托坐标系的 xyz 切片架构的标准的矢量切片服务， 可以直接任意支持矢量切片的客户端中使用 (mapboxgl, openlayers, arcgis js api 等）， 配置参照下面的矢量切片样式：
 
 ```json
 {
-  "vectorTile": {
-    "connectionString": "server=127.0.0.1;port=5432;database=geo_db;user id=postgres;password=********;",
-    "layers": {
-      "guangzhou_road": {
-        "schema": "public",
-        "tableName": "sr3857_guangzhou_road",
-        "idColumn": "id",
-        "attributeColumns": "name, fclass, ref, oneway, maxspeed, bridge, tunnel, layer",
-        "geometryColumn": "geom",
-        "srid": 3857,
-        "minzoom": 9,
-        "maxzoom": 15
-      },
-      "guangzhou_building": {
-        "schema": "public",
-        "tableName": "sr3857_guangzhou_building",
-        "idColumn": "objectid",
-        "attributeColumns": "name, height, flag, type, area_id",
-        "geometryColumn": "geom",
-        "srid": 3857,
-        "minzoom": 13,
-        "maxzoom": 17
+  "version": 8,
+  "sources": {
+    "guangzhou": {
+      "type": "vector",
+      "scheme": "xyz",
+      "tiles": ["http://127.0.0.1:5000/api/vectortiles/guangzhou/{z}/{y}/{x}"],
+      "minzoom": 9,
+      "maxzoom": 17
+    }
+  },
+  "layers": [
+    {
+      "id": "road",
+      "source": "guangzhou",
+      "source-layer": "road",
+      "type": "line",
+      "minzoom": 9,
+      "maxzoom": 15,
+      "paint": {
+        "line-color": "#00FF00",
+        "line-width": 2
+      }
+    },
+    {
+      "id": "building",
+      "source": "guangzhou",
+      "source-layer": "guangzhou_building",
+      "type": "fill",
+      "minzoom": 13,
+      "maxzoom": 17,
+      "paint": {
+        "fill-opacity": 0.8,
+        "fill-color": "#8c2d04"
       }
     }
-  }
+  ]
 }
 ```
 
@@ -146,135 +202,3 @@ public async Task<ActionResult> GetAll(int z, int y, int x) {
 - PostGIS 版本要求最新的 3.1.x ；
 - 虽然 PostGIS 3.x 最低支持 PostgreSQL 9.6.x ， 但是建议使用高版本的 PostgreSQL (12+)， 因为 PostgreSQL 12 以上的版本提供了更好的查询性能；
 - 虽然 PostGIS 提供了坐标系转换函数 [ST_Transform](http://postgis.net/docs/ST_Transform.html) ， 但是进行实时转换会消耗一些性能， 建议将空间数据转换为 [Web墨卡托坐标系 (SRID:3857)](https://en.wikipedia.org/wiki/Web_Mercator_projection) 存储在数据库， 这样在运行时就无需进行坐标系转换， 效率最高；
-
-## 使用矢量切片服务
-
-运行程序， 切片服务的 URL 地址为 <http://127.0.0.1:5000/api/vector/{z}/{y}/{x}> ， 可以轻松在 mapbox 或者 arcgis js api 中使用， 也可以在 QGIS 桌面应用中使用。
-
-在 mapbox-gl-js 中使用的代码如下：
-
-```js
-const map = new mapboxgl.Map({
-  container: 'viewDiv',
-  style,
-  center: [113.31939, 23.12313],
-  zoom: 8,
-  pitch: 0
-});
-
-map.once('load').then(() => {
-  // add source;
-  map.addSource(
-    'guangzhou',
-    {
-      type: 'vector',
-      scheme: 'xyz',
-      tiles: [`${location.protocol}//${location.host}/api/vector/{z}/{y}/{x}`],
-      minzoom: 9,
-      maxzoom: 17
-    }
-  );
-  // add layer
-  map.addLayer({
-    id: 'guangzhou_road',
-    source: 'guangzhou',
-    'source-layer': 'guangzhou_road',
-    type: 'line',
-    minzoom: 9,
-    maxzoom: 15,
-    paint: {
-      'line-color': '#00FF00',
-      'line-width': 2
-    }
-  });
-  map.addLayer({
-    id: 'guangzhou_building',
-    source: 'guangzhou',
-    'source-layer': 'guangzhou_building',
-    type: 'fill-extrusion',
-    minzoom: 13,
-    maxzoom: 17,
-    paint: {
-      'fill-extrusion-opacity': 0.8,
-      'fill-extrusion-height': ["to-number", ['get', 'height'], 0],
-      "fill-extrusion-color": [
-        "case",
-        ["<=", ["to-number", ["get", "height"]], 20], "#feedde",
-        ["<=", ["to-number", ["get", "height"]], 50], "#fdd0a2",
-        ["<=", ["to-number", ["get", "height"]], 100], "#fdae6b",
-        ["<=", ["to-number", ["get", "height"]], 150], "#fd8d3c",
-        ["<=", ["to-number", ["get", "height"]], 200], "#f16913",
-        ["<=", ["to-number", ["get", "height"]], 300], "#d94801",
-        "#8c2d04"
-      ]
-    }
-  });
-});
-```
-
-在 arcgis-js-api 中使用的代码如下：
-
-```js
-require([
-  'esri/Map',
-  'esri/views/MapView',
-  'esri/layers/VectorTileLayer'
-], function (Map, MapView, VectorTileLayer) {
-  const map = new Map({
-    basemap: 'satellite'
-  });
-  const view = new MapView({
-    container: 'viewDiv', // Reference to the scene div created in step 5
-    map: map, // Reference to the map object created before the scene
-    zoom: 8, // Sets zoom level based on level of detail (LOD)
-    center: [113.31939, 23.12313] // Sets center point of view using longitude,latitude
-  });
- view.when(() => {
-    const road = new VectorTileLayer({
-      style: {
-        "version": 8,
-        "sprite": "https://app.gdeei.cn/arcgis-js-api/mapbox/sprites/satellite-streets/sprite",
-        "glyphs": "https://app.gdeei.cn/arcgis-js-api/mapbox/glyphs/{fontstack}/{range}.pbf",
-        "sources": {
-          "esri": {
-            type: 'vector',
-            scheme: 'xyz',
-            tiles: [`${location.protocol}//${location.host}/api/vector/{z}/{y}/{x}`],
-            minzoom: 9,
-            maxzoom: 17
-          }
-        },
-        "layers": [
-          {
-            id: 'guangzhou_road',
-            source: 'esri',
-            'source-layer': 'guangzhou_road',
-            type: 'line',
-            minzoom: 9,
-            maxzoom: 15,
-            paint: {
-              'line-color': '#00FF00',
-              'line-width': 2
-            }
-          },
-          {
-            id: 'guangzhou_building',
-            source: 'esri',
-            'source-layer': 'guangzhou_building',
-            type: 'fill',
-            minzoom: 13,
-            maxzoom: 17,
-            paint: {
-              'fill-opacity': 0.8,
-              "fill-color": "#8c2d04"
-            }
-          }
-        ]
-      }
-    });
-    map.add(road);
-  });
-})
-```
-
-经过测试， 数据库服务器为 PostgreSQL 13.2 和 PostGIS 3.1.1 ，空间数据以  [Web墨卡托坐标系 (SRID:3857)](https://en.wikipedia.org/wiki/Web_Mercator_projection)  保存， 可以接近实时生成矢量切片。
