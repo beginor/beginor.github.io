@@ -88,36 +88,36 @@ public class CategoriesController : ApiController {
 <table class="table">
 <thead>
 <tr>
-<th><div class="text-left">方法</div></th>
-<th><div class="text-left">地址</div></th>
-<th><div class="text-left">描述</div></th>
+<th><div class="text-start">方法</div></th>
+<th><div class="text-start">地址</div></th>
+<th><div class="text-start">描述</div></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-    <td><div class="text-left">GET</div></td>
-    <td><div class="text-left">~/api/categories</div></td>
-    <td><div class="text-left">Get all categories</div></td>
+    <td><div class="text-start">GET</div></td>
+    <td><div class="text-start">~/api/categories</div></td>
+    <td><div class="text-start">Get all categories</div></td>
 </tr>
 <tr>
-    <td><div class="text-left">GET</div></td>
-    <td><div class="text-left">~/api/categories/{id:int}</div></td>
-    <td><div class="text-left">Get category by id</div></td>
+    <td><div class="text-start">GET</div></td>
+    <td><div class="text-start">~/api/categories/{id:int}</div></td>
+    <td><div class="text-start">Get category by id</div></td>
 </tr>
 <tr>
-    <td><div class="text-left">POST</div></td>
-    <td><div class="text-left">~/api/categories/</div></td>
-    <td><div class="text-left">Create a new category</div></td>
+    <td><div class="text-start">POST</div></td>
+    <td><div class="text-start">~/api/categories/</div></td>
+    <td><div class="text-start">Create a new category</div></td>
 </tr>
 <tr>
-    <td><div class="text-left">PUT</div></td>
-    <td><div class="text-left">~/api/categories/{id:int}</div></td>
-    <td><div class="text-left">Update an exist category</div></td>
+    <td><div class="text-start">PUT</div></td>
+    <td><div class="text-start">~/api/categories/{id:int}</div></td>
+    <td><div class="text-start">Update an exist category</div></td>
 </tr>
 <tr>
-    <td><div class="text-left">DELETE</div></td>
-    <td><div class="text-left">~/api/categories/{id:int}</div></td>
-    <td><div class="text-left">Delete category by id</div></td>
+    <td><div class="text-start">DELETE</div></td>
+    <td><div class="text-start">~/api/categories/{id:int}</div></td>
+    <td><div class="text-start">Delete category by id</div></td>
 </tr>
 </tbody>
 </table>

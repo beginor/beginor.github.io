@@ -21,7 +21,7 @@ header.top .container nav {
 }
 
 a.navbar-brand {
-  color: var(--white) !important;
+  color: var(--bs-white) !important;
 }
 
 .middle {
@@ -29,7 +29,7 @@ a.navbar-brand {
 }
 
 .middle .container {
-  background-color: var(--white);
+  background-color: var(--bs-white);
 }
 
 img {
@@ -44,17 +44,17 @@ img {
 
 .footer .container {
   text-align: center;
-  color: var(--white);
+  color: var(--bs-white);
   padding-top: 10px;
 }
 
 .middle a {
-  color: var(--dark) !important;
+  color: var(--bs-dark) !important;
   text-decoration: none;
 }
 
 .middle a:hover {
-  color: var(--gray) !important;
+  color: var(--bs-gray) !important;
 }
 
 .card {
@@ -62,12 +62,12 @@ img {
 }
 
 .footer .container a {
-  color: var(--white);
+  color: var(--bs-white);
   text-decoration: none;
 }
 
 .footer .container a:hover {
-  color: var(--white);
+  color: var(--bs-white);
   text-decoration: none;
 }
 
