@@ -8,7 +8,7 @@ typora-root-url: ../
 typora-copy-images-to: ../assets/post-images
 ---
 
-## 修改默认端口
+## 修改默认端口 (可选)
 
 1. 启动注册表编辑器 （在“搜索”框中键入 regedit）;
 2. 导航到以下注册表子项：`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp` ;
@@ -23,7 +23,7 @@ typora-copy-images-to: ../assets/post-images
 
 1. 启动注册表编辑器;
 2. 定位到键值 `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations`;
-3. 新建 `DWORD (32位) 值`;
+3. 新建 `DWORD (32位) 值`， 名称为 `DWMFRAMEINTERVAL`;
 4. 设置值为 10 进制的 `15` 或者 16 进制的 `F` ;
 
 ## 开启显卡加速以及 H264 编码
