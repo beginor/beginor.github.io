@@ -14,7 +14,7 @@ ArcGIS Enterprise 使用 Apache Tomcat 作为 HTTP 服务器， 在最近的服�
 
 ![image-20211021154753142](/assets/post-images/image-20211021154753142.png)
 
-在 [ArcGIS 知乎](https://zhihu.geoscene.cn) 上也有一些关于安全漏动的讨论， [Apache-tomcat远程代码执行漏洞(CVE-2016-8735)漏洞是否会对ArcGIS for Server产生影响？](https://zhihu.geoscene.cn/question/13914) ， 结局似乎不了了之。
+在 [ArcGIS 知乎](http://zhihu.geoscene.cn) 上也有一些关于安全漏动的讨论， [Apache-tomcat远程代码执行漏洞(CVE-2016-8735)漏洞是否会对ArcGIS for Server产生影响？](http://zhihu.geoscene.cn/question/13914) ， 结局似乎不了了之。
 
 查询 Apache Tomcat 的 [安全报告](https://tomcat.apache.org/security.html) 得知， 针对这些安全问题， Apache Tomcat 已经发布一系列的安全更新来解决这些安全问题。 但是 ArcGIS 并没有什么官方的文档说明怎么升级内部的 Tomcat 服务器， 因此只能自己动手升级。
 
