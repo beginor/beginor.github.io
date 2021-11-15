@@ -8,7 +8,7 @@ typora-root-url: ../
 typora-copy-images-to: ../assets/post-images
 ---
 
-GeoServer 使用 [Jetty](https://www.eclipse.org/jetty/) 作为服务容器， 但是默认的下载的 GeoServer 并没有包含 JNDI 相关的 Jetty 模块， 而在 GeoServer 的配置界面是支持使用 JNDI 连接数据库的，这就前后矛盾了。 不过最坑的是 GeoServer [关于 JNDI 关文档](https://docs.geoserver.org/stable/en/user/tutorials/tomcat-jndi/tomcat-jndi.html) 只有那么一小段， 居然还是基于 Tomcat 服务容器的， 真是太过分了。
+GeoServer 使用 [Jetty](https://www.eclipse.org/jetty/) 作为服务容器， 但是默认的下载的 GeoServer 并没有包含 JNDI 相关的 Jetty 模块， 而在 GeoServer 的配置界面是支持使用 JNDI 连接数据库的，这就前后矛盾了。 不过最坑的是 GeoServer [关于 JNDI 的文档](https://docs.geoserver.org/stable/en/user/tutorials/tomcat-jndi/tomcat-jndi.html) 只有那么一小段， 居然还是基于 Tomcat 服务容器的， 真是太过分了。
 
 ## 添加 JNDI 支持
 
