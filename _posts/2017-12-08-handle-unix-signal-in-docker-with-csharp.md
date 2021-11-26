@@ -3,7 +3,7 @@ layout: post2
 title: C# 程序在 Docker 中响应 Unix 信号
 description: 介绍如何用 C# 在 Docker 应用中响应 Unix 信号
 keywords: docker, c#, unix signal, sigint, sigterm
-tags: [Docker, Xamarin, .Net]
+tags: [Docker, Xamarin, .NET]
 ---
 
 在 [Docker Entry Script 详解](https://beginor.github.io/2017/07/01/docker-entry-script.html)中介绍了如何在 shell 脚本中响应 Unix 信号量来实现 Docker 应用优雅的关闭退出， 本文介绍 C# 程序如何在 Docker 中响应 Unix 信号实现优雅的关闭退出。

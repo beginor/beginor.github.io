@@ -2,7 +2,7 @@
 layout: post
 title: 谈谈 INotifyPropertyChanged 的实现
 description: INotifyPropertyChanged 接口是 WPF/Silverlight 开发中非常重要的接口， 它构成了 ViewModel 的基础， 数据绑定基本上都需要这个接口。 所以， 对它的实现也显得非常重要， 下面接贴出我知道的几种实现方式， 希望能起到抛砖引玉的作用。
-tags: [.Net]
+tags: [.NET]
 ---
 
 INotifyPropertyChanged 接口是 WPF/Silverlight 开发中非常重要的接口， 它构成了 ViewModel 的基础， 数据绑定基本上都需要这个接口。 所以， 对它的实现也显得非常重要， 下面接贴出我知道的几种实现方式， 希望能起到抛砖引玉的作用。

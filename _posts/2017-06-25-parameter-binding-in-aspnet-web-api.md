@@ -3,7 +3,7 @@ layout: post2
 title: ASP.NET WebAPI 中的参数绑定
 description: ASP.NET WebAPI 中的参数绑定
 keywords: asp.net, webapi, parameter, binding, fromuri, frombody, type converter, model binder, value providers, httpparameterbinding, iactionvaluebinder
-tags: [.Net, ASP.NET, WebAPI]
+tags: [.NET, ASP.NET, WebAPI]
 ---
 
 当 WebAPI 调用 Controller 上的方法时， 必须为其参数赋值， 这个过程就是参数绑定。 本文介绍 WebAPI 如何绑定参数， 以及如何进行自定义。

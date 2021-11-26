@@ -3,7 +3,7 @@ layout: post
 title: 分享 OWIN 静态文件处理中间件
 description: 分享一个 OWIN 文件处理中间件， 支持 ETag ， Html5 路径模式
 keywords: owin, middleware, static file, etag, html 5 location mode
-tags: [OWIN, .Net, Mono]
+tags: [OWIN, .NET, Mono]
 ---
 
 分享一个自己写的 OWIN 静态文件处理中间件， 功能如下：

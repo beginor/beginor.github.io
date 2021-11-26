@@ -3,7 +3,7 @@ layout: post
 title: 扩展 Microsoft.Owin.Security
 description: 本文讲述如何扩展 Microsoft.Owin.Security 来支持第三方 OAuth2 认证
 keywords: owin, oauth2, middleware
-tags: [OWIN, OAuth2, .Net]
+tags: [OWIN, OAuth2, .NET]
 ---
 
 微软在 OWIN 框架中对 OAuth 认证的支持非常好， 使用现有的 OWIN 中间件可以做到：

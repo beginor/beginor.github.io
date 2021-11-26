@@ -2,7 +2,7 @@
 layout: post
 title: 尝试在 Mono 3.0 下运行 ASP.NET MVC 4
 description: 关于在 Mono 3.0 下运行 ASP.NET MVC 4 的一些尝试
-tags: [.Net, Mono, ASP.NET, MVC]
+tags: [.NET, Mono, ASP.NET, MVC]
 keywords: net mvc4, mono 3.0, xamarin studio, visual studio, nhibernate, entity framework, nuget packages.
 ---
 

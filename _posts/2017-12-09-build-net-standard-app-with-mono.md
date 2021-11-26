@@ -3,7 +3,7 @@ layout: post2
 title: 使用 mono 编译 .NET Standard 应用
 description: 介绍使用 mono 编译 .NET Standard 应用的正确姿势
 keywords: .net standard, xamarin, mono, .net core
-tags: [.NET Standard, Xamarin, Mono, .Net]
+tags: [.NET Standard, Xamarin, Mono, .NET]
 ---
 
 微软发布 .NET Standard 2.0 已经有一段时间了， 根据 [.NET Standard 2.0](https://github.com/dotnet/standard/blob/master/docs/versions.md) 支持版本的文档， Mono 5.4 是支持 .NET Standard 2.0 的， 对于 .NET Standard 2.0 应用的开发的介绍， 几乎全部都是在 Windows 系统下使用 Visual Studio 2017 进行的， 而在 Linux 或 macOS 系统下使用 Mono 的介绍缺却少之又少， 本文就一一个简单的控制台应用为例， 介绍一下如何在 Mono 下如何开发 .NET Standard 2.0 应用。
