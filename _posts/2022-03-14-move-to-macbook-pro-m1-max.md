@@ -8,7 +8,7 @@ typora-root-url: ../
 typora-copy-images-to: ../assets/post-images
 ---
 
-记录如何将工作环境迁移到新的 M1 环境时进行的一系列的一些折腾。
+记录从 MacBook Pro 2015 迁移到 MacBook Pro 2021 M1 时进行的一系列的折腾。
 
 ## 安装常用软件的 Arm 版本
 
