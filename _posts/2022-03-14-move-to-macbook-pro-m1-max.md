@@ -98,7 +98,7 @@ DockerDesktop for Mac 已经适配 M1， 不过原来的 x64 镜像（特别是�
 
 如果确实想运行一些 Windows 软件的话， 还有一个选择，那就是 Wine 和 CrossOver ， Wine 只能运行 64 位的 Windows 软件， 而 CrossOver 则实现了 Wine32on64 ， 可以在运行 32 位的 Windows 软件， 只是版本稍微低一些。
 
-Wine 和 CrossOver 可以使用第三方的 Homebrew 公示 [Gcenx/homebrew-wine](https://github.com/Gcenx/homebrew-wine) 来安装，也可以在 [releases](https://github.com/Gcenx/homebrew-wine/releases) 页面直接下载， 如果想尝试最新的 wine-devel  以及 wine-staging ， 则可以在 [Gcenx/macOS_Wine_builds](https://github.com/Gcenx/macOS_Wine_builds/releases) 下载。
+Wine 和 CrossOver 可以使用第三方的 Homebrew 公式(Formula) [Gcenx/homebrew-wine](https://github.com/Gcenx/homebrew-wine) 来安装，也可以在 [releases](https://github.com/Gcenx/homebrew-wine/releases) 页面直接下载， 如果想尝试最新的 wine-devel  以及 wine-staging ， 则可以在 [Gcenx/macOS_Wine_builds](https://github.com/Gcenx/macOS_Wine_builds/releases) 下载。
 
 > 最新的 wine-devel 内置 VKD3D (用 VulkanAPI 实现 Windows 的 DirectX) 对 Windows 游戏支持的比较好， 可以抽时间试一下前段时间白嫖的古墓丽影四部曲。
 
