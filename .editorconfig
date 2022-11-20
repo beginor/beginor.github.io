@@ -12,4 +12,5 @@ trim_trailing_whitespace = true
 indent_size = 2
 # markdown files
 [*.md]
+indent_size = 2
 trim_trailing_whitespace = false
