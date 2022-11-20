@@ -1,12 +1,13 @@
 ---
 title: 首页
 layout: default
+navbar_active: index
 ---
 
 {% for p in paginator.posts %}
 <div class="card mb-3">
   <div class="card-header">
-    <a href="{{ p.url }}">{{ p.title }}</a>
+    <a class="card-title" href="{{ p.url }}">{{ p.title }}</a>
   </div>
   <div class="card-body">
     <p class="card-text">{{ p.content | strip_html | truncate: 300 }} <a class="card-link" href="{{ p.url }}">阅读全文</a></p>
@@ -15,11 +16,11 @@ layout: default
     <span>
     {% for t in p.tags %}
     <a href="/pages-tags.html#{{ t }}-ref" title="查看全部关于 {{ t }} 的文章">
-      <span class="badge rounded-pill bg-secondary">{{ t }}</span>
+      <span class="badge rounded-pill">{{ t }}</span>
     </a>
     {% endfor %}
     </span>
-    <span class="mt-1 float-end badge text-dark">{{ p.date | date: "%Y-%m-%d" }}</span>
+    <span class="mt-1 float-end badge">{{ p.date | date: "%Y-%m-%d" }}</span>
   </div>
 </div>
 {% endfor %}
