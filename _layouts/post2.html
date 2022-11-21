@@ -3,25 +3,29 @@
 <head>
   <title>{{ page.title }} - {{ site.title }}</title>
   {% include common-meta.md %}
-  {% include bootstrap-script.md %}
+  {% include tabler.md %}
   {% include highlight.md %}
   {% if page.keywords %}<meta name="keywords" content="{{ page.keywords }}">{% endif %}
   {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
   {% include gtag.md %}
 </head>
-<body>
+<body class="layout-boxed">
+<script src="/assets/@tabler/core/js/demo-theme.min.js"></script>
+<div class="page">
 {% include header.md %}
-<div class="middle">
-  <div class="container">
-    <div class="row" style="padding-top:16px;">
-      <div class="col-md-9">
-
-        <div class="markdown-body">
-
-          <h1>{{ page.title }}</h1>
-
-          {{ content }}
-
+<div class="page-wrapper">
+  <div class="page-body">
+    <div class="container-xl">
+      <div class="row">
+        <div class="col-md-9">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">{{ page.title }}</div>
+            </div>
+            <div class="card-body markdown-body">
+              {{ content }}
+            </div>
+          </div>
           <div class="d-lg-flex justify-content-lg-start">
             <div class="p-lg-4 p-sm-1">
             {% if page.previous %}
@@ -50,21 +54,20 @@
             {% endif %}
             </div>
           </div>
-
+          <div>
+            {% include utteranc.md %}
+          </div>
         </div>
-        {% include utteranc.md %}
+        <div class="col-md-3 d-print-none">
+          {% include tags.md %}
+          {% include recent-post.md %}
+          {% include flag-counter.md %}
+        </div>
       </div>
-      <!-- side bar -->
-      <div class="col-md-3 hidden-print">
-        {% include tags.md %}
-        {% include recent-post.md %}
-        {% include flag-counter.md %}
-      </div>
-      <!-- /side bar -->
     </div>
   </div>
+  {% include footer.md %}
 </div>
-
-{% include footer.md %}
+</div>
 </body>
 </html>

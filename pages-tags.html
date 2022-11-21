@@ -4,19 +4,23 @@ layout: default
 navbar_active: pages
 ---
 
-<ul class="nav nav-tabs">
-  <li role="presentation" class="nav-item"><a class="nav-link" href="pages.html">时间</a></li>
-  <li role="presentation" class="nav-item"><a class="nav-link active" href="#">分类</a></li>
-</ul>
-
-
-<ul class="tag-list mt-3">
-{% for tag in site.tags reversed %}
-<h3 id="{{ tag[0] }}-ref">{{ tag[0] }}</h3>
-<ul>
-    {% for post in tag[1] %}
-        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+<div class="card">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li role="presentation" class="nav-item"><a class="nav-link" href="pages.html">时间</a></li>
+      <li role="presentation" class="nav-item"><a class="nav-link active" href="#">分类</a></li>
+    </ul>
+  </div>
+  <div class="card-body">
+    <ul class="tag-list mt-3">
+    {% for tag in site.tags reversed %}
+    <h3 id="{{ tag[0] }}-ref">{{ tag[0] }}</h3>
+    <ul>
+        {% for post in tag[1] %}
+            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endfor %}
+    </ul>
     {% endfor %}
-</ul>
-{% endfor %}
-</ul>
+    </ul>
+  </div>
+</div>

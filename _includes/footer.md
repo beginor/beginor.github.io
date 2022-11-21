@@ -5,4 +5,4 @@
     <p class="copyright">Copyright &copy; {{ site.time | date: '%Y' }} {{ site.owner.name }} 版权所有</p>
   </div>
 </footer>
-<script src="assets/@tabler/core/js/tabler.min.js"></script>
+<script src="/assets/@tabler/core/js/tabler.min.js"></script>
