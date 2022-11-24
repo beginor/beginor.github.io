@@ -12,3 +12,7 @@
 .markdown img {
   border-radius: var(--tblr-border-radius);
 }
+
+.page-item-title {
+  color: var(--tblr-muted);
+}

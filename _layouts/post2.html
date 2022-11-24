@@ -2,8 +2,8 @@
 <html lang="zh-cn">
 <head>
   <title>{{ page.title }} - {{ site.title }}</title>
-  {% include common-meta.md %}
   {% include tabler.md %}
+  {% include common-meta.md %}
   {% include highlight.md %}
   {% if page.keywords %}<meta name="keywords" content="{{ page.keywords }}">{% endif %}
   {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
@@ -26,32 +26,39 @@
               {{ content }}
             </div>
           </div>
-          <div class="d-lg-flex justify-content-lg-start">
-            <div class="p-lg-4 p-sm-1">
-            {% if page.previous %}
-            <a class="btn btn-light btn-sm m-1" href="{{ page.previous.url }}">
-              <i class="fa fa-chevron-left" aria-hidden="true"></i>
-              {{ page.previous.title }}
-            </a>
-            {% else %}
-            <a class="btn btn-light btn-sm m-1 disabled" href="#">
-              <i class="fa fa-chevron-left" aria-hidden="true"></i>
-              没有了
-            </a>
-            {% endif %}
-            </div>
-            <div class="p-lg-4 p-sm-1 ms-lg-auto">
-            {% if page.next %}
-            <a class="btn btn-light btn-sm m-1" href="{{ page.next.url }}">
-              {{ page.next.title }}
-              <i class="fa fa-chevron-right" aria-hidden="true"></i>
-            </a>
-            {% else %}
-            <a class="btn btn-light btn-sm m-1 disabled" href="{{ page.next.url }}">
-              没有了
-              <i class="fa fa-chevron-right" aria-hidden="true"></i>
-            </a>
-            {% endif %}
+          <div class="card mt-3">
+            <div class="card-body">
+              <ul class="pagination">
+                {% if page.previous %}
+                  <li class="page-item page-prev">
+                    <a class="page-link" href="{{ page.previous.url }}">
+                      <div class="page-item-subtitle"><i class="icon ti ti-chevron-left"></i>上一篇</div>
+                      <div class="page-item-title">{{ page.previous.title }}</div>
+                    </a>
+                  </li>
+                {% else %}
+                  <li class="page-item page-prev disabled">
+                    <a class="page-link" href="#">
+                      <div class="page-item-subtitle"><i class="icon ti ti-chevron-left"></i>上一篇</div>
+                      <div class="page-item-title">没有了</div>
+                    </a>
+                  </li>
+                {% endif %}
+                  <li class="page-item page-next">
+                    <a class="page-link" href="{{ page.next.url }}">
+                      <div class="page-item-subtitle">下一篇<i class="icon ti ti-chevron-right"></i></div>
+                      <div class="page-item-title">{{ page.next.title }}</div>
+                    </a>
+                  </li>
+                {% if page.next %}
+                  <li class="page-item page-next disabled">
+                    <a class="page-link" href="#">
+                      <div class="page-item-subtitle">下一篇<i class="icon ti ti-chevron-right"></i></div>
+                      <div class="page-item-title">没有了</div>
+                    </a>
+                  </li>
+                {% endif %}
+              </ul>
             </div>
           </div>
           <div>
