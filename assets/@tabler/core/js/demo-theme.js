@@ -13,6 +13,15 @@
 
 	var themeStorageKey = 'tablerTheme';
 	var defaultTheme = 'light';
+
+    if (!!window.matchMedia) {
+        const mediaQueryObj = window.matchMedia('(prefers-color-scheme: dark)');
+        const isDarkMode = mediaQueryObj.matches;
+        if (isDarkMode) {
+            defaultTheme = 'dark';
+        }
+    }
+
 	var selectedTheme;
 	var params = new Proxy(new URLSearchParams(window.location.search), {
 	  get: function get(searchParams, prop) {
