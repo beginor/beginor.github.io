@@ -8,7 +8,7 @@ typora-root-url: ../
 typora-copy-images-to: ../assets/post-images
 ---
 
-记录2022年12月26日感染新冠奥密克戎病毒的流水帐以及广州琶洲方仓医院的一些见闻， 供大家参考。
+记录2022年11月26日感染新冠奥密克戎病毒的流水帐以及广州琶洲方仓医院的一些见闻， 供大家参考。
 
 ![奥密克戎病毒](/assets/post-images/omicron.jpeg)
 
