@@ -3,7 +3,7 @@ layout: post2
 title: Switch 模拟器 Ryujinx 在 Mac M1 上的体验
 description: 如何在 Mac M1 上安装 Ryujinx 模拟器以及使用 Ryujinx 玩 Swtich 上的游戏
 keywords: macos, macbook pro, m1 max, apple silicon, ryujinx, switch emulator
-tags: [参考]
+tags: [参考, macOS]
 typora-root-url: ../
 typora-copy-images-to: ../assets/post-images
 ---

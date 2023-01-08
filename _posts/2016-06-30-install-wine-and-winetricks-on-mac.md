@@ -3,7 +3,7 @@ layout: post
 title: 在 Mac OS X 上安装和配置 Wine
 description: 在 Mac OS X 上安装和配置 Wine, WineTricks
 keywords: Mac, OS X, HomeBrew, Brew, Wine, Winetricks
-tags: [OSX, 教程]
+tags: [macOS, 教程]
 ---
 
 Windows 上也有很多优秀的工具软件是 Mac 上没有的， 装虚拟机的话太浪费， 而且效率不高， 幸好可以通过 Wine 来运行 Windows 程序， 通过 HomeBrew 使得 Wine 的安装非常容易， 通过 WineTricks 来配置 Wine 也没有多大困难， 下面是我在 Mac 上安装和配置 Wine 的纪录。
