@@ -65,7 +65,7 @@ Copyright (c) 2003-2019, Jouni Malinen <j@w1.fi> and contributors
   nmcli device wifi
   ```
 
-- 开启无限网卡的 Wi-Fi 信号
+- 开启无线网卡的 Wi-Fi 信号
 
   ```sh
   sudo nmcli radio wifi on
