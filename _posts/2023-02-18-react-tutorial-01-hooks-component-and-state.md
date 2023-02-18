@@ -8,7 +8,7 @@ typora-root-url: ../
 typora-copy-images-to: ../assets/post-images
 ---
 
-之前一直使用 [Angular](https://angular.io) 作为前端开发的基础框架， 虽然 Angular 一直是一个非常优秀的框架， 现在也是， 甚至未来也会是， 但是鉴于目前国内 (中国大陆) 的现状， 再掌握一个流行的前端框架是很有必要的， 在认真对比了 React 和 Vue 之后， 选择了 React 作为前端基础框架。 
+之前一直使用 [Angular](https://angular.io) 作为前端开发的基础框架， 虽然 Angular 一直是一个非常优秀的框架， 现在也是， 甚至未来也会是， 但是鉴于目前国内 (中国大陆) 的现状， 再掌握一个流行的前端框架是很有必要的， 在认真对比了 React 和 Vue 之后， 选择了 React 作为前端基础框架。
 
 在我看来， React 的优势主要有：
 
