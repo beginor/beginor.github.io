@@ -1,6 +1,6 @@
 ---
 layout: post2
-title: "React 入门 01: 函数组件和状态"
+title: React 入门 01 - 函数组件和状态
 description: React 入门第一篇， 函数组件与状态
 keywords: reactjs, hooks, function component, state, useState, useCallback, useEffect
 tags: [React, 教程]
