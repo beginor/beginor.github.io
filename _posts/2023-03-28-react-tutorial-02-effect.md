@@ -49,7 +49,7 @@ function useEffect(
   }, []);
   ```
 
-- `useEffect` 的依赖项不为空， 任意依赖项发生变化时， 会自动进行同步；
+- `useEffect` 的依赖项不为空， 任意依赖项发生变化时， 会自动执行同步；
 
 ```tsx
 useEffect(() => {
