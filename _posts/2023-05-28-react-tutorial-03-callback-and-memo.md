@@ -1,8 +1,7 @@
 ---
 layout: post2
 title: React 入门 03 - Callback 和 Memo
-description: 本文介绍 React 函数组件的 useCallback 和 useMemo
-reactjs, hooks, function component, usecallback, usememo
+description: 本文介绍 React 函数组件的 useCallback 和 useMemo reactjs, hooks, function component, usecallback, usememo
 tags: [React, 教程]
 typora-root-url: ../
 typora-copy-images-to: ../assets/post-images
