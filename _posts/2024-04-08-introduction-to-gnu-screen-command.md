@@ -2,7 +2,7 @@
 layout: post2
 title: GNU Screen 命令简介
 description: 简单介绍 GNU Screen 命令常见用法
-keywords: linux, shell, gnu screen, background task, split region, terminal
+keywords: linux, shell, gnu screen, background task, split pane, terminal
 tags: [参考, Linux]
 typora-root-url: ../
 typora-copy-images-to: ../assets/post-images
