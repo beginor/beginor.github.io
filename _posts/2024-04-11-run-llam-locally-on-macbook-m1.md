@@ -3,7 +3,7 @@ layout: post2
 title: 在 Macbook M1 上运行 AI 大模型 LLAMA
 description: 本文介绍如何在 Macbook M1 上运行 AI 大模型 LLAMA
 keywords: macbook, llama, llama.cpp
-tags: [参考, macOS, llama]
+tags: [参考, macOS, AI]
 typora-root-url: ../
 typora-copy-images-to: ../assets/post-images
 ---
