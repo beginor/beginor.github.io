@@ -102,11 +102,11 @@ public class ArrTestEntity {
 或者使用 xml 映射：
 
 ```xml
-  <class table="arr_test" schema="public" name="UnitTest.ArrTestEntity,UnitTest">
-    <id name="Id" type="long" column="id" generator="trigger-identity" />
-    <property name="IntArr" type="int[]" column="int_arr" />
-    <property name="StrArr" type="string[]" column="str_arr" />
-  </class>
+<class table="arr_test" schema="public" name="UnitTest.ArrTestEntity,UnitTest">
+  <id name="Id" type="long" column="id" generator="trigger-identity" />
+  <property name="IntArr" type="int[]" column="int_arr" />
+  <property name="StrArr" type="string[]" column="str_arr" />
+</class>
 ```
 
 使用 SQL 进行查询过滤：
