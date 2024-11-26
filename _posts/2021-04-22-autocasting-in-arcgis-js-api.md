@@ -3,7 +3,7 @@ layout: post2
 title: ArcGIS API for JavaScript 中的 Autocasting
 description: 介绍如何使用 ArcGIS API for JavaScript 中的 Autocasting 并使用 esri-loader 进行扩展
 keywords: arcgis js api, autocasting, esr-loader, loadModules
-tags: [ArcGIS]
+tags: [GIS]
 ---
 
 ## Autocasting 简介

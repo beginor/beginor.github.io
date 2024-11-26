@@ -3,7 +3,7 @@ layout: post2
 title: 升级 ArcGIS 企业版内置的 Tomcat
 description: 本文介绍如何手动升级 ArcGIS Enterprise 内置的 Tomcat
 keywords: arcgis, arcgis enterprise, apache tomcat, upgrade, security issues
-tags: [ArcGIS]
+tags: [GIS, 参考]
 typora-root-url: ../
 typora-copy-images-to: ../assets/post-images
 ---

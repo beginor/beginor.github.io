@@ -2,7 +2,7 @@
 layout: post
 title: 在 iOS 项目中使用 ESRI ArcGIS SDK
 description: 介绍如何在 Xcode 项目以及 Xamarin.iOS (MonoTouch) 项目中使用 ESRI ArcGIS SDK
-tags: [iOS, Xamarin, ArcGIS]
+tags: [iOS, Xamarin, GIS]
 keywords: ArcGIS, MonoTouch, Xamarin, iOS, XCode
 ---
 

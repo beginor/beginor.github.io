@@ -3,7 +3,7 @@ layout: post2
 title: 使用现代化的脚本进行 ArcGIS JS API 开发
 description: 本文介绍如何使用现代化的脚本 (ES6+, TypeScript) 进行 ArcGIS JS API 开发
 keywords: arcgis js api, modernization, es6, typescript
-tags: [ArcGIS, JavaScript, TypeScript]
+tags: [GIS, JavaScript, TypeScript]
 ---
 
 ArcGIS JS API 基于古老的 JavaScript 框架 [Dojo](https://dojotoolkit.org/) 开发， dojo 虽然是曾经的王者， 但是2020年的前端开发， 早已是 Angular、 React 和 Vue 三大框架的天下， JavaScript 的新特性可以说是日新月异， 国内也几乎没有人基于 dojo 进行开发， 因此本文介绍如何使用现代化的脚本 (ES6, ES7, ES2018 等， 以下统称 ES6+, TypeScript) 进行 ArcGIS JS API 开发。

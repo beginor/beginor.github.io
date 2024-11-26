@@ -3,7 +3,7 @@ layout: post2
 title: 在客户端创建要素图层 (FeatureLayer)
 description: 本文介绍如何使用 ArcGIS JS API 在客户端创建要素图层 FeatureLayer 。
 keywords: arcgis js api, featurelayer, creation, client side
-tags: [ArcGIS, TypeScript]
+tags: [GIS, TypeScript]
 ---
 
 在 ArcGIS JS API 的开发中， FeatureLayer 可以说是让人又爱又恨， 特别是 ArcGIS JS API 4.x ， FeatureLayer 从服务端加载数据的策略不可控制， 或者说默认的数据加载策略不适合所有的场景， 某些场景下， 需要从先加载数据， 然后在客户端创建 FeatureLayer 。

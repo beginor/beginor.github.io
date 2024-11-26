@@ -2,7 +2,7 @@
 layout: post
 title: 在 Xamarin.iOS 项目中访问 ArcGIS 云端专题数据图层
 description: 介绍如何在 Xamarin.iOS 项目中使用 MonoTouch.ArcGIS 使用云端专题数据
-tags: [iOS, Xamarin, ArcGIS]
+tags: [iOS, Xamarin, GIS]
 keywords: ArcGIS, MonoTouch, Xamarin, iOS, FeatureLayer
 ---
 
