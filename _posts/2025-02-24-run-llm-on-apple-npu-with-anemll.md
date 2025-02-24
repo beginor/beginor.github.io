@@ -1,8 +1,8 @@
 ---
 layout: post2
-title: 使用 ANEMLL 在https://github.com/anemll/anemll苹果芯片 (M1 Max) 的 NPU 上运行大模型
-description: 本文描述如何使用 ANEMLL 在苹果电脑上运行
-keywords: keyword1, keyword2, keyword3
+title: 使用 ANEMLL 在苹果芯片 (M1 Max) 的 NPU 上运行大模型
+description: 本文描述如何使用 ANEMLL 在苹果电脑上运行大模型以及与显卡运行模型的简单对比
+keywords: anemll, ai, llm, macos, apple m1 max, npu, llame 3.1, deepseek r1
 tags: [参考, AI]
 typora-root-url: ../
 typora-copy-images-to: ../assets/post-images
@@ -61,7 +61,7 @@ python3 chat_full.py --meta llama-3.2-1b-instruct/meta.yaml
 
 NPU 使用率如下图所示：
 
-![ANEMLL Npu Usage](/assets/post-images/anemll-npu-usage.png)
+![ANEMLL Npu Usage](/assets/post-images/anemll-chat-npu-usage.png)
 
 首先， NPU 功耗确实很低， 只有 2.8W ，如果是用 mlx 来运行大模型， 显卡功耗差不多有 30W 了， 功耗只需要显卡的 1/10 。
 
