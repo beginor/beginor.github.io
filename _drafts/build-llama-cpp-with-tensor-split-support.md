@@ -1,8 +1,8 @@
 ---
 layout: post2
-title: 编译
-description: post description
-keywords: keyword1, keyword2, keyword3
+title: 编译 llama.cpp 以支持张量并行 (tensor split) 并测试多卡性能
+description: 介绍如何在多 GPU 环境下编译 llama.cpp 以启用试验性的张量并行支持，包括安装 NVIDIA NCCL 库、CMake 构建配置，以及在 8×H20 NVLink 服务器上对比不同显卡数量下的实际推理性能，验证单用户场景下接近 vllm 的吞吐表现。
+keywords: llama.cpp, 张量并行, NCCL
 tags: [参考, AI]
 typora-root-url: ../
 typora-copy-images-to: ../assets/post-images
