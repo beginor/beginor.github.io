@@ -1,0 +1,26 @@
+{
+  "name": "beginor.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev:css": "tailwindcss -i ./assets/styles/tailwind-input.css -o ./assets/styles/tailwind.css --watch",
+    "build:css": "tailwindcss -i ./assets/styles/tailwind-input.css -o ./assets/styles/tailwind.css",
+    "dev": "pnpm build:css && docker run -it --rm -v $(pwd):/site -p 4000:4000 beginor/gh-pages"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.8.0",
+      "onFail": "download"
+    }
+  },
+  "type": "module",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.1",
+    "@tailwindcss/typography": "^0.5.20",
+    "tailwindcss": "^4.3.1"
+  }
+}

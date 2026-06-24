@@ -10,23 +10,38 @@
   {% include gtag.md %}
 </head>
 <body class="layout-boxed">
-<script src="/assets/@tabler/core/js/demo-theme.js"></script>
+<script>
+(function() {
+  var themeStorageKey = 'tablerTheme';
+  var defaultTheme = 'light';
+  if (!!window.matchMedia) {
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      defaultTheme = 'dark';
+    }
+  }
+  var params = new URLSearchParams(window.location.search);
+  var selectedTheme;
+  if (params.has('theme')) {
+    localStorage.setItem(themeStorageKey, params.get('theme'));
+    selectedTheme = params.get('theme');
+  } else {
+    selectedTheme = localStorage.getItem(themeStorageKey) || defaultTheme;
+  }
+  document.body.classList.remove('theme-dark', 'theme-light');
+  document.body.classList.add('theme-' + selectedTheme);
+})();
+</script>
 <div class="page">
 {% include header.md %}
-<div class="page-wrapper">
-  <div class="page-body">
-    <div class="container-xl">
-      <div class="row">
-        <div class="col-md-9">
+<div>
+    <div class="max-w-screen-xl mx-auto px-6 py-8">
+      <div class="flex flex-col md:flex-row gap-10">
+        <main class="md:w-3/4 w-full min-w-0">
           {{ content }}
-        </div>
-        <!-- side bar -->
-        <div class="col-md-3 hidden-print">
-          {% include tags.md %}
-          {% include recent-post.md %}
-          {% include flag-counter.md %}
-        </div>
-        <!-- /side bar -->
+        </main>
+        <aside class="md:w-1/4 w-full hidden-print">
+          {% include sidebar.md %}
+        </aside>
       </div>
     </div>
   </div>

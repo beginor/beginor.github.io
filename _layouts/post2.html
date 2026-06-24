@@ -10,68 +10,72 @@
   {% include gtag.md %}
 </head>
 <body class="layout-boxed">
-<script src="/assets/@tabler/core/js/demo-theme.js"></script>
+<script>
+(function() {
+  var themeStorageKey = 'tablerTheme';
+  var defaultTheme = 'light';
+  if (!!window.matchMedia) {
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      defaultTheme = 'dark';
+    }
+  }
+  var params = new URLSearchParams(window.location.search);
+  var selectedTheme;
+  if (params.has('theme')) {
+    localStorage.setItem(themeStorageKey, params.get('theme'));
+    selectedTheme = params.get('theme');
+  } else {
+    selectedTheme = localStorage.getItem(themeStorageKey) || defaultTheme;
+  }
+  document.body.classList.remove('theme-dark', 'theme-light');
+  document.body.classList.add('theme-' + selectedTheme);
+})();
+</script>
 <div class="page">
 {% include header.md %}
-<div class="page-wrapper">
-  <div class="page-body">
-    <div class="container-xl">
-      <div class="row">
-        <div class="col-md-9">
-          <div class="card">
-            <div class="card-header">
-              <div class="card-title">{{ page.title }}</div>
-            </div>
-            <div class="card-body markdown">
-              {{ content }}
-            </div>
+<div>
+  <div class="max-w-screen-xl mx-auto px-6 py-8">
+    <div class="flex flex-col md:flex-row gap-10">
+      <main class="md:w-3/4 w-full min-w-0">
+        <article class="page-bg border border-gray-400 rounded-sm">
+          <div class="border-b border-gray-400 px-6 py-4">
+            <h1 class="text-lg font-semibold tracking-tight text-gray-950 dark:text-gray-900">{{ page.title }}</h1>
           </div>
-          <div class="card mt-3">
-            <div class="card-body">
-              <ul class="pagination">
-                {% if page.previous %}
-                  <li class="page-item page-prev">
-                    <a class="page-link" href="{{ page.previous.url }}">
-                      <div class="page-item-subtitle"><i class="icon ti ti-chevron-left"></i>上一篇</div>
-                      <div class="page-item-title">{{ page.previous.title }}</div>
-                    </a>
-                  </li>
-                {% else %}
-                  <li class="page-item page-prev disabled">
-                    <a class="page-link" href="#">
-                      <div class="page-item-subtitle"><i class="icon ti ti-chevron-left"></i>上一篇</div>
-                      <div class="page-item-title">没有了</div>
-                    </a>
-                  </li>
-                {% endif %}
-                {% if page.next %}
-                  <li class="page-item page-next">
-                    <a class="page-link" href="{{ page.next.url }}">
-                      <div class="page-item-subtitle">下一篇<i class="icon ti ti-chevron-right"></i></div>
-                      <div class="page-item-title">{{ page.next.title }}</div>
-                    </a>
-                  </li>
-                {% else %}
-                  <li class="page-item page-next disabled">
-                    <a class="page-link" href="#">
-                      <div class="page-item-subtitle">下一篇<i class="icon ti ti-chevron-right"></i></div>
-                      <div class="page-item-title">没有了</div>
-                    </a>
-                  </li>
-                {% endif %}
-              </ul>
-            </div>
+          <div class="px-6 py-6 prose prose-gray dark:prose-invert max-w-none">
+            {{ content }}
           </div>
-          <div>
-            {% include utteranc.md %}
-          </div>
+        </article>
+        <nav class="mt-6 flex items-center justify-between">
+          {% if page.previous %}
+          <a class="flex flex-col text-sm text-gray-900 hover:text-link no-underline max-w-[45%]" href="{{ page.previous.url }}">
+            <span class="text-xs text-gray-800"><i class="icon ti ti-chevron-left"></i>上一篇</span>
+            <span class="font-medium truncate">{{ page.previous.title }}</span>
+          </a>
+          {% else %}
+          <span class="flex flex-col text-sm text-gray-700 max-w-[45%]">
+            <span class="text-xs"><i class="icon ti ti-chevron-left"></i>上一篇</span>
+            <span class="font-medium">没有了</span>
+          </span>
+          {% endif %}
+          {% if page.next %}
+          <a class="flex flex-col text-sm text-right text-gray-900 hover:text-link no-underline max-w-[45%]" href="{{ page.next.url }}">
+            <span class="text-xs text-gray-800">下一篇<i class="icon ti ti-chevron-right"></i></span>
+            <span class="font-medium truncate">{{ page.next.title }}</span>
+          </a>
+          {% else %}
+          <span class="flex flex-col text-sm text-right text-gray-700 max-w-[45%]">
+            <span class="text-xs">下一篇<i class="icon ti ti-chevron-right"></i></span>
+            <span class="font-medium">没有了</span>
+          </span>
+          {% endif %}
+        </nav>
+        <div class="mt-6">
+          {% include utteranc.md %}
         </div>
-        <div class="col-md-3 d-print-none">
-          {% include tags.md %}
-          {% include recent-post.md %}
-          {% include flag-counter.md %}
-        </div>
-      </div>
+      </main>
+      <aside class="md:w-1/4 w-full hidden-print">
+        {% include sidebar.md %}
+      </aside>
     </div>
   </div>
   {% include footer.md %}

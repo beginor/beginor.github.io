@@ -9,3 +9,4 @@
 <link rel="apple-touch-icon-precomposed" href="/assets/imgs/min48.png" />
 <link rel="shortcut icon" href="/assets/imgs/min32.png" />
 <link rel="stylesheet" href="/assets/styles/markdown.css" />
+<link rel="stylesheet" href="/assets/styles/tailwind.css" />

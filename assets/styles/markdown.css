@@ -1,18 +1,18 @@
-.markdown {
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
-  font-size: 16px;
-  line-height: 1.5;
-  word-wrap: break-word
-}
-
-.markdown pre.highlight {
+.prose pre.highlight {
   padding: 0 !important;
 }
 
-.markdown img {
-  border-radius: var(--tblr-border-radius);
+.prose img {
+  border-radius: 0.25rem;
 }
 
-.page-item-title {
-  color: var(--tblr-muted);
+/* Geist dark prose — override Tailwind typography defaults */
+.theme-dark .prose,
+.theme-dark .prose-invert {
+  --tw-prose-body: #c9c9c9;
+  --tw-prose-headings: #c0c0c0;
+  --tw-prose-bold: #c0c0c0;
+  --tw-prose-links: #47a8ff;
+  --tw-prose-code: #dedede;
+  --tw-prose-quotes: #c9c9c9;
 }

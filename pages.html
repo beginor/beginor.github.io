@@ -4,17 +4,17 @@ layout: default
 navbar_active: pages
 ---
 
-<div class="card">
-  <div class="card-header">
-    <ul class="nav nav-tabs card-header-tabs">
-      <li role="presentation" class="nav-item"><a class="nav-link active" href="#">时间</a></li>
-      <li role="presentation" class="nav-item"><a class="nav-link" href="pages-tags.html">分类</a></li>
+<div class="page-bg border border-gray-400 rounded-sm">
+  <div class="border-b border-gray-400 px-6">
+    <ul class="flex -mb-px text-sm">
+      <li class="mr-1"><a class="inline-block px-4 py-3 border-b-2 border-gray-950 text-gray-950 no-underline" href="#">时间</a></li>
+      <li class="mr-1"><a class="inline-block px-4 py-3 border-b-2 border-transparent text-gray-900 hover:text-gray-950 hover:border-gray-600 no-underline" href="pages-tags.html">分类</a></li>
     </ul>
   </div>
-  <div class="card-body">
-    <ol>
+  <div class="px-6 py-6">
+    <ol class="list-decimal list-inside space-y-2 text-sm text-gray-900">
     {% for post in site.posts %}
-      <li>{{ post.date | date: "%Y-%m-%d" }} <a href="{{ post.url }}">{{ post.title }}</a></li>
+      <li>{{ post.date | date: "%Y-%m-%d" }} <a class="text-link hover:underline no-underline" href="{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
     </ol>
   </div>

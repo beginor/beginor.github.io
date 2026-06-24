@@ -9,7 +9,7 @@ owner:
 disqus:
   short_name: "beginor-github"
 paginate: 12
-exclude: ["start-jekyll.sh", "start-jekyll.bat", "bower.json"]
+exclude: ["start-jekyll.sh", "start-jekyll.bat", "bower.json", "node_modules", "package.json", "pnpm-lock.yaml", "design.md", "design.drak.md"]
 encoding: utf-8
 markdown: kramdown
 highlighter: rouge
