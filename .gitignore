@@ -10,7 +10,4 @@ package-lock.json
 .agents
 .claude
 
-# Generated files
-assets/styles/tailwind.css
-
 .DS_Store
